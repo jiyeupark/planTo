@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- js -->
+    <script type="text/javascript" src="../js/include.js"></script>
+    <script type="text/javascript" src="../js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+
+    <!-- css -->
+    <link href="../css/common.css" rel="stylesheet" />
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+        .service-main-cont {
+            max-width: 1216px;
+            margin: 0 auto;
+            padding-top: 40px;
+        }
+        .service-main-cont img {
+            width: 100%;
+        }
+
+        #section1 {
+            padding-top: 0px;
+            padding-bottom: 220px;
+        }
+
+        .service-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--obz-text-light-primary);
+            text-align: center;
+            line-height: 1.6;
+        }
+        .service-sub-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--obz-text-light-primary);
+            text-align: center;
+            line-height: 1.6;
+        }
+        .service-desc {
+            font-size: 20px;
+            color: var(--obz-text-light-secondary);
+            font-weight: 600;
+            margin-top: 32px;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .service1-bgimg {
+            background-image: url("../img/service/top_back.png");
+            background-size: cover;
+            height: 750px;
+        }
+
+        #section1 .service-cont {
+            text-align: center;
+        }
+
+        #service-main {
+            padding-top: 250px;
+        }
+        .page-title,
+        .page-desc {
+            color: #FFFFFF;
+        }
+
+        #service-info {
+            padding-top: 150px;
+        }   
+
+        .service-info-con {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-evenly;
+            align-items: center;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .service-info-card {
+            position: relative;
+            width: 280px;
+            height: 240px;
+            background-color: var(--obz-background-light);
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--obz-text-light-primary);
+            text-align: left;
+            padding: 24px 28px;
+            box-sizing: border-box;
+            box-shadow: 0px 5px 6px 0px rgb(0, 0, 0, 8%);
+            transition: background-color .15s, color .3s;
+        }
+        .service-info-icon {
+            width: 72px;
+            height: 72px;
+            position: absolute;
+            right: 26px;
+            bottom: 25px;
+            transition: opacity .1s;
+        }
+        .service-info-desc {
+            position: absolute;
+            left: 30px;
+            bottom: 28px;
+            color: var(--obz-text-dark-secondary);
+            font-size: 18px;
+            font-weight: 500;
+            opacity: 0;
+            transition: opacity .25s .1s;
+        }
+
+        .service-info-con-1 .service-info-icon {
+            background-image: url("../img/service/service-info1.png");
+        }
+        .service-info-con-2 .service-info-icon {
+            background-image: url("../img/service/service-info2.png");
+        }
+        .service-info-con-3 .service-info-icon {
+            background-image: url("../img/service/service-info3.png");
+        }
+        .service-info-con-4 .service-info-icon {
+            background-image: url("../img/service/service-info4.png");
+        }
+
+        .service-info-card:hover {
+            background-color: var(--obz-main-secondary);
+            color: var(--obz-text-dark-primary);
+        }
+        .service-info-card:hover .service-info-icon {
+            opacity: 0;
+        }
+        .service-info-card:hover .service-info-desc {
+            opacity: 1;
+        }
+
+        /* -- section2 -- */
+        #section2 {
+            padding-top: 220px;
+        }
+
+
+        /* -- section3 -- */
+        #section3 {
+            margin-top: 120px;
+            background-color: var(--obz-background-dark);
+        }
+        #section3 .service-title {
+            color: var(--obz-text-dark-primary);
+            font-weight: 600;
+        }
+        #section3 .service-desc {
+            color: var(--obz-text-dark-secondary);
+            font-weight: 500;
+        }
+        #section3 .service-sub-title {
+            color: #FFFFFF;
+            font-weight: 600;
+        }
+        
+        .service2 .service-main-cont {
+            padding-top: 80px;
+        }
+
+        .service .service-sub-title {
+            padding-top: 30px;
+        }
+        .service .feature-card-cont {
+            margin-top: 30px;
+        }
+        .service .feature-card {
+            height: 207px;
+            padding: 22px 16px;
+        }
+        .service .feature-card .feature-card-title {
+            font-size: 24px;
+        }
+        .service .feature-card .feature-card-desc {
+            font-size: 16px;
+        }
+
+        .refer-card-cont {
+            display: flex;
+            width: 100%;
+            margin-top: 38px;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .refer-card-cont-row {
+            display: flex;
+            flex-direction: row;
+        }
+        .refer-card {
+            flex: 1 1 1px;
+            height: 136px;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            margin-right: 32px;
+            margin-bottom: 32px;
+            padding: 24px 0px;
+            box-sizing: border-box;
+            box-shadow: 2px 7px 15px 0px rgb(0, 0, 0, 13%);
+            text-align: center;
+        }
+        .refer-card .refer-card-image {
+            object-fit: none;
+            height: 50px;
+        }
+        .refer-card .refer-card-title {
+            color: var(--obz-text-light-secondary);
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 7px;
+        }
+        .refer-card:last-child {
+            margin-right: 0px;
+        }
+
+
+        /* -- section4 -- */
+        #section4 {
+            position: relative;
+            padding-bottom: 0;
+        }
+        #section4::before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            content: "";
+            background-image: url("../img/service/back.jpg");
+            background-size: cover;
+            opacity: .25;
+            background-position-y: -55px;
+        }
+        #section4 > div {
+            position: relative;
+        }
+        #section4 .service-cont {
+            padding-bottom: 130px;
+        }
+        #section4 .refer-card {
+            padding: 35px 0px;
+        }
+        #section4 .refer-card-image {
+            height: 65px;
+        }
+        #section4 .feature-card {
+            background-color: #fff;
+        }
+
+
+        /* -- section5 -- */
+        /*
+        #section5 {
+            padding-top: 120px;
+            padding-bottom: 0px;
+        }
+        #section5 .service-cont {
+            padding-bottom: 64px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        #section5 .service-main-cont {
+            max-width: 632px;
+        }
+        */
+
+
+        /*************** 반응형 ***************/
+        @media screen and (max-width: 768px) { 
+            .service1-bgimg {
+                height: 640px;
+            }
+            #service-main {
+                padding-top: 150px;
+            }
+            #service-info {
+                padding-top: 130px;
+            }
+
+            #section1 {
+                padding-bottom: 570px;
+            }
+
+            .service-info-con {
+                flex-direction: column;
+            }
+            .service-info-card {
+                height: 190px;
+                margin-bottom: 20px;
+            }
+            .service-info-desc {
+                opacity: 1;
+                color: var(--obz-text-light-secondary);
+            }
+            .service-info-icon {
+                display: none;
+            }
+
+            .service-cont {
+                padding: 0 20px;
+            }
+            .service-title {
+                font-size: 2.35rem;
+            }
+            .service-desc {
+                font-size: 1.28rem;
+                letter-spacing: -0.5px;
+            }
+            .service-sub-title {
+                font-size: 1.73rem;
+                letter-spacing: -0.5px;
+                white-space: nowrap;
+            }
+
+            #section2 .service-main-cont {
+                padding-top: 40px;
+            }
+
+            #section3 { 
+                margin-top: 60px;
+                padding: 70px 0;
+            }
+            #section3::before {
+                background-position-y: 0px;
+            }
+
+            .feature-card-cont,
+            .refer-card-cont-row {
+                flex-direction: column;
+            }
+            .service .feature-card,
+            .service .refer-card {
+                margin-right: 0px;
+                padding: 22px 12px 30px;
+                /* height: fit-content; */
+            }
+            .service .feature-card .feature-card-title {
+                font-size: 1.5rem;
+            }
+            .feature-card .feature-card-caption,
+            .service .feature-card .feature-card-desc {
+                font-size: 1.1rem;
+                letter-spacing: -0.5px;
+            }
+
+        }
+
+    </style>
+
+    <script>
+        useTransparentGNB = true;  // common.js의 투명 GNB 사용 여부
+
+        var section;
+        var navigation;
+        
+        //*************** load ***************//
+        $(document).ready(function () {
+            section = $('.section');
+            navigation = $('#navigation a');
+            updateNavigation();
+        });
+
+        //*************** 스크롤 ***************//
+        window.addEventListener("scroll", function (e){
+            updateNavigation();
+
+            if (window.scrollY > 150) {
+                $("#header").addClass("solid");
+            } else {
+                $("#header").removeClass("solid");
+            }
+        });
+
+
+        //*************** section 이동 네비게이션 표시  ***************//
+        function updateNavigation() {
+            section.each(function(){
+                $this = $(this);
+            
+                var activeSection = $('#navigation a[href="#'+$this.attr('id')+'"]').data('number') - 1;
+
+                if ( ($this.offset().top - $(window).height()/2 < $(window).scrollTop() ) && ( $this.offset().top + $this.height() - $(window).height()/2 > $(window).scrollTop()) ) {
+                    navigation.eq(activeSection).addClass('is-selected');
+
+                    var navElem = $("#navigation");
+                    if (activeSection == 0 || activeSection == 2) {
+
+                        if (!navElem.hasClass("dark")) {
+                            navElem.addClass("dark");
+                        }
+                    } else {
+                        navElem.removeClass("dark");
+                    }
+                } else {
+                    navigation.eq(activeSection).removeClass('is-selected');
+                }
+            });
+        }
+    </script>
+</head>
+
+<body class="service">
+    <header>
+        <script>loadHTML("./header.html");</script>
+    </header>
+    <nav id="navigation">
+        <ul>
+            <li>
+                <a href="#section1" data-number="1">
+                    <span class="dot"></span>
+                    <span class="label">서비스 메인</span>
+                </a>
+                <div class="little-dot"></div>
+                <div class="little-dot"></div>
+            </li>
+            <li>
+                <a href="#section2" data-number="2">
+                    <span class="dot"></span>
+                    <span class="label">마케팅 컨설팅</span>
+                </a>
+                <div class="little-dot"></div>
+                <div class="little-dot"></div>
+            </li>
+            <li>
+                <a href="#section3" data-number="3">
+                    <span class="dot"></span>
+                    <span class="label">AI 모델링</span>
+                </a>
+                <div class="little-dot"></div>
+                <div class="little-dot"></div>
+            </li>
+            <li>
+                <a href="#section4" data-number="4">
+                    <span class="dot"></span>
+                    <span class="label">생성형 AI 접목</span>
+                </a>
+                <!-- <div class="little-dot"></div>
+                <div class="little-dot"></div> -->
+            </li>
+            <!-- <li>
+                <a href="#section5" data-number="5">
+                    <span class="dot"></span>
+                    <span class="label">네이버클라우드 클라우드 데이터박스</span>
+                </a>
+            </li> -->
+        </ul>
+    </nav>
+
+
+    <!-- <section> -->
+        <!-- section 1 -->
+        <section id="section1" class="service1 section">
+            <div class="service1-bgimg">
+                <div class="service-cont">
+                    <div id="service-main">
+                        <p class="page-title">서비스</p>
+                        <p class="page-desc">
+                            컨설팅, 분석, 개발 전문성과 선도 기업과의 프로젝트 경험을 바탕으로
+                            <br/>
+                            인공지능, 마케팅, 데이터를 통한 비즈니스 가치 창출을 지원합니다.
+                        </p>
+                    </div>
+                    <div id="service-info" class="service1-div">
+                        <div class="service-info-con">
+                            <a class="service-info-con-1 service-info-card" href="#section2">
+                                마케팅
+                                <br>
+                                컨설팅
+                                <div class="service-info-desc">
+                                    마케팅 전략 수립 및
+                                    <br>
+                                    캠페인 시나리오 도출
+                                </div>
+                                <div class="service-info-icon"></div> 
+                            </a> 
+                            <a class="service-info-con-2 service-info-card" href="#section3">
+                                AI
+                                <br>
+                                모델링
+                                <div class="service-info-desc">
+                                    기업 맞춤형
+                                    <br>
+                                    머신러닝 모델 개발
+                                </div>
+                                <div class="service-info-icon"></div> 
+                            </a> 
+                            <a class="service-info-con-3 service-info-card" href="#section4">
+                                생성형 AI
+                                <br>
+                                접목
+                                <div class="service-info-desc">
+                                    생성형 AI를 활용한
+                                    <br>
+                                    비즈니스 가치 창출
+                                </div>
+                                <div class="service-info-icon"></div> 
+                            </a> 
+                            <!-- <a class="service-info-con-4 service-info-card" href="#section5">
+                                네이버클라우드
+                                <br>
+                                클라우드 데이터박스
+                                <div class="service-info-desc">
+                                    기업 데이터와
+                                    <br>
+                                    네이버 데이터의 연계분석
+                                </div>
+                                <div class="service-info-icon"></div> 
+                            </a>  -->
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </section>
+
+
+        <!-- section 2 -->
+        <section id="section2" class="service2 section">
+            <div class="service-cont">
+                <div class="service-title">마케팅 컨설팅</div>
+                <div class="service-desc">
+                    20년 이상 100여 개 기업에 마케팅 자동화 솔루션을 공급하며 축적한 노하우와 자산을 활용하여
+                    <br>
+                    마케팅 전략 및 체계, 바로 적용 가능한 마케팅 시나리오 발굴까지 고객 데이터 기반 마케팅 전체를 지원합니다.
+                </div>
+
+                <div class="service-main-cont">
+                    <img src="../img/service/Process.png"/>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- section 3 -->
+        <section id="section3" class="service3 section">
+            <div class="service-cont">
+                <div class="service-title">AI 모델링</div>
+                <div class="service-desc">
+                    여러 유통사 및 금융사 AI 모델 개발 경험 및 운영 관점의 MLOps 전문성을 바탕으로
+                    <br>
+                    기업이 보유한 데이터와 분석 목적, AI 운영 환경 등을 복합적으로 고려하여 최적의 인공지능 모델을 개발합니다.
+                </div>
+
+                <div class="service-main-cont">
+                    <div class="service-sub-title">오브젠 AI 모델링 서비스의 특징</div>
+                    <div class="feature-card-cont">
+                        <div class="feature-card">
+                            <div class="feature-card-caption">Feature 01</div>
+                            <div class="feature-card-title">선도 기업 서비스 경험 접목</div>
+                            <div class="feature-card-desc">
+                                금융, 유통 등 여러 산업의 선도 기업을 대상으로
+                                <br>
+                                분석 모형을 개발한 노하우를 활용하여
+                                <br>
+                                비즈니스 가치 창출을 위한 AI 모델을 개발합니다.
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-card-caption">Feature 02</div>
+                            <div class="feature-card-title">독보적인 MLOps 전문성</div>
+                            <div class="feature-card-desc">
+                                많은 수의 대형 모델을 배포, 자동화한 경험과
+                                <br>
+                                자체 MLOps 플랫폼 개발 및 공급 경험을 바탕으로
+                                <br>
+                                분석/IT 자원을 최적으로 활용하는 모델을 개발합니다.
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-card-caption">Feature 03</div>
+                            <div class="feature-card-title">높은 AI 기술력 및 전문성</div>
+                            <div class="feature-card-desc">
+                                글로벌 AI 연구소 및 유수의 기업, 대학 출신의
+                                <br>
+                                AI 전문 인력과 탁월한 기술력을 바탕으로
+                                <br>
+                                우수한 성능의 분석 모형 개발을 지원합니다.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-sub-title">관련 고객사 Reference</div>
+                    <div class="refer-card-cont">
+                        <div class="refer-card-cont-row">
+                            <div class="refer-card">
+                                <img class="refer-card-image" src="../img/service/refer1.png"></img>
+                                <div class="refer-card-title">개인화 추천 모형 개발 및 마케팅 시스템 구축</div>
+                            </div>
+                            <div class="refer-card">
+                                <img class="refer-card-image" src="../img/service/refer2.png"></img>
+                                <div class="refer-card-title">개인화 상품 추천 모형 개발 및 자동화</div>
+                            </div>
+                            <div class="refer-card">
+                                <img class="refer-card-image" src="../img/service/refer3.png"></img>
+                                <div class="refer-card-title">AI 타겟팅 및 개인화 추천 모형 개발</div>
+                            </div>
+                        </div>
+                        <div class="refer-card-cont-row">
+                            <div class="refer-card">
+                                <img class="refer-card-image" src="../img/service/refer4.png"></img>
+                                <div class="refer-card-title">큐레이션 마케팅 자동화 시스템 구축</div>
+                            </div>
+                            <div class="refer-card">
+                                <img class="refer-card-image" src="../img/service/refer5.png"></img>
+                                <div class="refer-card-title">AI 분석 플랫폼 구축 및 모형 최적화</div>
+                            </div>
+                            <div class="refer-card">
+                                <img class="refer-card-image" src="../img/service/refer6.png"></img>
+                                <div class="refer-card-title">AI 마케팅 플랫폼 구축 및 모형 배포 (AIMs)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- section 4 -->
+        <section id="section4" class="service4 section">
+            <div class="service-cont">
+                <div class="service-title">생성형 AI 접목</div>
+                <div class="service-desc">
+                    기업의 데이터 및 IT 환경에 대한 깊은 이해와 유수의 기술, 연구, 비즈니스 파트너와의 협력을 통해
+                    <br>
+                    텍스트 생성, 이미지 생성, 코드 생성 등 생성형 AI 기술을 기업 환경에 따라 접목하여 업무 영역을 혁신합니다.
+                </div>
+
+                <div class="service-main-cont">
+                    <div class="service-sub-title">오브젠 생성형 AI 접목 서비스의 특징</div>
+                    <div class="feature-card-cont">
+                        <div class="feature-card">
+                            <div class="feature-card-caption">Feature 01</div>
+                            <div class="feature-card-title">컨설팅, 분석, 개발 전문성의 조화</div>
+                            <div class="feature-card-desc">
+                                생성형 AI를 활용한 신규 서비스 발굴 및 정의부터
+                                <br>
+                                프롬프트 최적화 및 파인 튜닝, 애플리케이션 개발까지
+                                <br>
+                                전 영역의 서비스를 지원합니다.
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-card-caption">Feature 02</div>
+                            <div class="feature-card-title">외부 초거대 AI 모델과의 안전한 연동</div>
+                            <div class="feature-card-desc">
+                                자체 AI 서버와 프롬프트 엔지니어링을 통해
+                                <br>
+                                기업 내부 데이터의 외부 전송 없이
+                                <br>
+                                주요 초거대 AI 모델의 결과값을 활용합니다.
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-card-caption">Feature 03</div>
+                            <div class="feature-card-title">국내 최고의 산-학-연 파트너와 협력</div>
+                            <div class="feature-card-desc">
+                                생성형 AI 모델의 비즈니스 접목을 위한
+                                <br>
+                                최고의 기술, 연구, 비즈니스 파트너와
+                                <br>
+                                긴밀하게 협력하고 있습니다.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-sub-title">오브젠의 생성형 AI 비즈니스 파트너</div>
+                    <div class="refer-card-cont">
+                        <div class="refer-card-cont-row">
+                            <div class="refer-card">
+                                <img class="refer-card-image" src="../img/service/refer7.png"></img>
+                            </div>
+                            <div class="refer-card">
+                                <img class="refer-card-image" src="../img/service/refer8.png"></img>
+                            </div>
+                            <div class="refer-card">
+                                <img class="refer-card-image" src="../img/service/refer9.png"></img>
+                            </div>
+                            <div class="refer-card">
+                                <img class="refer-card-image" src="../img/service/refer10.png"></img>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 문의 사항 -->
+            <script>loadHTML("./inquire.html");</script>
+        </section>
+
+
+        <!-- section 5 -->
+        <!-- <section id="section5" class="service5 section">
+            <div class="service-cont">
+                <div class="service-title">네이버클라우드 클라우드 데이터박스</div>
+                <div class="service-desc">
+                    네이버클라우드와의 파트너십과 데이터 분석 및 시각화 분야 전문성을 바탕으로
+                    <br>
+                    네이버클라우드 서비스를 활용하여 네이버 데이터와의 다양한 연계 분석을 통해 확장된 인사이트를 제공합니다.
+                </div>
+
+                <div class="service-main-cont">
+                    <img src="../img/service/navercloud.png"/>
+                </div>
+                <div class="more-button-cont right">
+                    <a class="main2-sub-button more-button" target="_blank"  href="https://www.ncloud.com/product/analytics/cloudDataBox">
+                        클라우드 데이터박스 바로가기
+                        <svg viewBox="0 0 36 36"><path d="M18 6L15.885 8.115L24.255 16.5H6V19.5H24.255L15.885 27.885L18 30L30 18L18 6Z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section> -->
+        
+        <footer>
+            <script>loadHTML("./footer.html");</script>
+        </footer>
+    </body>
+</html>

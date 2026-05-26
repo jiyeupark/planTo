@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- js -->
+    <script type="text/javascript" src="../js/include.js"></script>
+    <script type="text/javascript" src="../js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+
+    <!-- css -->
+    <link href="../css/common.css" rel="stylesheet" />
+
+    <style>
+        .recruit1 {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background: no-repeat center/150% url(../img/recruit_01.jpg);
+            background-size: cover;
+        }
+        .recruit1::before {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            content: "";
+            background-color: #09102b;
+            opacity: .3;
+        }
+        .recruit1-con {
+            padding-top: 170px;
+        }
+        .page-title,
+        .page-desc {
+            color: #ffffff;
+            position: relative;
+        }
+
+        .recruit2{
+            /* height: 2000px !important; */
+            padding: 30px 0 100px;
+        }
+        .recruit2-con{
+            width: 1200px;
+            margin: 40px auto;
+            height: 1805px;
+        }
+
+        #recurit_sheet{
+            width: 1200px;
+            text-align: center;
+            margin: 0 auto;
+            position: relative;
+        }
+        #recurit_sheet .recurit_sheet_wrapper{
+            margin: 0 auto;
+            color: #666;
+        }
+        #recurit_sheet .recurit_sheet_wrapper table > thead > tr{
+            text-align: center;
+        }
+        #recurit_sheet .recurit_sheet_wrapper table > thead > tr > th{
+            font-weight: 500;
+        }
+        #recurit_sheet .recurit_sheet_wrapper table > thead > tr > th,
+        #recurit_sheet .recurit_sheet_wrapper table > thead > tr > td,
+        #recurit_sheet .recurit_sheet_wrapper table > tbody > tr > th,
+        #recurit_sheet .recurit_sheet_wrapper table > tbody > tr > td {
+            border-bottom: 1px solid #ddd;
+            font-size: 15px;
+            padding: 15px 15px;
+            font-weight: 500;
+        }
+        .cell-center {
+            text-align: center;
+        }
+        .prefer {
+            margin-top: 5px;
+            font-weight: 600;
+        }
+
+        #recurit_sheet dl {
+            clear: both;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        #recurit_sheet dl dd {
+            float: left;
+            width: 130px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        #recurit_sheet dl dt {
+            line-height: 25px;
+            font-size: 16px;
+            text-align: left;
+            font-weight: 500;
+    color: var(--obz-text-light-secondary);
+        }
+
+        #recurit_company {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        #recurit_txt {
+            padding-top: 70px;
+            padding-left: 135px;
+        }
+
+        #recurit_txt img {
+            vertical-align: middle;
+        }
+        
+        .more-button-cont {
+            padding-top: 30px;
+        }
+
+
+        /*************** 반응형 ***************/
+        @media screen and (max-width: 768px) { 
+            .recruit1-con {
+                padding-top: 150px;
+            }
+            .recruit2 {
+                overflow-x: scroll;
+                padding: 0px 20px 100px;
+            }
+            .recruit2-con {
+                height: fit-content;
+                width: 100%;
+                overflow-x: auto;
+                margin-top: 20px;
+            }
+        }
+    </style>
+
+    <script>
+        useTransparentGNB = true;
+
+        //*************** 스크롤 ***************//
+        window.addEventListener("scroll", function (e) {
+            if (window.scrollY > 150) {
+                $("#header").addClass("solid");
+            } else {
+                $("#header").removeClass("solid");
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <script>loadHTML("./header.html");</script>
+    </header>
+    <section>
+        <div class="recruit1">
+            <div class="container recruit1-con">
+                <div class="page-title">채용정보</div>
+                <p class="page-desc" >오브젠의 열정있는 인재를 모집합니다</p>
+            </div>
+        </div>
+
+        <div class="recruit2">
+            <div class="recruit2-con">
+                <div id="recurit_sheet">
+                    <div class="recurit_sheet_wrapper">
+                        <dl>
+                            <dd>접수기간</dd>
+                            <dt>상시채용</dt>
+                        </dl>
+                        <dl>
+                            <dd>모집분야</dd>
+                            <dt>전 분야 신입사원 및 경력사원</dt>
+                        </dl>
+                        <dl style="margin-bottom: 50px;">
+                            <dt>
+                                <table cellpadding="0" cellspacing="0">
+                                    <colgroup>
+                                        <col width="80">
+                                        <col width="90">
+                                        <col width="380">
+                                        <col width="350">
+                                        <col width="100">
+                                        <col width="110">
+                                        <col width="90">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2">부서</th>
+                                            <th>담당업무</th>
+                                            <th>지원자격 및 필요역량</th>
+                                            <th>경력</th>
+                                            <th>학력</th>
+                                            <th>채용인원</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>&nbsp;&nbsp;&nbsp;</tr>
+                                        <tr>
+                                            <!-- <td>&nbsp;&nbsp;&nbsp;</td> -->
+                                            <th colspan="2" class="cell-center">SD Lab</th>
+                                            <td>-&nbsp;오브젠 솔루션 기반 분석 및 마케팅 시스템 구축 업무<br>&nbsp;&nbsp;(캠페인 / BI / Big Data / AI 프로젝트 수행 및 솔루션 개발)</td>
+                                            <td>
+                                                <div>
+                                                    -&nbsp;Java 기본지식 보유자
+                                                    <br>
+                                                    -&nbsp;JavaScript 기본지식 보유자
+                                                    <br>
+                                                    -&nbsp;SQL 기본지식 보유자
+                                                    <br>
+                                                    ※ 신입의 경우 포트폴리오 제출 필수
+                                                </div>
+                                            </td>
+                                            <td class="cell-center">경력 무관</td>
+                                            <td class="cell-center" style="line-height: 20px;">
+                                                4년제 대학
+                                                <br>
+                                                졸업(예정)자
+                                            </td>
+                                            <td class="cell-center">신입 : 0명 <br> 경력 : 0명</td>
+                                        </tr>
+
+
+                                        <!-- lab -->
+                                        <tr>
+                                            <th rowspan="4">연구소</th>
+                                        </tr>
+                                        <tr>
+                                            <th>DX Lab</th>
+                                            <td>
+                                                -&nbsp;어플리케이션 설계/개발 및 구축
+                                                <br>
+                                                -&nbsp;클라우드 솔루션 개발 및 구축
+                                                <br>
+                                                -&nbsp;CI/CD 파이프라인 설계 및 구현
+                                            </td>
+                                            <td>
+                                                <div class="career">
+                                                    -&nbsp;컴퓨터공학 또는 소프트웨어 관련 학과 전공자
+                                                </div>
+                                                <div class="career">
+                                                    -&nbsp;원활한 협업 및 커뮤니케이션 능력
+                                                </div>
+                                                <div class="prefer">[ 우대사항 ]</div>
+                                                <div class="career">
+                                                    -&nbsp;시스템 / 네트워크 / 데이터베이스 / 클라우드 등의<br>&nbsp;&nbsp;&nbsp;기술 역량 또는 관련 자격증 보유
+                                                    <br>
+                                                    -&nbsp;프론트엔드, 백엔드 개발 경험 보유
+                                                    <br>
+                                                    -&nbsp;비즈니스 서비스 개발 경험 보유
+                                                    <br>
+                                                    -&nbsp;오픈 소스 기술 경험 보유
+                                                </div>
+                                            </td>
+                                            <td class="cell-center">경력 무관</td>
+                                            <td class="cell-center" style="line-height: 20px;">
+                                                4년제 대학
+                                                <br>
+                                                졸업(예정)자
+                                            </td>
+                                            <td class="cell-center">신입 : 0명 <br> 경력 : 0명</td>
+                                        </tr>
+                                        <tr>
+                                            <th rowspan="2">AI Lab</th>
+                                            <td>-&nbsp;마케팅 AI 기능 개발<br>&nbsp;&nbsp;(추천, 고객타겟팅, 성과분석 등)</td>
+                                            <td>
+                                                <div class="career">-&nbsp;데이터 사이언스 유관 경력 2년 이상</div>
+                                                <div class="prefer">[ 우대사항 ]</div>
+                                                <div class="career">
+                                                    -&nbsp;통계 / 산업공학 분야 전공 우대
+                                                    <br>
+                                                    -&nbsp;실험 및 관찰 연구, 인과 추론 분야 경력 우대
+                                                    <br>
+                                                    &nbsp;&nbsp;&nbsp;(A/B Testing, Observation Study, Causal Inference)
+                                                </div>
+                                            </td>
+                                            <td rowspan="2" class="cell-center">2년 이상</td>
+                                            <td rowspan="2" class="cell-center" style="line-height: 20px;">
+                                                4년제 대학
+                                                <br>
+                                                졸업(예정)자
+                                            </td>
+                                            <td rowspan="2" class="cell-center">경력 : 0명</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                -&nbsp;AI 모델 배포 및 모니터링 체계 구축
+                                                <br>
+                                                -&nbsp;GUI 기반 AI 학습 플랫폼 개발
+                                                <br>
+                                                -&nbsp;실험 및 인과 추론 플랫폼 개발
+                                            </td>
+                                            <td>
+                                                <div class="career">-&nbsp;데이터 엔지니어링 경력 2년 이상 (R 또는 Python 필수)</div>
+                                                <div class="prefer">[ 우대사항 ]</div>
+                                                <div class="career">
+                                                    -&nbsp;컴퓨터 공학 분야 전공 우대
+                                                    <br>
+                                                    -&nbsp;머신러닝, 딥러닝 경력 우대
+                                                    <br>
+                                                    -&nbsp;컨테이너 기술, MLOps 분야 경력 우대
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </dt>
+                        </dl>
+                        <dl>
+                            <dd>근무조건</dd>
+                            <dt>
+                                주 5일 (월요일 ~ 금요일)  /  근무형태 : 정규직<br>
+                                신입사원의 경우 3개월 인턴십 후 정규직 전환 (최근 3년간 정규직 전환율 100%)
+                            </dt>
+                        </dl>
+                        <!--add-->
+                        <dl>
+                            <dd>급여</dd>
+                            <dt>면접 후 결정</dt>
+                        </dl>
+
+                        <dl>
+                            <dd>지원방법</dd>
+                            <dt>잡코리아 지원 · 자율양식 이메일 지원 접수(recruit@obzen.com)</dt>
+                        </dl>
+                        
+                        <dl>
+                            <dd>제출서류</dd>
+                            <dt>이력서, 자기소개서, 포트폴리오 (신입에 한함)</dt>
+                        </dl>
+                        <dl>
+                            <dd>전형절차</dd>
+                            <dt>
+                                <img src="../img/recruit_process.png" style="width:1000px; margin-top: 5px;">
+                                <div style="padding-left: 130px; padding-top: 10px;">※ 지원 결과는 합격자에 한해 이력서에 기재한 메일로 개별 안내합니다. 일부 전형절차는 회사 사정에 의해 생략될 수 있습니다.</div>
+                            </dt>
+                        </dl>
+                        <dl style="height:40px;" >
+                            <dd style="line-height:23px;">공통 지원자격<br>및 우대사항</dd>
+                            <dt style="padding-top: 5px;">
+                                병역필 또는 면제자로서 해외여행에 결격사유가 없는 자 / 취업 보호 대상자 우대
+                            </dt>
+                        </dl>
+                        <dl>
+                            <dd>복리후생</dd>
+                            <dt>
+                                차별적 성과제도 및 특진제도 운영, 생일 축하금ㆍ연말 케이크 구입비용ㆍ도서구입비 지원, 복지포인트 지급,<br>
+                                경조금 지원, 야근 시 저녁 식대ㆍ교통비 지급, 사내 추천 채용 제도, 교육 플랫폼 운영, 자율 복장, 휴게실 운영, 간식 제공<br>
+                            </dt>
+                        </dl>
+                        <dl>
+                            <dd>문의사항</dd>
+                            <dt>
+                                기획인사팀&nbsp;&nbsp;&nbsp;recruit@obzen.com / 02-3775-4600
+                            </dt>
+                        </dl>
+                        <dl>
+                            <dd>기타사항</dd>
+                            <dt>
+                                입사지원서 및 자격 내용이 허위임이 판명될 경우 채용이 취소될 수 있습니다. 
+                            </dt>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <!-- <a href="mailto:recruit@obzen.com">
+                <div class="btn-send-mail">
+                    지원 메일 보내기
+                </div>
+            </a> -->
+            <div class="more-button-cont">
+                <a class="rect-button dark" href="mailto:recruit@obzen.com">
+                    지원 메일 보내기
+                    <svg viewBox="0 0 36 36"><path d="M18 6L15.885 8.115L24.255 16.5H6V19.5H24.255L15.885 27.885L18 30L30 18L18 6Z"></path></svg>
+                </a>
+            </div>
+        </div>        
+    </section>
+    <footer>
+        <script>loadHTML("footer.html");</script>
+    </footer>
+</body>
+</html>

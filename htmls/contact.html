@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- js -->
+    <script type="text/javascript" src="../js/include.js"></script>
+    <script type="text/javascript" src="../js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+
+    <script>
+        useTransparentGNB = true;
+
+        $(document).ready(function () {
+            $('.button-success').on('click',function(){
+                sendForm();
+            });
+
+            if (isMobile) {
+                $(".rect-button").removeClass("dark");
+            }
+        });
+
+        //*************** 스크롤 ***************//
+        window.addEventListener("scroll", function (e) {
+            if (window.scrollY > 70) {
+                $("#header").addClass("solid");
+            } else {
+                $("#header").removeClass("solid");
+            }
+        });
+
+        function sendForm(){
+            var obj = new Object();
+            var content = '';
+
+            obj.name = $('#name').val().trim();
+            obj.phone = $('#phone').val().trim();
+            obj.company = $('#company').val().trim();
+            obj.email = $('#email').val().trim();
+            obj.title = $('#title').val().trim();
+            obj.content = $('#content').val();
+
+            // 이름
+            if(obj.name == ''){
+                alert('이름을 입력해주세요.');
+                $('#name').focus();
+                return;
+            }
+
+            // 이메일
+            if(obj.phone=='' && obj.email == ''){
+                alert('연락처나 이메일을 입력해주세요.');
+                if(obj.phone=''){
+                    $('#phone').focus();
+                } else if(obj.email == ''){
+                    $('#email').focus();
+                }
+                return;
+            }
+
+            // 제목
+            if(obj.title == ''){
+                alert('제목을 입력해주세요.');
+                $('#title').focus();
+                return;
+            }
+
+            // 내용
+            if(obj.content == ''){
+                alert('내용을 입력해주세요.');
+                $('#content').focus();
+                return;
+            }
+
+            // 개인정보 수집 동의 체크 확인
+            if ($('#chk-personal').prop('checked') == false) {
+                alert('개인정보 수집 및 이용에 동의해주세요.');
+                $('#chk-personal').focus();
+                return;
+            }
+
+            // form 전송
+            $.ajax({
+                url: 'sendMail.php',
+                data : {
+                    name : obj.name,
+                    phone : obj.phone,
+                    company : obj.company,
+                    email : obj.email,
+                    title : obj.title,
+                    content : obj.content
+                },
+                type : 'POST',
+				dataType : 'json',
+                success	: function(result) {
+					if(result.success == false) {
+						alert(result.msg);
+						return;
+					} else {
+                        alert(result.data);
+                        location.reload();
+                    }
+				},
+                error: function(){
+                    alert(result.msg);
+                }
+            });
+        }
+    </script>
+
+    <!-- css -->
+    <link href="../css/common.css" rel="stylesheet" />
+    <style>
+        .contact1 {
+            position: relative;
+            width: 100%;
+            height: fit-content;
+            min-width: 100%;
+            /* background-image: url(../img/contact/contact_bg_01.jpg); */
+            background-image: url("../img/product/back.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .contact1::before {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            content: "";
+            background-color: #000000;
+            opacity: .3;
+        }
+
+        .contact-container {
+            position: relative;
+            width: 1200px;
+            display: flex;
+            margin: 0 auto;
+        }
+        .contact-top {
+            height: 150px;
+        }
+        .contact-bottom {
+            background-color: #FFFFFF;
+            width: 700px;
+            margin: 130px auto 90px;
+            padding: 65px 100px;
+            box-shadow: rgb(100 100 111 / 25%) 0px 6px 35px;
+        }
+
+        .page-desc2 {
+            margin-top: 20px;
+        }
+
+        form.gform {
+            width: 700px;
+        }
+
+        .form-1 {
+            margin: 7px;
+            width: 330px;
+            float: left;
+        }
+        .form-2 {
+            width: 670px;
+            margin: 7px;
+        }
+        .form-3 {
+            width: 100%;
+            margin: 7px 7px 20px;
+        }
+        .form-4 {
+            width: 100%;
+            text-align: center;
+            margin: 0 auto 0;
+            display: flex;
+            justify-content: center;
+        }
+        .form-4 #chk-personal,
+        .form-4 label,
+        .form-4 .btn-personal {
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-4 #chk-personal {
+            margin: -2px 7px 0 0;
+        }
+
+        .form-4 .btn-personal {
+            width: 50px;
+            height: 20px;
+            margin-top: -2px;
+            border: none;
+            color: #565656;
+            padding: 2px 7px;
+            border-radius: 12px;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+        .form-5 {
+            margin: 5px auto 10px;
+        }
+        .gform span {
+            color: #555;
+            font-size: 18px;
+            font-weight: 300;
+            margin-right: 10px;
+        }
+        .gform .input-box {
+            color: #444444;
+            background-color: #f8f8fa;
+            height: 45px;
+            /* margin-top: 10px; */
+            font-size: 16px;
+            width: 91.5%;
+            padding: 0 20px 0 20px;
+            border: 2px solid var(--obz-border-light);
+            box-sizing: border-box;
+            width: 100%;
+            transition: all .15s;
+        }
+        .gform .input-box:focus,
+        textarea.help-content:focus {
+            outline: none;
+            border-color: var(--obz-main-secondary);
+            background-color: #ffffff;
+        }
+
+        .form-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .form-container>div {
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+        .form-container>.form-1 {
+            flex-basis: 47%;
+        }
+        .form-container>.form-2 {
+            flex-basis: 100%;
+        }
+        .form-container>.form-3 {
+            flex-basis: 100%;
+        }
+
+        div[class^='icon-'] {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            margin: 19px 10px;
+            background-repeat: no-repeat;
+            display: none;
+        }
+
+        textarea.help-content {
+            width: 100%;
+            padding: 15px 40px 20px 20px;
+            border: 2px solid var(--obz-border-light);
+            background-color: #f8f8fa;
+            color: #444444;
+            font-size: 16px;
+            resize: none;
+            white-space: pre-wrap;
+            box-sizing: border-box;
+        }
+
+        .button-success {
+            height: 66px;
+            font-size: 26px;
+            margin-top: 30px;
+        }
+
+
+        /*************** 반응형 ***************/
+        @media screen and (max-width: 768px) { 
+            .contact-container {
+                width: 100%;
+            }
+            .contact-bottom {
+                margin-top: 80px;
+                padding: 0 20px;
+                width: 100%;
+                background-color: transparent;
+                box-shadow: none;
+                box-sizing: border-box;
+            }
+            .contact-container .sub-title {
+                font-size: 2.2rem;
+                color: var(--obz-text-dark-primary);
+            }
+            .contact-container .page-desc2 {
+                font-size: 1.3rem;
+                color: var(--obz-text-dark-secondary);
+            }
+
+            .form-container {
+                margin-top: 15px;
+            }
+            form.gform {
+                width: 100%;
+            }
+
+            .gform .input-box,
+            textarea.help-content {
+                border: 2px solid var(--obz-border-normal);
+                background-color: transparent;
+                color: #ffffff;
+            }
+            .gform .input-box::placeholder,
+            textarea.help-content::placeholder {
+                color: var(--obz-text-dark-secondary);
+                opacity: .7;
+            }
+            .gform .input-box:focus, textarea.help-content:focus {
+                border-color: #fff;
+                background-color: transparent;
+            }
+
+            .form-4 #chk-personal, .form-4 label, .form-4 .btn-personal {
+                color: var(--obz-text-dark-primary);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <script>loadHTML("header.html");</script>
+    </header>
+    <section>
+        <div class="top-page contact1">
+            <div class="contact-container">
+                <div class="contact-bottom">
+                    <div class="contact-top">
+                        <div class="sub-title">문의하기</div>
+                        <div class="page-desc2">
+                            궁금하신 사항이 있으시면 문의 해주세요.
+                            <br>
+                            빠른 시일 내에 검토하여 답변해 드리겠습니다.
+                        </div> 
+                    </div>
+                    <form class="gform " method="post" action="https://script.google.com/macros/s/AKfycbxQ1nCmYA779nOZh6ofOXti17D9JCcINkaIS4e8/exec">
+                        <div class="form-container">
+                            <div class="form-1">
+                                <div class="icon-01"></div>
+                                <input type="text" name="name" id="name" class="input-box" placeholder="이름">
+                            </div>
+                            <div class="form-1">    
+                                <div class="icon-02"></div>
+                                <input type="text" name="phone" id="phone" class="input-box"  placeholder="연락처" oninput="this.value = this.value.replace(/[^0-9\.\-\+]/g, '').replace(/(\..*)/g, '$1');" maxlength="40">
+                            </div>
+                            <div class="form-1">
+                                <div class="icon-03"></div>
+                                <input type="text" name="company" id="company" class="input-box" placeholder="소속">
+                            </div>
+                            <div class="form-1">   
+                                <div class="icon-04"></div>
+                                <input type="email" name="email" id="email" class="input-box" placeholder="이메일">
+                            </div>
+                            <div class="form-2">
+                                <div class="icon-05"></div>
+                                <input type="text" name="title" id="title" class="input-box" placeholder="제목" maxlength="100">
+                            </div>
+                            <div class="form-3">
+                                <div class="icon-06"></div>
+                                <textarea name="content" id="content" class="help-content" placeholder="문의 내용을 입력해 주세요." rows="10" maxlength="2000"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-4">
+                            <input type="checkbox" id="chk-personal"> 
+                            <label for="chk-personal">개인정보 수집 및 이용에 동의합니다.</label>
+                            <a href="./privacy.html" target="_blank">
+                                <div class="btn-personal">자세히</div>
+                            </a>
+                        </div>
+                        <div class="form-5">
+                             <!-- <div class="button-success">문의하기</div> -->
+                             <div class="more-button-cont">
+                                <div class="button-success rect-button dark">
+                                    문의하기
+                                    <svg viewBox="0 0 36 36"><path d="M18 6L15.885 8.115L24.255 16.5H6V19.5H24.255L15.885 27.885L18 30L30 18L18 6Z"></path></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                   
+                </div>
+                
+            </div>
+
+        </div>
+    </section>    
+    <footer>
+        <script>loadHTML("footer.html");</script>
+    </footer>
+</body>
+</html>
