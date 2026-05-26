@@ -1,0 +1,1062 @@
+<!doctype html>
+<html lang="en">
+  <!-- Mirrored from www.obzen.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 May 2026 06:23:10 GMT -->
+  <!-- Added by HTTrack --><meta
+    http-equiv="content-type"
+    content="text/html;charset=UTF-8"
+  /><!-- /Added by HTTrack -->
+  <head>
+    <title>AI CRM 솔루션 - 기업과 고객을 연결하는 성공파트너</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta
+      name="description"
+      content="기업과 고객을 연결하는 성공파트너! AI CRM 솔루션 선도 기업"
+    />
+
+    <!-- js -->
+    <script type="text/javascript" src="./js/include.js"></script>
+    <script type="text/javascript" src="./js/jquery/jquery.min.js"></script>
+    <script
+      src="../ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"
+      type="text/javascript"
+    ></script>
+    <script src="../maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script src="../unpkg.com/swiper%407.4.1/swiper-bundle.min.js"></script>
+
+    <!-- css -->
+    <link
+      rel="stylesheet"
+      href="../maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+    <link
+      rel="stylesheet"
+      href="../unpkg.com/swiper%407.4.1/swiper-bundle.min.css"
+    />
+
+    <script>
+      useTransparentGNB = true; // common.js의 투명 GNB 사용 여부
+
+      var dataList = []; // tableInsert 함수에서 for문을 돌면서 삽입 실시
+
+      var lastScrollY = 0;
+      var flag_InitScroll = true;
+      var flag_AutoScroll = false;
+      // // var scrollPoints = [750, 1450, 2320, 3220, 4070];
+      // var scrollPoints = [750, 1480, 2300, 3120];
+      var sectionTops = [];
+      var elemTops = [];
+      var elemHeights = [];
+      // var SECTION_IDX = 0;
+
+      /*---------------- onload ---------------- */
+      $(document).ready(function () {
+        // moveScroll(0, 0);
+        var body = document.body;
+        var doc = document.documentElement;
+
+        // 포커싱할 element들의 top & height 정보 가져오기
+        elemTops = [];
+        elemHeights = [];
+        var elems = $(".focus-elem");
+        for (var i = 0; i < elems.length; i++) {
+          elemTops.push(elems[i].offsetTop);
+          elemHeights.push(elems[i].clientHeight);
+        }
+
+        // 현재 window 사이즈를 기반으로 section별 top 계산
+        sectionTops = [0];
+        elems = $(".section");
+        for (i = 1; i < elems.length; i++) {
+          sectionTops.push(getNewTop(i));
+        }
+
+        // 현재 스크롤 위치에 따라 헤더 스타일 변경
+        if (window.scrollY >= elemTops[1] - 80) {
+          $("#header").addClass("solid");
+        }
+
+        // 최근 소식과 뉴스 가져오기
+        $.ajax({
+          type: "post",
+          dataType: "json",
+          url: "./htmls/index_promotion.php",
+          success: function (data) {
+            dataList = data;
+            topThumbnailView(dataList); // NEWS 썸네일
+          },
+          error: function (xhr) {
+            console.log("error");
+          },
+        });
+
+        //*************** window resize ***************//
+        window.addEventListener("resize", function () {
+          sectionTops = [0];
+          elems = $(".section");
+          for (i = 1; i < elems.length; i++) {
+            sectionTops.push(getNewTop(i));
+          }
+        });
+
+        //*************** 스크롤 이벤트 ***************//
+        window.addEventListener("scroll", function (e) {
+          // 스크롤 위치에 따라 헤더 스타일 변경
+          if (window.scrollY > elemTops[1] - 80) {
+            $("#header").addClass("solid");
+          } else {
+            $("#header").removeClass("solid");
+          }
+        });
+
+        //*************** 휠 이벤트 ***************//
+        window.addEventListener("wheel", function (e) {
+          // 스크롤 위치에 따라 헤더 스타일 변경
+          if (e.deltaY > 0) {
+            // DOWN
+            var SECTION_IDX = -1;
+            for (var i = 0; i < elemTops.length; i++) {
+              if (window.scrollY < sectionTops[i]) {
+                SECTION_IDX = i - 1;
+                break;
+              }
+            }
+            if (SECTION_IDX == -1) {
+              SECTION_IDX = elemTops.length;
+            }
+
+            if (SECTION_IDX < elemTops.length - 1) {
+              SECTION_IDX++;
+              moveScroll(sectionTops[SECTION_IDX], 300);
+            }
+          } else {
+            // UP
+            var SECTION_IDX = -1;
+            for (var i = 0; i < elemTops.length; i++) {
+              if (window.scrollY <= sectionTops[i]) {
+                SECTION_IDX = i;
+                break;
+              }
+            }
+            if (SECTION_IDX == -1) {
+              SECTION_IDX = elemTops.length;
+            }
+
+            if (SECTION_IDX > 0) {
+              SECTION_IDX--;
+            }
+            moveScroll(sectionTops[SECTION_IDX], 300);
+          }
+        });
+
+        // 현재 window 사이즈를 기준으로 section top 계산
+        function getNewTop(idx) {
+          var elemt = elemTops[idx];
+          var elemh = elemHeights[idx];
+          var windowh = window.innerHeight;
+          var newTop = 0;
+          if (elemh > windowh) {
+            newTop = elemt;
+          } else {
+            newTop = elemt - Math.floor((windowh - elemh) / 2);
+          }
+          return newTop;
+        }
+
+        // 임시
+        // topThumbnailView([]);
+      });
+
+      function moveScroll(scrollY, scrollTime) {
+        if (isMobile) return;
+        if (flag_AutoScroll) return;
+        if (window.scrollY == scrollY) return;
+
+        if (scrollTime == undefined) {
+          scrollTime = 300;
+        }
+
+        flag_AutoScroll = true;
+        $("html, body").animate(
+          { scrollTop: scrollY },
+          scrollTime,
+          function () {
+            flag_AutoScroll = false;
+          },
+        );
+      }
+
+      /*-------- NEWS 썸네일 (최근 기사 4개) -------- */
+      function topThumbnailView(dataList) {
+        var newsWrap = $(".news-wrap");
+
+        // 임시 데이터
+        // var d = '[{"name":"관리자","title":"\'오브젠\' 창업주 전배문, 2년 만에 대표이사 복귀","content":"https://biz.newdaily.co.kr/site/data/html/2023/11/23/2023112300171.html","date":"2023-11-24","category":"보도자료","thumbnail":"/wp-content/uploads/kboard_thumbnails/1/202311/65600ebdda9b87475349.png"},{"name":"관리자","title":"개인화 마케팅에 AI 활용하니 고객이 원하는 시점도 알려줘","content":"https://www.mk.co.kr/news/it/10856399","date":"2023-10-23","category":"보도자료","thumbnail":"/wp-content/uploads/kboard_thumbnails/1/202310/6536259c9b68c9108806.jpg"},{"name":"관리자","title":"오브젠, 구글·어도비와 어깨 나란히…CDXP+로 \'솔루션 유니버스\' 완성","content":"http://www.newsprime.co.kr/news/article/?no=616041","date":"2023-10-19","category":"보도자료","thumbnail":"/wp-content/uploads/kboard_thumbnails/1/202310/65308666af6853742525.jpg"},{"name":"관리자","title":"오브젠, AI 기반 고객 분석 신제품 공개","content":"https://www.hankyung.com/article/2023101875416","date":"2023-10-19","category":"보도자료","thumbnail":"/wp-content/uploads/kboard_thumbnails/1/202310/653086d39abb09786870.jpg"}]';
+        // var d = '{"0":{"name":"관리자","title":"오브젠, 여성가족부 \'가족친화인증\' 획득","content":"https://www.newsprime.co.kr/news/article/?no=622377","date":"2023-12-19","category":"보도자료","thumbnail":"/wp-content/uploads/kboard_thumbnails/1/202312/658143662ded83182167.jpg"},"1":{"name":"관리자","title":"\'오브젠\' 창업주 전배문, 2년 만에 대표이사 복귀","content":"https://biz.newdaily.co.kr/site/data/html/2023/11/23/2023112300171.html","date":"2023-11-24","category":"보도자료","thumbnail":"/wp-content/uploads/kboard_thumbnails/1/202311/65600ebdda9b87475349.png"},"2":{"name":"관리자","title":"2023년 오브젠 세미나","content":"<img class=\\"alignnone size-full wp-image-333\\" src=\\"https://obzen.com/wp/wp-content/uploads/2023/09/%EB%A6%AC%ED%94%8C%EB%A0%9B_%EC%99%84%EC%84%B1%EB%B3%B8.jpg\\" alt=\\"\\" width=\\"843\\" height=\\"1193\\" />","date":"2023-09-25","category":"공지사항","thumbnail":""},"3":{"name":"관리자","title":"오브젠, 구글·어도비와 어깨 나란히…CDXP+로 \'솔루션 유니버스\' 완성","content":"http://www.newsprime.co.kr/news/article/?no=616041","date":"2023-10-19","category":"보도자료","thumbnail":"/wp-content/uploads/kboard_thumbnails/1/202310/65308666af6853742525.jpg"}}';
+        // var d = '{"0":{"uid":"150","name":"관리자","title":"오브젠, 여성가족부 \'가족친화인증\' 획득","content":"https://www.newsprime.co.kr/news/article/?no=622377","date":"2023-12-19","category":"1","category_nm":"보도자료","thumbnail":"/wp-content/uploads/kboard_thumbnails/1/202312/658143662ded83182167.jpg"},"1":{"uid":"149","name":"관리자","title":"\'오브젠\' 창업주 전배문, 2년 만에 대표이사 복귀","content":"https://biz.newdaily.co.kr/site/data/html/2023/11/23/2023112300171.html","date":"2023-11-24","category":"1","category_nm":"보도자료","thumbnail":"/wp-content/uploads/kboard_thumbnails/1/202311/65600ebdda9b87475349.png"},"2":{"uid":"141","name":"관리자","title":"2023년 오브젠 세미나","content":"<img class=\\"alignnone size-full wp-image-333\\" src=\\"https://obzen.com/wp/wp-content/uploads/2023/09/%EB%A6%AC%ED%94%8C%EB%A0%9B_%EC%99%84%EC%84%B1%EB%B3%B8.jpg\\" alt=\\"\\" width=\\"843\\" height=\\"1193\\" />","date":"2023-09-25","category":"2","category_nm":"공지사항","thumbnail":""},"3":{"uid":"144","name":"관리자","title":"오브젠, 구글·어도비와 어깨 나란히…CDXP+로 \'솔루션 유니버스\' 완성","content":"http://www.newsprime.co.kr/news/article/?no=616041","date":"2023-10-19","category":"1","category_nm":"보도자료","thumbnail":"/wp-content/uploads/kboard_thumbnails/1/202310/65308666af6853742525.jpg"}}';
+        // dataList = JSON.parse(d);
+
+        var thumbnail;
+        for (var i = 0; i < 4; i++) {
+          if (dataList[i].thumbnail == "") {
+            thumbnail = "./img/img-none.jpg";
+          } else {
+            thumbnail = "../wp" + dataList[i].thumbnail;
+          }
+          if (dataList[i].category == "1") {
+            newsWrap.append(
+              '<li class="news"><a href="' +
+                dataList[i].content +
+                '" target ="_blank"><img class="news-img" src="' +
+                thumbnail +
+                '"><div class="text-area"><div class="news-type">' +
+                dataList[i].category_nm +
+                '</div><div class="news-title">' +
+                dataList[i].title +
+                "</div></div></a></li>",
+            );
+          } else if (dataList[i].category == "2") {
+            try {
+              var doc = getXMLDoc(dataList[i].content);
+              var images = doc.getElementsByTagName("img");
+              if (images.length > 0) {
+                thumbnail = images[0].getAttribute("src");
+              }
+            } catch (e) {
+              // console.log(e);
+            }
+            newsWrap.append(
+              '<li class="news"><div onclick="openNoticeDetail(\'' +
+                dataList[i].uid +
+                '\');"><img class="news-img board" src="' +
+                thumbnail +
+                '"><div class="text-area"><div class="news-type">' +
+                dataList[i].category_nm +
+                '</div><div class="news-title">' +
+                dataList[i].title +
+                "</div></div></div></li>",
+            );
+          }
+        }
+      }
+
+      function openNoticeDetail(uid) {
+        sessionStorage.setItem("boardid", uid);
+        window.location.replace("htmls/noticeDetail.html");
+      }
+
+      function getXMLDoc(xml) {
+        var xmlDoc;
+        if (window.DOMParser) {
+          var parser = new DOMParser();
+          xmlDoc = parser.parseFromString(xml, "text/xml");
+        } // Internet Explorer
+        else {
+          xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+          xmlDoc.async = false;
+          xmlDoc.loadXML(xml);
+        }
+        return xmlDoc;
+      }
+    </script>
+
+    <style>
+      .slide-bg.img {
+        background-position-x: right;
+        background-position-y: center;
+      }
+      .swiper-slide-active .slide-bg.img {
+        animation: motion-solution-top 5.4s forwards
+          cubic-bezier(0.4, 0, 0.35, 1);
+      }
+
+      @keyframes motion-solution-top {
+        0% {
+          transform: scale(1.13);
+          translate: 0px 0px;
+        }
+        100% {
+          transform: scale(1.2);
+          translate: -80px 70px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <script>
+        loadHTML("header_index.html");
+      </script>
+    </header>
+    <section>
+      <!-- 배너 -->
+      <div class="main1 top-page main-banner-swiper swiper focus-elem section">
+        <div class="swiper-wrapper">
+          <!-- slide banner 1 -->
+          <div class="swiper-slide">
+            <video
+              class="slide-bg"
+              preload="metadata"
+              loop=""
+              playsinline=""
+              muted=""
+              autoplay=""
+            >
+              <source src="./img/main/banner/engagement.mp4" type="video/mp4" />
+            </video>
+            <div class="slide-bg-cover slide-bg-cover-40"></div>
+            <div class="slide-con-container align-center">
+              <div class="slide-con slide-con1 slide-text">
+                <span class="text-highlight">오브젠 CDXP+</span>는
+              </div>
+              <div class="slide-con slide-con2 slide-text">
+                데이터 수집·통합, 분석·예측, 개인화 마케팅을 아우르는
+              </div>
+              <div class="slide-con slide-con3 slide-text">
+                End-to-End 고객 데이터 & 경험 관리 플랫폼입니다.
+              </div>
+              <a
+                class="slide-con slide-con4 slide-button"
+                href="htmls/product/product.html"
+              >
+                obzen CDXP+ 바로가기
+                <div class="slide-button-icon"></div>
+              </a>
+            </div>
+          </div>
+
+          <!-- slide banner 2 -->
+          <div class="swiper-slide">
+            <div
+              class="slide-bg img"
+              style="
+                background-image: url(./img/main/banner/digitalMarketing.png);
+              "
+            ></div>
+            <!-- <video class="slide-bg" preload="metadata" loop="" playsinline="" muted="" autoplay="">
+                            <source src="./img/main/banner/data.mp4" type="video/mp4">
+                        </video> -->
+            <div class="slide-bg-cover slide-bg-cover-20"></div>
+            <div class="slide-con-container align-left">
+              <div class="slide-con slide-con1 slide-text">
+                은행, 카드, 증권, 유통, 통신, ...
+              </div>
+              <div class="slide-con slide-con2 slide-text">
+                <span class="text-highlight">대한민국 1위 기업들이 선택한</span>
+              </div>
+              <div class="slide-con slide-con3 slide-text">
+                개인화 마케팅 솔루션을 만나보세요.
+              </div>
+              <a
+                class="slide-con slide-con4 slide-button"
+                href="htmls/product/solution/obzenDigitalMarketing.html"
+              >
+                obzen Digital Marketing 자세히 보기
+                <div class="slide-button-icon"></div>
+              </a>
+            </div>
+          </div>
+
+          <!-- slide banner 3 -->
+          <div class="swiper-slide">
+            <div
+              class="slide-bg img"
+              style="
+                background-image: url(./img/main/banner/obzenAnalytics.png);
+              "
+            ></div>
+            <!-- <video class="slide-bg" preload="metadata" loop="" playsinline="" muted="" autoplay="">
+                            <source src="./img/main/banner/insight.mp4" type="video/mp4">
+                        </video> -->
+            <div class="slide-bg-cover slide-bg-cover-40"></div>
+            <div class="slide-con-container align-left">
+              <div class="slide-con slide-con1 slide-text">
+                <span class="text-highlight">디지털 채널에서의 사용자 행동</span
+                >을
+              </div>
+              <div class="slide-con slide-con2 slide-text">
+                실시간으로 수집, 처리하여
+              </div>
+              <div class="slide-con slide-con3 slide-text">
+                다양한 분석과 마케팅으로 연결합니다.
+              </div>
+              <a
+                class="slide-con slide-con4 slide-button"
+                href="htmls/product/solution/obzenAnalytics.html"
+              >
+                obzen Analytics 자세히 보기
+                <div class="slide-button-icon"></div>
+              </a>
+            </div>
+          </div>
+
+          <!-- slide banner 4 -->
+          <div class="swiper-slide typing-ani">
+            <div
+              class="slide-bg img"
+              style="background-image: url(./img/main/banner/genAI.png)"
+            ></div>
+            <!-- <video class="slide-bg" preload="metadata" loop="" playsinline="" muted="" autoplay="">
+                            <source src="./img/main/banner/generation_ai.mp4" type="video/mp4">
+                        </video> -->
+            <div class="slide-bg-cover slide-bg-cover-20">
+              <!-- <div class="b1"></div> -->
+            </div>
+            <div class="slide-con-container align-left">
+              <div class="slide-con slide-con5 slide-text e-cursor">
+                <div class="text-highlight">채팅을 하듯 편하게,</div>
+              </div>
+              <div class="slide-con slide-con6 slide-text">
+                데이터를 분석하고 콘텐츠를 만들 수 있다면
+              </div>
+              <div class="slide-con slide-con7 slide-text">
+                얼마나 좋을까요?
+              </div>
+              <a
+                class="slide-con slide-con8 slide-button"
+                href="htmls/product/solution/obzenGenerationAI.html"
+              >
+                obzen 생성형 AI 자세히 보기
+                <div class="slide-button-icon"></div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev">
+          <img src="./img/main/banner/back.svg" />
+        </div>
+        <div class="swiper-button-next">
+          <img src="./img/main/banner/forward.svg" />
+        </div>
+      </div>
+
+      <!-- 사업 영역 1 -->
+      <div class="main main2 focus-elem section">
+        <div class="container main2-con">
+          <div class="sub">
+            <div class="sub-title">오브젠 사업 영역</div>
+            <div class="sub-title-highlight">소프트웨어 공급 및 개발</div>
+            <div class="sub-title2">
+              End-to-End 고객 데이터 및 경험 관리 플랫폼,
+              <br />
+              오브젠 CDXP+를 공급합니다.
+            </div>
+          </div>
+          <div class="main2-sub-con">
+            <img src="./img/main/business/cdxp_summary.png" />
+            <div class="more-button-cont right">
+              <a
+                class="main2-sub-button more-button"
+                href="htmls/product/product.html"
+              >
+                오브젠 제품 자세히 보기
+                <svg viewBox="0 0 36 36">
+                  <path
+                    d="M18 6L15.885 8.115L24.255 16.5H6V19.5H24.255L15.885 27.885L18 30L30 18L18 6Z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 사업 영역 2 -->
+      <div class="main main3 section">
+        <div class="main3-con focus-elem">
+          <div class="business-card-swiper swiper">
+            <div class="main3-sub-wrapper swiper-wrapper">
+              <a
+                href="htmls/service.html#section2"
+                class="main3-sub-card swiper-slide"
+              >
+                <div class="main3-sub-card-left">
+                  <div class="main3-sub-card-title1">
+                    마케팅 전략 수립 및 캠페인 시나리오 도출
+                  </div>
+                  <div class="main3-sub-card-title2">마케팅 컨설팅</div>
+                  <div class="main3-sub-card-desc">
+                    마케팅 전략 및 체계, 바로 적용 가능한
+                    <br />
+                    마케팅 시나리오 발굴까지
+                    <br />
+                    고객 데이터 기반 마케팅 전체를 지원합니다.
+                  </div>
+                </div>
+                <div class="main3-sub-card-right">
+                  <img src="./img/main/business/card-consulting.png" />
+                </div>
+              </a>
+              <a
+                href="htmls/service.html#section3"
+                class="main3-sub-card swiper-slide"
+              >
+                <div class="main3-sub-card-left">
+                  <div class="main3-sub-card-title1">
+                    기업 맞춤형 머신러닝 모형 개발
+                  </div>
+                  <div class="main3-sub-card-title2">AI 모델링</div>
+                  <div class="main3-sub-card-desc">
+                    기업이 보유한 데이터와 분석 목적,
+                    <br />
+                    AI 운영 환경 등을 복합적으로 고려하여
+                    <br />
+                    최적의 인공지능 모델을 개발합니다.
+                  </div>
+                </div>
+                <div class="main3-sub-card-right">
+                  <img src="./img/main/business/card-ai.png" />
+                </div>
+              </a>
+              <a
+                href="htmls/service.html#section4"
+                class="main3-sub-card swiper-slide"
+              >
+                <div class="main3-sub-card-left">
+                  <div class="main3-sub-card-title1">
+                    생성형 AI를 활용한 비즈니스 가치 창출
+                  </div>
+                  <div class="main3-sub-card-title2">생성형 AI 접목</div>
+                  <div class="main3-sub-card-desc">
+                    텍스트 생성, 이미지 생성, 코드 생성 등
+                    <br />
+                    생성형 AI 기술을 기업 환경에 따라 접목하여
+                    <br />
+                    업무 영역을 혁신합니다.
+                  </div>
+                </div>
+                <div class="main3-sub-card-right">
+                  <img src="./img/main/business/card-genai.png" />
+                </div>
+              </a>
+              <!-- <a href="./htmls/service.html#section5" class="main3-sub-card swiper-slide">
+                            <div class="main3-sub-card-left">
+                                <div class="main3-sub-card-title1">기업 데이터와 네이버 데이터의 연계 분석</div>
+                                <div class="main3-sub-card-title2">네이버클라우드<br/>클라우드 데이터박스</div>
+                                <div class="main3-sub-card-desc">
+                                    네이버클라우드 서비스를 활용하여
+                                    <br/>
+                                    네이버 데이터와의 다양한 연계 분석을 통해
+                                    <br/>
+                                    확장된 인사이트를 제공합니다.
+                                </div>
+                            </div>
+                            <div class="main3-sub-card-right">
+                                <img src="./img/main/business/card-cloud.png" />
+                            </div>
+                        </a> -->
+            </div>
+
+            <div class="swiper-button-prev">
+              <img src="./img/main/business/card-back.svg" />
+            </div>
+            <div class="swiper-button-next">
+              <img src="./img/main/business/card-forward.svg" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 오브젠 CDXP+의 주요 제품 -->
+      <div class="main main4" style="display: none">
+        <div class="container main4-con">
+          <div class="sub">
+            <div class="sub-title">오브젠 CDXP+의 주요 제품</div>
+          </div>
+        </div>
+        <div id="MainProd1" class="main4-sub-con">
+          <svg
+            width="48"
+            height="48"
+            viewBox="0 0 48 48"
+            fill="none"
+            style="display: none"
+          >
+            <defs>
+              <rect
+                id="p_ProdLinkBorder"
+                x="1"
+                y="1"
+                width="46"
+                height="46"
+                rx="23"
+                stroke="inherit"
+                stroke-width="2"
+                fill="#ffffff"
+              />
+              <path
+                id="p_ProdLinkArrow"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M22.4575 34.1252L30.895 25.6877H11.344V22.3127H30.895L22.4575 13.8752L24.844 11.4887L37.3555 24.0002L24.844 36.5117L22.4575 34.1252Z"
+                fill="inherit"
+              />
+            </defs>
+          </svg>
+          <div id="BtnMainProd1" class="main4-sub-button">
+            단위 제품 확인하기
+            <svg viewBox="0 0 36 36">
+              <path
+                d="M18 6L15.885 8.115L24.255 16.5H6V19.5H24.255L15.885 27.885L18 30L30 18L18 6Z"
+              />
+            </svg>
+          </div>
+          <div class="main4-tile-cont">
+            <div
+              id="ProdTile1_1"
+              class="main4-tile type0"
+              style="width: 456px; height: 380px; left: 0px; top: 0px"
+            >
+              <div class="main4-tile-title">obzen<br />Analytics</div>
+              <div class="main4-tile-desc">행동 로그 수집 및 시각화</div>
+              <div class="main4-tile-icon"></div>
+              <div class="main4-tile-link">
+                <svg viewBox="0 0 48 48">
+                  <use xlink:href="#p_ProdLinkBorder" class="link-border"></use>
+                  <use xlink:href="#p_ProdLinkArrow" class="link-arrow"></use>
+                </svg>
+              </div>
+            </div>
+            <div
+              id="ProdTile1_2"
+              class="main4-tile type1"
+              style="width: 456px; height: 256px; left: 472px; top: 0px"
+            >
+              <div class="main4-tile-title">obzen CMS</div>
+              <div class="main4-tile-desc">
+                대한민국 1위<br />마케팅 자동화 솔루션
+              </div>
+              <div class="main4-tile-icon"></div>
+              <div class="main4-tile-link">
+                <svg viewBox="0 0 48 48">
+                  <use xlink:href="#p_ProdLinkBorder" class="link-border"></use>
+                  <use xlink:href="#p_ProdLinkArrow" class="link-arrow"></use>
+                </svg>
+              </div>
+            </div>
+            <div
+              id="ProdTile1_3"
+              class="main4-tile type3"
+              style="width: 208px; height: 706px; left: 944px; top: 0px"
+            >
+              <div class="main4-tile-title">Smart AI</div>
+              <div class="main4-tile-desc">
+                머신러닝 모델<br />개발 및 운영<br />(MLOps)
+              </div>
+              <div class="main4-tile-link">
+                <svg viewBox="0 0 48 48">
+                  <use xlink:href="#p_ProdLinkBorder" class="link-border"></use>
+                  <use xlink:href="#p_ProdLinkArrow" class="link-arrow"></use>
+                </svg>
+              </div>
+            </div>
+            <div
+              id="ProdTile1_4"
+              class="main4-tile type2"
+              style="width: 456px; height: 196px; left: 472px; top: 272px"
+            >
+              <div class="main4-tile-title">obzen REBM</div>
+              <div class="main4-tile-desc">실시간 데이터 감지 및 타겟팅</div>
+              <div class="main4-tile-icon"></div>
+              <div class="main4-tile-link">
+                <svg viewBox="0 0 48 48">
+                  <use xlink:href="#p_ProdLinkBorder" class="link-border"></use>
+                  <use xlink:href="#p_ProdLinkArrow" class="link-arrow"></use>
+                </svg>
+              </div>
+            </div>
+            <div
+              id="ProdTile1_5"
+              class="main4-tile type3"
+              style="width: 220px; height: 310px; left: 0px; top: 396px"
+            >
+              <div class="main4-tile-title">D3F</div>
+              <div class="main4-tile-desc">데이터<br />가공 및 통합</div>
+              <div class="main4-tile-link">
+                <svg viewBox="0 0 48 48">
+                  <use xlink:href="#p_ProdLinkBorder" class="link-border"></use>
+                  <use xlink:href="#p_ProdLinkArrow" class="link-arrow"></use>
+                </svg>
+              </div>
+            </div>
+            <div
+              id="ProdTile1_6"
+              class="main4-tile type4"
+              style="width: 220px; height: 310px; left: 236px; top: 396px"
+            >
+              <div class="main4-tile-title">Data<br />Intelligence</div>
+              <div class="main4-tile-desc">비즈니스<br />인텔리전스</div>
+              <div class="main4-tile-link">
+                <svg viewBox="0 0 48 48">
+                  <use xlink:href="#p_ProdLinkBorder" class="link-border"></use>
+                  <use xlink:href="#p_ProdLinkArrow" class="link-arrow"></use>
+                </svg>
+              </div>
+            </div>
+            <div
+              id="ProdTile1_7"
+              class="main4-tile type5"
+              style="width: 456px; height: 102px; left: 472px; top: 484px"
+            >
+              <div class="main4-tile-title">onCMS</div>
+              <div class="main4-tile-desc">개인화 추천</div>
+              <div class="main4-tile-link">
+                <svg viewBox="0 0 48 48">
+                  <use xlink:href="#p_ProdLinkBorder" class="link-border"></use>
+                  <use xlink:href="#p_ProdLinkArrow" class="link-arrow"></use>
+                </svg>
+              </div>
+            </div>
+            <div
+              id="ProdTile1_8"
+              class="main4-tile type5"
+              style="width: 456px; height: 102px; left: 472px; top: 602px"
+            >
+              <div class="main4-tile-title">Survey</div>
+              <div class="main4-tile-desc">설문 생성 및 관리</div>
+              <div class="main4-tile-link">
+                <svg viewBox="0 0 48 48">
+                  <use xlink:href="#p_ProdLinkBorder" class="link-border"></use>
+                  <use xlink:href="#p_ProdLinkArrow" class="link-arrow"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="MainProd2" class="main4-sub-con">
+          <div id="BtnMainProd2" class="main4-sub-button">
+            주요 솔루션 확인하기
+            <svg viewBox="0 0 36 36">
+              <path
+                d="M18 6L15.885 8.115L24.255 16.5H6V19.5H24.255L15.885 27.885L18 30L30 18L18 6Z"
+              />
+            </svg>
+          </div>
+          <div class="main4-tile-cont">
+            <div
+              id="ProdTile2_1"
+              class="main4-tile type6"
+              style="width: 220px; height: 182px; left: 0px; top: 0px"
+            >
+              <div class="main4-tile-icon"></div>
+              <div class="main4-tile-title">행동 데이터<br />수집</div>
+              <div class="main4-tile-desc">TagManager</div>
+            </div>
+            <div
+              id="ProdTile2_2"
+              class="main4-tile type6"
+              style="width: 220px; height: 182px; left: 236px; top: 0px"
+            >
+              <div class="main4-tile-icon"></div>
+              <div class="main4-tile-title">행동 데이터<br />시각화</div>
+              <div class="main4-tile-desc">DataAnalytics</div>
+            </div>
+            <div
+              id="ProdTile2_3"
+              class="main4-tile type7"
+              style="width: 456px; height: 256px; left: 472px; top: 0px"
+            >
+              <div class="main4-tile-icon"></div>
+              <div class="main4-tile-title">마케팅 자동화</div>
+              <div class="main4-tile-desc">CMS</div>
+            </div>
+            <div
+              id="ProdTile2_4"
+              class="main4-tile type8"
+              style="width: 208px; height: 706px; left: 944px; top: 0px"
+            >
+              <div class="main4-tile-icon"></div>
+              <div class="main4-tile-title">MLOps</div>
+              <div class="main4-tile-desc">Smart AI</div>
+            </div>
+            <div
+              id="ProdTile2_5"
+              class="main4-tile type6"
+              style="width: 220px; height: 182px; left: 0px; top: 198px"
+            >
+              <div class="main4-tile-icon"></div>
+              <div class="main4-tile-title">실시간<br />데이터 처리</div>
+              <div class="main4-tile-desc">DataPipeline</div>
+            </div>
+            <div
+              id="ProdTile2_6"
+              class="main4-tile type6"
+              style="width: 220px; height: 182px; left: 236px; top: 198px"
+            >
+              <div class="main4-tile-icon"></div>
+              <div class="main4-tile-title">예측<br />AutoML</div>
+              <div class="main4-tile-desc">AI Prediction</div>
+            </div>
+            <div
+              id="ProdTile2_7"
+              class="main4-tile type9"
+              style="width: 456px; height: 196px; left: 472px; top: 272px"
+            >
+              <div class="main4-tile-icon"></div>
+              <div class="main4-tile-title">실시간 타겟팅</div>
+              <div class="main4-tile-desc">REBM</div>
+            </div>
+            <div
+              id="ProdTile2_8"
+              class="main4-tile type10"
+              style="width: 220px; height: 310px; left: 0px; top: 396px"
+            >
+              <div class="main4-tile-icon"></div>
+              <div class="main4-tile-title">데이터<br />가공 및 통합</div>
+              <div class="main4-tile-desc">D3F</div>
+            </div>
+            <div
+              id="ProdTile2_9"
+              class="main4-tile type10"
+              style="width: 220px; height: 310px; left: 236px; top: 396px"
+            >
+              <div class="main4-tile-icon"></div>
+              <div class="main4-tile-title">비즈니스<br />인텔리전스</div>
+              <div class="main4-tile-desc">Data<br />Intelligence</div>
+            </div>
+            <div
+              id="ProdTile2_10"
+              class="main4-tile type11"
+              style="width: 456px; height: 102px; left: 472px; top: 484px"
+            >
+              <div class="main4-tile-icon"></div>
+              <div class="main4-tile-title">개인화 추천</div>
+              <div class="main4-tile-desc">onCMS</div>
+            </div>
+            <div
+              id="ProdTile2_11"
+              class="main4-tile type11"
+              style="width: 456px; height: 102px; left: 472px; top: 602px"
+            >
+              <div class="main4-tile-icon"></div>
+              <div class="main4-tile-title">설문조사</div>
+              <div class="main4-tile-desc">Survey</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 최근 소식과 뉴스 -->
+      <div class="main main5 focus-elem section">
+        <div class="container main4-con">
+          <div class="sub">
+            <div class="sub-title">최근 소식과 뉴스</div>
+          </div>
+        </div>
+        <div class="main4-sub-con">
+          <ul class="news-wrap"></ul>
+          <a class="main5-sub-button more-button" href="htmls/promotion.html">
+            더보기
+            <svg viewBox="0 0 36 36">
+              <path
+                d="M18 6L15.885 8.115L24.255 16.5H6V19.5H24.255L15.885 27.885L18 30L30 18L18 6Z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 오브젠의 고객사 -->
+      <div class="main main6 focus-elem section">
+        <div class="container main6-con">
+          <div class="sub">
+            <div class="sub-title">오브젠의 고객사</div>
+            <div class="sub-desc">
+              여러 산업의 국내 최고의 선도 기업이 고객 데이터 및 경험 관리를
+              위해 오브젠을 선택하고 있습니다.
+            </div>
+          </div>
+        </div>
+        <div class="main6-sub-con">
+          <ul class="main6-logos">
+            <li id="banner1">
+              <img src="./img/main/client/01-01.png" />
+              <img src="./img/main/client/01-02.png" />
+              <img src="./img/main/client/01-03.png" />
+              <img src="./img/main/client/01-04.svg" />
+              <img src="./img/main/client/01-05.png" />
+            </li>
+            <li id="banner2">
+              <img src="./img/main/client/02-01.svg" />
+              <img
+                src="./img/main/client/02-02.svg"
+                style="top: -3px; transform: scale(0.9)"
+              />
+              <img src="./img/main/client/02-03.png" />
+              <img src="./img/main/client/02-04.svg" />
+              <img
+                src="./img/main/client/02-05.png"
+                style="transform: scale(0.8)"
+              />
+            </li>
+            <li id="banner3">
+              <img
+                src="./img/main/client/03-01.png"
+                style="top: -13px; margin-bottom: 23px"
+              />
+              <img
+                src="./img/main/client/03-02.png"
+                style="transform: scale(1.5)"
+              />
+              <img
+                src="./img/main/client/03-03.svg"
+                style="transform: scale(0.8)"
+              />
+              <img src="./img/main/client/03-04.png" />
+              <img src="./img/main/client/03-05.png" style="top: -10px" />
+            </li>
+            <li id="banner4">
+              <img src="./img/main/client/04-01.png" />
+              <img src="./img/main/client/04-02.png" />
+              <img src="./img/main/client/04-03.svg" />
+              <img src="./img/main/client/04-04.svg" style="top: 4px" />
+              <img src="./img/main/client/04-05.png" />
+            </li>
+            <li id="banner5">
+              <img
+                src="./img/main/client/05-01.png"
+                style="transform: scale(0.75)"
+              />
+              <img src="./img/main/client/05-02.png" style="top: -3px" />
+              <img src="./img/main/client/05-03.svg" />
+              <img src="./img/main/client/05-04.svg" />
+              <img src="./img/main/client/05-05.svg" />
+            </li>
+            <li id="banner6">
+              <img
+                src="./img/main/client/06-01.png"
+                style="transform: scale(0.9)"
+              />
+              <img src="./img/main/client/06-02.svg" />
+              <img src="./img/main/client/06-03.png" />
+              <img
+                src="./img/main/client/06-04.png"
+                style="transform: scale(1.2)"
+              />
+              <img src="./img/main/client/06-05.svg" style="top: -13px" />
+            </li>
+            <li id="banner7">
+              <img
+                src="./img/main/client/07-01.png"
+                style="top: -2px; transform: scale(1.5)"
+              />
+              <img src="./img/main/client/07-02.png" />
+              <img src="./img/main/client/07-03.svg" />
+              <img
+                src="./img/main/client/07-04.png"
+                style="transform: scale(0.75)"
+              />
+              <img src="./img/main/client/07-05.svg" />
+            </li>
+            <li id="banner8">
+              <img
+                src="./img/main/client/08-01.jpg"
+                style="transform: scale(1.1)"
+              />
+              <img src="./img/main/client/08-02.svg" />
+              <img src="./img/main/client/08-03.png" />
+              <img src="./img/main/client/08-04.svg" style="top: -8px" />
+              <img src="./img/main/client/08-05.png" />
+            </li>
+            <li id="banner9">
+              <img src="./img/main/client/09-01.png" />
+              <img src="./img/main/client/09-02.png" />
+              <img src="./img/main/client/09-03.svg" />
+              <img src="./img/main/client/09-04.png" style="top: 10px" />
+              <img src="./img/main/client/09-05.png" />
+            </li>
+            <li id="banner10">
+              <img src="./img/main/client/10-01.png" />
+              <img src="./img/main/client/10-02.svg" />
+              <img src="./img/main/client/10-03.png" />
+              <img src="./img/main/client/10-04.svg" />
+              <img src="./img/main/client/10-05.svg" />
+            </li>
+            <li id="banner11">
+              <img src="./img/main/client/11-01.png" />
+              <img src="./img/main/client/11-02.svg" />
+              <img src="./img/main/client/11-03.png" />
+              <img src="./img/main/client/11-04.svg" />
+              <img src="./img/main/client/11-05.png" />
+            </li>
+            <li id="banner12">
+              <img src="./img/main/client/12-01.png" />
+              <img
+                src="./img/main/client/12-04.png"
+                style="transform: scale(0.85); top: -12px"
+              />
+              <img
+                src="./img/main/client/12-03.png"
+                style="transform: scale(0.4)"
+              />
+              <img
+                src="./img/main/client/12-02.png"
+                style="transform: scale(1.3)"
+              />
+              <img
+                src="./img/main/client/12-05.png"
+                style="transform: scale(1.15); top: -10px"
+              />
+            </li>
+            <li id="banner13">
+              <img
+                src="./img/main/client/13-01.png"
+                style="transform: scale(0.8); top: -5px"
+              />
+              <img src="./img/main/client/13-02.svg" style="top: 2px" />
+              <img
+                src="./img/main/client/13-03.png"
+                style="transform: scale(0.8)"
+              />
+              <img src="./img/main/client/13-04.svg" />
+              <img src="./img/main/client/13-05.png" style="top: 15px" />
+            </li>
+            <li id="banner14">
+              <img src="./img/main/client/14-01.png" />
+              <img src="./img/main/client/14-02.png" />
+              <img src="./img/main/client/14-03.png" />
+              <img src="./img/main/client/14-04.svg" />
+              <img
+                src="./img/main/client/14-05.png"
+                style="transform: scale(0.7)"
+              />
+            </li>
+            <li id="banner15">
+              <img
+                src="./img/main/client/15-01.png"
+                style="top: -3px; width: 220px"
+              />
+              <img src="./img/main/client/15-02.png" style="top: 15px" />
+              <img src="./img/main/client/15-03.png" />
+              <img src="./img/main/client/15-04.png" />
+              <img src="./img/main/client/15-05.png" />
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 문의 사항 -->
+      <script>
+        loadHTML("htmls/inquire.html");
+      </script>
+
+      <div id="main-popup"></div>
+    </section>
+    <footer>
+      <script>
+        loadHTML("htmls/footer.html");
+      </script>
+    </footer>
+  </body>
+
+  <!-- Mirrored from www.obzen.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 May 2026 08:00:59 GMT -->
+</html>
