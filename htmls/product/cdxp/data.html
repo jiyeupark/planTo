@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- js -->
+    <script type="text/javascript" src="../../../js/include.js"></script>
+    <script
+      type="text/javascript"
+      src="../../../js/jquery/jquery.min.js"
+    ></script>
+    <script type="text/javascript" src="../../../js/common.js"></script>
+
+    <!-- css -->
+    <link href="../../../css/common.css" rel="stylesheet" />
+    <link href="../../../css/product.css" rel="stylesheet" />
+
+    <style>
+      .page-top .banner-image img.img1 {
+        left: -50%;
+        top: -23%;
+      }
+      .page-top .banner-image img.img2 {
+        left: -10%;
+        top: 75%;
+      }
+      .page-top .banner-image img.img3 {
+        left: 55%;
+        top: 0%;
+      }
+    </style>
+
+    <script>
+      useTransparentGNB = true; // common.js의 투명 GNB 사용 여부
+
+      var lastScrollY = 0;
+      var flag_InitScroll = true;
+      var flag_AutoScroll = false;
+      var isMobile;
+
+      $(document).ready(function () {
+        var body = document.body;
+        var doc = document.documentElement;
+        isMobile = detectMobileDevice(window.navigator.userAgent);
+
+        /*----------- 접속 기기에 따른 애니메이션 유무 --------------*/
+        if (isMobile) {
+          // 모바일 접속 시 애니메이션 없음
+        } else {
+          // PC 접속 시 애니메이션 있음
+          if (body.scrollTop != 0 || doc.scrollTop != 0) {
+            body.scrollTop = 0;
+            doc.scrollTop = 0;
+          } else {
+            flag_InitScroll = false;
+          }
+        }
+
+        var params = this.location.href.split("?");
+        if (params.length > 1) {
+          var elem = $("#" + params[1])[0];
+          elem.scrollIntoView({ block: "center" });
+        }
+      });
+
+      //*************** 스크롤 ***************//
+      window.addEventListener("scroll", function (e) {
+        if (flag_InitScroll) {
+          if (lastScrollY < window.scrollY) {
+            flag_InitScroll = false;
+          }
+          if (window.scrollY == 0) {
+            flag_InitScroll = false;
+          }
+          lastScrollY = window.scrollY;
+          return;
+        }
+
+        if (lastScrollY < window.scrollY) {
+          if (window.scrollY > 0 && window.scrollY < 6) {
+            if (!flag_AutoScroll) {
+              e.preventDefault();
+              $("html, body").animate({ scrollTop: 600 }, 400);
+            }
+          }
+        }
+
+        if (window.scrollY > 150) {
+          $("#header").addClass("solid");
+        } else {
+          $("#header").removeClass("solid");
+        }
+
+        lastScrollY = window.scrollY;
+      });
+
+      function moveScroll(scrollY, scrollTime) {
+        flag_AutoScroll = true;
+        $("html, body").animate(
+          { scrollTop: scrollY },
+          scrollTime,
+          function () {
+            flag_AutoScroll = false;
+          },
+        );
+      }
+
+      //*************** recognize mobile device ***************//
+      function detectMobileDevice(agent) {
+        const mobileRegex = [
+          /Android/i,
+          /iPhone/i,
+          /iPad/i,
+          /iPod/i,
+          /BlackBerry/i,
+          /Windows Phone/i,
+        ];
+        return mobileRegex.some((mobile) => agent.match(mobile));
+      }
+    </script>
+  </head>
+
+  <body class="product">
+    <header>
+      <script>
+        loadHTML("../../header.html");
+      </script>
+    </header>
+    <section>
+      <div class="page-top">
+        <div class="slide-bg-cover">
+          <div class="blur1"></div>
+          <div class="blur2"></div>
+        </div>
+        <div class="container product-cont">
+          <div class="product-con">
+            <div class="product-category">플랜투 RegTech</div>
+            <div class="product-title">e·Mapp</div>
+            <div class="product-summary">
+              ETL(데이터의 추출, 변환, 적재)과 머신러닝이 결합된 빅데이터 통합
+              분석 플랫폼
+            </div>
+            <div class="product-tag-cont">
+              <div class="product-tag">#데이터수집</div>
+              <div class="product-tag">#데이터처리</div>
+              <div class="product-tag">#데이터통합</div>
+              <div class="product-tag">#CDP</div>
+            </div>
+            <p class="product-desc">
+              온·오프라인에서 발생하는 모든 고객 데이터를
+              <br />
+              실시간으로 수집 및 통합하여 비즈니스에 활용할 수 있습니다.
+            </p>
+          </div>
+          <div class="banner-image">
+            <img
+              class="img1"
+              src="../../../img/product/cdxp/data/banner1.png"
+            />
+            <img
+              class="img2"
+              src="../../../img/product/cdxp/data/banner2.png"
+            />
+            <img
+              class="img3"
+              src="../../../img/product/cdxp/data/banner3.png"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="page page1">
+        <div class="page-cont">
+          <div class="page-title">플랜투 비즈니스 e·Mapp</div>
+          <div class="page-desc">
+            e·Mapp은 플랜투비즈니스컨설팅에서 개발한 빅데이터 수집부터 분석,
+            결과까지의 One-stop 솔루션의 제공및 정형, 비정형 형태를 포함한
+            다양한 데이터로부터 지식과 인사이트를 추출하기 위한 빅데이터 분석
+            플랫폼을 제공하는 토털 솔루션을 말합니다. 데이터 엔지니어링, 데이터
+            준비, 분석 활동이 서로 다른 툴을 사용하여 별도의 프로세스로 구성되어
+            있어 필요에 따른 맞춤형 솔루션 구현이 가능합니다.
+          </div>
+          <div class="product-card-cont">
+            <div class="product-card">
+              <div class="product-card-caption">Feature 01</div>
+              <div class="product-card-title">App/Web 데이터 통합 수집</div>
+              <div class="product-card-desc">
+                표준화된 태깅 구조를 통해
+                <br />
+                모바일 앱과 웹사이트에서의 고객 행동 이력을
+                <br />
+                이벤트 단위로 통합 수집 (GA4 방식)
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-card-caption">Feature 02</div>
+              <div class="product-card-title">오프라인 데이터 수집 및 연계</div>
+              <div class="product-card-desc">
+                EAI, MCI, File 등
+                <br />
+                다양한 유형의 데이터 수집 컴포넌트를 바탕으로
+                <br />
+                여러 업무 시스템에 분산된 고객 데이터 통합 활용
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-card-caption">Feature 03</div>
+              <div class="product-card-title">대규모 데이터의 안정적 처리</div>
+              <div class="product-card-desc">
+                국내 최대 금융사, 유통사의
+                <br />
+                디지털 행동 데이터 및 내부 업무 데이터
+                <br />
+                실시간 수집·처리 지원 중
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-card-caption">Feature 04</div>
+              <div class="product-card-title">No-Code 방식</div>
+              <div class="product-card-desc">
+                다양한 데이터 가공 컴포넌트를
+                <br />
+                워크플로우 형태로 연결하여
+                <br />
+                직관적으로 데이터 수집 및 처리 프로세스 설계
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-card-caption">Feature 05</div>
+              <div class="product-card-title">다양한 업무 시스템으로 전송</div>
+              <div class="product-card-desc">
+                데이터 저장 또는 추출 컴포넌트를 통해
+                <br />
+                데이터 처리 결과를
+                <br />
+                대상 시스템에 적합한 형식으로 실시간 전송
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page page2">
+        <div class="page-cont">
+          <div class="page-title">플랜투 RegTech DATA 제품 구성</div>
+          <div class="product-sub-list">
+            <div id="TagManager" class="product-sub-item">
+              <div class="product-sub-item-title">TagManager</div>
+              <div class="product-sub-item-title2">디지털 행동 로그 수집</div>
+              <div class="product-sub-item-desc">
+                클릭, 스크롤, 스와이프 등 모바일 앱과 웹사이트 상에서 발생하는
+                <br />
+                다양한 행동 데이터와 관련 정보를 실시간으로 수집하여 전송합니다.
+              </div>
+              <div class="product-sub-item-image">
+                <img src="../../../img/product/cdxp/data/solution1.png" />
+              </div>
+            </div>
+            <div id="DataPipeline" class="product-sub-item">
+              <div class="product-sub-item-title">DataPipeline</div>
+              <div class="product-sub-item-title2">실시간 데이터 처리</div>
+              <div class="product-sub-item-desc">
+                디지털 접점에서 발생하는 온라인 행동 데이터와 업무 시스템에서
+                수집되는 오프라인 고객 정보를
+                <br />
+                실시간으로 수집, 정제, 통합하여 전송합니다.
+              </div>
+              <div class="product-sub-item-image">
+                <img src="../../../img/product/cdxp/data/solution2.png" />
+              </div>
+            </div>
+            <div id="D3F" class="product-sub-item">
+              <div class="product-sub-item-title">D3F</div>
+              <div class="product-sub-item-title2">
+                대규모 데이터 가공 및 결합
+              </div>
+              <div class="product-sub-item-desc">
+                여러 원천 시스템의 대규모 데이터를 다양한 비즈니스 목적에 따라
+                자동으로 일괄 처리하여
+                <br />
+                안정적으로 정합성 높은 데이터 활용 환경을 구성합니다.
+              </div>
+              <div class="product-sub-item-image">
+                <img src="../../../img/product/cdxp/data/solution3.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page page3">
+        <div class="page-cont">
+          <div class="page-title">관련 솔루션</div>
+          <div class="product-card-cont">
+            <a class="link-card" href="../solution/obzenAnalytics.html">
+              <div class="link-card-caption">
+                디지털 행동 데이터 수집 및 분석
+              </div>
+              <div class="link-card-title">obzen Analytics</div>
+              <div class="link-card-icon"></div>
+            </a>
+            <a class="link-card" href="../solution/obzenDigitalMarketing.html">
+              <div class="link-card-caption">
+                실시간 개인화 마케팅 자동화 솔루션
+              </div>
+              <div class="link-card-title">obzen onCMS</div>
+              <div class="link-card-icon"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 문의 사항 -->
+      <script>
+        loadHTML("../../inquire.html");
+      </script>
+    </section>
+    <footer>
+      <script>
+        loadHTML("../../footer.html");
+      </script>
+    </footer>
+  </body>
+</html>

@@ -64,9 +64,10 @@
 }
 
 :root {
-  --obz-main-primary: #9f1b68;
-  --obz-main-secondary: #0f2861;
-  --obz-main-accent: #ffab2c;
+  --obz-main-primary: #14c162;
+  --obz-main-secondary: #203462;
+  --obz-main-accent: #739cfc;
+  --obz-main-deep: #0961e7;
 
   --obz-text-light-primary: #171c22;
   --obz-text-light-secondary: #4d4d4f;
@@ -417,8 +418,11 @@ span.highlight {
   padding: 17px 25px;
 }
 #header .sub-logo > div {
-  font-size: 17px;
+  font-size: 15px;
   color: #fff;
+  background-color: var(--obz-main-deep);
+  padding: 5px 10px;
+  border-radius: 3px;
 }
 
 #header.solid {
@@ -446,8 +450,7 @@ span.highlight {
   background: no-repeat left/80% url(../img/gnb/planTo_logo_white.svg) !important;
 }
 #header.solid .sub-logo > div {
-  color: #111;
-  font-weight: 600;
+  color: #fff;
 }
 
 /*************** buttons ***************/
