@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- favicon -->
-    <link rel="icon" href="../img/obzen_favicon.png">
-    
+    <link rel="icon" href="../img/obzen_favicon.png" />
+
     <!-- js -->
     <script type="text/javascript" src="../js/include.js"></script>
     <script type="text/javascript" src="../js/jquery/jquery.min.js"></script>
@@ -16,978 +16,1354 @@
 
     <!-- 네이버 지도 API 서비스 변경 2025.06.09 -->
     <!-- <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=hg1pgwhv16&callback=initMap"></script> -->
-    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=min57f5r5p"></script>
+    <script
+      type="text/javascript"
+      src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=min57f5r5p"
+    ></script>
 
     <!-- css -->
     <link href="../css/common.css" rel="stylesheet" />
     <link href="../css/about.css" rel="stylesheet" />
-    
+
     <script>
-        $(function() {
-            $(".client-ctgr").on("click", function() {
-                var curElem = $(this);
-                
-                if (curElem.hasClass("sel")) return;
+      $(function () {
+        $(".client-ctgr").on("click", function () {
+          var curElem = $(this);
 
-                $(".client-ctgr").removeClass("sel");
-                curElem.addClass("sel");
+          if (curElem.hasClass("sel")) return;
 
-                var idx = $(this).attr("data-index");
-                $(".client").removeClass("sel");
-                $(".c" + idx).addClass("sel");
-            });
-        })
+          $(".client-ctgr").removeClass("sel");
+          curElem.addClass("sel");
+
+          var idx = $(this).attr("data-index");
+          $(".client").removeClass("sel");
+          $(".c" + idx).addClass("sel");
+        });
+      });
     </script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <script>loadHTML("./header.html");</script>
+      <script>
+        loadHTML("./header.html");
+      </script>
     </header>
     <nav id="navigation">
-        <ul>
-            <li>
-                <a href="#section1" data-number="1">
-                    <span class="dot"></span>
-                    <span class="label">회사 소개</span>
-                </a>
-                <div class="little-dot"></div>
-                <div class="little-dot"></div>
-            </li>
-            <li>
-                <a href="#section2" data-number="2">
-                    <span class="dot"></span>
-                    <span class="label">경영진</span>
-                </a>
-                <div class="little-dot"></div>
-                <div class="little-dot"></div>
-            </li>
-            <li>
-                <a href="#section7" data-number="3">
-                    <span class="dot"></span>
-                    <span class="label">CEO 인사말</span>
-                </a>
-                <div class="little-dot"></div>
-                <div class="little-dot"></div>
-            </li>
-            <li>
-                <a href="#section3" data-number="4">
-                    <span class="dot"></span>
-                    <span class="label">조직 구성</span>
-                </a>
-                <div class="little-dot"></div>
-                <div class="little-dot"></div>
-            </li>
-            <li>
-                <a href="#section4" data-number="5">
-                    <span class="dot"></span>
-                    <span class="label">연혁</span>
-                </a>
-                <div class="little-dot"></div>
-                <div class="little-dot"></div>
-            </li>
-            <li>
-                <a href="#section8" data-number="6">
-                    <span class="dot"></span>
-                    <span class="label">성장 전략</span>
-                </a>
-                <div class="little-dot"></div>
-                <div class="little-dot"></div>
-            </li>
-            <li>
-                <a href="#section5" data-number="7">
-                    <span class="dot"></span>
-                    <span class="label">고객사</span>
-                </a>
-                <div class="little-dot"></div>
-                <div class="little-dot"></div>
-            </li>
-            <li>
-                <a href="#section6" data-number="8">
-                    <span class="dot"></span>
-                    <span class="label">오시는 길</span>
-                </a>
-            </li>
-        </ul>
+      <ul>
+        <li>
+          <a href="#section1" data-number="1">
+            <span class="dot"></span>
+            <span class="label">회사 소개</span>
+          </a>
+          <div class="little-dot"></div>
+          <div class="little-dot"></div>
+        </li>
+        <li>
+          <a href="#section2" data-number="2">
+            <span class="dot"></span>
+            <span class="label">경영진</span>
+          </a>
+          <div class="little-dot"></div>
+          <div class="little-dot"></div>
+        </li>
+        <li>
+          <a href="#section7" data-number="3">
+            <span class="dot"></span>
+            <span class="label">CEO 인사말</span>
+          </a>
+          <div class="little-dot"></div>
+          <div class="little-dot"></div>
+        </li>
+        <li>
+          <a href="#section3" data-number="4">
+            <span class="dot"></span>
+            <span class="label">조직 구성</span>
+          </a>
+          <div class="little-dot"></div>
+          <div class="little-dot"></div>
+        </li>
+        <li>
+          <a href="#section4" data-number="5">
+            <span class="dot"></span>
+            <span class="label">연혁</span>
+          </a>
+          <div class="little-dot"></div>
+          <div class="little-dot"></div>
+        </li>
+        <li>
+          <a href="#section8" data-number="6">
+            <span class="dot"></span>
+            <span class="label">성장 전략</span>
+          </a>
+          <div class="little-dot"></div>
+          <div class="little-dot"></div>
+        </li>
+        <li>
+          <a href="#section5" data-number="7">
+            <span class="dot"></span>
+            <span class="label">고객사</span>
+          </a>
+          <div class="little-dot"></div>
+          <div class="little-dot"></div>
+        </li>
+        <li>
+          <a href="#section6" data-number="8">
+            <span class="dot"></span>
+            <span class="label">오시는 길</span>
+          </a>
+        </li>
+      </ul>
     </nav>
 
-
     <!-- <section> -->
-        <!-- section 1 -->
-        <section id="section1" class="about1 section">
-            <div class="about1-bgimg">
-                <div class="container about-con">
-                    <div id="about-main">
-                        <p class="page-title">오브젠</p>
-                        <p class="page-desc">AI와 데이터 사이언스 기술로 비즈니스를 혁신하는 오브젠입니다.</p>
-                    </div>
-                    <div id="about-info" class="about1-div">
-                        <div class="about-info-con">
-                            <div class="about-info-con-1 about-info-main">
-                                <div class="about-info-icon-1"></div> 
-                                데이터 수집에서 분석까지
-                                <br>
-                                실시간 대용량 데이터 처리 기술을
-                                <br>
-                                보유한 데이터 사이언스 기업입니다.                        
-                            </div> 
-                            <div class="about-info-con-2 about-info-main">
-                                <div class="about-info-icon-2"></div> 
-                                머신러닝, 딥러닝 기술 기반
-                                <br>
-                                AI Full Stack Business를 제공하는
-                                <br>
-                                AI 기술 기업입니다.       
-                            </div> 
-                            <div class="about-info-con-3 about-info-main">
-                                <div class="about-info-icon-3"></div> 
-                                고객 데이터 분석 기반 인사이트와
-                                <br>
-                                최적의 자동화 서비스를 제공하는
-                                <br>
-                                국내 유일 CRM 솔루션 기업입니다.
-                            </div> 
-                            <div class="about-info-con-4 about-info-main">
-                                <div class="about-info-icon-4"></div> 
-                                금융, 유통, 라이프 영역에서
-                                <br>
-                                약 20년간 솔루션 공급률 1위를
-                                <br>
-                                지켜온 국내 1위 솔루션 기업입니다.
-                            </div> 
-                        </div>
-                        <div class="about-info-desc">
-                            오브젠은 AI와 데이터 사이언스 기술을 기반으로 기업용 소프트웨어를 개발하는 솔루션 기업입니다.
-                            <br>
-                            오브젠의 핵심 솔루션은 AI CRM 솔루션으로 ERP, SCM 등과 더불어 가장 대표적인 기업용 소프트웨어입니다.
-                            <br>
-                            고객 데이터를 수집/통합/분석하여 최적의 비즈니스 인사이트와 맞춤형 서비스 제공을 지원하는 오브젠은
-                            <br>
-                            2000년 4월 창립 이래, 약 20년간 금융 및 유통산업 분야에서 솔루션 공급률 1위의 자리를 지켜오며 기술력과 전문성을 인정받았습니다.
-                            <br>
-                            데이터 사이언스와 생성형 AI를 결합한 고도의 AI 데이터 플랫폼 기업으로 면모를 갖추고 있으며,
-                            <br>
-                            국내 시장을 넘어 글로벌 시장의 선도 기업으로 성장을 지속하고 있습니다.
-                        </div>
-                    </div>  
-                </div>
+    <!-- section 1 -->
+    <section id="section1" class="about1 section">
+      <div class="about1-bgimg">
+        <div class="container about-con">
+          <div id="about-main">
+            <p class="page-title">플랜투 비즈니스 컨설팅</p>
+            <p class="page-desc">
+              AI와 데이터 사이언스 기술로 비즈니스를 혁신하는 플랜투 비즈니스
+              컨설팅입니다.
+            </p>
+          </div>
+          <div id="about-info" class="about1-div">
+            <div class="about-info-con">
+              <div class="about-info-con-1 about-info-main">
+                <div class="about-info-icon-1"></div>
+                데이터 수집에서 분석까지
+                <br />
+                실시간 대용량 데이터 처리 기술을
+                <br />
+                보유한 데이터 사이언스 기업입니다.
+              </div>
+              <div class="about-info-con-2 about-info-main">
+                <div class="about-info-icon-2"></div>
+                머신러닝, 딥러닝 기술 기반
+                <br />
+                AI Full Stack Business를 제공하는
+                <br />
+                AI 기술 기업입니다.
+              </div>
+              <div class="about-info-con-3 about-info-main">
+                <div class="about-info-icon-3"></div>
+                고객 데이터 분석 기반 인사이트와
+                <br />
+                최적의 자동화 서비스를 제공하는
+                <br />
+                국내 유일 CRM 솔루션 기업입니다.
+              </div>
+              <div class="about-info-con-4 about-info-main">
+                <div class="about-info-icon-4"></div>
+                금융, 유통, 라이프 영역에서
+                <br />
+                약 20년간 솔루션 공급률 1위를
+                <br />
+                지켜온 국내 1위 솔루션 기업입니다.
+              </div>
             </div>
-        </section>
-
-        <!-- section 2 -->
-        <section id="section2" class="about2 section">
-            <div class="container about-con">
-                <div class="sub-title">경영진</div>
-                <div class="sub-desc">전문성과 경영 효율성을 강화하기 위한 각자 대표 체제 전환</div>
-                <div id="leader_con" class="about-content">
-                    <dl>
-                        <dd>
-                            <ul>
-                                <li>
-                                    <div class="boss-img-con">
-                                        <img class="boss-img boss1" src="../img/about/boss-1.png" alt="전배문">
-                                    </div>
-                                </li>
-                                <li class="leaderName">전배문 대표이사</li>
-                                <li class="leader_rank_01">연구/사업 부문 총괄</li>
-                                <li class="leaderTxt_02">
-                                    오브젠㈜ Founder 및 최대주주<br>
-                                    (전) 한국 IBM SW연구소 연구원<br>
-                                    서울대학교 계산통계학 석사/학사
-                                    <br><br><br>
-                                </li>
-                                
-                            </ul>
-                        </dd>
-                        <dd>
-                            <ul>
-                                <li>
-                                    <div class="boss-img-con">
-                                        <img class="boss-img boss2" src="../img/about/boss-2.png" alt="유용희">
-                                    </div>
-                                </li>
-                                <li class="leaderName">유용희 대표이사</li>
-                                <li class="leader_rank_01">경영/영업 부문 총괄</li>
-                                <li class="leaderTxt_02">
-                                    (전) 대명코퍼레이션 대표이사<br>
-                                    (전) 대명그룹 기획실장<br>
-                                    서울대학교 경제학 학사<br>
-                                    <br><br><br>
-                                </li>
-                            </ul>
-                        </dd>
-                    </dl>
-                </div>
+            <div class="about-info-desc">
+              플랜투 비즈니스 컨설팅은 AI와 데이터 사이언스 기술을 기반으로
+              기업용 소프트웨어를 개발하는 솔루션 기업입니다.
+              <br />
+              플랜투 비즈니스 컨설팅의 핵심 솔루션은 AI CRM 솔루션으로 ERP, SCM
+              등과 더불어 가장 대표적인 기업용 소프트웨어입니다.
+              <br />
+              고객 데이터를 수집/통합/분석하여 최적의 비즈니스 인사이트와 맞춤형
+              서비스 제공을 지원하는 플랜투 비즈니스 컨설팅은
+              <br />
+              2000년 4월 창립 이래, 약 20년간 금융 및 유통산업 분야에서 솔루션
+              공급률 1위의 자리를 지켜오며 기술력과 전문성을 인정받았습니다.
+              <br />
+              데이터 사이언스와 생성형 AI를 결합한 고도의 AI 데이터 플랫폼
+              기업으로 면모를 갖추고 있으며,
+              <br />
+              국내 시장을 넘어 글로벌 시장의 선도 기업으로 성장을 지속하고
+              있습니다.
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- section 7 -->
-        <section id="section7" class="about7 section">
-            <div class="container about-con">
-                <div class="sub-title">CEO 인사말</div>
-                <div class="about-content">
-                    <div class="about-info-desc">
-                        안녕하십니까.<br>
-                        오브젠을 찾아주신 여러분께 진심으로 감사드립니다.<br>
-                        <br>
-                        오브젠은 2000년 창립 이래, AI와 데이터 사이언스 기술을 기반으로 혁신을 주도해 온 AI 데이터 플랫폼 기업입니다.<br>
-                        <br>
-                        우리는 데이터의 가치를 깊이 이해하고, 이를 실질적인 비즈니스 성과로 연결하는 데 집중해 왔습니다.<br>
-                        AI와 데이터 사이언스 기술을 바탕으로, 금융과 유통 분야의 고객들과 함께 미래를 설계해 온 검증된 파트너입니다.<br>
-                        <br>
-                        이제 오브젠은 또 한 번의 도약을 준비하고 있습니다.<br>
-                        금융과 유통을 넘어 다양한 산업으로, 국내를 넘어 글로벌 시장으로 확장하며,<br>
-                        세계를 선도하는 AI 에이전트 기업으로 성장하고자 합니다.<br>
-                        <br>
-                        고객과 함께 성장하며 변화를 주도하는 진정한 동반자가 되겠습니다.<br>
-                        오브젠의 기술과 가치 혁신의 여정과 함께해 주시길 바랍니다.<br>
-                        <br>
-                        고맙습니다.<br>
-                    </div>
-                    <div class="sub-desc">대표이사 전배문ㆍ유용희</div>
-                </div>
+    <!-- section 2 -->
+    <section id="section2" class="about2 section">
+      <div class="container about-con">
+        <div class="sub-title">경영진</div>
+        <div class="sub-desc">
+          전문성과 경영 효율성을 강화하기 위한 각자 대표 체제 전환
+        </div>
+        <div id="leader_con" class="about-content">
+          <dl>
+            <dd>
+              <ul>
+                <li>
+                  <div class="boss-img-con">
+                    <img
+                      class="boss-img boss1"
+                      src="../img/about/boss-1.png"
+                      alt="전배문"
+                    />
+                  </div>
+                </li>
+                <li class="leaderName">전배문 대표이사</li>
+                <li class="leader_rank_01">연구/사업 부문 총괄</li>
+                <li class="leaderTxt_02">
+                  플랜투 비즈니스 컨설팅㈜ Founder 및 최대주주<br />
+                  (전) 한국 IBM SW연구소 연구원<br />
+                  서울대학교 계산통계학 석사/학사
+                  <br /><br /><br />
+                </li>
+              </ul>
+            </dd>
+            <dd>
+              <ul>
+                <li>
+                  <div class="boss-img-con">
+                    <img
+                      class="boss-img boss2"
+                      src="../img/about/boss-2.png"
+                      alt="유용희"
+                    />
+                  </div>
+                </li>
+                <li class="leaderName">유용희 대표이사</li>
+                <li class="leader_rank_01">경영/영업 부문 총괄</li>
+                <li class="leaderTxt_02">
+                  (전) 대명코퍼레이션 대표이사<br />
+                  (전) 대명그룹 기획실장<br />
+                  서울대학교 경제학 학사<br />
+                  <br /><br /><br />
+                </li>
+              </ul>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- section 7 -->
+    <section id="section7" class="about7 section">
+      <div class="container about-con">
+        <div class="sub-title">CEO 인사말</div>
+        <div class="about-content">
+          <div class="about-info-desc">
+            안녕하십니까.<br />
+            플랜투 비즈니스 컨설팅을 찾아주신 여러분께 진심으로 감사드립니다.<br />
+            <br />
+            플랜투 비즈니스 컨설팅은 2000년 창립 이래, AI와 데이터 사이언스
+            기술을 기반으로 혁신을 주도해 온 AI 데이터 플랫폼 기업입니다.<br />
+            <br />
+            우리는 데이터의 가치를 깊이 이해하고, 이를 실질적인 비즈니스 성과로
+            연결하는 데 집중해 왔습니다.<br />
+            AI와 데이터 사이언스 기술을 바탕으로, 금융과 유통 분야의 고객들과
+            함께 미래를 설계해 온 검증된 파트너입니다.<br />
+            <br />
+            이제 플랜투 비즈니스 컨설팅은 또 한 번의 도약을 준비하고
+            있습니다.<br />
+            금융과 유통을 넘어 다양한 산업으로, 국내를 넘어 글로벌 시장으로
+            확장하며,<br />
+            세계를 선도하는 AI 에이전트 기업으로 성장하고자 합니다.<br />
+            <br />
+            고객과 함께 성장하며 변화를 주도하는 진정한 동반자가 되겠습니다.<br />
+            플랜투 비즈니스 컨설팅의 기술과 가치 혁신의 여정과 함께해 주시길
+            바랍니다.<br />
+            <br />
+            고맙습니다.<br />
+          </div>
+          <div class="sub-desc">대표이사 전배문ㆍ유용희</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- section 3 -->
+    <section id="section3" class="about3 section">
+      <div class="container about-con">
+        <div class="sub-title">조직 구성</div>
+        <div class="sub-desc">4개 부문 · 7 Lab · 1 TFT 구성</div>
+        <div id="operation_con">
+          <div class="oper-img about-content"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- section 4 -->
+    <section id="section4" class="about4 section">
+      <div class="container about-con" id="about4-con">
+        <div class="sub-title">연혁</div>
+        <div id="history_Con">
+          <div id="history_year">
+            <dl>
+              <dt>2025</dt>
+              <dd>
+                <ul>
+                  <li>베트남 FPT 텔레콤 솔루션 공급계약 체결</li>
+                  <li>
+                    IBK 기업은행 신(新) 고객정보활용 플랫폼 구축 (53억) 수주
+                  </li>
+                  <li>obzen Alphabet 상표권 등록</li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>2024</dt>
+              <dd>
+                <ul>
+                  <li>100억원 메자닌(전환사채) 투자 유치</li>
+                  <li>KB증권 더 플랫폼 정보계 차세대 구축 (28억) 수주</li>
+                  <li>
+                    전이학습 기반 마케팅 퍼널 전환 예측 시스템 및 그 제어방법
+                    특허 등록
+                  </li>
+                  <li>제3자배정 유상증자 50억원</li>
+                  <li>obzen SmartAI 외 8건 저작권 등록</li>
+                  <li>삼성금융네트웍스 삼성모니모 원앱 구축 (44억) 수주</li>
+                  <li>하둡기반 AI 분석 시스템 특허 등록</li>
+                  <li>
+                    obzen DataIntelligence v1.0 소프트웨어품질인증(GS인증) 1등급
+                    획득
+                  </li>
+                  <li>인과추론 분석 시스템 및 그 제어방법 특허 등록</li>
+                  <li>obzen DataIntelligence v1.0 저작권 등록</li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>2023</dt>
+              <dd>
+                <ul>
+                  <li>한국거래소 코스닥시장 기술성장기업(기술평가특례) 상장</li>
+                  <li>
+                    플랜투 비즈니스 컨설팅-네이버클라우드, 초대규모 AI 기반 B2B
+                    사업 확대 MOU 체결
+                  </li>
+                  <li>
+                    플랜투 비즈니스 컨설팅-한국투자증권-네이버클라우드, 생성형
+                    AI 기반의 금융서비스 개발을 위한 MOU 체결
+                  </li>
+                  <li>
+                    플랜투 비즈니스 컨설팅-삼정KPMG, 초거대 AI기반 비즈니스
+                    혁신을 위한 MOU 체결
+                  </li>
+                  <li>온라인 개인화 추천 솔루션 "obzen onCMS" 출시</li>
+                  <li>
+                    온라인 고객 행동 정보의 수집부터 여정분석 "obzen Analytics"
+                    출시
+                  </li>
+                  <li>"obzen e·Mapp", "obzen SmartAI" 1건 상표등록</li>
+                  <li>
+                    신제품 세미나 개최 '데이터의 인사이트와 AI의 혁신으로
+                    고객경험을 디자인하다' (전경련회관, 10월)
+                  </li>
+                  <li>가족친화기업 인증 (여성가족부, 제2023-0411호)</li>
+                  <li>
+                    우리은행, 국민은행, 수협은행, 국민카드, 한국인삼공사,
+                    신세계I&C, 농협정보시스템, 한화손해보험, 한국투자증권,
+                    (주)교원 등 프로젝트 수행
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>2022</dt>
+              <dd>
+                <ul>
+                  <li>우수 기업부설연구소 지정 (과학기술정보통신부)</li>
+                  <li>
+                    코스닥 상장특례 기술평가 결과발표 (기술보증기금 "A",
+                    한국평가데이터 "A")
+                  </li>
+                  <li>한국거래소 코스닥시장 상장예비심사 승인</li>
+                  <li>
+                    제1회 중소기업 복지대상 선정 (중소벤처기업부,
+                    대한상공회의소)
+                  </li>
+                  <li>고용노동부 선정 강소기업 선정</li>
+                  <li>2022 KOREA AI STARTUP 100 선정 (한국경제신문)</li>
+                  <li>데이터 바우처 수요기업 선정 (한국데이터산업진흥원)</li>
+                  <li>
+                    "인공지능 학습을 위한 클린 라벨 데이터 정제 방법 및 장치" 외
+                    3건 특허등록
+                  </li>
+                  <li>"생존 분석 시스템 및 그 제어방법" 외 2건 특허등록</li>
+                  <li>
+                    "생존 데이터 정제 서버와 생존 데이터 분석 서버를 포함하는
+                    시스템 및 그 제어방법" 특허등록
+                  </li>
+                  <li>
+                    "고객생애 단계별 고객생애가치(CLV) 예측 모델 자동 생성 방법
+                    및 시스템" 특허등록
+                  </li>
+                  <li>"obzen Digital Marketing" 외 6건 상표등록</li>
+                  <li>
+                    플랜투 비즈니스 컨설팅-네이버클라우드, 클라우드 기반
+                    초개인화 마케팅 협력 MOU 체결
+                  </li>
+                  <li>
+                    하나카드, 현대카드, 현대차증권, 미래에셋증권, 신한투자증권,
+                    라이나생명, 전북은행, LG CNS, SK주식회사 등 프로젝트 수행
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>2021</dt>
+              <dd>
+                <ul>
+                  <li>obzen Daisy Suite출시</li>
+                  <li>TagWorks출시</li>
+                  <li>Auto타겟팅/AB테스트with CMS출시</li>
+                  <li>중소기업육성 국무총리 표창장 수상</li>
+                  <li>고용노동부장관 청년친화강소기업 인증 획득</li>
+                  <li>벤처기업확인기관장 벤처기업확인서 획득</li>
+                  <li>마이데이터 사업 참여</li>
+                  <li>
+                    신한카드,보건복지부,우리은행,롯데카드, AK
+                    Plaza,섹타나인(SPC그룹),하나손해보험,우체국,
+                    NH투자증권,삼성증권 등 프로젝트 수행
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>2020</dt>
+              <dd>
+                <ul>
+                  <li>
+                    Obzect Flow Framework기술 기반통합Digital Marketing제품 출시
+                  </li>
+                  <li>DataIntelligence Web전환 제품 출시</li>
+                  <li>DataPipeline for BigData출시</li>
+                  <li>SmartAI제품 정식 출시</li>
+                  <li>Web Publisher도입</li>
+                  <li>Container기반 분석 환경 배포기술 적용</li>
+                  <li>CDP(Customer Data Platform)솔루션 출시</li>
+                  <li>고용노동부장관 청년친화강소기업 인증 획득</li>
+                  <li>
+                    APAC CIO Outlook아태지역10대 빅데이터 솔루션 공급사 선정시
+                  </li>
+                  <li>
+                    우리은행,네파, KB국민카드, GS엠비즈,
+                    CJ제일제당,오케이저축은행,웰컴저축은행,르노캐피탈,경복대학교,
+                    NH멤버스,미샤,롯데카드 등 프로젝트 수행
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>2019</dt>
+              <dd>
+                <ul>
+                  <li>Strategy Lab및 컨설팅본부 신설</li>
+                  <li>Cloud Lab신설</li>
+                  <li>OLAP/Document기술,Excel Integration Manager기술 도입</li>
+                  <li>우수기술기업 인증서 획득</li>
+                  <li>KIBO서울보증기금 벤처기업확인서 획득</li>
+                  <li>NH농협은행 차세대시스템 구축 감사패 수령</li>
+                  <li>
+                    우리은행,딜라이브, SSG.com,까사미아,홈플러스,메가박스,
+                    KB국민은행 프로젝트 수행
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>2018</dt>
+              <dd>
+                <ul>
+                  <li>중소기업형Digital Marketing제품 출시</li>
+                  <li>DataIntelligence Web버전 출시</li>
+                  <li>
+                    현대캐피탈,하나투어,생산성본부,
+                    KB국민카드,토니모리,신세계백화점, KT, CJ ONE프로젝트 수행
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>2017</dt>
+              <dd>
+                <ul>
+                  <li>BigData제품 출시</li>
+                  <li>고용노동부장관 청년친화강소기업 인증 획득</li>
+                  <li>
+                    CJ헬로비전, CJ오쇼핑, NH농협은행,제주항공 등 프로젝트 수행
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>2016</dt>
+              <dd>
+                <ul>
+                  <li>청년친화 강소기업 선정</li>
+                  <li>연구소 조직 세분화</li>
+                  <li>AI Lab신설</li>
+                  <li>SmartAI초기 버전 제품 출시</li>
+                  <li>고용노동부장관 청년친화강소기업 인증 획득</li>
+                  <li>
+                    KB국민은행,우리은행, KB국민카드, CJ올리브영,신세계백화점,
+                    CJ제일제당 등 프로젝트 수행
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>2015</dt>
+              <dd>
+                <ul>
+                  <li>R연동 기술, Rule Engine기술 업그레이드</li>
+                  <li>유통사 실시간 마케팅 자동화 솔루션 공급 시작</li>
+                  <li>
+                    S신한은행,이랜드 리테일,이랜드
+                    외식사업,신한카드,하나금융그룹,우리카드, KB국민은행 등
+                    프로젝트 수행
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>2014</dt>
+              <dd>
+                <ul>
+                  <li>
+                    CJ헬로비전, CJ ONE,대구은행,하나투어,외환은행 등 프로젝트
+                    수행
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>2013</dt>
+              <dd>
+                <ul>
+                  <li>SurveyWorks제품 출시</li>
+                  <li>DataPipeline제품 출시(데이터 전처리 솔루션)</li>
+                  <li>BRMS기능 개발</li>
+                  <li>Unicode기술, R연동 기술 적용</li>
+                  <li>2013년 한국외환은행 차세대CRM시스템 구축 감사패 수령</li>
+                  <li>
+                    삼성카드,하나SK카드,기업은행,삼성화재,영원
+                    아웃도어,롯데카드,현대카드 등 프로젝트 수행
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>2012</dt>
+              <dd>
+                <ul>
+                  <li>DataIntelligence제품 출시(데이터 분석/시각화 솔루션)</li>
+                  <li>
+                    농협협동조합 중앙회 카드 정보계 시스템 구축 감사패 수령
+                  </li>
+                  <li>신한카드 차세대 시스템 구축 감사패 수령</li>
+                  <li>
+                    KB국민카드, CJ CGV, CJ대한통운,이랜드, SK플래닛,메리츠화재
+                    등 프로젝트 수행
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>2011</dt>
+              <dd>
+                <ul>
+                  <li>Digital Marketing실시간 제품 출시</li>
+                  <li>IBK기업은행CRM시스템 고도화 감사패 수령</li>
+                  <li>신한카드 차세대 시스템 구축 감사패 수령</li>
+                  <li>
+                    SK플래닛,
+                    KB금융그룹,보건산업진흥원,기업은행,아주캐피탈,신한카드,
+                    NH카드,신한생명,현대상선, SK브로드밴드 등 프로젝트 수행
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>2010</dt>
+              <dd>
+                <ul>
+                  <li>EBM(Event Base Marketing)제품 출시</li>
+                  <li>OLAP툴 출시</li>
+                  <li>서버 모니터링 기술, MS Silverlight기술 적용</li>
+                  <li>SKS C&C Partners인증 획득</li>
+                  <li>한국인포매티카Authorized Solution Partner인증 획득</li>
+                  <li>
+                    삼성카드,보건사회연구원,국민연금,외환은행카드,국민카드,신한카드,
+                    BC카드,신한금융투자 등 프로젝트 수행
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>2009</dt>
+              <dd>
+                <ul>
+                  <li>기업부설 연구소 인정</li>
+                  <li>하나은행 차세대시스템(PaxHana)구축 감사패 수령</li>
+                  <li>
+                    신라저축은행, KB국민은행,농수산홈쇼핑,환경정책평가연구원,
+                    BC카드,삼성생명,아모레퍼시픽,하나카드 등 프로젝트 수행
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>2008</dt>
+              <dd>
+                <ul>
+                  <li>Frame Studio, eCube서버 업그레이드</li>
+                  <li>멀티 프로세싱 기술 적용</li>
+                  <li>HP Korea Best CI Partner인증 획득</li>
+                  <li>IBK기업은행 통합CRM시스템 구축 감사패 수령</li>
+                  <li>
+                    외환은행, KB국민은행,대우캐피탈,
+                    KB카드,외환은행카드,하나은행,신한카드 등 프로젝트 수행
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>2007</dt>
+              <dd>
+                <ul>
+                  <li>기술혁신형 중소기업(이노비즈)인증</li>
+                  <li>하이테크 어워드 솔루션 부문 대상 수상</li>
+                  <li>
+                    KB국민은행,롯데카드, KB카드,항공안전본부,제일화재해상보험 등
+                    프로젝트 수행
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>2006</dt>
+              <dd>
+                <ul>
+                  <li>
+                    스카이상호저축은행,방송통신대학교,보험개발원,
+                    LG카드,통계청,한국정보통신산업협외,기업은행 등 프로젝트 수행
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>2005</dt>
+              <dd>
+                <ul>
+                  <li>eCube서버 도입</li>
+                  <li>Workflow, Transaction Model업그레이드</li>
+                  <li>KB국민은행 전행 고객관리 시스템 구축 감사패 수령</li>
+                  <li>은행 솔루션 공급 시작</li>
+                  <li>
+                    SK텔레콤, SK가스,
+                    KB국민은행,행정자치부,서울시청,하이닉스,감사원,조선일보,스카이상호저축은행
+                    프로젝트 수행
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>2004</dt>
+              <dd>
+                <ul>
+                  <li>유통사 솔루션 공급 시작</li>
+                  <li>
+                    연간 프로젝트 수행 10건 초과(14건, SK텔레콤,
+                    KT,하이닉스,동부아남반도체,행정자치부, LG Philips,
+                    KT,서울시청,삼성전자,파라다이스, NC소프트, LG유통)
+                  </li>
+                  <li>카지노,게임회사 등 고객사 다양화</li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>2003</dt>
+              <dd>
+                <ul>
+                  <li>SK텔레콤, SK생명,통계청,삼성전자, KT프로젝트 수행</li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>2002</dt>
+              <dd>
+                <ul>
+                  <li>
+                    플랜투 비즈니스 컨설팅 개발Framework(eCube Development
+                    Studio)초기 버전 개발
+                  </li>
+                  <li>벤처 기업 인증</li>
+                  <li>삼성전자,감사원,하이닉스 프로젝트 수행</li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>2001</dt>
+              <dd>
+                <ul>
+                  <li>마케팅 자동화 솔루션(캠페인 관리 시스템, CMS)출시</li>
+                  <li>Workflow기술, Client-Server기술 도입</li>
+                  <li>반도체 분석 프로젝트 수행(하이닉스,삼성전자)</li>
+                  <li>통신사 솔루션 공급 시작(SK텔레콤)</li>
+                  <li>금융권 솔루션 공급 시작(대한투자신탁, KB카드)</li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>2000</dt>
+              <dd>
+                <ul>
+                  <li>플랜투 비즈니스 컨설팅 설립</li>
+                  <li>엑셀Add-in분석 툴 출시</li>
+                  <li>하이닉스 반도체 분석 프로젝트 수행(3건)</li>
+                </ul>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div id="btn-more-history">더보기</div>
+    </section>
+
+    <!-- section 8 -->
+    <section id="section8" class="about8 section">
+      <div class="container">
+        <div class="sub-title">성장 전략</div>
+        <div id="strategy-info" class="about-content">
+          <div class="strategy-info-con">
+            <div class="strategy-info-main">
+              <div class="strategy-info-title">전략 1.</div>
+              <div class="strategy-info-main-title">고객분석 솔루션 Add-On</div>
+              <div class="strategy-info-bg-1"></div>
+              <div class="strategy-info-cont">
+                글로벌 수준의 기술력과 경제성 확보!
+              </div>
+              <div class="strategy-info-desc">
+                마케팅 자동화에서 고객분석 솔루션까지,
+                <br />
+                마케팅 전 영역의 프로세스 커버리지 확보
+              </div>
             </div>
-        </section>
-
-        <!-- section 3 -->
-        <section id="section3" class="about3 section">
-            <div class="container about-con">
-                <div class="sub-title">조직 구성</div>
-                <div class="sub-desc">4개 부문 · 7 Lab · 1 TFT 구성</div>
-                <div id="operation_con">
-                    <div class="oper-img about-content"></div>
-                </div>
+            <div class="strategy-info-main">
+              <div class="strategy-info-title">전략 2.</div>
+              <div class="strategy-info-main-title">금융 특화 Agentic AI</div>
+              <div class="strategy-info-bg-2"></div>
+              <div class="strategy-info-cont">
+                금융 분야 AI 에이전트 시장 선도!
+              </div>
+              <div class="strategy-info-desc">
+                Agentic AI 기술을 기반으로
+                <br />
+                금융 분야의 다양한 업무 도메인으로 확장
+              </div>
             </div>
-        </section>
-
-        <!-- section 4 -->
-        <section id="section4" class="about4 section">
-            <div class="container about-con" id="about4-con">
-                <div class="sub-title">연혁</div>
-                <div id="history_Con">
-                    <div id="history_year">
-                        <dl>
-                            <dt>2025</dt>
-                            <dd>
-                                <ul>
-                                    <li>베트남 FPT 텔레콤 솔루션 공급계약 체결</li>
-                                    <li>IBK 기업은행 신(新) 고객정보활용 플랫폼 구축 (53억) 수주</li>
-                                    <li>obzen Alphabet 상표권 등록</li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>2024</dt>
-                            <dd>
-                                <ul>
-                                    <li>100억원 메자닌(전환사채) 투자 유치</li>
-                                    <li>KB증권 더 플랫폼 정보계 차세대 구축 (28억) 수주</li>
-                                    <li>전이학습 기반 마케팅 퍼널 전환 예측 시스템 및 그 제어방법 특허 등록</li>
-                                    <li>제3자배정 유상증자 50억원</li>
-                                    <li>obzen SmartAI 외 8건 저작권 등록</li>
-                                    <li>삼성금융네트웍스 삼성모니모 원앱 구축 (44억) 수주</li>
-                                    <li>하둡기반 AI 분석 시스템 특허 등록</li>
-                                    <li>obzen DataIntelligence v1.0 소프트웨어품질인증(GS인증) 1등급 획득</li>
-                                    <li>인과추론 분석 시스템 및 그 제어방법 특허 등록</li>
-                                    <li>obzen DataIntelligence v1.0 저작권 등록</li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>2023</dt>
-                            <dd>
-                                <ul>
-                                    <li>한국거래소 코스닥시장 기술성장기업(기술평가특례) 상장</li>
-                                    <li>오브젠-네이버클라우드, 초대규모 AI 기반 B2B 사업 확대 MOU 체결</li>
-                                    <li>오브젠-한국투자증권-네이버클라우드, 생성형 AI 기반의 금융서비스 개발을 위한 MOU 체결</li>
-                                    <li>오브젠-삼정KPMG, 초거대 AI기반 비즈니스 혁신을 위한 MOU 체결</li>
-                                    <li>온라인 개인화 추천 솔루션 "obzen onCMS" 출시</li>
-                                    <li>온라인 고객 행동 정보의 수집부터 여정분석 "obzen Analytics" 출시</li>
-                                    <li>"obzen CDXP+", "obzen SmartAI" 1건 상표등록</li>
-                                    <li>신제품 세미나 개최  '데이터의 인사이트와 AI의 혁신으로 고객경험을 디자인하다' (전경련회관, 10월)</li>
-                                    <li>가족친화기업 인증 (여성가족부, 제2023-0411호)</li>
-                                    <li>우리은행, 국민은행, 수협은행, 국민카드, 한국인삼공사, 신세계I&C, 농협정보시스템, 한화손해보험, 한국투자증권, (주)교원 등 프로젝트 수행</li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>2022</dt>
-                            <dd>
-                                <ul>
-                                    <li>우수 기업부설연구소 지정 (과학기술정보통신부)</li>
-                                    <li>코스닥 상장특례 기술평가 결과발표 (기술보증기금 "A", 한국평가데이터 "A")</li>
-                                    <li>한국거래소 코스닥시장 상장예비심사 승인</li>
-                                    <li>제1회 중소기업 복지대상 선정 (중소벤처기업부, 대한상공회의소)</li>
-                                    <li>고용노동부 선정 강소기업 선정</li>
-                                    <li>2022 KOREA AI STARTUP 100 선정 (한국경제신문)</li>
-                                    <li>데이터 바우처 수요기업 선정 (한국데이터산업진흥원)</li>
-                                    <li>"인공지능 학습을 위한 클린 라벨 데이터 정제 방법 및 장치" 외 3건 특허등록</li>
-                                    <li>"생존 분석 시스템 및 그 제어방법" 외 2건 특허등록</li>
-                                    <li>"생존 데이터 정제 서버와 생존 데이터 분석 서버를 포함하는 시스템 및 그 제어방법" 특허등록</li>
-                                    <li>"고객생애 단계별 고객생애가치(CLV) 예측 모델 자동 생성 방법 및 시스템"  특허등록</li>
-                                    <li>"obzen Digital Marketing" 외 6건 상표등록</li>
-                                    <li>오브젠-네이버클라우드, 클라우드 기반 초개인화 마케팅 협력 MOU 체결</li>
-                                    <li>하나카드, 현대카드, 현대차증권, 미래에셋증권, 신한투자증권, 라이나생명, 전북은행, LG CNS, SK주식회사 등 프로젝트 수행</li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>2021</dt>
-                            <dd>
-                                <ul>
-                                    <li>obzen Daisy Suite출시</li>
-                                    <li>TagWorks출시</li>
-                                    <li>Auto타겟팅/AB테스트with CMS출시</li>
-                                    <li>중소기업육성 국무총리 표창장 수상</li>
-                                    <li>고용노동부장관 청년친화강소기업 인증 획득</li>
-                                    <li>벤처기업확인기관장 벤처기업확인서 획득</li>
-                                    <li>마이데이터 사업 참여</li>
-                                    <li>신한카드,보건복지부,우리은행,롯데카드, AK Plaza,섹타나인(SPC그룹),하나손해보험,우체국, NH투자증권,삼성증권 등 프로젝트 수행</li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>2020</dt>
-                            <dd>
-                                <ul>
-                                    <li>Obzect Flow Framework기술 기반통합Digital Marketing제품 출시</li>
-                                    <li>DataIntelligence Web전환 제품 출시</li>
-                                    <li>DataPipeline for BigData출시</li>
-                                    <li>SmartAI제품 정식 출시</li>
-                                    <li>Web Publisher도입</li>
-                                    <li>Container기반 분석 환경 배포기술 적용</li>
-                                    <li>CDP(Customer Data Platform)솔루션 출시</li>
-                                    <li>고용노동부장관 청년친화강소기업 인증 획득</li>
-                                    <li>APAC CIO Outlook아태지역10대 빅데이터 솔루션 공급사 선정시</li>
-                                    <li>우리은행,네파, KB국민카드, GS엠비즈, CJ제일제당,오케이저축은행,웰컴저축은행,르노캐피탈,경복대학교, NH멤버스,미샤,롯데카드 등 프로젝트 수행</li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>2019</dt>
-                            <dd>
-                                <ul>
-                                    <li>Strategy Lab및 컨설팅본부 신설</li>
-                                    <li>Cloud Lab신설</li>
-                                    <li>OLAP/Document기술,Excel Integration Manager기술 도입</li>
-                                    <li>우수기술기업 인증서 획득</li>
-                                    <li>KIBO서울보증기금 벤처기업확인서 획득</li>
-                                    <li>NH농협은행 차세대시스템 구축 감사패 수령</li>
-                                    <li>우리은행,딜라이브, SSG.com,까사미아,홈플러스,메가박스, KB국민은행 프로젝트 수행</li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>2018</dt>
-                            <dd>
-                                <ul>
-                                    <li>중소기업형Digital Marketing제품 출시</li>
-                                    <li>DataIntelligence Web버전 출시</li>
-                                    <li>현대캐피탈,하나투어,생산성본부, KB국민카드,토니모리,신세계백화점, KT, CJ ONE프로젝트 수행</li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>2017</dt>
-                            <dd>
-                                <ul>
-                                    <li>BigData제품 출시</li>
-                                    <li>고용노동부장관 청년친화강소기업 인증 획득</li>
-                                    <li>CJ헬로비전, CJ오쇼핑, NH농협은행,제주항공 등 프로젝트 수행</li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>2016</dt>
-                            <dd>
-                                <ul>
-                                    <li>청년친화 강소기업 선정</li>
-                                    <li>연구소 조직 세분화</li>
-                                    <li>AI Lab신설</li>
-                                    <li>SmartAI초기 버전 제품 출시</li>
-                                    <li>고용노동부장관 청년친화강소기업 인증 획득</li>
-                                    <li>KB국민은행,우리은행, KB국민카드, CJ올리브영,신세계백화점, CJ제일제당 등 프로젝트 수행</li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>2015</dt>
-                            <dd>
-                                <ul>
-                                    <li>R연동 기술, Rule Engine기술 업그레이드</li>
-                                    <li>유통사 실시간 마케팅 자동화 솔루션 공급 시작</li>
-                                    <li>S신한은행,이랜드 리테일,이랜드 외식사업,신한카드,하나금융그룹,우리카드, KB국민은행 등 프로젝트 수행</li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>2014</dt>
-                            <dd>
-                                <ul>
-                                    <li>CJ헬로비전, CJ ONE,대구은행,하나투어,외환은행 등 프로젝트 수행</li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>2013</dt>
-                            <dd>
-                                <ul>
-                                    <li>SurveyWorks제품 출시</li>
-                                    <li>DataPipeline제품 출시(데이터 전처리 솔루션)</li>
-                                    <li>BRMS기능 개발</li>
-                                    <li>Unicode기술, R연동 기술 적용</li>
-                                    <li>2013년 한국외환은행 차세대CRM시스템 구축 감사패 수령</li>
-                                    <li>삼성카드,하나SK카드,기업은행,삼성화재,영원 아웃도어,롯데카드,현대카드 등 프로젝트 수행</li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>2012</dt>
-                            <dd>
-                                <ul>
-                                    <li>DataIntelligence제품 출시(데이터 분석/시각화 솔루션)</li>
-                                    <li>농협협동조합 중앙회 카드 정보계 시스템 구축 감사패 수령</li>
-                                    <li>신한카드 차세대 시스템 구축 감사패 수령</li>
-                                    <li>KB국민카드, CJ CGV, CJ대한통운,이랜드, SK플래닛,메리츠화재 등 프로젝트 수행</li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>2011</dt>
-                            <dd>
-                                <ul>
-                                    <li>Digital Marketing실시간 제품 출시</li>
-                                    <li>IBK기업은행CRM시스템 고도화 감사패 수령</li>
-                                    <li>신한카드 차세대 시스템 구축 감사패 수령</li>
-                                    <li>SK플래닛, KB금융그룹,보건산업진흥원,기업은행,아주캐피탈,신한카드, NH카드,신한생명,현대상선, SK브로드밴드 등 프로젝트 수행</li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>2010</dt>
-                            <dd>
-                                <ul>
-                                    <li>EBM(Event Base Marketing)제품 출시</li>
-                                    <li>OLAP툴 출시</li>
-                                    <li>서버 모니터링 기술, MS Silverlight기술 적용</li>
-                                    <li>SKS C&C Partners인증 획득</li>
-                                    <li>한국인포매티카Authorized Solution Partner인증 획득</li>
-                                    <li>삼성카드,보건사회연구원,국민연금,외환은행카드,국민카드,신한카드, BC카드,신한금융투자 등 프로젝트 수행</li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>2009</dt>
-                            <dd>
-                                <ul>
-                                    <li>기업부설 연구소 인정</li>
-                                    <li>하나은행 차세대시스템(PaxHana)구축 감사패 수령</li>
-                                    <li>신라저축은행, KB국민은행,농수산홈쇼핑,환경정책평가연구원, BC카드,삼성생명,아모레퍼시픽,하나카드 등 프로젝트 수행</li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>2008</dt>
-                            <dd>
-                                <ul>
-                                    <li>Frame Studio, eCube서버 업그레이드</li>
-                                    <li>멀티 프로세싱 기술 적용</li>
-                                    <li>HP Korea Best CI Partner인증 획득</li>
-                                    <li>IBK기업은행 통합CRM시스템 구축 감사패 수령</li>
-                                    <li>외환은행, KB국민은행,대우캐피탈, KB카드,외환은행카드,하나은행,신한카드 등 프로젝트 수행</li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>2007</dt>
-                            <dd>
-                                <ul>
-                                    <li>기술혁신형 중소기업(이노비즈)인증</li>
-                                    <li>하이테크 어워드 솔루션 부문 대상 수상</li>
-                                    <li>KB국민은행,롯데카드, KB카드,항공안전본부,제일화재해상보험 등 프로젝트 수행</li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>2006</dt>
-                            <dd>
-                                <ul>
-                                    <li>스카이상호저축은행,방송통신대학교,보험개발원, LG카드,통계청,한국정보통신산업협외,기업은행 등 프로젝트 수행</li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>2005</dt>
-                            <dd>
-                                <ul>
-                                    <li>eCube서버 도입</li>
-                                    <li>Workflow, Transaction Model업그레이드</li>
-                                    <li>KB국민은행 전행 고객관리 시스템 구축 감사패 수령</li>
-                                    <li>은행 솔루션 공급 시작</li>
-                                    <li>SK텔레콤, SK가스, KB국민은행,행정자치부,서울시청,하이닉스,감사원,조선일보,스카이상호저축은행 프로젝트 수행</li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>2004</dt>
-                            <dd>
-                                <ul>
-                                    <li>유통사 솔루션 공급 시작</li>
-                                    <li>연간 프로젝트 수행 10건 초과(14건, SK텔레콤, KT,하이닉스,동부아남반도체,행정자치부, LG Philips, KT,서울시청,삼성전자,파라다이스, NC소프트, LG유통)</li>
-                                    <li>카지노,게임회사 등 고객사 다양화</li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>2003</dt>
-                            <dd>
-                                <ul>
-                                    <li>SK텔레콤, SK생명,통계청,삼성전자, KT프로젝트 수행</li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>2002</dt>
-                            <dd>
-                                <ul>
-                                    <li>오브젠 개발Framework(eCube Development Studio)초기 버전 개발</li>
-                                    <li>벤처 기업 인증</li>
-                                    <li>삼성전자,감사원,하이닉스 프로젝트 수행</li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>2001</dt>
-                            <dd>
-                                <ul>
-                                    <li>마케팅 자동화 솔루션(캠페인 관리 시스템, CMS)출시</li>
-                                    <li>Workflow기술, Client-Server기술 도입</li>
-                                    <li>반도체 분석 프로젝트 수행(하이닉스,삼성전자)</li>
-                                    <li>통신사 솔루션 공급 시작(SK텔레콤)</li>
-                                    <li>금융권 솔루션 공급 시작(대한투자신탁, KB카드)</li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>2000</dt>
-                            <dd>
-                                <ul>
-                                    <li> 오브젠 설립</li>
-                                    <li>엑셀Add-in분석 툴 출시</li>
-                                    <li>하이닉스 반도체 분석 프로젝트 수행(3건)</li>
-                                </ul>
-                            </dd>
-                        </dl>
-                    </div>
-                </div>
+            <div class="strategy-info-main">
+              <div class="strategy-info-title">전략 3.</div>
+              <div class="strategy-info-main-title">
+                국가대표 AI 마케팅 솔루션
+              </div>
+              <div class="strategy-info-bg-3"></div>
+              <div class="strategy-info-cont">
+                마케팅 자동화 솔루션 해외 진출 쾌거!
+              </div>
+              <div class="strategy-info-desc">
+                빠르게 성장하는 동남아시아를 시작으로
+                <br />
+                글로벌 시장 지속 확대
+              </div>
             </div>
-            <div id="btn-more-history">더보기</div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- section 8 -->
-        <section id="section8" class="about8 section">
-            <div class="container">
-                <div class="sub-title">성장 전략</div>
-                <div id="strategy-info" class="about-content">
-                    <div class="strategy-info-con">
-                        <div class="strategy-info-main">
-                            <div class="strategy-info-title">전략 1.</div>
-                            <div class="strategy-info-main-title">고객분석 솔루션 Add-On</div>
-                            <div class="strategy-info-bg-1"></div> 
-                            <div class="strategy-info-cont">글로벌 수준의 기술력과 경제성 확보!</div>
-                            <div class="strategy-info-desc">
-                                마케팅 자동화에서 고객분석 솔루션까지,
-                                <br>
-                                마케팅 전 영역의 프로세스 커버리지 확보
-                            </div>
-                        </div>
-                        <div class="strategy-info-main">
-                            <div class="strategy-info-title">전략 2.</div>
-                            <div class="strategy-info-main-title">금융 특화 Agentic AI</div>
-                            <div class="strategy-info-bg-2"></div> 
-                            <div class="strategy-info-cont">금융 분야 AI 에이전트 시장 선도!</div>
-                            <div class="strategy-info-desc">
-                                Agentic AI 기술을 기반으로
-                                <br>
-                                금융 분야의 다양한 업무 도메인으로 확장
-                            </div>
-                        </div>
-                        <div class="strategy-info-main">
-                            <div class="strategy-info-title">전략 3.</div>
-                            <div class="strategy-info-main-title">국가대표 AI 마케팅 솔루션</div>
-                            <div class="strategy-info-bg-3"></div> 
-                            <div class="strategy-info-cont">마케팅 자동화 솔루션 해외 진출 쾌거!</div>
-                            <div class="strategy-info-desc">
-                                빠르게 성장하는 동남아시아를 시작으로
-                                <br>
-                                글로벌 시장 지속 확대
-                            </div>
-                        </div> 
-                    </div>
-                </div>  
+    <!-- section 5 -->
+    <section id="section5" class="about5 section">
+      <div class="container about-con">
+        <div class="sub-title">고객사</div>
+        <!-- PC용 -->
+        <div class="about-cont client-cont">
+          <div class="client-header-con">
+            <div class="client-header-row">
+              <div class="client-ctgr sel" data-index="01">은행</div>
+              <div class="client-ctgr" data-index="02">카드</div>
+              <div class="client-ctgr" data-index="03">보험</div>
+              <div class="client-ctgr" data-index="04">증권</div>
+              <div class="client-ctgr" data-index="05">캐피탈</div>
             </div>
-        </section>
-
-        <!-- section 5 -->
-        <section id="section5" class="about5 section">
-            <div class="container about-con">
-                <div class="sub-title">고객사</div>
-                <!-- PC용 -->
-                <div class="about-cont client-cont">
-                    <div class="client-header-con">
-                        <div class="client-header-row">
-                            <div class="client-ctgr sel" data-index="01">은행</div>
-                            <div class="client-ctgr" data-index="02">카드</div>
-                            <div class="client-ctgr" data-index="03">보험</div>
-                            <div class="client-ctgr" data-index="04">증권</div>
-                            <div class="client-ctgr" data-index="05">캐피탈</div>
-                        </div>
-                        <div class="client-header-row">
-                            <div class="client-ctgr" data-index="06">저축은행</div>
-                            <div class="client-ctgr" data-index="07">지주</div>
-                            <div class="client-ctgr" data-index="08">유통·마케팅</div>
-                            <div class="client-ctgr" data-index="09">통신</div>
-                            <div class="client-ctgr" data-index="10">제조·서비스</div>
-                        </div>
-                    </div>
-                    <div id="client_con">
-                        <div class="client c01 sel">
-                            <div class="client-logos">
-                                <img src="../img/about/client/A_01.png" alt="국민은행">
-                                <img src="../img/about/client/A_02.png" alt="신한은행">
-                                <img src="../img/about/client/A_03.png" alt="하나은행">
-                                <img src="../img/about/client/A_04.svg" alt="우리은행">
-                                <img src="../img/about/client/A_05.png" alt="기업은행">
-                                <img src="../img/about/client/A_06.svg" alt="농협은행">
-                                <img src="../img/about/client/A_07.svg" alt="수협은행" style="margin-top:-3px;">
-                                <img src="../img/about/client/A_08.png" alt="대구은행">
-                                <img src="../img/about/client/A_09.svg" alt="광주은행">
-                                <img src="../img/about/client/A_10.png" alt="케이뱅크" style="transform: scale(0.8);">
-                                <img src="../img/about/client/A_11.png" alt="우체국예금" style="margin-top:-3px;">
-                                <img src="../img/about/client/A_12.png" alt="iM뱅크" style="transform: scale(1.3);">
-                            </div>
-                        </div> 
-                        <div class="client c02">
-                            <div class="client-logos">
-                                <img src="../img/about/client/B_01.png" alt="신한카드" style="transform: scale(1.5);">
-                                <img src="../img/about/client/B_02.svg" alt="삼성카드" style="transform: scale(0.8);">
-                                <img src="../img/about/client/B_03.png" alt="국민카드">
-                                <img src="../img/about/client/B_04.png" alt="현대카드">
-                                <img src="../img/about/client/B_05.png" alt="우리카드">
-                                <img src="../img/about/client/B_06.png" alt="롯데카드">
-                                <img src="../img/about/client/B_07.svg" alt="하나카드">
-                                <img src="../img/about/client/B_08.svg" alt="비씨카드">
-                                <img src="../img/about/client/B_09.png" alt="농협카드">
-                                <img src="../img/about/client/B_10.png" alt="IBK카드">
-                            </div>
-                        </div> 
-                        <div class="client c03">
-                            <div class="client-logos">
-                                <img src="../img/about/client/C_01.png" alt="삼성생명" style="transform: scale(0.75);">
-                                <img src="../img/about/client/C_02.png" alt="교보생명" style="margin-top:-3px;">
-                                <img src="../img/about/client/C_03.svg" alt="농협생명">
-                                <img src="../img/about/client/C_04.svg" alt="신한라이프">
-                                <img src="../img/about/client/C_05.svg" alt="푸본현대생명">
-                                <img src="../img/about/client/C_06.png" alt="삼성화재" style="transform: scale(0.9);">
-                                <img src="../img/about/client/C_07.svg" alt="현대해상">
-                                <img src="../img/about/client/C_08.png" alt="메리츠화재">
-                                <img src="../img/about/client/C_09.png" alt="흥국화재" style="transform: scale(1.3);">
-                                <img src="../img/about/client/C_10.svg" alt="우체국보험" style="margin-top:-8px;">
-                                <img src="../img/about/client/C_11.png" alt="동양생명">
-                            </div>
-                        </div> 
-                        <div class="client c04">
-                            <div class="client-logos">
-                                <img src="../img/about/client/D_01.png" alt="미래에셋증권" style="transform: scale(1.5);">
-                                <img src="../img/about/client/D_02.png" alt="NH투자증권">
-                                <img src="../img/about/client/D_03.svg" alt="한국투자증권">
-                                <img src="../img/about/client/D_04.png" alt="삼성증권" style="transform: scale(0.75);">
-                                <img src="../img/about/client/D_05.svg" alt="하나증권">
-                                <img src="../img/about/client/D_06.jpg" alt="신한금융투자" style="transform: scale(1.1);">
-                                <img src="../img/about/client/D_07.svg" alt="대신증권">
-                                <img src="../img/about/client/D_08.png" alt="IBK투자증권">
-                                <img src="../img/about/client/D_09.svg" alt="현대차증권" style="margin-top:-8px;">
-                                <img src="../img/about/client/D_10.png" alt="유진투자증권" style="transform: scale(1.2);">
-                                <img src="../img/about/client/D_11.png" alt="KB증권">
-                            </div>
-                        </div> 
-                        <div class="client c05">
-                            <div class="client-logos">
-                                <img src="../img/about/client/E_01.png" alt="현대캐피탈">
-                                <img src="../img/about/client/E_02.png" alt="모빌라이즈">
-                                <img src="../img/about/client/E_03.png" alt="우리금융캐피탈">
-                            </div>
-                        </div> 
-        
-                        <div class="client c06">
-                            <div class="client-logos">
-                                <img src="../img/about/client/F_01.svg" alt="OK저축은행">
-                                <img src="../img/about/client/F_02.png" alt="웰컴저축은행">
-                                <img src="../img/about/client/F_03.png" alt="KB저축은행">
-                            </div>
-                        </div> 
-        
-                        <div class="client c07">
-                            <div class="client-logos">
-                                <img src="../img/about/client/G_01.png" alt="KB금융지주">
-                                <img src="../img/about/client/G_02.svg" alt="하나금융지주">
-                            </div>
-                        </div> 
-        
-        
-                        <div class="client c08">
-                            <div class="client-logos">
-                                <img src="../img/about/client/H_01.png" alt="신세계">
-                                <img src="../img/about/client/H_02.svg" alt="SSG.COM">
-                                <img src="../img/about/client/H_03.svg" alt="홈플러스">
-                                <img src="../img/about/client/H_04.png" alt="CJ온스타일">
-                                <img src="../img/about/client/H_05.svg" alt="NS홈쇼핑">
-                                <img src="../img/about/client/H_06.png" alt="올리브영">
-                                <img src="../img/about/client/H_07.svg" alt="AKPLAZA">
-                                <img src="../img/about/client/H_08.png" alt="Secta9ine">
-                                <img src="../img/about/client/H_09.png" alt="NH멤버스">
-                                <img src="../img/about/client/H_10.png" alt="CJONE" style="transform: scale(1.4);">
-                                <img src="../img/about/client/H_11.png" alt="Kotra">
-                            </div>
-                        </div> 
-        
-                        <div class="client c09">
-                            <div class="client-logos">
-                                <img src="../img/about/client/I_01.png" alt="KT" style="transform: scale(0.6);">
-                                <img src="../img/about/client/I_02.png" alt="SK텔레콤" style="transform: scale(0.9); margin-top:1px;">
-                                <img src="../img/about/client/I_03.png" alt="SK브로드밴드" style="transform: scale(1.3);">
-                                <img src="../img/about/client/I_04.png" alt="SK플래닛">
-                                <img src="../img/about/client/I_05.svg" alt="LG헬로비전">
-                                <img src="../img/about/client/I_06.png" alt="DLIVE" style="transform: scale(0.8);">
-                                <img src="../img/about/client/I_07.png" alt="FPT베트남" style="transform: scale(1.1);">
-                            </div>
-                        </div> 
-        
-                        <div class="client c10">
-                            <div class="client-logos">
-                                <img src="../img/about/client/J_01.svg" alt="이랜드">
-                                <img src="../img/about/client/J_02.png" alt="YOUNGONE">
-                                <img src="../img/about/client/J_03.png" alt="NEPA">
-                                <img src="../img/about/client/J_04.png" alt="토니모리">
-                                <img src="../img/about/client/J_05.png" alt="까사미아">
-                                <img src="../img/about/client/J_06.svg" alt="하나투어">
-                                <img src="../img/about/client/J_07.png" alt="CGV" style="transform: scale(0.8);">
-                                <img src="../img/about/client/J_08.png" alt="CJ대한통운">
-                                <img src="../img/about/client/J_09.png" alt="메가박스">
-                                <img src="../img/about/client/J_10.png" alt="제주항공">
-                                <img src="../img/about/client/J_11.png" alt="GS엠비즈">
-                                <img src="../img/about/client/J_12.png" alt="경복대학교" style="transform: scale(1.4);">
-                                <img src="../img/about/client/J_13.png" alt="보건복지부">
-                                <img src="../img/about/client/J_14.png" alt="과학기술정보통신부" style="transform: scale(1.25);">
-                                <img src="../img/about/client/J_15.png" alt="삼성금융네트웍스">
-                                <img src="../img/about/client/J_16.png" alt="삼성모니모">
-                            </div>
-                        </div> 
-                    </div>
-                </div>
-                <!-- MOBILE용 -->
-                <div class="about-cont client-cont-mo">
-                    <div class="client-ctgr-mo">
-                        <div class="client-ctgr-header-mo">은행</div>
-                        <div class="client-mo">
-                            <div class="client-logos">
-                                <img src="../img/about/client/A_01.png" alt="국민은행">
-                                <img src="../img/about/client/A_02.png" alt="신한은행">
-                                <img src="../img/about/client/A_03.png" alt="하나은행">
-                                <img src="../img/about/client/A_04.svg" alt="우리은행">
-                                <img src="../img/about/client/A_05.png" alt="기업은행">
-                                <img src="../img/about/client/A_06.svg" alt="농협은행">
-                                <img src="../img/about/client/A_07.svg" alt="수협은행" style="margin-top:-3px;">
-                                <img src="../img/about/client/A_08.png" alt="대구은행">
-                                <img src="../img/about/client/A_09.svg" alt="광주은행">
-                                <img src="../img/about/client/A_10.png" alt="케이뱅크" style="transform: scale(0.8);">
-                                <img src="../img/about/client/A_11.png" alt="우체국예금" style="margin-top:-3px;">
-                                <img src="../img/about/client/A_12.png" alt="iM뱅크" style="transform: scale(1.3);">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="client-ctgr-mo">
-                        <div class="client-ctgr-header-mo">카드</div>
-                        <div class="client-mo">
-                            <div class="client-logos">
-                                <img src="../img/about/client/B_01.png" alt="신한카드" style="transform: scale(1.5);">
-                                <img src="../img/about/client/B_02.svg" alt="삼성카드" style="transform: scale(0.8);">
-                                <img src="../img/about/client/B_03.png" alt="국민카드">
-                                <img src="../img/about/client/B_04.png" alt="현대카드">
-                                <img src="../img/about/client/B_05.png" alt="우리카드">
-                                <img src="../img/about/client/B_06.png" alt="롯데카드">
-                                <img src="../img/about/client/B_07.svg" alt="하나카드">
-                                <img src="../img/about/client/B_08.svg" alt="비씨카드">
-                                <img src="../img/about/client/B_09.png" alt="농협카드">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="client-ctgr-mo">
-                        <div class="client-ctgr-header-mo">보험</div>
-                        <div class="client-mo">
-                            <div class="client-logos">
-                                <img src="../img/about/client/C_01.png" alt="삼성생명" style="transform: scale(0.75);">
-                                <img src="../img/about/client/C_02.png" alt="교보생명" style="margin-top:-3px;">
-                                <img src="../img/about/client/C_03.svg" alt="농협생명">
-                                <img src="../img/about/client/C_04.svg" alt="신한라이프">
-                                <img src="../img/about/client/C_05.svg" alt="푸본현대생명">
-                                <img src="../img/about/client/C_06.png" alt="삼성화재" style="transform: scale(0.9);">
-                                <img src="../img/about/client/C_07.svg" alt="현대해상">
-                                <img src="../img/about/client/C_08.png" alt="메리츠화재">
-                                <img src="../img/about/client/C_09.png" alt="흥국화재" style="transform: scale(1.3);">
-                                <img src="../img/about/client/C_10.svg" alt="우체국보험" style="margin-top:-8px;">
-                                <img src="../img/about/client/C_11.png" alt="동양생명">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="client-ctgr-mo">
-                        <div class="client-ctgr-header-mo">증권</div>
-                        <div class="client-mo">
-                            <div class="client-logos">
-                                <img src="../img/about/client/D_01.png" alt="미래에셋증권" style="transform: scale(1.5);">
-                                <img src="../img/about/client/D_02.png" alt="NH투자증권">
-                                <img src="../img/about/client/D_03.svg" alt="한국투자증권">
-                                <img src="../img/about/client/D_04.png" alt="삼성증권" style="transform: scale(0.75);">
-                                <img src="../img/about/client/D_05.svg" alt="하나증권">
-                                <img src="../img/about/client/D_06.jpg" alt="신한금융투자" style="transform: scale(1.1);">
-                                <img src="../img/about/client/D_07.svg" alt="대신증권">
-                                <img src="../img/about/client/D_08.png" alt="IBK투자증권">
-                                <img src="../img/about/client/D_09.svg" alt="현대차증권" style="margin-top:-8px;">
-                                <img src="../img/about/client/D_10.png" alt="유진투자증권" style="transform: scale(1.2);">
-                                <img src="../img/about/client/D_11.png" alt="KB증권">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="client-ctgr-mo">
-                        <div class="client-ctgr-header-mo">캐피탈</div>
-                        <div class="client-mo">
-                            <div class="client-logos">
-                                <img src="../img/about/client/E_01.png" alt="현대캐피탈">
-                                <img src="../img/about/client/E_02.png" alt="모빌라이즈">
-                                <img src="../img/about/client/E_03.png" alt="우리금융캐피탈">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="client-ctgr-mo">
-                        <div class="client-ctgr-header-mo">저축은행</div>
-                        <div class="client-mo">
-                            <div class="client-logos">
-                                <img src="../img/about/client/F_01.svg" alt="OK저축은행">
-                                <img src="../img/about/client/F_02.png" alt="웰컴저축은행" style="top: 4px;">
-                                <img src="../img/about/client/F_03.png" alt="KB저축은행">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="client-ctgr-mo">
-                        <div class="client-ctgr-header-mo">지주</div>
-                        <div class="client-mo">
-                            <div class="client-logos">
-                                <img src="../img/about/client/G_01.png" alt="KB금융지주">
-                                <img src="../img/about/client/G_02.svg" alt="하나금융지주">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="client-ctgr-mo">
-                        <div class="client-ctgr-header-mo">유통·마케팅</div>
-                        <div class="client-mo">
-                            <div class="client-logos">
-                                <img src="../img/about/client/H_01.png" alt="신세계">
-                                <img src="../img/about/client/H_02.svg" alt="SSG.COM">
-                                <img src="../img/about/client/H_03.svg" alt="홈플러스">
-                                <img src="../img/about/client/H_04.png" alt="CJ온스타일">
-                                <img src="../img/about/client/H_05.svg" alt="NS홈쇼핑">
-                                <img src="../img/about/client/H_06.png" alt="올리브영">
-                                <img src="../img/about/client/H_07.svg" alt="AKPLAZA">
-                                <img src="../img/about/client/H_08.png" alt="Secta9ine">
-                                <img src="../img/about/client/H_09.png" alt="NH멤버스">
-                                <img src="../img/about/client/H_10.png" alt="CJONE" style="transform: scale(1.4);">
-                                <img src="../img/about/client/H_11.png" alt="Kotra">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="client-ctgr-mo">
-                        <div class="client-ctgr-header-mo">통신</div>
-                        <div class="client-mo">
-                            <div class="client-logos">
-                                <img src="../img/about/client/I_01.png" alt="KT" style="transform: scale(0.6);">
-                                <img src="../img/about/client/I_02.png" alt="SK텔레콤" style="transform: scale(0.9); margin-top:1px;">
-                                <img src="../img/about/client/I_03.png" alt="SK브로드밴드" style="transform: scale(1.3);">
-                                <img src="../img/about/client/I_04.png" alt="SK플래닛">
-                                <img src="../img/about/client/I_05.svg" alt="LG헬로비전">
-                                <img src="../img/about/client/I_06.png" alt="DLIVE" style="transform: scale(0.8);">
-                                <img src="../img/about/client/I_07.png" alt="FPT베트남" style="transform: scale(1.1);">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="client-ctgr-mo">
-                        <div class="client-ctgr-header-mo">제조·서비스</div>
-                        <div class="client-mo">
-                            <div class="client-logos">
-                                <img src="../img/about/client/J_01.svg" alt="이랜드">
-                                <img src="../img/about/client/J_02.png" alt="YOUNGONE">
-                                <img src="../img/about/client/J_03.png" alt="NEPA">
-                                <img src="../img/about/client/J_04.png" alt="토니모리">
-                                <img src="../img/about/client/J_05.png" alt="까사미아">
-                                <img src="../img/about/client/J_06.svg" alt="하나투어">
-                                <img src="../img/about/client/J_07.png" alt="CGV" style="transform: scale(0.8);">
-                                <img src="../img/about/client/J_08.png" alt="CJ대한통운">
-                                <img src="../img/about/client/J_09.png" alt="메가박스">
-                                <img src="../img/about/client/J_10.png" alt="제주항공">
-                                <img src="../img/about/client/J_11.png" alt="GS엠비즈">
-                                <img src="../img/about/client/J_12.png" alt="경복대학교" style="transform: scale(1.4);">
-                                <img src="../img/about/client/J_13.png" alt="보건복지부">
-                                <img src="../img/about/client/J_14.png" alt="과학기술정보통신부" style="transform: scale(1.25);">
-                                <img src="../img/about/client/J_15.png" alt="삼성금융네트웍스">
-                                <img src="../img/about/client/J_16.png" alt="삼성모니모">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="client-header-row">
+              <div class="client-ctgr" data-index="06">저축은행</div>
+              <div class="client-ctgr" data-index="07">지주</div>
+              <div class="client-ctgr" data-index="08">유통·마케팅</div>
+              <div class="client-ctgr" data-index="09">통신</div>
+              <div class="client-ctgr" data-index="10">제조·서비스</div>
             </div>
-        </section>
-
-        <!-- section 6 -->
-        <section id="section6" class="about6 section">
-            <div class="container about-con">
-                <div class="sub-title">오시는 길</div>
-                <div id="contact_map">
-                    <div id="map"></div>
-                </div>
-                <div class="company-path-wrap">
-                    <div class="company-traffic">
-                        <div class="traffic-up">
-                            <div class="traffic-left">
-                                <div class="traffic-title">주소</div>
-                                <div class="traffic-desc">서울특별시 영등포구 여의대로 14, 12층 (여의도동, KT여의도타워)</div>
-                            </div>
-                            <div class="traffic-right">
-                                <div class="traffic-title">지하철</div>
-                                <div class="traffic-desc">5호선, 9호선 <span>여의도역</span> 2번 출구(금융감독원) 도보 10분거리</div>
-                            </div>
-                        </div>
-                        <div class="traffic">
-                            <div class="traffic-title">버스</div>
-                            <div class="traffic-bus bus-blue">간선
-                                <div class="traffic-desc">160, 162, 360, 503, 600, 662</div>
-                            </div>
-                            <div class="traffic-bus bus-green">지선
-                                <div class="traffic-desc">5012, 5615, 5618, 5713, 6513, 6628, 6649</div>
-                            </div>
-                            <div class="traffic-bus">일반
-                                <div class="traffic-desc">10, 11-1, 11-2, 510, 530, 83, 88, 88-1</div>
-                            </div>
-                            <div class="traffic-bus">좌석
-                                <div class="traffic-desc">300, 301, 320, 700, 871</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div id="client_con">
+            <div class="client c01 sel">
+              <div class="client-logos">
+                <img src="../img/about/client/A_01.png" alt="국민은행" />
+                <img src="../img/about/client/A_02.png" alt="신한은행" />
+                <img src="../img/about/client/A_03.png" alt="하나은행" />
+                <img src="../img/about/client/A_04.svg" alt="우리은행" />
+                <img src="../img/about/client/A_05.png" alt="기업은행" />
+                <img src="../img/about/client/A_06.svg" alt="농협은행" />
+                <img
+                  src="../img/about/client/A_07.svg"
+                  alt="수협은행"
+                  style="margin-top: -3px"
+                />
+                <img src="../img/about/client/A_08.png" alt="대구은행" />
+                <img src="../img/about/client/A_09.svg" alt="광주은행" />
+                <img
+                  src="../img/about/client/A_10.png"
+                  alt="케이뱅크"
+                  style="transform: scale(0.8)"
+                />
+                <img
+                  src="../img/about/client/A_11.png"
+                  alt="우체국예금"
+                  style="margin-top: -3px"
+                />
+                <img
+                  src="../img/about/client/A_12.png"
+                  alt="iM뱅크"
+                  style="transform: scale(1.3)"
+                />
+              </div>
             </div>
-        </section>
-        
+            <div class="client c02">
+              <div class="client-logos">
+                <img
+                  src="../img/about/client/B_01.png"
+                  alt="신한카드"
+                  style="transform: scale(1.5)"
+                />
+                <img
+                  src="../img/about/client/B_02.svg"
+                  alt="삼성카드"
+                  style="transform: scale(0.8)"
+                />
+                <img src="../img/about/client/B_03.png" alt="국민카드" />
+                <img src="../img/about/client/B_04.png" alt="현대카드" />
+                <img src="../img/about/client/B_05.png" alt="우리카드" />
+                <img src="../img/about/client/B_06.png" alt="롯데카드" />
+                <img src="../img/about/client/B_07.svg" alt="하나카드" />
+                <img src="../img/about/client/B_08.svg" alt="비씨카드" />
+                <img src="../img/about/client/B_09.png" alt="농협카드" />
+                <img src="../img/about/client/B_10.png" alt="IBK카드" />
+              </div>
+            </div>
+            <div class="client c03">
+              <div class="client-logos">
+                <img
+                  src="../img/about/client/C_01.png"
+                  alt="삼성생명"
+                  style="transform: scale(0.75)"
+                />
+                <img
+                  src="../img/about/client/C_02.png"
+                  alt="교보생명"
+                  style="margin-top: -3px"
+                />
+                <img src="../img/about/client/C_03.svg" alt="농협생명" />
+                <img src="../img/about/client/C_04.svg" alt="신한라이프" />
+                <img src="../img/about/client/C_05.svg" alt="푸본현대생명" />
+                <img
+                  src="../img/about/client/C_06.png"
+                  alt="삼성화재"
+                  style="transform: scale(0.9)"
+                />
+                <img src="../img/about/client/C_07.svg" alt="현대해상" />
+                <img src="../img/about/client/C_08.png" alt="메리츠화재" />
+                <img
+                  src="../img/about/client/C_09.png"
+                  alt="흥국화재"
+                  style="transform: scale(1.3)"
+                />
+                <img
+                  src="../img/about/client/C_10.svg"
+                  alt="우체국보험"
+                  style="margin-top: -8px"
+                />
+                <img src="../img/about/client/C_11.png" alt="동양생명" />
+              </div>
+            </div>
+            <div class="client c04">
+              <div class="client-logos">
+                <img
+                  src="../img/about/client/D_01.png"
+                  alt="미래에셋증권"
+                  style="transform: scale(1.5)"
+                />
+                <img src="../img/about/client/D_02.png" alt="NH투자증권" />
+                <img src="../img/about/client/D_03.svg" alt="한국투자증권" />
+                <img
+                  src="../img/about/client/D_04.png"
+                  alt="삼성증권"
+                  style="transform: scale(0.75)"
+                />
+                <img src="../img/about/client/D_05.svg" alt="하나증권" />
+                <img
+                  src="../img/about/client/D_06.jpg"
+                  alt="신한금융투자"
+                  style="transform: scale(1.1)"
+                />
+                <img src="../img/about/client/D_07.svg" alt="대신증권" />
+                <img src="../img/about/client/D_08.png" alt="IBK투자증권" />
+                <img
+                  src="../img/about/client/D_09.svg"
+                  alt="현대차증권"
+                  style="margin-top: -8px"
+                />
+                <img
+                  src="../img/about/client/D_10.png"
+                  alt="유진투자증권"
+                  style="transform: scale(1.2)"
+                />
+                <img src="../img/about/client/D_11.png" alt="KB증권" />
+              </div>
+            </div>
+            <div class="client c05">
+              <div class="client-logos">
+                <img src="../img/about/client/E_01.png" alt="현대캐피탈" />
+                <img src="../img/about/client/E_02.png" alt="모빌라이즈" />
+                <img src="../img/about/client/E_03.png" alt="우리금융캐피탈" />
+              </div>
+            </div>
+
+            <div class="client c06">
+              <div class="client-logos">
+                <img src="../img/about/client/F_01.svg" alt="OK저축은행" />
+                <img src="../img/about/client/F_02.png" alt="웰컴저축은행" />
+                <img src="../img/about/client/F_03.png" alt="KB저축은행" />
+              </div>
+            </div>
+
+            <div class="client c07">
+              <div class="client-logos">
+                <img src="../img/about/client/G_01.png" alt="KB금융지주" />
+                <img src="../img/about/client/G_02.svg" alt="하나금융지주" />
+              </div>
+            </div>
+
+            <div class="client c08">
+              <div class="client-logos">
+                <img src="../img/about/client/H_01.png" alt="신세계" />
+                <img src="../img/about/client/H_02.svg" alt="SSG.COM" />
+                <img src="../img/about/client/H_03.svg" alt="홈플러스" />
+                <img src="../img/about/client/H_04.png" alt="CJ온스타일" />
+                <img src="../img/about/client/H_05.svg" alt="NS홈쇼핑" />
+                <img src="../img/about/client/H_06.png" alt="올리브영" />
+                <img src="../img/about/client/H_07.svg" alt="AKPLAZA" />
+                <img src="../img/about/client/H_08.png" alt="Secta9ine" />
+                <img src="../img/about/client/H_09.png" alt="NH멤버스" />
+                <img
+                  src="../img/about/client/H_10.png"
+                  alt="CJONE"
+                  style="transform: scale(1.4)"
+                />
+                <img src="../img/about/client/H_11.png" alt="Kotra" />
+              </div>
+            </div>
+
+            <div class="client c09">
+              <div class="client-logos">
+                <img
+                  src="../img/about/client/I_01.png"
+                  alt="KT"
+                  style="transform: scale(0.6)"
+                />
+                <img
+                  src="../img/about/client/I_02.png"
+                  alt="SK텔레콤"
+                  style="transform: scale(0.9); margin-top: 1px"
+                />
+                <img
+                  src="../img/about/client/I_03.png"
+                  alt="SK브로드밴드"
+                  style="transform: scale(1.3)"
+                />
+                <img src="../img/about/client/I_04.png" alt="SK플래닛" />
+                <img src="../img/about/client/I_05.svg" alt="LG헬로비전" />
+                <img
+                  src="../img/about/client/I_06.png"
+                  alt="DLIVE"
+                  style="transform: scale(0.8)"
+                />
+                <img
+                  src="../img/about/client/I_07.png"
+                  alt="FPT베트남"
+                  style="transform: scale(1.1)"
+                />
+              </div>
+            </div>
+
+            <div class="client c10">
+              <div class="client-logos">
+                <img src="../img/about/client/J_01.svg" alt="이랜드" />
+                <img src="../img/about/client/J_02.png" alt="YOUNGONE" />
+                <img src="../img/about/client/J_03.png" alt="NEPA" />
+                <img src="../img/about/client/J_04.png" alt="토니모리" />
+                <img src="../img/about/client/J_05.png" alt="까사미아" />
+                <img src="../img/about/client/J_06.svg" alt="하나투어" />
+                <img
+                  src="../img/about/client/J_07.png"
+                  alt="CGV"
+                  style="transform: scale(0.8)"
+                />
+                <img src="../img/about/client/J_08.png" alt="CJ대한통운" />
+                <img src="../img/about/client/J_09.png" alt="메가박스" />
+                <img src="../img/about/client/J_10.png" alt="제주항공" />
+                <img src="../img/about/client/J_11.png" alt="GS엠비즈" />
+                <img
+                  src="../img/about/client/J_12.png"
+                  alt="경복대학교"
+                  style="transform: scale(1.4)"
+                />
+                <img src="../img/about/client/J_13.png" alt="보건복지부" />
+                <img
+                  src="../img/about/client/J_14.png"
+                  alt="과학기술정보통신부"
+                  style="transform: scale(1.25)"
+                />
+                <img
+                  src="../img/about/client/J_15.png"
+                  alt="삼성금융네트웍스"
+                />
+                <img src="../img/about/client/J_16.png" alt="삼성모니모" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- MOBILE용 -->
+        <div class="about-cont client-cont-mo">
+          <div class="client-ctgr-mo">
+            <div class="client-ctgr-header-mo">은행</div>
+            <div class="client-mo">
+              <div class="client-logos">
+                <img src="../img/about/client/A_01.png" alt="국민은행" />
+                <img src="../img/about/client/A_02.png" alt="신한은행" />
+                <img src="../img/about/client/A_03.png" alt="하나은행" />
+                <img src="../img/about/client/A_04.svg" alt="우리은행" />
+                <img src="../img/about/client/A_05.png" alt="기업은행" />
+                <img src="../img/about/client/A_06.svg" alt="농협은행" />
+                <img
+                  src="../img/about/client/A_07.svg"
+                  alt="수협은행"
+                  style="margin-top: -3px"
+                />
+                <img src="../img/about/client/A_08.png" alt="대구은행" />
+                <img src="../img/about/client/A_09.svg" alt="광주은행" />
+                <img
+                  src="../img/about/client/A_10.png"
+                  alt="케이뱅크"
+                  style="transform: scale(0.8)"
+                />
+                <img
+                  src="../img/about/client/A_11.png"
+                  alt="우체국예금"
+                  style="margin-top: -3px"
+                />
+                <img
+                  src="../img/about/client/A_12.png"
+                  alt="iM뱅크"
+                  style="transform: scale(1.3)"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="client-ctgr-mo">
+            <div class="client-ctgr-header-mo">카드</div>
+            <div class="client-mo">
+              <div class="client-logos">
+                <img
+                  src="../img/about/client/B_01.png"
+                  alt="신한카드"
+                  style="transform: scale(1.5)"
+                />
+                <img
+                  src="../img/about/client/B_02.svg"
+                  alt="삼성카드"
+                  style="transform: scale(0.8)"
+                />
+                <img src="../img/about/client/B_03.png" alt="국민카드" />
+                <img src="../img/about/client/B_04.png" alt="현대카드" />
+                <img src="../img/about/client/B_05.png" alt="우리카드" />
+                <img src="../img/about/client/B_06.png" alt="롯데카드" />
+                <img src="../img/about/client/B_07.svg" alt="하나카드" />
+                <img src="../img/about/client/B_08.svg" alt="비씨카드" />
+                <img src="../img/about/client/B_09.png" alt="농협카드" />
+              </div>
+            </div>
+          </div>
+          <div class="client-ctgr-mo">
+            <div class="client-ctgr-header-mo">보험</div>
+            <div class="client-mo">
+              <div class="client-logos">
+                <img
+                  src="../img/about/client/C_01.png"
+                  alt="삼성생명"
+                  style="transform: scale(0.75)"
+                />
+                <img
+                  src="../img/about/client/C_02.png"
+                  alt="교보생명"
+                  style="margin-top: -3px"
+                />
+                <img src="../img/about/client/C_03.svg" alt="농협생명" />
+                <img src="../img/about/client/C_04.svg" alt="신한라이프" />
+                <img src="../img/about/client/C_05.svg" alt="푸본현대생명" />
+                <img
+                  src="../img/about/client/C_06.png"
+                  alt="삼성화재"
+                  style="transform: scale(0.9)"
+                />
+                <img src="../img/about/client/C_07.svg" alt="현대해상" />
+                <img src="../img/about/client/C_08.png" alt="메리츠화재" />
+                <img
+                  src="../img/about/client/C_09.png"
+                  alt="흥국화재"
+                  style="transform: scale(1.3)"
+                />
+                <img
+                  src="../img/about/client/C_10.svg"
+                  alt="우체국보험"
+                  style="margin-top: -8px"
+                />
+                <img src="../img/about/client/C_11.png" alt="동양생명" />
+              </div>
+            </div>
+          </div>
+          <div class="client-ctgr-mo">
+            <div class="client-ctgr-header-mo">증권</div>
+            <div class="client-mo">
+              <div class="client-logos">
+                <img
+                  src="../img/about/client/D_01.png"
+                  alt="미래에셋증권"
+                  style="transform: scale(1.5)"
+                />
+                <img src="../img/about/client/D_02.png" alt="NH투자증권" />
+                <img src="../img/about/client/D_03.svg" alt="한국투자증권" />
+                <img
+                  src="../img/about/client/D_04.png"
+                  alt="삼성증권"
+                  style="transform: scale(0.75)"
+                />
+                <img src="../img/about/client/D_05.svg" alt="하나증권" />
+                <img
+                  src="../img/about/client/D_06.jpg"
+                  alt="신한금융투자"
+                  style="transform: scale(1.1)"
+                />
+                <img src="../img/about/client/D_07.svg" alt="대신증권" />
+                <img src="../img/about/client/D_08.png" alt="IBK투자증권" />
+                <img
+                  src="../img/about/client/D_09.svg"
+                  alt="현대차증권"
+                  style="margin-top: -8px"
+                />
+                <img
+                  src="../img/about/client/D_10.png"
+                  alt="유진투자증권"
+                  style="transform: scale(1.2)"
+                />
+                <img src="../img/about/client/D_11.png" alt="KB증권" />
+              </div>
+            </div>
+          </div>
+          <div class="client-ctgr-mo">
+            <div class="client-ctgr-header-mo">캐피탈</div>
+            <div class="client-mo">
+              <div class="client-logos">
+                <img src="../img/about/client/E_01.png" alt="현대캐피탈" />
+                <img src="../img/about/client/E_02.png" alt="모빌라이즈" />
+                <img src="../img/about/client/E_03.png" alt="우리금융캐피탈" />
+              </div>
+            </div>
+          </div>
+
+          <div class="client-ctgr-mo">
+            <div class="client-ctgr-header-mo">저축은행</div>
+            <div class="client-mo">
+              <div class="client-logos">
+                <img src="../img/about/client/F_01.svg" alt="OK저축은행" />
+                <img
+                  src="../img/about/client/F_02.png"
+                  alt="웰컴저축은행"
+                  style="top: 4px"
+                />
+                <img src="../img/about/client/F_03.png" alt="KB저축은행" />
+              </div>
+            </div>
+          </div>
+          <div class="client-ctgr-mo">
+            <div class="client-ctgr-header-mo">지주</div>
+            <div class="client-mo">
+              <div class="client-logos">
+                <img src="../img/about/client/G_01.png" alt="KB금융지주" />
+                <img src="../img/about/client/G_02.svg" alt="하나금융지주" />
+              </div>
+            </div>
+          </div>
+          <div class="client-ctgr-mo">
+            <div class="client-ctgr-header-mo">유통·마케팅</div>
+            <div class="client-mo">
+              <div class="client-logos">
+                <img src="../img/about/client/H_01.png" alt="신세계" />
+                <img src="../img/about/client/H_02.svg" alt="SSG.COM" />
+                <img src="../img/about/client/H_03.svg" alt="홈플러스" />
+                <img src="../img/about/client/H_04.png" alt="CJ온스타일" />
+                <img src="../img/about/client/H_05.svg" alt="NS홈쇼핑" />
+                <img src="../img/about/client/H_06.png" alt="올리브영" />
+                <img src="../img/about/client/H_07.svg" alt="AKPLAZA" />
+                <img src="../img/about/client/H_08.png" alt="Secta9ine" />
+                <img src="../img/about/client/H_09.png" alt="NH멤버스" />
+                <img
+                  src="../img/about/client/H_10.png"
+                  alt="CJONE"
+                  style="transform: scale(1.4)"
+                />
+                <img src="../img/about/client/H_11.png" alt="Kotra" />
+              </div>
+            </div>
+          </div>
+          <div class="client-ctgr-mo">
+            <div class="client-ctgr-header-mo">통신</div>
+            <div class="client-mo">
+              <div class="client-logos">
+                <img
+                  src="../img/about/client/I_01.png"
+                  alt="KT"
+                  style="transform: scale(0.6)"
+                />
+                <img
+                  src="../img/about/client/I_02.png"
+                  alt="SK텔레콤"
+                  style="transform: scale(0.9); margin-top: 1px"
+                />
+                <img
+                  src="../img/about/client/I_03.png"
+                  alt="SK브로드밴드"
+                  style="transform: scale(1.3)"
+                />
+                <img src="../img/about/client/I_04.png" alt="SK플래닛" />
+                <img src="../img/about/client/I_05.svg" alt="LG헬로비전" />
+                <img
+                  src="../img/about/client/I_06.png"
+                  alt="DLIVE"
+                  style="transform: scale(0.8)"
+                />
+                <img
+                  src="../img/about/client/I_07.png"
+                  alt="FPT베트남"
+                  style="transform: scale(1.1)"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="client-ctgr-mo">
+            <div class="client-ctgr-header-mo">제조·서비스</div>
+            <div class="client-mo">
+              <div class="client-logos">
+                <img src="../img/about/client/J_01.svg" alt="이랜드" />
+                <img src="../img/about/client/J_02.png" alt="YOUNGONE" />
+                <img src="../img/about/client/J_03.png" alt="NEPA" />
+                <img src="../img/about/client/J_04.png" alt="토니모리" />
+                <img src="../img/about/client/J_05.png" alt="까사미아" />
+                <img src="../img/about/client/J_06.svg" alt="하나투어" />
+                <img
+                  src="../img/about/client/J_07.png"
+                  alt="CGV"
+                  style="transform: scale(0.8)"
+                />
+                <img src="../img/about/client/J_08.png" alt="CJ대한통운" />
+                <img src="../img/about/client/J_09.png" alt="메가박스" />
+                <img src="../img/about/client/J_10.png" alt="제주항공" />
+                <img src="../img/about/client/J_11.png" alt="GS엠비즈" />
+                <img
+                  src="../img/about/client/J_12.png"
+                  alt="경복대학교"
+                  style="transform: scale(1.4)"
+                />
+                <img src="../img/about/client/J_13.png" alt="보건복지부" />
+                <img
+                  src="../img/about/client/J_14.png"
+                  alt="과학기술정보통신부"
+                  style="transform: scale(1.25)"
+                />
+                <img
+                  src="../img/about/client/J_15.png"
+                  alt="삼성금융네트웍스"
+                />
+                <img src="../img/about/client/J_16.png" alt="삼성모니모" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- section 6 -->
+    <section id="section6" class="about6 section">
+      <div class="container about-con">
+        <div class="sub-title">오시는 길</div>
+        <div id="contact_map">
+          <div id="map"></div>
+        </div>
+        <div class="company-path-wrap">
+          <div class="company-traffic">
+            <div class="traffic-up">
+              <div class="traffic-left">
+                <div class="traffic-title">주소</div>
+                <div class="traffic-desc">
+                  서울특별시 영등포구 여의대로 14, 12층 (여의도동, KT여의도타워)
+                </div>
+              </div>
+              <div class="traffic-right">
+                <div class="traffic-title">지하철</div>
+                <div class="traffic-desc">
+                  5호선, 9호선 <span>여의도역</span> 2번 출구(금융감독원) 도보
+                  10분거리
+                </div>
+              </div>
+            </div>
+            <div class="traffic">
+              <div class="traffic-title">버스</div>
+              <div class="traffic-bus bus-blue">
+                간선
+                <div class="traffic-desc">160, 162, 360, 503, 600, 662</div>
+              </div>
+              <div class="traffic-bus bus-green">
+                지선
+                <div class="traffic-desc">
+                  5012, 5615, 5618, 5713, 6513, 6628, 6649
+                </div>
+              </div>
+              <div class="traffic-bus">
+                일반
+                <div class="traffic-desc">
+                  10, 11-1, 11-2, 510, 530, 83, 88, 88-1
+                </div>
+              </div>
+              <div class="traffic-bus">
+                좌석
+                <div class="traffic-desc">300, 301, 320, 700, 871</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer>
-        <script>loadHTML("footer.html");</script>
+      <script>
+        loadHTML("footer.html");
+      </script>
     </footer>
-</body>
+  </body>
 </html>

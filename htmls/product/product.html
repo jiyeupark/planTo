@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>오브젠</title>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>플랜투 비즈니스 컨설팅</title>
+
     <!-- js -->
     <script type="text/javascript" src="../../js/include.js"></script>
     <script type="text/javascript" src="../../js/jquery/jquery.min.js"></script>
@@ -16,401 +16,422 @@
     <link href="../../css/product.css" rel="stylesheet" />
 
     <style>
-        .page {
-            padding-top: 60px;
-            padding-bottom: 50px;
-        }
-        .page > div {
-            position: relative;
-        }
+      .page {
+        padding-top: 60px;
+        padding-bottom: 50px;
+      }
+      .page > div {
+        position: relative;
+      }
 
-        .sub-title2 {
-            font-size: 38px;
-        }
+      .sub-title2 {
+        font-size: 38px;
+      }
 
+      .page1 {
+        padding-top: 130px;
+      }
+      .page1 .page-cont {
+        padding-top: 75px;
+        max-width: 1092px !important;
+      }
+      .page-cont img {
+        width: 100%;
+      }
 
-        .page1 {
-            padding-top: 130px;
-        }
-        .page1 .page-cont {
-            padding-top: 75px;
-            max-width: 1092px !important;
-        }
-        .page-cont img {
-            width: 100%;
-        }
+      .page2 {
+        background-color: #000000;
+        position: relative;
+        height: 483px;
+        box-sizing: border-box;
+      }
+      .page2::before {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        content: "";
+        background-image: url("../../img/product/back.jpg");
+        background-size: 100% 140%;
+        background-position-y: bottom;
+        opacity: 0.25;
+      }
+      .page2 .sub-title2 {
+        color: var(--obz-text-dark-white);
+        font-weight: 600;
+      }
 
+      .feature-card {
+        background-color: transparent;
+        border: 4px solid var(--obz-border-normal);
+      }
+      .feature-card .feature-card-caption {
+        color: var(--obz-main-accent);
+      }
+      .feature-card .feature-card-title {
+        color: var(--obz-text-dark-primary);
+        font-weight: 600;
+      }
+      .feature-card .feature-card-desc {
+        color: var(--obz-text-dark-secondary);
+        font-weight: 400;
+      }
 
-        .page2 {
-            background-color: #000000;
-            position: relative;
-            height: 483px;
-            box-sizing: border-box;
-        }
-        .page2::before {
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            content: "";
-            background-image: url("../../img/product/back.jpg");
-            background-size: 100% 140%;
-            background-position-y: bottom;
-            opacity: .25;
-        }
-        .page2 .sub-title2 {
-            color: var(--obz-text-dark-white);
-            font-weight: 600;
-        }
+      .page3 {
+        padding: 0px;
+      }
+      .page3 .sub-title2 {
+        padding: 21px 0px;
+        background-color: var(--obz-background-dark);
+        color: var(--obz-text-dark-primary);
+        font-weight: 600;
+      }
+      .page3 .sub-title2 > div {
+        font-size: inherit;
+        color: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+        max-width: 1248px;
+        margin: 0 auto;
+        text-align: left;
+      }
+      .page3 .page-cont {
+        padding-bottom: 0px;
+      }
+      .product-main .page3 .product-card-cont {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: start;
+        margin: 0px;
+      }
+      .product-main .page3 .product-card {
+        position: relative;
+        width: 304px;
+        height: 240px;
+        background: #ffffff;
+        padding: 20px 27px;
+        box-sizing: border-box;
+        border-left: 2px solid var(--obz-border-normal);
+      }
+      .product-main .page3 .product-card .product-card-desc {
+        color: var(--obz-text-light-secondary);
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+      .product-main .page3 .product-card .product-card-caption {
+        color: var(--obz-main-primary);
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 15px;
+      }
+      .product-main .page3 .product-card .product-card-title {
+        color: var(--obz-text-light-primary);
+        font-size: 32px;
+        font-weight: 700;
+        margin-top: 5px;
+      }
+      .product-main .page3 .product-card .product-card-icon {
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        right: 12px;
+        bottom: 10px;
+        opacity: 0;
+      }
+      .product-main .page3 .product-card .product-card-icon svg {
+        width: 100%;
+        height: 100%;
+      }
+      .product-main .page3 .product-card .product-card-icon path {
+        fill: #ffffff;
+      }
 
+      .product-main .page3 .product-card:hover {
+        background-color: var(--obz-main-secondary);
+      }
+      .product-main .page3 .product-card:hover .product-card-desc {
+        color: var(--obz-text-dark-secondary);
+        font-weight: 500;
+      }
+      .product-main .page3 .product-card:hover .product-card-caption {
+        color: var(--obz-main-accent);
+      }
+      .product-main .page3 .product-card:hover .product-card-title {
+        color: var(--obz-text-dark-primary);
+        font-weight: 600;
+      }
+      .product-main .page3 .product-card:hover .product-card-icon {
+        opacity: 1;
+      }
 
-        .feature-card {
-            background-color: transparent;
-            border: 4px solid var(--obz-border-normal);
-        }
-        .feature-card .feature-card-caption {
-            color: var(--obz-main-accent);
-        }
-        .feature-card .feature-card-title {
-            color: var(--obz-text-dark-primary);
-            font-weight: 600;
-        }
-        .feature-card .feature-card-desc {
-            color: var(--obz-text-dark-secondary);
-            font-weight: 400;
-        }
-
-
-        .page3 {
-            padding: 0px;
-        }
-        .page3 .sub-title2 {
-            padding: 21px 0px;
-            background-color: var(--obz-background-dark);   
-            color: var(--obz-text-dark-primary);
-            font-weight: 600;
-        }
-        .page3 .sub-title2>div {
-            font-size: inherit;
-            color: inherit;
-            font-family: inherit;
-            font-weight: inherit;
-            max-width: 1248px;
-            margin: 0 auto;
-            text-align: left;
-        }
-        .page3 .page-cont {
-            padding-bottom: 0px;
-        }
-        .product-main .page3 .product-card-cont {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-            justify-content: start;
-            margin: 0px;
-        }
-        .product-main .page3 .product-card {
-            position: relative;
-            width: 304px;
-            height: 240px;
-            background: #ffffff;
-            padding: 20px 27px;
-            box-sizing: border-box;
-            border-left: 2px solid var(--obz-border-normal);
-        }
-        .product-main .page3 .product-card .product-card-desc {
-            color: var(--obz-text-light-secondary);
-            font-size: 20px;
-            font-weight: 600;
-            line-height: 1.5;
-        }
-        .product-main .page3 .product-card .product-card-caption {
-            color: var(--obz-main-primary);
-            font-size: 18px;
-            font-weight: 600;
-            margin-top: 15px;
-        }
-        .product-main .page3 .product-card .product-card-title {
-            color: var(--obz-text-light-primary);
-            font-size: 32px;
-            font-weight: 700;
-            margin-top: 5px;
-        }
-        .product-main .page3 .product-card .product-card-icon {
-            position: absolute;
-            width: 48px;
-            height: 48px;
-            right: 12px;
-            bottom: 10px;
-            opacity: 0;
-        }
-        .product-main .page3 .product-card .product-card-icon svg {
-            width: 100%;
-            height: 100%;
-        }
-        .product-main .page3 .product-card .product-card-icon path {
-            fill: #FFFFFF;
-        }
-
-        .product-main .page3 .product-card:hover {
-            background-color: var(--obz-main-secondary);
-        }
-        .product-main .page3 .product-card:hover .product-card-desc {
-            color: var(--obz-text-dark-secondary);
-            font-weight: 500;
-        }
-        .product-main .page3 .product-card:hover .product-card-caption {
-            color: var(--obz-main-accent);
-        }
-        .product-main .page3 .product-card:hover .product-card-title {
-            color: var(--obz-text-dark-primary);
-            font-weight: 600;
-        }
-        .product-main .page3 .product-card:hover .product-card-icon {
-            opacity: 1;
-        }
-
-
-        .page4 {
-            background-color: var(--obz-background-light);
-        }
-        .page4 .page-cont {
-            padding-bottom: 0px;
-        }
+      .page4 {
+        background-color: var(--obz-background-light);
+      }
+      .page4 .page-cont {
+        padding-bottom: 0px;
+      }
     </style>
 
     <script>
-        var lastScrollY = 0;
-        var flag_InitScroll = true;
-        var flag_AutoScroll = false;
-        var isMobile;
-        
-        $(document).ready(function () {
-            var body = document.body;
-            var doc = document.documentElement;
-            isMobile = detectMobileDevice(window.navigator.userAgent);
+      var lastScrollY = 0;
+      var flag_InitScroll = true;
+      var flag_AutoScroll = false;
+      var isMobile;
 
+      $(document).ready(function () {
+        var body = document.body;
+        var doc = document.documentElement;
+        isMobile = detectMobileDevice(window.navigator.userAgent);
 
-            /*----------- 접속 기기에 따른 애니메이션 유무 --------------*/
-            if (isMobile) {     // 모바일 접속 시 애니메이션 없음
+        /*----------- 접속 기기에 따른 애니메이션 유무 --------------*/
+        if (isMobile) {
+          // 모바일 접속 시 애니메이션 없음
+        } else {
+          // PC 접속 시 애니메이션 있음
+          if (body.scrollTop != 0 || doc.scrollTop != 0) {
+            body.scrollTop = 0;
+            doc.scrollTop = 0;
+          } else {
+            flag_InitScroll = false;
+          }
+        }
+      });
 
-            } else {            // PC 접속 시 애니메이션 있음
-                if (body.scrollTop != 0 || doc.scrollTop != 0) {
-                    body.scrollTop = 0;
-                    doc.scrollTop = 0;
-                } else {
-                    flag_InitScroll = false;
-                }
-            }
-                    
-        });
-
-        //*************** 스크롤 ***************//
-        window.addEventListener("scroll", function (e){
-            if (flag_InitScroll) {
-                if (lastScrollY < window.scrollY) {
-                    flag_InitScroll = false;
-                }
-                if (window.scrollY == 0) {
-                    flag_InitScroll = false;
-                }
-                lastScrollY = window.scrollY;
-                return;
-            }
-
-            if (lastScrollY < window.scrollY) {
-                if (window.scrollY > 0 && window.scrollY < 6 ) {
-                    if (!flag_AutoScroll) {
-                        e.preventDefault();
-                        $("html, body").animate({ scrollTop: 890 }, 400);
-                    }
-                }
-            }
-
-            lastScrollY = window.scrollY;
-        });
-
-        function moveScroll(scrollY, scrollTime) {
-            flag_AutoScroll = true;
-            $("html, body").animate({ scrollTop: scrollY }, scrollTime, function() {
-                flag_AutoScroll = false;
-            });
+      //*************** 스크롤 ***************//
+      window.addEventListener("scroll", function (e) {
+        if (flag_InitScroll) {
+          if (lastScrollY < window.scrollY) {
+            flag_InitScroll = false;
+          }
+          if (window.scrollY == 0) {
+            flag_InitScroll = false;
+          }
+          lastScrollY = window.scrollY;
+          return;
         }
 
-        //*************** recognize mobile device ***************//
-        function detectMobileDevice(agent) {
-            const mobileRegex = [
-                /Android/i,
-                /iPhone/i,
-                /iPad/i,
-                /iPod/i,
-                /BlackBerry/i,
-                /Windows Phone/i
-            ]
-            return mobileRegex.some(mobile => agent.match(mobile))
+        if (lastScrollY < window.scrollY) {
+          if (window.scrollY > 0 && window.scrollY < 6) {
+            if (!flag_AutoScroll) {
+              e.preventDefault();
+              $("html, body").animate({ scrollTop: 890 }, 400);
+            }
+          }
         }
+
+        lastScrollY = window.scrollY;
+      });
+
+      function moveScroll(scrollY, scrollTime) {
+        flag_AutoScroll = true;
+        $("html, body").animate(
+          { scrollTop: scrollY },
+          scrollTime,
+          function () {
+            flag_AutoScroll = false;
+          },
+        );
+      }
+
+      //*************** recognize mobile device ***************//
+      function detectMobileDevice(agent) {
+        const mobileRegex = [
+          /Android/i,
+          /iPhone/i,
+          /iPad/i,
+          /iPod/i,
+          /BlackBerry/i,
+          /Windows Phone/i,
+        ];
+        return mobileRegex.some((mobile) => agent.match(mobile));
+      }
     </script>
-</head>
+  </head>
 
-<body class="product-main">
+  <body class="product-main">
     <header>
-        <script>loadHTML("../header.html");</script>
+      <script>
+        loadHTML("../header.html");
+      </script>
     </header>
     <section>
-        <div class="page page1">
-            <div class="sub-title2">
-                <span class="highlight">오브젠 CDXP+</span>는
-                <br>
-                데이터 수집·통합, 분석 및 예측, 개인화 마케팅을 아우르는
-                <br>
-                End-to-End 고객 데이터 & 경험 관리 플랫폼입니다.
-            </div>
-            <div class="page-cont">
-                <img src="../../img/product/CDXP+.svg">
-            </div>
+      <div class="page page1">
+        <div class="sub-title2">
+          <span class="highlight">플랜투 비즈니스 컨설팅 e·Mapp</span>는
+          <br />
+          데이터 수집·통합, 분석 및 예측, 개인화 마케팅을 아우르는
+          <br />
+          End-to-End 고객 데이터 & 경험 관리 플랫폼입니다.
         </div>
-
-        <div class="page page2">
-            <div class="sub-title2">obzen CDXP+의 특징</div>
-            <div class="page-cont">
-                <div class="feature-card-cont">
-                    <div class="feature-card">
-                        <div class="feature-card-caption">Feature 01</div>
-                        <div class="feature-card-title">End-to-End 통합성</div>
-                        <div class="feature-card-desc">
-                            하나의 플랫폼 상에서
-                            <br>
-                            데이터 수집부터 결합, 분석,
-                            <br>
-                            AI 활용, 마케팅 자동화
-                            <br>
-                            전 과정을 지원
-                        </div>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-card-caption">Feature 02</div>
-                        <div class="feature-card-title">워크플로우 기반 유연성</div>
-                        <div class="feature-card-desc">
-                            데이터 처리 및 분석,
-                            <br>
-                            마케팅 자동화 업무를
-                            <br>
-                            워크플로우 형태로
-                            <br>
-                            자유롭고 직관적으로 구성
-                        </div>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-card-caption">Feature 03</div>
-                        <div class="feature-card-title">제품과 기술 관점의 확장성</div>
-                        <div class="feature-card-desc">
-                            기업의 니즈와 여건에 따라
-                            <br>
-                            순차적인 제품 도입 및 확장이 용이하며,
-                            <br>
-                            생성형 AI 등 최신 기술 기반의
-                            <br>
-                            새로운 기능 탑재
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="page-cont">
+          <img src="../../img/product/e·Mapp.svg" />
         </div>
+      </div>
 
-        <div class="page page3">
-            <div class="sub-title2"><div>obzen CDXP+ - 데이터 수집·통합, 분석 및 예측, 개인화 마케팅, AI까지</div></div>
-            <div class="page-cont">
-                <div class="product-card-cont">
-                    <a class="product-card" href="./cdxp/data.html">
-                        <div class="product-card-desc">
-                            다양한 원천의
-                            <br/>
-                            데이터 수집 및 통합
-                        </div>
-                        <div class="product-card-caption">obzen CDXP+</div>
-                        <div class="product-card-title">DATA</div>
-                        <div class="product-card-icon">
-                            <svg viewBox="0 0 48 48">
-                                <path d="M22.4575 34.1252L30.895 25.6877H11.344V22.3127H30.895L22.4575 13.8752L24.844 11.4887L37.3555 24.0002L24.844 36.5117L22.4575 34.1252Z"/>
-                            </svg>
-                        </div>
-                    </a>
-                    <a class="product-card" href="./cdxp/insight.html">
-                        <div class="product-card-desc">
-                            데이터 기반의
-                            <br/>
-                            고객 이해 및 인사이트 발굴
-                        </div>
-                        <div class="product-card-caption">obzen CDXP+</div>
-                        <div class="product-card-title">INSIGHT</div>
-                        <div class="product-card-icon">
-                            <svg viewBox="0 0 48 48">
-                                <path d="M22.4575 34.1252L30.895 25.6877H11.344V22.3127H30.895L22.4575 13.8752L24.844 11.4887L37.3555 24.0002L24.844 36.5117L22.4575 34.1252Z"/>
-                            </svg>
-                        </div>
-                    </a>
-                    <a class="product-card" href="./cdxp/engagement.html">
-                        <div class="product-card-desc">
-                            개인화된 고객 경험
-                            <br/>
-                            설계 및 자동화
-                        </div>
-                        <div class="product-card-caption">obzen CDXP+</div>
-                        <div class="product-card-title">ENGAGEMENT</div>
-                        <div class="product-card-icon">
-                            <svg viewBox="0 0 48 48">
-                                <path d="M22.4575 34.1252L30.895 25.6877H11.344V22.3127H30.895L22.4575 13.8752L24.844 11.4887L37.3555 24.0002L24.844 36.5117L22.4575 34.1252Z"/>
-                            </svg>
-                        </div>
-                    </a>
-                    <a class="product-card" href="./cdxp/ai.html">
-                        <div class="product-card-desc">
-                            머신러닝 모델의
-                            <br/>
-                            개발 및 관리
-                        </div>
-                        <div class="product-card-caption">obzen CDXP+</div>
-                        <div class="product-card-title">AI</div>
-                        <div class="product-card-icon">
-                            <svg viewBox="0 0 48 48">
-                                <path d="M22.4575 34.1252L30.895 25.6877H11.344V22.3127H30.895L22.4575 13.8752L24.844 11.4887L37.3555 24.0002L24.844 36.5117L22.4575 34.1252Z"/>
-                            </svg>
-                        </div>
-                    </a>
-                </div>
+      <div class="page page2">
+        <div class="sub-title2">obzen e·Mapp의 특징</div>
+        <div class="page-cont">
+          <div class="feature-card-cont">
+            <div class="feature-card">
+              <div class="feature-card-caption">Feature 01</div>
+              <div class="feature-card-title">End-to-End 통합성</div>
+              <div class="feature-card-desc">
+                하나의 플랫폼 상에서
+                <br />
+                데이터 수집부터 결합, 분석,
+                <br />
+                AI 활용, 마케팅 자동화
+                <br />
+                전 과정을 지원
+              </div>
             </div>
-        </div>
-
-        <div class="page page4">
-            <div class="sub-title2">주요 솔루션</div>
-            <div class="page-cont">
-                <div class="product-card-cont">
-                    <a class="link-card" href="./solution/obzenAnalytics.html">
-                        <div class="link-card-caption">디지털 행동 데이터 수집 및 분석</div>
-                        <div class="link-card-title">obzen Analytics</div>
-                        <div class="link-card-icon"></div>
-                    </a>
-                    <a class="link-card" href="./solution/obzenDigitalMarketing.html">
-                        <div class="link-card-caption">실시간 개인화 마케팅 자동화 솔루션</div>
-                        <div class="link-card-title">obzen onCMS</div>
-                        <div class="link-card-icon"></div>
-                    </a>
-                    <a class="link-card" href="./solution/obzenGenerationAI.html">
-                        <div class="link-card-caption">생성형 AI 기술 기반의 분석/마케팅 생산성 향상</div>
-                        <div class="link-card-title">obzen 생성형 AI</div>
-                        <div class="link-card-icon"></div>
-                    </a>
-                </div>
+            <div class="feature-card">
+              <div class="feature-card-caption">Feature 02</div>
+              <div class="feature-card-title">워크플로우 기반 유연성</div>
+              <div class="feature-card-desc">
+                데이터 처리 및 분석,
+                <br />
+                마케팅 자동화 업무를
+                <br />
+                워크플로우 형태로
+                <br />
+                자유롭고 직관적으로 구성
+              </div>
             </div>
+            <div class="feature-card">
+              <div class="feature-card-caption">Feature 03</div>
+              <div class="feature-card-title">제품과 기술 관점의 확장성</div>
+              <div class="feature-card-desc">
+                기업의 니즈와 여건에 따라
+                <br />
+                순차적인 제품 도입 및 확장이 용이하며,
+                <br />
+                생성형 AI 등 최신 기술 기반의
+                <br />
+                새로운 기능 탑재
+              </div>
+            </div>
+          </div>
         </div>
-        
-        <!-- 문의 사항 -->
-        <script>loadHTML("../inquire.html");</script>
+      </div>
 
+      <div class="page page3">
+        <div class="sub-title2">
+          <div>
+            obzen e·Mapp - 데이터 수집·통합, 분석 및 예측, 개인화 마케팅, AI까지
+          </div>
+        </div>
+        <div class="page-cont">
+          <div class="product-card-cont">
+            <a class="product-card" href="./cdxp/data.html">
+              <div class="product-card-desc">
+                다양한 원천의
+                <br />
+                데이터 수집 및 통합
+              </div>
+              <div class="product-card-caption">obzen e·Mapp</div>
+              <div class="product-card-title">DATA</div>
+              <div class="product-card-icon">
+                <svg viewBox="0 0 48 48">
+                  <path
+                    d="M22.4575 34.1252L30.895 25.6877H11.344V22.3127H30.895L22.4575 13.8752L24.844 11.4887L37.3555 24.0002L24.844 36.5117L22.4575 34.1252Z"
+                  />
+                </svg>
+              </div>
+            </a>
+            <a class="product-card" href="./cdxp/insight.html">
+              <div class="product-card-desc">
+                데이터 기반의
+                <br />
+                고객 이해 및 인사이트 발굴
+              </div>
+              <div class="product-card-caption">obzen e·Mapp</div>
+              <div class="product-card-title">INSIGHT</div>
+              <div class="product-card-icon">
+                <svg viewBox="0 0 48 48">
+                  <path
+                    d="M22.4575 34.1252L30.895 25.6877H11.344V22.3127H30.895L22.4575 13.8752L24.844 11.4887L37.3555 24.0002L24.844 36.5117L22.4575 34.1252Z"
+                  />
+                </svg>
+              </div>
+            </a>
+            <a class="product-card" href="./cdxp/engagement.html">
+              <div class="product-card-desc">
+                개인화된 고객 경험
+                <br />
+                설계 및 자동화
+              </div>
+              <div class="product-card-caption">obzen e·Mapp</div>
+              <div class="product-card-title">ENGAGEMENT</div>
+              <div class="product-card-icon">
+                <svg viewBox="0 0 48 48">
+                  <path
+                    d="M22.4575 34.1252L30.895 25.6877H11.344V22.3127H30.895L22.4575 13.8752L24.844 11.4887L37.3555 24.0002L24.844 36.5117L22.4575 34.1252Z"
+                  />
+                </svg>
+              </div>
+            </a>
+            <a class="product-card" href="./cdxp/ai.html">
+              <div class="product-card-desc">
+                머신러닝 모델의
+                <br />
+                개발 및 관리
+              </div>
+              <div class="product-card-caption">obzen e·Mapp</div>
+              <div class="product-card-title">AI</div>
+              <div class="product-card-icon">
+                <svg viewBox="0 0 48 48">
+                  <path
+                    d="M22.4575 34.1252L30.895 25.6877H11.344V22.3127H30.895L22.4575 13.8752L24.844 11.4887L37.3555 24.0002L24.844 36.5117L22.4575 34.1252Z"
+                  />
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="page page4">
+        <div class="sub-title2">주요 솔루션</div>
+        <div class="page-cont">
+          <div class="product-card-cont">
+            <a class="link-card" href="./solution/obzenAnalytics.html">
+              <div class="link-card-caption">
+                디지털 행동 데이터 수집 및 분석
+              </div>
+              <div class="link-card-title">obzen Analytics</div>
+              <div class="link-card-icon"></div>
+            </a>
+            <a class="link-card" href="./solution/obzenDigitalMarketing.html">
+              <div class="link-card-caption">
+                실시간 개인화 마케팅 자동화 솔루션
+              </div>
+              <div class="link-card-title">obzen onCMS</div>
+              <div class="link-card-icon"></div>
+            </a>
+            <a class="link-card" href="./solution/obzenGenerationAI.html">
+              <div class="link-card-caption">
+                생성형 AI 기술 기반의 분석/마케팅 생산성 향상
+              </div>
+              <div class="link-card-title">obzen 생성형 AI</div>
+              <div class="link-card-icon"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 문의 사항 -->
+      <script>
+        loadHTML("../inquire.html");
+      </script>
     </section>
     <footer>
-        <script>loadHTML("../footer.html");</script>
+      <script>
+        loadHTML("../footer.html");
+      </script>
     </footer>
-</body>
+  </body>
 </html>

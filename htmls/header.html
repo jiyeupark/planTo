@@ -1,452 +1,606 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- js -->    
+    <!-- js -->
     <!-- <script type="text/javascript" src="../js/common.js"></script> -->
 
     <!-- css -->
     <!-- <link rel="stylesheet" type="text/css" href="../css/common.css" /> -->
 
     <script>
-        $(function() {
-            if (!useTransparentGNB) {
-                $("#header").addClass("solid");
-            }
-        });
-
-        function funcMenu_onClick(elem) {
-            var item = $(elem).parent().parent();
-            if (!item.hasClass("open")) {
-                $('.responsive-menu-item').removeClass('open');
-            }
-            item.toggleClass('open');
+      $(function () {
+        if (!useTransparentGNB) {
+          $("#header").addClass("solid");
         }
+      });
+
+      function funcMenu_onClick(elem) {
+        var item = $(elem).parent().parent();
+        if (!item.hasClass("open")) {
+          $(".responsive-menu-item").removeClass("open");
+        }
+        item.toggleClass("open");
+      }
     </script>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <!-- header -->
     <div id="header">
-        <a href="/index.html" title="home" class="header-logo">
-            <div class="top-logo"></div>
-        </a>
-        <div class="header-con">
-            <!-- first menu -->
-            <ul id="first-menu-con" class="first-menu">
-                <li data-sub="about">
-                    <a href="/htmls/about.html">회사소개</a>
-                    <div class="select-bar"></div>
-                </li>
-                <li data-sub="product">
-                    <a href="/htmls/product/product.html">제품</a>
-                    <div class="select-bar" style="width: 33px"></div>
-                </li>
-                <li data-sub="service">
-                    <a href="/htmls/service.html">서비스</a>
-                    <div class="select-bar"></div>
-                </li>
-                <li data-sub="promotion">
-                    <a href="/htmls/promotion.html">홍보/IR</a>
-                    <div class="select-bar"></div>
-                </li>
-                <!-- <li data-sub="">
+      <a href="/index.html" title="home" class="header-logo">
+        <div class="top-logo"></div>
+      </a>
+      <div class="header-con">
+        <!-- first menu -->
+        <ul id="first-menu-con" class="first-menu">
+          <li data-sub="about">
+            <a href="/htmls/about.html">회사소개</a>
+            <div class="select-bar"></div>
+          </li>
+          <li data-sub="product">
+            <a href="/htmls/product/product.html">제품</a>
+            <div class="select-bar" style="width: 33px"></div>
+          </li>
+          <li data-sub="service">
+            <a href="/htmls/service.html">서비스</a>
+            <div class="select-bar"></div>
+          </li>
+          <li data-sub="promotion">
+            <a href="/htmls/promotion.html">홍보/IR</a>
+            <div class="select-bar"></div>
+          </li>
+          <!-- <li data-sub="">
                     <a href="/htmls/ir.html">IR</a>
                     <div class="select-bar" style="width: 23px"></div>
                 </li> -->
-                <li data-sub="">
-                    <a href="/htmls/recruit.html">채용정보</a>
-                    <div class="select-bar"></div>
-                </li>
-                <li data-sub="">
-                    <a href="/htmls/contact.html">문의하기</a>
-                    <div class="select-bar"></div>
-                </li>
-            </ul>
-            <section id="sub-menu-con" class="sub-menu-cont">
-                <div id="sub-product" class="sub-menu-lv1 col2">
-                    <div class="sub-menu-lv2">
-                        <div class="sub-menu-main-title">obzen CDXP+</div>
-                        <div class="sub-menu-list">
-                            <a id="goCDXP" href="/htmls/product/cdxp/data.html" class="sub-menu has-icon">
-                                <div class="sub-menu-icon">
-                                    <svg viewBox="0 0 48 48">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8 14C8 12.4952 8.72005 11.229 9.67669 10.2597C10.6249 9.29893 11.8977 8.52548 13.3127 7.91907C16.1497 6.70319 19.9296 6 24 6C28.0704 6 31.8503 6.70319 34.6873 7.91907C36.1023 8.52548 37.3751 9.29893 38.3233 10.2597C39.2799 11.229 40 12.4952 40 14V34C40 35.5048 39.2799 36.771 38.3233 37.7403C37.3751 38.7011 36.1023 39.4745 34.6873 40.0809C31.8503 41.2968 28.0704 42 24 42C19.9296 42 16.1497 41.2968 13.3127 40.0809C11.8977 39.4745 10.6249 38.7011 9.67669 37.7403C8.72005 36.771 8 35.5048 8 34V14ZM12 14C12 13.8479 12.0635 13.5357 12.5237 13.0694C12.9924 12.5945 13.7698 12.075 14.8883 11.5956C17.1183 10.64 20.3384 10 24 10C27.6616 10 30.8817 10.64 33.1117 11.5956C34.2302 12.075 35.0076 12.5945 35.4763 13.0694C35.9366 13.5357 36 13.8479 36 14C36 14.1521 35.9366 14.4643 35.4763 14.9306C35.0076 15.4055 34.2302 15.925 33.1117 16.4044C30.8817 17.36 27.6616 18 24 18C20.3384 18 17.1183 17.36 14.8883 16.4044C13.7698 15.925 12.9924 15.4055 12.5237 14.9306C12.0635 14.4643 12 14.1521 12 14ZM12 24V19.4446C12.4189 19.6744 12.8585 19.8863 13.3127 20.0809C16.1497 21.2968 19.9296 22 24 22C28.0704 22 31.8503 21.2968 34.6873 20.0809C35.1415 19.8863 35.5811 19.6744 36 19.4446V24C36 24.1521 35.9366 24.4643 35.4763 24.9306C35.0076 25.4055 34.2302 25.925 33.1117 26.4044C30.8817 27.36 27.6616 28 24 28C20.3384 28 17.1183 27.36 14.8883 26.4044C13.7698 25.925 12.9924 25.4055 12.5237 24.9306C12.0635 24.4643 12 24.1521 12 24ZM12 29.4446V34C12 34.1521 12.0635 34.4643 12.5237 34.9306C12.9924 35.4055 13.7698 35.925 14.8883 36.4044C17.1183 37.36 20.3384 38 24 38C27.6616 38 30.8817 37.36 33.1117 36.4044C34.2302 35.925 35.0076 35.4055 35.4763 34.9306C35.9366 34.4643 36 34.1521 36 34V29.4446C35.5811 29.6744 35.1415 29.8863 34.6873 30.0809C31.8503 31.2968 28.0704 32 24 32C19.9296 32 16.1497 31.2968 13.3127 30.0809C12.8585 29.8863 12.4189 29.6744 12 29.4446Z"/>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <div class="sub-menu-title">obzen CDXP+ Data</div>
-                                    <div class="sub-menu-desc">온ㆍ오프라인 데이터의 실시간 수집 및 통합</div>
-                                    <!-- <div class="sub-menu-desc">TagManager  |  DataPipeline  |  D3F</div> -->
-                                </div>
-                            </a>
-                            <a id="goInsight" href="/htmls/product/cdxp/insight.html" class="sub-menu has-icon">
-                                <div class="sub-menu-icon">
-                                    <svg viewBox="0 0 48 48">
-                                        <path d="M30 8L28.5 12.5L24 14L28.5 15.5L30 20L31.5 15.5L36 14L31.5 12.5L30 8Z"/>
-                                        <path d="M7 17L8 14L9 17L12 18L9 19L8 22L7 19L4 18L7 17Z"/>
-                                        <path d="M44 21C44 23.2091 42.2091 25 40 25C39.7676 25 39.5398 24.9802 39.3182 24.9421L33.7549 31.6181C33.9134 32.0488 34 32.5143 34 33C34 35.2091 32.2091 37 30 37C27.7909 37 26 35.2091 26 33C26 32.6417 26.0471 32.2944 26.1355 31.964L21.036 26.8645C20.7056 26.9529 20.3583 27 20 27C19.6974 27 19.4026 26.9664 19.1192 26.9027L11.82 34.8101C11.937 35.186 12 35.5856 12 36C12 38.2091 10.2091 40 8 40C5.79086 40 4 38.2091 4 36C4 33.7909 5.79086 32 8 32C8.30256 32 8.59727 32.0336 8.8806 32.0972L16.1799 24.1897C16.063 23.8139 16 23.4143 16 23C16 20.7909 17.7909 19 20 19C22.2091 19 24 20.7909 24 23C24 23.3584 23.9529 23.7057 23.8645 24.0362L28.9638 29.1355C29.2943 29.0471 29.6416 29 30 29C30.2324 29 30.4601 29.0198 30.6816 29.0578L36.2451 22.3817C36.0865 21.9511 36 21.4856 36 21C36 18.7909 37.7909 17 40 17C42.2091 17 44 18.7909 44 21Z"/>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <div class="sub-menu-title">obzen CDXP+ Insight</div>
-                                    <div class="sub-menu-desc">데이터 분석 및 AI 예측을 통한 인사이트 제공</div>
-                                    <!-- <div class="sub-menu-desc">DataAnalytics  |  AI Prediction  |  DataIntelligence</div> -->
-                                </div>
-                            </a>
-                            <a id="goEngagement" href="/htmls/product/cdxp/engagement.html" class="sub-menu has-icon">
-                                <div class="sub-menu-icon">
-                                    <svg viewBox="0 0 48 48">
-                                        <path d="M26 21.0356V25.5094H30V21.0356C30 18.8204 28.2091 17.0247 26 17.0247H19V21.0356H26Z"/>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18 8C15.7909 8 14 9.79577 14 12.011V26.5121C14 28.7273 15.7909 30.5231 18 30.5231H29.0075L33.6864 34.3126C35.6484 35.9017 38.5714 34.5014 38.5714 31.9724V30.4825C40.5099 30.2045 42 28.5328 42 26.5121V12.011C42 9.79577 40.2091 8 38 8H18ZM18 12.011L38 12.011V26.5121L34.5714 26.5121V29.8735L30.4211 26.5121H18V12.011Z"/>
-                                        <path d="M10 17.0247H13V21.0356H10V32.4515H12.8571V34.8872L15.8646 32.4515H26V31.5259H28.6541L29.9968 32.6133C29.9121 34.7535 28.1551 36.4624 26 36.4624H17.2782L13.7422 39.3263C11.7802 40.9154 8.85714 39.5151 8.85714 36.9861V36.2963C7.20486 35.8032 6 34.2684 6 32.4515V21.0356C6 18.8204 7.79086 17.0247 10 17.0247Z"/>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <div class="sub-menu-title">obzen CDXP+ Engagement</div>
-                                    <div class="sub-menu-desc">실시간 초 개인화 마케팅 설계 및 실행</div>
-                                    <!-- <div class="sub-menu-desc">CMS  |  REBM  |  onCMS  |  Survey</div> -->
-                                </div>
-                            </a>
-                            <a id="goAI" href="/htmls/product/cdxp/ai.html" class="sub-menu has-icon">
-                                <div class="sub-menu-icon">
-                                    <svg viewBox="0 0 48 48">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6 22C6 14.268 12.268 8 20 8H25C26.6569 8 28 9.34314 28 11V14H31.2798L34.0059 12.2197C34.002 12.1469 34 12.0737 34 12C34 9.79086 35.7909 8 38 8C40.2091 8 42 9.79086 42 12C42 14.2091 40.2091 16 38 16C37.3495 16 36.7353 15.8447 36.1924 15.5692L32.9686 17.6745C32.6434 17.8869 32.2634 18 31.875 18H28V22H34.5351C35.2267 20.8044 36.5194 20 38 20C40.2091 20 42 21.7909 42 24C42 26.2091 40.2091 28 38 28C36.5194 28 35.2267 27.1956 34.5351 26H28V30H31.875C32.2634 30 32.6434 30.1131 32.9686 30.3255L36.1924 32.4308C36.7353 32.1553 37.3495 32 38 32C40.2091 32 42 33.7909 42 36C42 38.2091 40.2091 40 38 40C35.7909 40 34 38.2091 34 36C34 35.9263 34.002 35.8531 34.0059 35.7803L31.2798 34H28V37C28 38.6569 26.6569 40 25 40H20C12.268 40 6 33.732 6 26V22ZM24 27H19C17.8954 27 17 27.8954 17 29V34H21V31H24V36H20C16.2986 36 13.0669 33.989 11.3378 31H13V27H10.0494C10.0167 26.6711 10 26.3375 10 26V23H16C17.1046 23 18 22.1046 18 21V16H14V19H10.4578C11.7321 14.9429 15.5224 12 20 12H24V19H20V23H24V27Z"/>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <div class="sub-menu-title">obzen CDXP+ AI</div>
-                                    <div class="sub-menu-desc">머신러닝 기반 AI 모형 개발 및 운영 플랫폼</div>
-                                    <!-- <div class="sub-menu-desc">SmartAI</div> -->
-                                </div>
-                            </a>
-                        </div>
+          <li data-sub="">
+            <a href="/htmls/recruit.html">채용정보</a>
+            <div class="select-bar"></div>
+          </li>
+          <li data-sub="">
+            <a href="/htmls/contact.html">문의하기</a>
+            <div class="select-bar"></div>
+          </li>
+        </ul>
+        <section id="sub-menu-con" class="sub-menu-cont">
+          <div id="sub-product" class="sub-menu-lv1 col2">
+            <div class="sub-menu-lv2">
+              <div class="sub-menu-main-title">obzen e·Mapp</div>
+              <div class="sub-menu-list">
+                <a
+                  id="goCDXP"
+                  href="/htmls/product/cdxp/data.html"
+                  class="sub-menu has-icon"
+                >
+                  <div class="sub-menu-icon">
+                    <svg viewBox="0 0 48 48">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M8 14C8 12.4952 8.72005 11.229 9.67669 10.2597C10.6249 9.29893 11.8977 8.52548 13.3127 7.91907C16.1497 6.70319 19.9296 6 24 6C28.0704 6 31.8503 6.70319 34.6873 7.91907C36.1023 8.52548 37.3751 9.29893 38.3233 10.2597C39.2799 11.229 40 12.4952 40 14V34C40 35.5048 39.2799 36.771 38.3233 37.7403C37.3751 38.7011 36.1023 39.4745 34.6873 40.0809C31.8503 41.2968 28.0704 42 24 42C19.9296 42 16.1497 41.2968 13.3127 40.0809C11.8977 39.4745 10.6249 38.7011 9.67669 37.7403C8.72005 36.771 8 35.5048 8 34V14ZM12 14C12 13.8479 12.0635 13.5357 12.5237 13.0694C12.9924 12.5945 13.7698 12.075 14.8883 11.5956C17.1183 10.64 20.3384 10 24 10C27.6616 10 30.8817 10.64 33.1117 11.5956C34.2302 12.075 35.0076 12.5945 35.4763 13.0694C35.9366 13.5357 36 13.8479 36 14C36 14.1521 35.9366 14.4643 35.4763 14.9306C35.0076 15.4055 34.2302 15.925 33.1117 16.4044C30.8817 17.36 27.6616 18 24 18C20.3384 18 17.1183 17.36 14.8883 16.4044C13.7698 15.925 12.9924 15.4055 12.5237 14.9306C12.0635 14.4643 12 14.1521 12 14ZM12 24V19.4446C12.4189 19.6744 12.8585 19.8863 13.3127 20.0809C16.1497 21.2968 19.9296 22 24 22C28.0704 22 31.8503 21.2968 34.6873 20.0809C35.1415 19.8863 35.5811 19.6744 36 19.4446V24C36 24.1521 35.9366 24.4643 35.4763 24.9306C35.0076 25.4055 34.2302 25.925 33.1117 26.4044C30.8817 27.36 27.6616 28 24 28C20.3384 28 17.1183 27.36 14.8883 26.4044C13.7698 25.925 12.9924 25.4055 12.5237 24.9306C12.0635 24.4643 12 24.1521 12 24ZM12 29.4446V34C12 34.1521 12.0635 34.4643 12.5237 34.9306C12.9924 35.4055 13.7698 35.925 14.8883 36.4044C17.1183 37.36 20.3384 38 24 38C27.6616 38 30.8817 37.36 33.1117 36.4044C34.2302 35.925 35.0076 35.4055 35.4763 34.9306C35.9366 34.4643 36 34.1521 36 34V29.4446C35.5811 29.6744 35.1415 29.8863 34.6873 30.0809C31.8503 31.2968 28.0704 32 24 32C19.9296 32 16.1497 31.2968 13.3127 30.0809C12.8585 29.8863 12.4189 29.6744 12 29.4446Z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="sub-menu-title">obzen e·Mapp Data</div>
+                    <div class="sub-menu-desc">
+                      온ㆍ오프라인 데이터의 실시간 수집 및 통합
                     </div>
-                    <div class="sub-menu-lv2">
-                        <div class="sub-menu-main-title">주요 솔루션</div>
-                        <div class="sub-menu-list">
-                            <a href="/htmls/product/solution/obzenAnalytics.html" class="sub-menu">
-                                <div class="sub-menu-icon"></div>
-                                <div>
-                                    <div class="sub-menu-title">obzen Analytics</div>
-                                    <div class="sub-menu-desc">디지털 행동 데이터 수집 및 시각화 솔루션</div>
-                                </div>
-                            </a>
-                            <a href="/htmls/product/solution/obzenDigitalMarketing.html" class="sub-menu">
-                                <div class="sub-menu-icon"></div>
-                                <div>
-                                    <div class="sub-menu-title">obzen onCMS</div>
-                                    <div class="sub-menu-desc">실시간 개인화 마케팅 자동화 솔루션</div>
-                                </div>
-                            </a>
-                            <a href="/htmls/product/solution/obzenSalesCloud.html" class="sub-menu">
-                                <div class="sub-menu-icon"></div>
-                                <div>
-                                    <div class="sub-menu-title">obzen Sales Cloud</div>
-                                    <div class="sub-menu-desc">고객정보부터 성과관리까지 Total 영업 관리 솔루션</div>
-                                </div>
-                            </a>
-                            <a href="/htmls/product/solution/obzenGenerationAI.html" class="sub-menu">
-                                <div class="sub-menu-icon"></div>
-                                <div>
-                                    <div class="sub-menu-title">obzen 생성형 AI</div>
-                                    <!-- <div class="sub-menu-desc">생성형 AI 기술 기반의 분석/마케팅 생산성 향상</div> -->
-                                    <div class="sub-menu-desc">생성형 AI-Agent 기술 기반의 분석/마케팅 생산성 향상</div>
-                                </div>
-                            </a>
-                        </div>
+                    <!-- <div class="sub-menu-desc">TagManager  |  DataPipeline  |  D3F</div> -->
+                  </div>
+                </a>
+                <a
+                  id="goInsight"
+                  href="/htmls/product/cdxp/insight.html"
+                  class="sub-menu has-icon"
+                >
+                  <div class="sub-menu-icon">
+                    <svg viewBox="0 0 48 48">
+                      <path
+                        d="M30 8L28.5 12.5L24 14L28.5 15.5L30 20L31.5 15.5L36 14L31.5 12.5L30 8Z"
+                      />
+                      <path
+                        d="M7 17L8 14L9 17L12 18L9 19L8 22L7 19L4 18L7 17Z"
+                      />
+                      <path
+                        d="M44 21C44 23.2091 42.2091 25 40 25C39.7676 25 39.5398 24.9802 39.3182 24.9421L33.7549 31.6181C33.9134 32.0488 34 32.5143 34 33C34 35.2091 32.2091 37 30 37C27.7909 37 26 35.2091 26 33C26 32.6417 26.0471 32.2944 26.1355 31.964L21.036 26.8645C20.7056 26.9529 20.3583 27 20 27C19.6974 27 19.4026 26.9664 19.1192 26.9027L11.82 34.8101C11.937 35.186 12 35.5856 12 36C12 38.2091 10.2091 40 8 40C5.79086 40 4 38.2091 4 36C4 33.7909 5.79086 32 8 32C8.30256 32 8.59727 32.0336 8.8806 32.0972L16.1799 24.1897C16.063 23.8139 16 23.4143 16 23C16 20.7909 17.7909 19 20 19C22.2091 19 24 20.7909 24 23C24 23.3584 23.9529 23.7057 23.8645 24.0362L28.9638 29.1355C29.2943 29.0471 29.6416 29 30 29C30.2324 29 30.4601 29.0198 30.6816 29.0578L36.2451 22.3817C36.0865 21.9511 36 21.4856 36 21C36 18.7909 37.7909 17 40 17C42.2091 17 44 18.7909 44 21Z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="sub-menu-title">obzen e·Mapp Insight</div>
+                    <div class="sub-menu-desc">
+                      데이터 분석 및 AI 예측을 통한 인사이트 제공
                     </div>
-                </div>
+                    <!-- <div class="sub-menu-desc">DataAnalytics  |  AI Prediction  |  DataIntelligence</div> -->
+                  </div>
+                </a>
+                <a
+                  id="goEngagement"
+                  href="/htmls/product/cdxp/engagement.html"
+                  class="sub-menu has-icon"
+                >
+                  <div class="sub-menu-icon">
+                    <svg viewBox="0 0 48 48">
+                      <path
+                        d="M26 21.0356V25.5094H30V21.0356C30 18.8204 28.2091 17.0247 26 17.0247H19V21.0356H26Z"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M18 8C15.7909 8 14 9.79577 14 12.011V26.5121C14 28.7273 15.7909 30.5231 18 30.5231H29.0075L33.6864 34.3126C35.6484 35.9017 38.5714 34.5014 38.5714 31.9724V30.4825C40.5099 30.2045 42 28.5328 42 26.5121V12.011C42 9.79577 40.2091 8 38 8H18ZM18 12.011L38 12.011V26.5121L34.5714 26.5121V29.8735L30.4211 26.5121H18V12.011Z"
+                      />
+                      <path
+                        d="M10 17.0247H13V21.0356H10V32.4515H12.8571V34.8872L15.8646 32.4515H26V31.5259H28.6541L29.9968 32.6133C29.9121 34.7535 28.1551 36.4624 26 36.4624H17.2782L13.7422 39.3263C11.7802 40.9154 8.85714 39.5151 8.85714 36.9861V36.2963C7.20486 35.8032 6 34.2684 6 32.4515V21.0356C6 18.8204 7.79086 17.0247 10 17.0247Z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="sub-menu-title">obzen e·Mapp Engagement</div>
+                    <div class="sub-menu-desc">
+                      실시간 초 개인화 마케팅 설계 및 실행
+                    </div>
+                    <!-- <div class="sub-menu-desc">CMS  |  REBM  |  onCMS  |  Survey</div> -->
+                  </div>
+                </a>
+                <a
+                  id="goAI"
+                  href="/htmls/product/cdxp/ai.html"
+                  class="sub-menu has-icon"
+                >
+                  <div class="sub-menu-icon">
+                    <svg viewBox="0 0 48 48">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M6 22C6 14.268 12.268 8 20 8H25C26.6569 8 28 9.34314 28 11V14H31.2798L34.0059 12.2197C34.002 12.1469 34 12.0737 34 12C34 9.79086 35.7909 8 38 8C40.2091 8 42 9.79086 42 12C42 14.2091 40.2091 16 38 16C37.3495 16 36.7353 15.8447 36.1924 15.5692L32.9686 17.6745C32.6434 17.8869 32.2634 18 31.875 18H28V22H34.5351C35.2267 20.8044 36.5194 20 38 20C40.2091 20 42 21.7909 42 24C42 26.2091 40.2091 28 38 28C36.5194 28 35.2267 27.1956 34.5351 26H28V30H31.875C32.2634 30 32.6434 30.1131 32.9686 30.3255L36.1924 32.4308C36.7353 32.1553 37.3495 32 38 32C40.2091 32 42 33.7909 42 36C42 38.2091 40.2091 40 38 40C35.7909 40 34 38.2091 34 36C34 35.9263 34.002 35.8531 34.0059 35.7803L31.2798 34H28V37C28 38.6569 26.6569 40 25 40H20C12.268 40 6 33.732 6 26V22ZM24 27H19C17.8954 27 17 27.8954 17 29V34H21V31H24V36H20C16.2986 36 13.0669 33.989 11.3378 31H13V27H10.0494C10.0167 26.6711 10 26.3375 10 26V23H16C17.1046 23 18 22.1046 18 21V16H14V19H10.4578C11.7321 14.9429 15.5224 12 20 12H24V19H20V23H24V27Z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="sub-menu-title">obzen e·Mapp AI</div>
+                    <div class="sub-menu-desc">
+                      머신러닝 기반 AI 모형 개발 및 운영 플랫폼
+                    </div>
+                    <!-- <div class="sub-menu-desc">SmartAI</div> -->
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="sub-menu-lv2">
+              <div class="sub-menu-main-title">주요 솔루션</div>
+              <div class="sub-menu-list">
+                <a
+                  href="/htmls/product/solution/obzenAnalytics.html"
+                  class="sub-menu"
+                >
+                  <div class="sub-menu-icon"></div>
+                  <div>
+                    <div class="sub-menu-title">obzen Analytics</div>
+                    <div class="sub-menu-desc">
+                      디지털 행동 데이터 수집 및 시각화 솔루션
+                    </div>
+                  </div>
+                </a>
+                <a
+                  href="/htmls/product/solution/obzenDigitalMarketing.html"
+                  class="sub-menu"
+                >
+                  <div class="sub-menu-icon"></div>
+                  <div>
+                    <div class="sub-menu-title">obzen onCMS</div>
+                    <div class="sub-menu-desc">
+                      실시간 개인화 마케팅 자동화 솔루션
+                    </div>
+                  </div>
+                </a>
+                <a
+                  href="/htmls/product/solution/obzenSalesCloud.html"
+                  class="sub-menu"
+                >
+                  <div class="sub-menu-icon"></div>
+                  <div>
+                    <div class="sub-menu-title">obzen Sales Cloud</div>
+                    <div class="sub-menu-desc">
+                      고객정보부터 성과관리까지 Total 영업 관리 솔루션
+                    </div>
+                  </div>
+                </a>
+                <a
+                  href="/htmls/product/solution/obzenGenerationAI.html"
+                  class="sub-menu"
+                >
+                  <div class="sub-menu-icon"></div>
+                  <div>
+                    <div class="sub-menu-title">obzen 생성형 AI</div>
+                    <!-- <div class="sub-menu-desc">생성형 AI 기술 기반의 분석/마케팅 생산성 향상</div> -->
+                    <div class="sub-menu-desc">
+                      생성형 AI-Agent 기술 기반의 분석/마케팅 생산성 향상
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
 
-                <div id="sub-service" class="sub-menu-lv1 col2">
-                    <div class="sub-menu-lv2">
-                        <div class="sub-menu-list">
-                            <a href="/htmls/service.html#section2" class="sub-menu">
-                                <div class="sub-menu-icon"></div>
-                                <div>
-                                    <div class="sub-menu-title">마케팅 컨설팅</div>
-                                    <div class="sub-menu-desc">마케팅 전략 수립 및 캠페인 시나리오 도출</div>
-                                </div>
-                            </a>
-                            <a href="/htmls/service.html#section4" class="sub-menu">
-                                <div class="sub-menu-icon"></div>
-                                <div>
-                                    <div class="sub-menu-title">생성형 AI 접목</div>
-                                    <div class="sub-menu-desc">생성형 AI 기술을 활용한 비즈니스 가치 창출</div>
-                                </div>
-                            </a>
-                        </div>
+          <div id="sub-service" class="sub-menu-lv1 col2">
+            <div class="sub-menu-lv2">
+              <div class="sub-menu-list">
+                <a href="/htmls/service.html#section2" class="sub-menu">
+                  <div class="sub-menu-icon"></div>
+                  <div>
+                    <div class="sub-menu-title">마케팅 컨설팅</div>
+                    <div class="sub-menu-desc">
+                      마케팅 전략 수립 및 캠페인 시나리오 도출
                     </div>
-                    <div class="sub-menu-lv2">
-                        <div class="sub-menu-list">
-                            <a href="/htmls/service.html#section3" class="sub-menu">
-                                <div class="sub-menu-icon"></div>
-                                <div>
-                                    <div class="sub-menu-title">AI 모델링</div>
-                                    <div class="sub-menu-desc">기업 맞춤형 머신러닝 모델 개발</div>
-                                </div>
-                            </a>
-                            <!-- <a href="/htmls/service.html#section5" class="sub-menu">
+                  </div>
+                </a>
+                <a href="/htmls/service.html#section4" class="sub-menu">
+                  <div class="sub-menu-icon"></div>
+                  <div>
+                    <div class="sub-menu-title">생성형 AI 접목</div>
+                    <div class="sub-menu-desc">
+                      생성형 AI 기술을 활용한 비즈니스 가치 창출
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="sub-menu-lv2">
+              <div class="sub-menu-list">
+                <a href="/htmls/service.html#section3" class="sub-menu">
+                  <div class="sub-menu-icon"></div>
+                  <div>
+                    <div class="sub-menu-title">AI 모델링</div>
+                    <div class="sub-menu-desc">
+                      기업 맞춤형 머신러닝 모델 개발
+                    </div>
+                  </div>
+                </a>
+                <!-- <a href="/htmls/service.html#section5" class="sub-menu">
                                 <div class="sub-menu-icon"></div>
                                 <div>
                                     <div class="sub-menu-title">네이버클라우드 클라우드 데이터박스</div>
                                 <div class="sub-menu-desc">기업 데이터와 네이버 데이터의 연계 분석</div>
                                 </div>
                             </a> -->
-                            
-                        </div>
-                    </div>
-                </div>
-
-                <div id="sub-about" class="sub-menu-lv1">
-                    <div class="sub-menu-lv2">
-                        <div class="sub-menu-list">
-                            <a href="/htmls/about.html#2" class="sub-menu">
-                                <div class="sub-menu-icon"></div>
-                                <div>
-                                    <div class="sub-menu-title">경영진</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="sub-menu-lv2">
-                        <div class="sub-menu-list">
-                            <a href="/htmls/about.html#7" class="sub-menu">
-                                <div class="sub-menu-icon"></div>
-                                <div>
-                                    <div class="sub-menu-title">CEO 인사말</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="sub-menu-lv2">
-                        <div class="sub-menu-list">
-                            <a href="/htmls/about.html#3" class="sub-menu">
-                                <div class="sub-menu-icon"></div>
-                                <div>
-                                    <div class="sub-menu-title">조직구성</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="sub-menu-lv2">
-                        <div class="sub-menu-list">
-                            <a href="/htmls/about.html#4" class="sub-menu">
-                                <div class="sub-menu-icon"></div>
-                                <div>
-                                    <div class="sub-menu-title">연혁</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="sub-menu-lv2">
-                        <div class="sub-menu-list">
-                            <a href="/htmls/about.html#8" class="sub-menu">
-                                <div class="sub-menu-icon"></div>
-                                <div>
-                                    <div class="sub-menu-title">성장 전략</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="sub-menu-lv2">
-                        <div class="sub-menu-list">
-                            <a href="/htmls/about.html#5" class="sub-menu">
-                                <div class="sub-menu-icon"></div>
-                                <div>
-                                    <div class="sub-menu-title">고객사</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="sub-menu-lv2">
-                        <div class="sub-menu-list">
-                            <a href="/htmls/about.html#6" class="sub-menu">
-                                <div class="sub-menu-icon"></div>
-                                <div>
-                                    <div class="sub-menu-title">오시는 길</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="sub-promotion" class="sub-menu-lv1">
-                    <div class="sub-menu-lv2">
-                        <div class="sub-menu-list">
-                            <a href="/htmls/notice.html" class="sub-menu">
-                                <div class="sub-menu-icon"></div>
-                                <div>
-                                    <div class="sub-menu-title">공지사항</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="sub-menu-lv2">
-                        <div class="sub-menu-list">
-                            <a href="/htmls/promotion.html" class="sub-menu">
-                                <div class="sub-menu-icon"></div>
-                                <div>
-                                    <div class="sub-menu-title">보도자료</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="sub-menu-lv2">
-                        <div class="sub-menu-list">
-                            <a href="/htmls/promotion_video.html" class="sub-menu">
-                                <div class="sub-menu-icon"></div>
-                                <div>
-                                    <div class="sub-menu-title">홍보영상</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="sub-menu-lv2">
-                        <div class="sub-menu-list">
-                            <a href="/htmls/disclosure.html" class="sub-menu">
-                                <div class="sub-menu-icon"></div>
-                                <div>
-                                    <div class="sub-menu-title">공시정보</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="sub-menu-lv2">
-                        <div class="sub-menu-list">
-                            <a href="/htmls/ir.html" class="sub-menu">
-                                <div class="sub-menu-icon"></div>
-                                <div>
-                                    <div class="sub-menu-title">IR</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- responsive menu -->
-            <div id="nav-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+              </div>
             </div>
-        </div> 
-        <a href="https://www.zalesia.com/" title="잘레시아 홈페이지로 이동" class="sub-logo" target="_blank">
-            <div>Zalesia ↗</div>
-        </a>
+          </div>
+
+          <div id="sub-about" class="sub-menu-lv1">
+            <div class="sub-menu-lv2">
+              <div class="sub-menu-list">
+                <a href="/htmls/about.html#2" class="sub-menu">
+                  <div class="sub-menu-icon"></div>
+                  <div>
+                    <div class="sub-menu-title">경영진</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="sub-menu-lv2">
+              <div class="sub-menu-list">
+                <a href="/htmls/about.html#7" class="sub-menu">
+                  <div class="sub-menu-icon"></div>
+                  <div>
+                    <div class="sub-menu-title">CEO 인사말</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="sub-menu-lv2">
+              <div class="sub-menu-list">
+                <a href="/htmls/about.html#3" class="sub-menu">
+                  <div class="sub-menu-icon"></div>
+                  <div>
+                    <div class="sub-menu-title">조직구성</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="sub-menu-lv2">
+              <div class="sub-menu-list">
+                <a href="/htmls/about.html#4" class="sub-menu">
+                  <div class="sub-menu-icon"></div>
+                  <div>
+                    <div class="sub-menu-title">연혁</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="sub-menu-lv2">
+              <div class="sub-menu-list">
+                <a href="/htmls/about.html#8" class="sub-menu">
+                  <div class="sub-menu-icon"></div>
+                  <div>
+                    <div class="sub-menu-title">성장 전략</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="sub-menu-lv2">
+              <div class="sub-menu-list">
+                <a href="/htmls/about.html#5" class="sub-menu">
+                  <div class="sub-menu-icon"></div>
+                  <div>
+                    <div class="sub-menu-title">고객사</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="sub-menu-lv2">
+              <div class="sub-menu-list">
+                <a href="/htmls/about.html#6" class="sub-menu">
+                  <div class="sub-menu-icon"></div>
+                  <div>
+                    <div class="sub-menu-title">오시는 길</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div id="sub-promotion" class="sub-menu-lv1">
+            <div class="sub-menu-lv2">
+              <div class="sub-menu-list">
+                <a href="/htmls/notice.html" class="sub-menu">
+                  <div class="sub-menu-icon"></div>
+                  <div>
+                    <div class="sub-menu-title">공지사항</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="sub-menu-lv2">
+              <div class="sub-menu-list">
+                <a href="/htmls/promotion.html" class="sub-menu">
+                  <div class="sub-menu-icon"></div>
+                  <div>
+                    <div class="sub-menu-title">보도자료</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="sub-menu-lv2">
+              <div class="sub-menu-list">
+                <a href="/htmls/promotion_video.html" class="sub-menu">
+                  <div class="sub-menu-icon"></div>
+                  <div>
+                    <div class="sub-menu-title">홍보영상</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="sub-menu-lv2">
+              <div class="sub-menu-list">
+                <a href="/htmls/disclosure.html" class="sub-menu">
+                  <div class="sub-menu-icon"></div>
+                  <div>
+                    <div class="sub-menu-title">공시정보</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="sub-menu-lv2">
+              <div class="sub-menu-list">
+                <a href="/htmls/ir.html" class="sub-menu">
+                  <div class="sub-menu-icon"></div>
+                  <div>
+                    <div class="sub-menu-title">IR</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- responsive menu -->
+        <div id="nav-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <a
+        href="https://www.zalesia.com/"
+        title="잘레시아 홈페이지로 이동"
+        class="sub-logo"
+        target="_blank"
+      >
+        <div>Zalesia ↗</div>
+      </a>
     </div>
 
     <div id="responsive-menu-bg">
-        <div id="responsive-menu">
-            <ul class="responsive-menu-item">
-                <div class="responsive-menu-header">
-                    <a href="/htmls/about.html" class="responsive-menu-title">회사소개</a>
-                    <div class="responsive-menu-icon" onclick="funcMenu_onClick(this);">
-                        <svg viewBox="0 0 48 48" fill="none">
-                            <path d="M8 16L24 32L40 16" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                </div>
-                <div class="responsive-menu-body">
-                    <li><a href="/htmls/about.html#2">경영진</a></li>
-                    <li><a href="/htmls/about.html#7">CEO 인사말</a></li>
-                    <li><a href="/htmls/about.html#3">조직구성</a></li>
-                    <li><a href="/htmls/about.html#4">연혁</a></li>
-                    <li><a href="/htmls/about.html#8">성장 전략</a></li>
-                    <li><a href="/htmls/about.html#5">고객사</a></li>
-                    <li><a href="/htmls/about.html#6">오시는 길</a></li>
-                </div>
-            </ul>
-            <ul class="responsive-menu-item">
-                <div class="responsive-menu-header">
-                    <a href="/htmls/product/product.html" class="responsive-menu-title">제품</a>
-                    <div class="responsive-menu-icon" onclick="funcMenu_onClick(this);">
-                        <svg viewBox="0 0 48 48" fill="none">
-                            <path d="M8 16L24 32L40 16" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                </div>
-                <div class="responsive-menu-body">
-                    <li><a href="/htmls/product/cdxp/data.html">obzen CDXP+ Data</a></li>
-                    <li><a href="/htmls/product/cdxp/insight.html">obzen CDXP+ Insight</a></li>
-                    <li><a href="/htmls/product/cdxp/engagement.html">obzen CDXP+ Engagement</a></li>
-                    <li><a href="/htmls/product/cdxp/ai.html">obzen CDXP+ AI</a></li>
-                    <li><a href="/htmls/product/solution/obzenAnalytics.html">obzen Analytics</a></li>
-                    <li><a href="/htmls/product/solution/obzenDigitalMarketing.html">obzen onCMS</a></li>
-                    <li><a href="/htmls/product/solution/obzenSalesCloud.html">obzen Sales Cloud</a></li>
-                    <li><a href="/htmls/product/solution/obzenGenerationAI.html">obzen 생성형 AI</a></li>
-                </div>
-            </ul>
-            <ul class="responsive-menu-item">
-                <div class="responsive-menu-header">
-                    <a href="/htmls/service.html" class="responsive-menu-title">서비스</a>
-                    <div class="responsive-menu-icon" onclick="funcMenu_onClick(this);">
-                        <svg viewBox="0 0 48 48" fill="none">
-                            <path d="M8 16L24 32L40 16" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                </div>
-                <div class="responsive-menu-body">
-                    <li><a href="/htmls/service.html#section2">마케팅 컨설팅</a></li>
-                    <li><a href="/htmls/service.html#section3">AI 모델링</a></li>
-                    <li><a href="/htmls/service.html#section4">생성형 AI 접목</a></li>
-                    <!-- <li><a href="/htmls/service.html#section5">네이버클라우드 클라우드 데이터박스</a></li> -->
-                </div>
-            </ul>
-            <ul class="responsive-menu-item">
-                <div class="responsive-menu-header">
-                    <a href="/htmls/promotion.html" class="responsive-menu-title">홍보/IR</a>
-                    <div class="responsive-menu-icon" onclick="funcMenu_onClick(this);">
-                        <svg viewBox="0 0 48 48" fill="none">
-                            <path d="M8 16L24 32L40 16" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                </div>
-                <div class="responsive-menu-body">
-                    <li><a href="/htmls/notice.html#section1">공지사항</a></li>
-                    <li><a href="/htmls/promotion.html#section2">보도자료</a></li>
-                    <li><a href="/htmls/promotion_video.html#section3">홍보영상</a></li>
-                    <li><a href="/htmls/disclosure.html">공시정보</a></li>
-                    <li><a href="/htmls/ir.html">IR</a></li>
-                </div>
-            </ul>
-            <!-- <ul class="responsive-menu-item">
+      <div id="responsive-menu">
+        <ul class="responsive-menu-item">
+          <div class="responsive-menu-header">
+            <a href="/htmls/about.html" class="responsive-menu-title"
+              >회사소개</a
+            >
+            <div class="responsive-menu-icon" onclick="funcMenu_onClick(this)">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path
+                  d="M8 16L24 32L40 16"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="responsive-menu-body">
+            <li><a href="/htmls/about.html#2">경영진</a></li>
+            <li><a href="/htmls/about.html#7">CEO 인사말</a></li>
+            <li><a href="/htmls/about.html#3">조직구성</a></li>
+            <li><a href="/htmls/about.html#4">연혁</a></li>
+            <li><a href="/htmls/about.html#8">성장 전략</a></li>
+            <li><a href="/htmls/about.html#5">고객사</a></li>
+            <li><a href="/htmls/about.html#6">오시는 길</a></li>
+          </div>
+        </ul>
+        <ul class="responsive-menu-item">
+          <div class="responsive-menu-header">
+            <a href="/htmls/product/product.html" class="responsive-menu-title"
+              >제품</a
+            >
+            <div class="responsive-menu-icon" onclick="funcMenu_onClick(this)">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path
+                  d="M8 16L24 32L40 16"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="responsive-menu-body">
+            <li>
+              <a href="/htmls/product/cdxp/data.html">obzen e·Mapp Data</a>
+            </li>
+            <li>
+              <a href="/htmls/product/cdxp/insight.html"
+                >obzen e·Mapp Insight</a
+              >
+            </li>
+            <li>
+              <a href="/htmls/product/cdxp/engagement.html"
+                >obzen e·Mapp Engagement</a
+              >
+            </li>
+            <li><a href="/htmls/product/cdxp/ai.html">obzen e·Mapp AI</a></li>
+            <li>
+              <a href="/htmls/product/solution/obzenAnalytics.html"
+                >obzen Analytics</a
+              >
+            </li>
+            <li>
+              <a href="/htmls/product/solution/obzenDigitalMarketing.html"
+                >obzen onCMS</a
+              >
+            </li>
+            <li>
+              <a href="/htmls/product/solution/obzenSalesCloud.html"
+                >obzen Sales Cloud</a
+              >
+            </li>
+            <li>
+              <a href="/htmls/product/solution/obzenGenerationAI.html"
+                >obzen 생성형 AI</a
+              >
+            </li>
+          </div>
+        </ul>
+        <ul class="responsive-menu-item">
+          <div class="responsive-menu-header">
+            <a href="/htmls/service.html" class="responsive-menu-title"
+              >서비스</a
+            >
+            <div class="responsive-menu-icon" onclick="funcMenu_onClick(this)">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path
+                  d="M8 16L24 32L40 16"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="responsive-menu-body">
+            <li><a href="/htmls/service.html#section2">마케팅 컨설팅</a></li>
+            <li><a href="/htmls/service.html#section3">AI 모델링</a></li>
+            <li><a href="/htmls/service.html#section4">생성형 AI 접목</a></li>
+            <!-- <li><a href="/htmls/service.html#section5">네이버클라우드 클라우드 데이터박스</a></li> -->
+          </div>
+        </ul>
+        <ul class="responsive-menu-item">
+          <div class="responsive-menu-header">
+            <a href="/htmls/promotion.html" class="responsive-menu-title"
+              >홍보/IR</a
+            >
+            <div class="responsive-menu-icon" onclick="funcMenu_onClick(this)">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path
+                  d="M8 16L24 32L40 16"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="responsive-menu-body">
+            <li><a href="/htmls/notice.html#section1">공지사항</a></li>
+            <li><a href="/htmls/promotion.html#section2">보도자료</a></li>
+            <li><a href="/htmls/promotion_video.html#section3">홍보영상</a></li>
+            <li><a href="/htmls/disclosure.html">공시정보</a></li>
+            <li><a href="/htmls/ir.html">IR</a></li>
+          </div>
+        </ul>
+        <!-- <ul class="responsive-menu-item">
                 <div class="responsive-menu-header">
                     <a href="/htmls/ir.html" class="responsive-menu-title">IR</a>
                 </div>
             </ul> -->
-            <ul class="responsive-menu-item">
-                <div class="responsive-menu-header">
-                    <a href="/htmls/recruit.html" class="responsive-menu-title">채용정보</a>
-                </div>
-            </ul>
-            <ul class="responsive-menu-item">
-                <div class="responsive-menu-header">
-                    <a href="/htmls/contact.html" class="responsive-menu-title">문의하기</a>
-                </div>
-            </ul>
-            <ul class="responsive-menu-item">
-                <div class="responsive-menu-header">
-                    <a href="https://www.zalesia.com/" class="responsive-menu-title" target="_blank">Zalesia ↗</a>
-                </div>
-            </ul>
-        </div>	
+        <ul class="responsive-menu-item">
+          <div class="responsive-menu-header">
+            <a href="/htmls/recruit.html" class="responsive-menu-title"
+              >채용정보</a
+            >
+          </div>
+        </ul>
+        <ul class="responsive-menu-item">
+          <div class="responsive-menu-header">
+            <a href="/htmls/contact.html" class="responsive-menu-title"
+              >문의하기</a
+            >
+          </div>
+        </ul>
+        <ul class="responsive-menu-item">
+          <div class="responsive-menu-header">
+            <a
+              href="https://www.zalesia.com/"
+              class="responsive-menu-title"
+              target="_blank"
+              >Zalesia ↗</a
+            >
+          </div>
+        </ul>
+      </div>
     </div>
 
     <!-- top button -->
     <div id="btn-top" title="위로 가기">
-        <div class="top-arrow">
-            <svg width="28" height="38" viewBox="0 0 28 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M27.6367 13.849L26.0988 15.3903L14.906 4.17246L14.906 27.698C14.906 28.2999 14.4191 28.7879 13.8185 28.7879C13.218 28.7879 12.7311 28.2999 12.7311 27.698L12.7311 4.17246L1.53823 15.3903L0.000359477 13.849L13.8185 -6.04012e-07L27.6367 13.849Z" fill="white"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 36.8485C0 37.4844 0.475893 38 1.06294 38H26.5734C27.1605 38 27.6364 37.4844 27.6364 36.8485C27.6364 36.2125 27.1605 35.697 26.5734 35.697H1.06294C0.475893 35.697 0 36.2125 0 36.8485Z" fill="white"/>
-            </svg>
-        </div>
+      <div class="top-arrow">
+        <svg
+          width="28"
+          height="38"
+          viewBox="0 0 28 38"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M27.6367 13.849L26.0988 15.3903L14.906 4.17246L14.906 27.698C14.906 28.2999 14.4191 28.7879 13.8185 28.7879C13.218 28.7879 12.7311 28.2999 12.7311 27.698L12.7311 4.17246L1.53823 15.3903L0.000359477 13.849L13.8185 -6.04012e-07L27.6367 13.849Z"
+            fill="white"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M0 36.8485C0 37.4844 0.475893 38 1.06294 38H26.5734C27.1605 38 27.6364 37.4844 27.6364 36.8485C27.6364 36.2125 27.1605 35.697 26.5734 35.697H1.06294C0.475893 35.697 0 36.2125 0 36.8485Z"
+            fill="white"
+          />
+        </svg>
+      </div>
     </div>
-</body>
+  </body>
 </html>
