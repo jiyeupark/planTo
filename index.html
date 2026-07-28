@@ -25,7 +25,7 @@
     <script src="../maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/common.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
-    <script src="../unpkg.com/swiper%407.4.1/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- css -->
     <link
@@ -34,9 +34,10 @@
     />
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/main.css" />
+
     <link
       rel="stylesheet"
-      href="../unpkg.com/swiper%407.4.1/swiper-bundle.min.css"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
 
     <script>
@@ -81,6 +82,55 @@
           $("#header").addClass("solid");
         }
 
+        var clientLogoFlowSwiper = new Swiper(".clientLogoFlowSwiper", {
+          loop: true,
+
+          speed: 6000,
+
+          slidesPerView: "auto",
+
+          spaceBetween: 80,
+
+          freeMode: true,
+
+          freeModeMomentum: false,
+
+          allowTouchMove: false,
+
+          autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          },
+        });
+        var businessCardSwiper = new Swiper(".business-card-swiper", {
+          slidesPerView: 5,
+
+          spaceBetween: 20,
+
+          navigation: {
+            nextEl: ".business-card-swiper .swiper-button-next",
+            prevEl: ".business-card-swiper .swiper-button-prev",
+          },
+
+          breakpoints: {
+            0: {
+              slidesPerView: 1,
+            },
+
+            768: {
+              slidesPerView: 2,
+            },
+
+            1024: {
+              slidesPerView: 4,
+            },
+
+            1400: {
+              slidesPerView: 6,
+            },
+          },
+        });
         // 최근 소식과 뉴스 가져오기
         $.ajax({
           type: "post",
@@ -296,184 +346,340 @@
     </header>
     <section>
       <!-- 배너 -->
-      <div class="main1 top-page main-banner-swiper swiper focus-elem section">
-        <div class="swiper-wrapper">
-          <!-- slide banner 1 -->
-          <div class="swiper-slide">
-            <video
-              class="slide-bg"
-              preload="metadata"
-              loop=""
-              playsinline=""
-              muted=""
-              autoplay=""
-            >
-              <source src="./img/main/banner/engagement.mp4" type="video/mp4" />
-            </video>
-            <div class="slide-bg-cover slide-bg-cover-40"></div>
-            <div class="slide-con-container align-left">
-              <div class="slide-con slide-con1 slide-text">
-                <div class="slide-sub" style="line-height: 0.5">
-                  Enterprise AI & Data Plataform
-                </div>
-                <span class="text-highlight">RegTech</span>로 바른 금융을 만드는
-              </div>
-
-              <div class="slide-con slide-con2 slide-text">
-                AI 핀테크 거버넌스의 브레인
-              </div>
-              <div class="slide-con slide-con3 slide-desc">
-                데이터 플랫용 구축부터 AI 분석, 스마트 팩토리, ESG까지<br />
-                플랜투비즈니스컨설팅이 기업의 디지털 전환을 함께합니다.
-              </div>
-              <a
-                class="slide-con slide-con4 slide-button"
-                href="htmls/product/product.html"
+      <div>
+        <div
+          class="main1 top-page main-banner-swiper swiper focus-elem section"
+        >
+          <div class="swiper-wrapper">
+            <!-- slide banner 1 -->
+            <div class="swiper-slide">
+              <video
+                class="slide-bg"
+                preload="metadata"
+                loop=""
+                playsinline=""
+                muted=""
+                autoplay=""
               >
-                플랜투 비즈니스 바로가기
-                <div class="slide-button-icon"></div>
-              </a>
-            </div>
-          </div>
+                <source
+                  src="./img/main/banner/engagement.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div class="slide-bg-cover slide-bg-cover-40"></div>
+              <div class="slide-con-container align-left">
+                <div class="slide-con slide-con1 slide-text">
+                  <div class="slide-sub" style="line-height: 0.5">
+                    Enterprise AI & Data Plataform
+                  </div>
+                  <span class="text-highlight">RegTech</span>로 바른 금융을
+                  만드는
+                </div>
 
-          <!-- slide banner 2 -->
-          <div class="swiper-slide">
-            <div
-              class="slide-bg img"
-              style="
-                background-image: url(./img/main/banner/digitalMarketing.png);
-              "
-            ></div>
-            <!-- <video class="slide-bg" preload="metadata" loop="" playsinline="" muted="" autoplay="">
+                <div class="slide-con slide-con2 slide-text">
+                  AI 핀테크 거버넌스의 브레인
+                </div>
+                <div class="slide-con slide-con3 slide-desc">
+                  데이터 플랫용 구축부터 AI 분석, 스마트 팩토리, ESG까지<br />
+                  플랜투비즈니스컨설팅이 기업의 디지털 전환을 함께합니다.
+                </div>
+                <a
+                  class="slide-con slide-con4 slide-button"
+                  href="htmls/product/product.html"
+                >
+                  플랜투 비즈니스 바로가기
+                  <div class="slide-button-icon"></div>
+                </a>
+              </div>
+            </div>
+
+            <!-- slide banner 2 -->
+            <div class="swiper-slide">
+              <div
+                class="slide-bg img"
+                style="
+                  background-image: url(./img/main/banner/digitalMarketing.png);
+                "
+              ></div>
+              <!-- <video class="slide-bg" preload="metadata" loop="" playsinline="" muted="" autoplay="">
                             <source src="./img/main/banner/data.mp4" type="video/mp4">
                         </video> -->
-            <div class="slide-bg-cover slide-bg-cover-20"></div>
-            <div class="slide-con-container align-left">
-              <div class="slide-con slide-con1 slide-text">
-                <span class="text-highlight">RegTech</span>는
-                <br />
-                ‘레귤레이션(Regulation)’과‘테크놀로지(Technology)’의 합성어로
-              </div>
-              <div class="slide-con slide-con2 slide-text">
-                <span class="text-highlight"
-                  >금융사의 책무, 내부통제, AML(자금세탁방지) 등에</span
+              <div class="slide-bg-cover slide-bg-cover-20"></div>
+              <div class="slide-con-container align-left">
+                <div class="slide-con slide-con1 slide-text">
+                  <span class="text-highlight">RegTech</span>는
+                  <br />
+                  ‘레귤레이션(Regulation)’과‘테크놀로지(Technology)’의 합성어로
+                </div>
+                <div class="slide-con slide-con2 slide-text">
+                  <span class="text-highlight"
+                    >금융사의 책무, 내부통제, AML(자금세탁방지) 등에</span
+                  >
+                </div>
+                <div class="slide-con slide-con3 slide-text">
+                  AI를 접목하여 법규 준수 및 사전예방을 용이하게 하는 정보
+                  기술을 말함
+                </div>
+                <a
+                  class="slide-con slide-con4 slide-button"
+                  href="htmls/product/solution/planToDigitalMarketing.html"
                 >
+                  planTo Digital Marketing 자세히 보기
+                  <div class="slide-button-icon"></div>
+                </a>
               </div>
-              <div class="slide-con slide-con3 slide-text">
-                AI를 접목하여 법규 준수 및 사전예방을 용이하게 하는 정보 기술을
-                말함
-              </div>
-              <a
-                class="slide-con slide-con4 slide-button"
-                href="htmls/product/solution/planToDigitalMarketing.html"
-              >
-                planTo Digital Marketing 자세히 보기
-                <div class="slide-button-icon"></div>
-              </a>
             </div>
-          </div>
 
-          <!-- slide banner 3 -->
-          <div class="swiper-slide">
-            <div
-              class="slide-bg img"
-              style="
-                background-image: url(./img/main/banner/planToAnalytics.png);
-              "
-            ></div>
-            <!-- <video class="slide-bg" preload="metadata" loop="" playsinline="" muted="" autoplay="">
+            <!-- slide banner 3 -->
+            <div class="swiper-slide">
+              <div
+                class="slide-bg img"
+                style="
+                  background-image: url(./img/main/banner/planToAnalytics.png);
+                "
+              ></div>
+              <!-- <video class="slide-bg" preload="metadata" loop="" playsinline="" muted="" autoplay="">
                             <source src="./img/main/banner/insight.mp4" type="video/mp4">
                         </video> -->
-            <div class="slide-bg-cover slide-bg-cover-40"></div>
-            <div class="slide-con-container align-left">
-              <div class="slide-con slide-con1 slide-text">
-                <span class="text-highlight">디지털 채널에서의 사용자 행동</span
-                >을
+              <div class="slide-bg-cover slide-bg-cover-40"></div>
+              <div class="slide-con-container align-left">
+                <div class="slide-con slide-con1 slide-text">
+                  <span class="text-highlight"
+                    >디지털 채널에서의 사용자 행동</span
+                  >을
+                </div>
+                <div class="slide-con slide-con2 slide-text">
+                  실시간으로 수집, 처리하여
+                </div>
+                <div class="slide-con slide-con3 slide-text">
+                  다양한 분석과 마케팅으로 연결합니다.
+                </div>
+                <a
+                  class="slide-con slide-con4 slide-button"
+                  href="htmls/product/solution/planToAnalytics.html"
+                >
+                  planTo Analytics 자세히 보기
+                  <div class="slide-button-icon"></div>
+                </a>
               </div>
-              <div class="slide-con slide-con2 slide-text">
-                실시간으로 수집, 처리하여
-              </div>
-              <div class="slide-con slide-con3 slide-text">
-                다양한 분석과 마케팅으로 연결합니다.
-              </div>
-              <a
-                class="slide-con slide-con4 slide-button"
-                href="htmls/product/solution/planToAnalytics.html"
-              >
-                planTo Analytics 자세히 보기
-                <div class="slide-button-icon"></div>
-              </a>
             </div>
-          </div>
 
-          <!-- slide banner 4 -->
-          <div class="swiper-slide typing-ani">
-            <div
-              class="slide-bg img"
-              style="background-image: url(./img/main/banner/genAI.png)"
-            ></div>
-            <!-- <video class="slide-bg" preload="metadata" loop="" playsinline="" muted="" autoplay="">
+            <!-- slide banner 4 -->
+            <div class="swiper-slide typing-ani">
+              <div
+                class="slide-bg img"
+                style="background-image: url(./img/main/banner/genAI.png)"
+              ></div>
+              <!-- <video class="slide-bg" preload="metadata" loop="" playsinline="" muted="" autoplay="">
                             <source src="./img/main/banner/generation_ai.mp4" type="video/mp4">
                         </video> -->
-            <div class="slide-bg-cover slide-bg-cover-20">
-              <!-- <div class="b1"></div> -->
-            </div>
-            <div class="slide-con-container align-left">
-              <div class="slide-con slide-con5 slide-text e-cursor">
-                <div class="text-highlight">채팅을 하듯 편하게,</div>
+              <div class="slide-bg-cover slide-bg-cover-20">
+                <!-- <div class="b1"></div> -->
               </div>
-              <div class="slide-con slide-con6 slide-text">
-                데이터를 분석하고 콘텐츠를 만들 수 있다면
+              <div class="slide-con-container align-left">
+                <div class="slide-con slide-con5 slide-text e-cursor">
+                  <div class="text-highlight">채팅을 하듯 편하게,</div>
+                </div>
+                <div class="slide-con slide-con6 slide-text">
+                  데이터를 분석하고 콘텐츠를 만들 수 있다면
+                </div>
+                <div class="slide-con slide-con7 slide-text">
+                  얼마나 좋을까요?
+                </div>
+                <a
+                  class="slide-con slide-con8 slide-button"
+                  href="htmls/product/solution/planToGenerationAI.html"
+                >
+                  planTo 생성형 AI 자세히 보기
+                  <div class="slide-button-icon"></div>
+                </a>
               </div>
-              <div class="slide-con slide-con7 slide-text">
-                얼마나 좋을까요?
-              </div>
-              <a
-                class="slide-con slide-con8 slide-button"
-                href="htmls/product/solution/planToGenerationAI.html"
-              >
-                planTo 생성형 AI 자세히 보기
-                <div class="slide-button-icon"></div>
-              </a>
             </div>
           </div>
-        </div>
 
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev">
-          <img src="./img/main/banner/back.svg" />
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev">
+            <img src="./img/main/banner/back.svg" />
+          </div>
+          <div class="swiper-button-next">
+            <img src="./img/main/banner/forward.svg" />
+          </div>
         </div>
-        <div class="swiper-button-next">
-          <img src="./img/main/banner/forward.svg" />
-        </div>
+        <section class="client-logo-wrap">
+          <div class="swiper clientLogoFlowSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="images/client_logo01.png" alt="고객사1" />
+              </div>
+
+              <div class="swiper-slide">
+                <img src="images/client_logo02.png" alt="고객사2" />
+              </div>
+
+              <div class="swiper-slide">
+                <img src="images/client_logo03.png" alt="고객사3" />
+              </div>
+
+              <div class="swiper-slide">
+                <img src="images/client_logo04.png" alt="고객사4" />
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
 
       <!-- 사업 영역 1 -->
-      <div class="main main2 focus-elem section">
-        <div class="container main2-con">
-          <div class="sub">
-            <div class="sub-title">플랜투 사업 영역</div>
-            <div class="sub-title-highlight">소프트웨어 공급 및 개발</div>
-            <div class="sub-title2">
-              End-to-End 고객 데이터 및 경험 관리 플랫폼,
-              <br />
-              플랜투를 공급합니다.
+      <div class="main main2 section">
+        <div class="main2-con focus-elem">
+          <div class="main2-title-wrap">
+            <div class="main2-title-sub">WHAT WE DO</div>
+            <div class="main2-title">
+              데이터 기반 AI 솔루션으로<br />
+              기업의 디지털 혁신을 지원합니다.
             </div>
           </div>
-          <div class="main2-sub-con">
-            <img src="./img/main/business/cdxp_summary.png" />
-            <div class="more-button-cont right">
+
+          <div class="business-card-swiper swiper">
+            <div class="main2-sub-wrapper swiper-wrapper">
+              <!-- AI Analytics -->
               <a
-                class="main2-sub-button more-button"
-                href="htmls/product/product.html"
+                href="htmls/service.html#section1"
+                class="main2-sub-card swiper-slide"
               >
-                플랜투 제품 자세히 보기
-                <svg viewBox="0 0 36 36">
-                  <path
-                    d="M18 6L15.885 8.115L24.255 16.5H6V19.5H24.255L15.885 27.885L18 30L30 18L18 6Z"
-                  />
-                </svg>
+                <div class="main2-sub-card-icon">
+                  <img src="./img/main/business/icon_ai.svg" alt="" />
+                </div>
+
+                <div class="main2-sub-card-title2">AI Analytics</div>
+
+                <div class="main2-sub-card-desc">
+                  AI 기반 데이터 분석으로
+                  <br />
+                  기업의 의사결정을 지원하고
+                  <br />
+                  새로운 비즈니스 인사이트를 제공합니다.
+                </div>
+
+                <div class="main2-sub-card-more">자세히보기 →</div>
               </a>
+
+              <!-- Smart Factory -->
+              <a
+                href="htmls/service.html#section2"
+                class="main2-sub-card swiper-slide"
+              >
+                <div class="main2-sub-card-icon">
+                  <img src="./img/main/business/icon_factory.svg" alt="" />
+                </div>
+
+                <div class="main2-sub-card-title2">Smart Factory</div>
+
+                <div class="main2-sub-card-desc">
+                  생산 데이터를 분석하여
+                  <br />
+                  공정을 최적화하고
+                  <br />
+                  생산성을 향상시킵니다.
+                </div>
+
+                <div class="main2-sub-card-more">자세히보기 →</div>
+              </a>
+
+              <!-- Platform -->
+              <a
+                href="htmls/service.html#section3"
+                class="main2-sub-card swiper-slide"
+              >
+                <div class="main2-sub-card-icon">
+                  <img src="./img/main/business/icon_platform.svg" alt="" />
+                </div>
+
+                <div class="main2-sub-card-title2">Platform</div>
+
+                <div class="main2-sub-card-desc">
+                  고객 환경에 최적화된
+                  <br />
+                  데이터 플랫폼을 구축하여
+                  <br />
+                  운영 효율을 높입니다.
+                </div>
+
+                <div class="main2-sub-card-more">자세히보기 →</div>
+              </a>
+
+              <!-- ESG -->
+              <a
+                href="htmls/service.html#section4"
+                class="main2-sub-card swiper-slide"
+              >
+                <div class="main2-sub-card-icon">
+                  <img src="./img/main/business/icon_esg.svg" alt="" />
+                </div>
+
+                <div class="main2-sub-card-title2">ESG</div>
+
+                <div class="main2-sub-card-desc">
+                  ESG 경영을 위한
+                  <br />
+                  데이터 분석과
+                  <br />
+                  전략 수립을 지원합니다.
+                </div>
+
+                <div class="main2-sub-card-more">자세히보기 →</div>
+              </a>
+
+              <!-- e-Mapp -->
+              <a
+                href="htmls/service.html#section5"
+                class="main2-sub-card swiper-slide"
+              >
+                <div class="main2-sub-card-icon">
+                  <img src="./img/main/business/icon_emapp.svg" alt="" />
+                </div>
+
+                <div class="main2-sub-card-title2">e-Mapp</div>
+
+                <div class="main2-sub-card-desc">
+                  데이터를 직관적으로
+                  <br />
+                  시각화하여
+                  <br />
+                  빠른 의사결정을 지원합니다.
+                </div>
+
+                <div class="main2-sub-card-more">자세히보기 →</div>
+              </a>
+
+              <!-- RapidMiner -->
+              <a
+                href="htmls/service.html#section6"
+                class="main2-sub-card swiper-slide"
+              >
+                <div class="main2-sub-card-icon">
+                  <img src="./img/main/business/icon_rapidminer.svg" alt="" />
+                </div>
+
+                <div class="main2-sub-card-title2">RapidMiner</div>
+
+                <div class="main2-sub-card-desc">
+                  머신러닝 기반 분석 환경을
+                  <br />
+                  구축하여
+                  <br />
+                  AI 활용도를 높입니다.
+                </div>
+
+                <div class="main2-sub-card-more">자세히보기 →</div>
+              </a>
+            </div>
+
+            <div class="swiper-button-prev">
+              <img src="./img/main/business/card-back.svg" alt="" />
+            </div>
+
+            <div class="swiper-button-next">
+              <img src="./img/main/business/card-forward.svg" alt="" />
             </div>
           </div>
         </div>
@@ -482,396 +688,301 @@
       <!-- 사업 영역 2 -->
       <div class="main main3 section">
         <div class="main3-con focus-elem">
-          <div class="business-card-swiper swiper">
-            <div class="main3-sub-wrapper swiper-wrapper">
-              <a
-                href="htmls/service.html#section2"
-                class="main3-sub-card swiper-slide"
-              >
-                <div class="main3-sub-card-left">
-                  <div class="main3-sub-card-title1">
-                    마케팅 전략 수립 및 캠페인 시나리오 도출
-                  </div>
-                  <div class="main3-sub-card-title2">마케팅 컨설팅</div>
-                  <div class="main3-sub-card-desc">
-                    마케팅 전략 및 체계, 바로 적용 가능한
-                    <br />
-                    마케팅 시나리오 발굴까지
-                    <br />
-                    고객 데이터 기반 마케팅 전체를 지원합니다.
-                  </div>
-                </div>
-                <div class="main3-sub-card-right">
-                  <img src="./img/main/business/card-consulting.png" />
-                </div>
-              </a>
-              <a
-                href="htmls/service.html#section3"
-                class="main3-sub-card swiper-slide"
-              >
-                <div class="main3-sub-card-left">
-                  <div class="main3-sub-card-title1">
-                    기업 맞춤형 머신러닝 모형 개발
-                  </div>
-                  <div class="main3-sub-card-title2">AI 모델링</div>
-                  <div class="main3-sub-card-desc">
-                    기업이 보유한 데이터와 분석 목적,
-                    <br />
-                    AI 운영 환경 등을 복합적으로 고려하여
-                    <br />
-                    최적의 인공지능 모델을 개발합니다.
-                  </div>
-                </div>
-                <div class="main3-sub-card-right">
-                  <img src="./img/main/business/card-ai.png" />
-                </div>
-              </a>
-              <a
-                href="htmls/service.html#section4"
-                class="main3-sub-card swiper-slide"
-              >
-                <div class="main3-sub-card-left">
-                  <div class="main3-sub-card-title1">
-                    생성형 AI를 활용한 비즈니스 가치 창출
-                  </div>
-                  <div class="main3-sub-card-title2">생성형 AI 접목</div>
-                  <div class="main3-sub-card-desc">
-                    텍스트 생성, 이미지 생성, 코드 생성 등
-                    <br />
-                    생성형 AI 기술을 기업 환경에 따라 접목하여
-                    <br />
-                    업무 영역을 혁신합니다.
-                  </div>
-                </div>
-                <div class="main3-sub-card-right">
-                  <img src="./img/main/business/card-genai.png" />
-                </div>
-              </a>
-              <!-- <a href="./htmls/service.html#section5" class="main3-sub-card swiper-slide">
-                            <div class="main3-sub-card-left">
-                                <div class="main3-sub-card-title1">기업 데이터와 네이버 데이터의 연계 분석</div>
-                                <div class="main3-sub-card-title2">네이버클라우드<br/>클라우드 데이터박스</div>
-                                <div class="main3-sub-card-desc">
-                                    네이버클라우드 서비스를 활용하여
-                                    <br/>
-                                    네이버 데이터와의 다양한 연계 분석을 통해
-                                    <br/>
-                                    확장된 인사이트를 제공합니다.
-                                </div>
-                            </div>
-                            <div class="main3-sub-card-right">
-                                <img src="./img/main/business/card-cloud.png" />
-                            </div>
-                        </a> -->
+          <div class="main3-head">
+            <div class="main3-title-wrap">
+              <span class="main3-title-sub">CASE STUDIES</span>
+
+              <h2 class="main3-title">
+                고객의 성공이<br />
+                플랜투의 가치입니다.
+              </h2>
             </div>
 
-            <div class="swiper-button-prev">
-              <img src="./img/main/business/card-back.svg" />
-            </div>
-            <div class="swiper-button-next">
-              <img src="./img/main/business/card-forward.svg" />
-            </div>
+            <a href="#" class="main3-more"> 모든 사례보기 → </a>
           </div>
+
+          <ul class="main3-list">
+            <!-- Card 01 -->
+            <li class="main3-card">
+              <a href="#">
+                <div class="main3-thumb">
+                  <img
+                    src="./img/main/case01.jpg"
+                    alt="현대오토에버 Smart Factory"
+                  />
+                </div>
+
+                <div class="main3-info">
+                  <span class="main3-badge"> 스마트팩토리 </span>
+
+                  <h3 class="main3-card-title">현대오토에버 Smart Factory</h3>
+
+                  <p class="main3-card-desc">
+                    MES 데이터를 활용한 실시간 모니터링 및 AI 기반 생산성 최적화
+                  </p>
+
+                  <div class="main3-kpi">
+                    <div class="main3-kpi-item">
+                      <strong>32%</strong>
+                      <span>생산성 향상</span>
+                    </div>
+
+                    <div class="main3-kpi-item">
+                      <strong>45%</strong>
+                      <span>불량률 감소</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <!-- Card 02 -->
+            <li class="main3-card">
+              <a href="#">
+                <div class="main3-thumb">
+                  <img
+                    src="./img/main/case02.jpg"
+                    alt="금호타이어 AI 예측 시스템"
+                  />
+                </div>
+
+                <div class="main3-info">
+                  <span class="main3-badge"> AI 예측 시스템 </span>
+
+                  <h3 class="main3-card-title">금호타이어 AI 예측 시스템</h3>
+
+                  <p class="main3-card-desc">
+                    Big Data 기반 타이어 수명 예측 모델 구축 및 운영 자동화
+                  </p>
+
+                  <div class="main3-kpi">
+                    <div class="main3-kpi-item">
+                      <strong>80%</strong>
+                      <span>분석시간 단축</span>
+                    </div>
+
+                    <div class="main3-kpi-item">
+                      <strong>28%</strong>
+                      <span>예측 정확도 향상</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <!-- Card 03 -->
+            <li class="main3-card">
+              <a href="#">
+                <div class="main3-thumb">
+                  <img
+                    src="./img/main/case03.jpg"
+                    alt="용진실크 데이터 플랫폼"
+                  />
+                </div>
+
+                <div class="main3-info">
+                  <span class="main3-badge"> 데이터 플랫폼 </span>
+
+                  <h3 class="main3-card-title">용진실크 데이터 플랫폼</h3>
+
+                  <p class="main3-card-desc">
+                    데이터 통합 분석 플랫폼 구축으로 기업의 의사결정을
+                    지원합니다.
+                  </p>
+
+                  <div class="main3-kpi">
+                    <div class="main3-kpi-item">
+                      <strong>60%</strong>
+                      <span>운영 효율 향상</span>
+                    </div>
+
+                    <div class="main3-kpi-item">
+                      <strong>2.5x</strong>
+                      <span>데이터 활용도 증가</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
 
       <!-- 플랜투의 주요 제품 -->
-      <div class="main main4" style="display: none">
-        <div class="container main4-con">
-          <div class="sub">
-            <div class="sub-title">플랜투의 주요 제품</div>
-          </div>
-        </div>
-        <div id="MainProd1" class="main4-sub-con">
-          <svg
-            width="48"
-            height="48"
-            viewBox="0 0 48 48"
-            fill="none"
-            style="display: none"
-          >
-            <defs>
-              <rect
-                id="p_ProdLinkBorder"
-                x="1"
-                y="1"
-                width="46"
-                height="46"
-                rx="23"
-                stroke="inherit"
-                stroke-width="2"
-                fill="#ffffff"
-              />
-              <path
-                id="p_ProdLinkArrow"
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M22.4575 34.1252L30.895 25.6877H11.344V22.3127H30.895L22.4575 13.8752L24.844 11.4887L37.3555 24.0002L24.844 36.5117L22.4575 34.1252Z"
-                fill="inherit"
-              />
-            </defs>
-          </svg>
-          <div id="BtnMainProd1" class="main4-sub-button">
-            단위 제품 확인하기
-            <svg viewBox="0 0 36 36">
-              <path
-                d="M18 6L15.885 8.115L24.255 16.5H6V19.5H24.255L15.885 27.885L18 30L30 18L18 6Z"
-              />
-            </svg>
-          </div>
-          <div class="main4-tile-cont">
-            <div
-              id="ProdTile1_1"
-              class="main4-tile type0"
-              style="width: 456px; height: 380px; left: 0px; top: 0px"
-            >
-              <div class="main4-tile-title">planTo<br />Analytics</div>
-              <div class="main4-tile-desc">행동 로그 수집 및 시각화</div>
-              <div class="main4-tile-icon"></div>
-              <div class="main4-tile-link">
-                <svg viewBox="0 0 48 48">
-                  <use xlink:href="#p_ProdLinkBorder" class="link-border"></use>
-                  <use xlink:href="#p_ProdLinkArrow" class="link-arrow"></use>
-                </svg>
-              </div>
-            </div>
-            <div
-              id="ProdTile1_2"
-              class="main4-tile type1"
-              style="width: 456px; height: 256px; left: 472px; top: 0px"
-            >
-              <div class="main4-tile-title">planTo CMS</div>
-              <div class="main4-tile-desc">
-                대한민국 1위<br />마케팅 자동화 솔루션
-              </div>
-              <div class="main4-tile-icon"></div>
-              <div class="main4-tile-link">
-                <svg viewBox="0 0 48 48">
-                  <use xlink:href="#p_ProdLinkBorder" class="link-border"></use>
-                  <use xlink:href="#p_ProdLinkArrow" class="link-arrow"></use>
-                </svg>
-              </div>
-            </div>
-            <div
-              id="ProdTile1_3"
-              class="main4-tile type3"
-              style="width: 208px; height: 706px; left: 944px; top: 0px"
-            >
-              <div class="main4-tile-title">Smart AI</div>
-              <div class="main4-tile-desc">
-                머신러닝 모델<br />개발 및 운영<br />(MLOps)
-              </div>
-              <div class="main4-tile-link">
-                <svg viewBox="0 0 48 48">
-                  <use xlink:href="#p_ProdLinkBorder" class="link-border"></use>
-                  <use xlink:href="#p_ProdLinkArrow" class="link-arrow"></use>
-                </svg>
-              </div>
-            </div>
-            <div
-              id="ProdTile1_4"
-              class="main4-tile type2"
-              style="width: 456px; height: 196px; left: 472px; top: 272px"
-            >
-              <div class="main4-tile-title">planTo REBM</div>
-              <div class="main4-tile-desc">실시간 데이터 감지 및 타겟팅</div>
-              <div class="main4-tile-icon"></div>
-              <div class="main4-tile-link">
-                <svg viewBox="0 0 48 48">
-                  <use xlink:href="#p_ProdLinkBorder" class="link-border"></use>
-                  <use xlink:href="#p_ProdLinkArrow" class="link-arrow"></use>
-                </svg>
-              </div>
-            </div>
-            <div
-              id="ProdTile1_5"
-              class="main4-tile type3"
-              style="width: 220px; height: 310px; left: 0px; top: 396px"
-            >
-              <div class="main4-tile-title">D3F</div>
-              <div class="main4-tile-desc">데이터<br />가공 및 통합</div>
-              <div class="main4-tile-link">
-                <svg viewBox="0 0 48 48">
-                  <use xlink:href="#p_ProdLinkBorder" class="link-border"></use>
-                  <use xlink:href="#p_ProdLinkArrow" class="link-arrow"></use>
-                </svg>
-              </div>
-            </div>
-            <div
-              id="ProdTile1_6"
-              class="main4-tile type4"
-              style="width: 220px; height: 310px; left: 236px; top: 396px"
-            >
-              <div class="main4-tile-title">Data<br />Intelligence</div>
-              <div class="main4-tile-desc">비즈니스<br />인텔리전스</div>
-              <div class="main4-tile-link">
-                <svg viewBox="0 0 48 48">
-                  <use xlink:href="#p_ProdLinkBorder" class="link-border"></use>
-                  <use xlink:href="#p_ProdLinkArrow" class="link-arrow"></use>
-                </svg>
-              </div>
-            </div>
-            <div
-              id="ProdTile1_7"
-              class="main4-tile type5"
-              style="width: 456px; height: 102px; left: 472px; top: 484px"
-            >
-              <div class="main4-tile-title">onCMS</div>
-              <div class="main4-tile-desc">개인화 추천</div>
-              <div class="main4-tile-link">
-                <svg viewBox="0 0 48 48">
-                  <use xlink:href="#p_ProdLinkBorder" class="link-border"></use>
-                  <use xlink:href="#p_ProdLinkArrow" class="link-arrow"></use>
-                </svg>
-              </div>
-            </div>
-            <div
-              id="ProdTile1_8"
-              class="main4-tile type5"
-              style="width: 456px; height: 102px; left: 472px; top: 602px"
-            >
-              <div class="main4-tile-title">Survey</div>
-              <div class="main4-tile-desc">설문 생성 및 관리</div>
-              <div class="main4-tile-link">
-                <svg viewBox="0 0 48 48">
-                  <use xlink:href="#p_ProdLinkBorder" class="link-border"></use>
-                  <use xlink:href="#p_ProdLinkArrow" class="link-arrow"></use>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="main main4 section">
+        <div class="main4-con focus-elem">
+          <div class="main4-title-wrap">
+            <span class="main4-title-sub"> INDUSTRY </span>
 
-        <div id="MainProd2" class="main4-sub-con">
-          <div id="BtnMainProd2" class="main4-sub-button">
-            주요 솔루션 확인하기
-            <svg viewBox="0 0 36 36">
-              <path
-                d="M18 6L15.885 8.115L24.255 16.5H6V19.5H24.255L15.885 27.885L18 30L30 18L18 6Z"
-              />
-            </svg>
+            <h2 class="main4-title">
+              다양한 산업의 디지털 혁신을<br />
+              플랜투가 함께합니다.
+            </h2>
           </div>
-          <div class="main4-tile-cont">
-            <div
-              id="ProdTile2_1"
-              class="main4-tile type6"
-              style="width: 220px; height: 182px; left: 0px; top: 0px"
-            >
-              <div class="main4-tile-icon"></div>
-              <div class="main4-tile-title">행동 데이터<br />수집</div>
-              <div class="main4-tile-desc">TagManager</div>
-            </div>
-            <div
-              id="ProdTile2_2"
-              class="main4-tile type6"
-              style="width: 220px; height: 182px; left: 236px; top: 0px"
-            >
-              <div class="main4-tile-icon"></div>
-              <div class="main4-tile-title">행동 데이터<br />시각화</div>
-              <div class="main4-tile-desc">DataAnalytics</div>
-            </div>
-            <div
-              id="ProdTile2_3"
-              class="main4-tile type7"
-              style="width: 456px; height: 256px; left: 472px; top: 0px"
-            >
-              <div class="main4-tile-icon"></div>
-              <div class="main4-tile-title">마케팅 자동화</div>
-              <div class="main4-tile-desc">CMS</div>
-            </div>
-            <div
-              id="ProdTile2_4"
-              class="main4-tile type8"
-              style="width: 208px; height: 706px; left: 944px; top: 0px"
-            >
-              <div class="main4-tile-icon"></div>
-              <div class="main4-tile-title">MLOps</div>
-              <div class="main4-tile-desc">Smart AI</div>
-            </div>
-            <div
-              id="ProdTile2_5"
-              class="main4-tile type6"
-              style="width: 220px; height: 182px; left: 0px; top: 198px"
-            >
-              <div class="main4-tile-icon"></div>
-              <div class="main4-tile-title">실시간<br />데이터 처리</div>
-              <div class="main4-tile-desc">DataPipeline</div>
-            </div>
-            <div
-              id="ProdTile2_6"
-              class="main4-tile type6"
-              style="width: 220px; height: 182px; left: 236px; top: 198px"
-            >
-              <div class="main4-tile-icon"></div>
-              <div class="main4-tile-title">예측<br />AutoML</div>
-              <div class="main4-tile-desc">AI Prediction</div>
-            </div>
-            <div
-              id="ProdTile2_7"
-              class="main4-tile type9"
-              style="width: 456px; height: 196px; left: 472px; top: 272px"
-            >
-              <div class="main4-tile-icon"></div>
-              <div class="main4-tile-title">실시간 타겟팅</div>
-              <div class="main4-tile-desc">REBM</div>
-            </div>
-            <div
-              id="ProdTile2_8"
-              class="main4-tile type10"
-              style="width: 220px; height: 310px; left: 0px; top: 396px"
-            >
-              <div class="main4-tile-icon"></div>
-              <div class="main4-tile-title">데이터<br />가공 및 통합</div>
-              <div class="main4-tile-desc">D3F</div>
-            </div>
-            <div
-              id="ProdTile2_9"
-              class="main4-tile type10"
-              style="width: 220px; height: 310px; left: 236px; top: 396px"
-            >
-              <div class="main4-tile-icon"></div>
-              <div class="main4-tile-title">비즈니스<br />인텔리전스</div>
-              <div class="main4-tile-desc">Data<br />Intelligence</div>
-            </div>
-            <div
-              id="ProdTile2_10"
-              class="main4-tile type11"
-              style="width: 456px; height: 102px; left: 472px; top: 484px"
-            >
-              <div class="main4-tile-icon"></div>
-              <div class="main4-tile-title">개인화 추천</div>
-              <div class="main4-tile-desc">onCMS</div>
-            </div>
-            <div
-              id="ProdTile2_11"
-              class="main4-tile type11"
-              style="width: 456px; height: 102px; left: 472px; top: 602px"
-            >
-              <div class="main4-tile-icon"></div>
-              <div class="main4-tile-title">설문조사</div>
-              <div class="main4-tile-desc">Survey</div>
-            </div>
-          </div>
+
+          <ul class="main4-list">
+            <li class="main4-item">
+              <a href="#">
+                <div class="main4-icon">
+                  <img src="./img/main/industry01.svg" alt="" />
+                </div>
+
+                <strong>Manufacturing</strong>
+
+                <span>제조</span>
+              </a>
+            </li>
+
+            <li class="main4-item">
+              <a href="#">
+                <div class="main4-icon">
+                  <img src="./img/main/industry02.svg" alt="" />
+                </div>
+
+                <strong>Public</strong>
+
+                <span>공공</span>
+              </a>
+            </li>
+
+            <li class="main4-item">
+              <a href="#">
+                <div class="main4-icon">
+                  <img src="./img/main/industry03.svg" alt="" />
+                </div>
+
+                <strong>Finance</strong>
+
+                <span>금융</span>
+              </a>
+            </li>
+
+            <li class="main4-item">
+              <a href="#">
+                <div class="main4-icon">
+                  <img src="./img/main/industry04.svg" alt="" />
+                </div>
+
+                <strong>Healthcare</strong>
+
+                <span>의료</span>
+              </a>
+            </li>
+
+            <li class="main4-item">
+              <a href="#">
+                <div class="main4-icon">
+                  <img src="./img/main/industry05.svg" alt="" />
+                </div>
+
+                <strong>Logistics</strong>
+
+                <span>물류</span>
+              </a>
+            </li>
+
+            <li class="main4-item">
+              <a href="#">
+                <div class="main4-icon">
+                  <img src="./img/main/industry06.svg" alt="" />
+                </div>
+
+                <strong>Energy</strong>
+
+                <span>에너지</span>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
 
       <!-- 최근 소식과 뉴스 -->
-      <div class="main main5 focus-elem section">
-        <div class="container main4-con">
-          <div class="sub">
-            <div class="sub-title">최근 소식과 뉴스</div>
+      <div class="main main5 section">
+        <div class="main5-con focus-elem">
+          <div class="main5-head">
+            <div class="main5-title-wrap">
+              <span class="main5-title-sub">INSIGHT</span>
+
+              <h2 class="main5-title">
+                최신 인사이트와<br />
+                디지털 트렌드를 소개합니다.
+              </h2>
+            </div>
+
+            <a href="#" class="main5-more"> 전체보기 → </a>
           </div>
-        </div>
-        <div class="main4-sub-con">
-          <ul class="news-wrap"></ul>
-          <a class="main5-sub-button more-button" href="htmls/promotion.html">
-            더보기
-            <svg viewBox="0 0 36 36">
-              <path
-                d="M18 6L15.885 8.115L24.255 16.5H6V19.5H24.255L15.885 27.885L18 30L30 18L18 6Z"
-              />
-            </svg>
-          </a>
+
+          <ul class="main5-list">
+            <li class="main5-card">
+              <a href="#">
+                <div class="main5-thumb">
+                  <img src="./img/main/insight01.jpg" alt="" />
+                </div>
+
+                <div class="main5-info">
+                  <span class="main5-category">AI</span>
+
+                  <h3 class="main5-card-title">AI가 만드는 제조 혁신의 미래</h3>
+
+                  <p class="main5-card-desc">
+                    스마트팩토리와 생성형 AI를 활용한 디지털 혁신 사례를
+                    소개합니다.
+                  </p>
+
+                  <div class="main5-bottom">
+                    <span class="main5-date">2026.07.28</span>
+                    <span class="main5-arrow">→</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li class="main5-card">
+              <a href="#">
+                <div class="main5-thumb">
+                  <img src="./img/main/insight02.jpg" alt="" />
+                </div>
+
+                <div class="main5-info">
+                  <span class="main5-category">Big Data</span>
+
+                  <h3 class="main5-card-title">데이터 기반 기업 경쟁력 강화</h3>
+
+                  <p class="main5-card-desc">
+                    데이터 분석 플랫폼 구축을 통한 의사결정 혁신 사례입니다.
+                  </p>
+
+                  <div class="main5-bottom">
+                    <span class="main5-date">2026.07.25</span>
+                    <span class="main5-arrow">→</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li class="main5-card">
+              <a href="#">
+                <div class="main5-thumb">
+                  <img src="./img/main/insight03.jpg" alt="" />
+                </div>
+
+                <div class="main5-info">
+                  <span class="main5-category">Cloud</span>
+
+                  <h3 class="main5-card-title">클라우드 기반 DX 전략</h3>
+
+                  <p class="main5-card-desc">
+                    기업 디지털 전환을 위한 클라우드 활용 방안을 소개합니다.
+                  </p>
+
+                  <div class="main5-bottom">
+                    <span class="main5-date">2026.07.20</span>
+                    <span class="main5-arrow">→</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
 
