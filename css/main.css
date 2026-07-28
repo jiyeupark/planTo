@@ -23,7 +23,7 @@ hr.sub-title-hr {
   margin: 0 auto;
   max-width: 100%;
   width: 100%;
-  height: 760px;
+  height: 700px;
 }
 
 .slide-bg {
@@ -79,7 +79,7 @@ hr.sub-title-hr {
 }
 .slide-con-container.align-left {
   align-items: start;
-  left: 20%;
+  left: 17%;
 }
 .slide-con-container.align-center {
   align-items: center;
@@ -316,6 +316,20 @@ hr.sub-title-hr {
   font-size: 3.15rem;
   font-weight: 600;
   letter-spacing: 1.1px;
+}
+.slide-con-container .slide-desc {
+  color: #ffffff85;
+  /* font-size: 44px; */
+  font-size: 1.28rem;
+  font-weight: 400;
+  letter-spacing: 1.1px;
+  margin-top: 20px;
+}
+.slide-con-container .slide-sub {
+  color: var(--obz-main-accent);
+  /* font-size: 44px; */
+  font-size: 1.8rem !important;
+  margin-bottom: 20px;
 }
 .slide-con-container .slide-text .text-highlight {
   font-size: inherit;
