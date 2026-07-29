@@ -131,7 +131,7 @@ p {
 }
 
 .container {
-  width: 1200px;
+  width: 1600px;
   margin: 0 auto;
   box-sizing: border-box;
 }
@@ -523,56 +523,6 @@ span.highlight {
   fill: var(--obz-main-accent) !important;
 }
 
-.rect-button {
-  position: relative;
-  /* width: 176px; */
-  width: fit-content;
-  height: 83px;
-  padding: 11px 22px 11px 32px;
-  font-size: 28px;
-  font-weight: 500;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.1s;
-  border-radius: 2px;
-  cursor: pointer;
-  border: 4px solid #fff;
-  color: #fff;
-  margin-top: 14px;
-  box-sizing: border-box;
-}
-.rect-button svg {
-  margin-left: 7px;
-  width: 36px;
-  height: 36px;
-}
-.rect-button path {
-  fill: #fff;
-}
-.rect-button:hover {
-  background-color: #fff;
-  color: #171c22;
-}
-.rect-button:hover path {
-  fill: #171c22 !important;
-}
-
-.rect-button.dark {
-  border-color: var(--obz-background-dark);
-  color: var(--obz-background-dark);
-}
-.rect-button.dark path {
-  fill: var(--obz-background-dark) !important;
-}
-.rect-button.dark:hover {
-  background-color: var(--obz-background-dark);
-  color: #ffffff;
-}
-.rect-button.dark:hover path {
-  fill: #ffffff !important;
-}
-
 .feature-card-cont {
   display: flex;
   flex-wrap: wrap;
@@ -614,140 +564,335 @@ span.highlight {
 }
 
 /*************** inquire ***************/
+/* ===========================
+    INQUIRE
+=========================== */
+
 .inquire {
-  width: 100%;
-  min-width: 1000px;
-  height: 342px;
-  background: #171c22;
   position: relative;
   overflow: hidden;
+  padding: 30px;
+  margin: 10px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #07172b 0%, #0b2748 45%, #0b6d92 100%);
 }
 
-.inquire .slide-bg-cover .b2 {
-  position: absolute;
-  top: -100%;
-  left: -15%;
-  width: 800px;
-  height: 800px;
-  opacity: 0.5;
-  overflow: visible;
-  background-image: radial-gradient(
-    circle,
-    #0f2861cc 0%,
-    rgba(255, 0, 0, 0) 75%
-  );
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-.inquire .slide-bg-cover .b3 {
-  position: absolute;
-  top: -50%;
-  right: 3%;
-  width: 1000px;
-  height: 1000px;
-  opacity: 0.5;
-  overflow: visible;
-  background-image: radial-gradient(
-    circle,
-    #0f2861cc 0%,
-    rgba(255, 0, 0, 0) 75%
-  );
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+.inquire .container {
+  position: relative;
+  z-index: 2;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 60px;
+  width: 100%;
 }
 
 .inquire .sub {
-  padding-top: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+.inquire .sub-left {
+  flex: 1;
+}
+
+.inquire .sub-right {
+  flex-shrink: 0;
 }
 
 .inquire .sub-title {
-  color: #f5f5f5;
-  position: relative;
+  margin-bottom: 20px;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #fff;
+  text-align: left;
 }
 
-.inquire-sub-con {
-  width: 100%;
-  margin-top: 60px;
+.inquire .sub-desc {
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: left;
 }
+
+/* ===========================
+    Button
+=========================== */
 
 .inquire .rect-button {
-  width: 241px;
-  height: 93px;
-  margin-top: 0px;
-}
-
-/*************** footer ***************/
-#footer {
-  position: relative;
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  min-width: 1200px;
-  height: 144px;
-  left: 50%;
-  bottom: 0;
-  font-size: 14px;
-  font-weight: 300;
-  color: #555555;
-  background-color: #f5f5f5;
-  transform: translateX(-50%);
-  z-index: 8;
+  align-items: center;
+
+  width: 380px;
+  height: 92px;
+
+  padding: 0 38px;
+
+  border-radius: 16px;
+
+  background: #fff;
+
+  font-size: 28px;
+  font-weight: 700;
+  color: #111;
+
+  transition: 0.35s;
 }
+
+.inquire .rect-button:hover {
+  transform: translateY(-6px);
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+}
+
+.inquire .rect-button svg {
+  width: 34px;
+  height: 34px;
+
+  fill: #1f6bff;
+
+  transition: 0.3s;
+}
+
+.inquire .rect-button:hover svg {
+  transform: translateX(8px);
+}
+
+.inquire .rect-button span {
+  font-size: 17px;
+  font-weight: 600;
+  color: rgb(17, 17, 17);
+  transition: 0.3s;
+}
+/* ===========================
+    Background
+=========================== */
+
+.inquire .slide-bg-cover {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.inquire .b2 {
+  position: absolute;
+
+  top: -250px;
+  right: -180px;
+
+  width: 700px;
+  height: 700px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(rgba(0, 195, 255, 0.25), transparent 70%);
+}
+
+.inquire .b3 {
+  position: absolute;
+
+  right: -120px;
+  bottom: -180px;
+
+  width: 750px;
+  height: 750px;
+
+  background: url("../img/main/network-pattern.png") no-repeat center/contain;
+
+  opacity: 0.15;
+}
+
+/* ===========================
+    Mobile
+=========================== */
+
+@media (max-width: 768px) {
+  .inquire {
+    padding: 60px 0;
+  }
+
+  .inquire .container {
+    padding: 0 30px;
+  }
+
+  .inquire .sub {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 35px;
+  }
+
+  .inquire .sub-title {
+    font-size: 32px;
+  }
+
+  .inquire .sub-desc {
+    font-size: 16px;
+  }
+
+  .inquire .rect-button {
+    width: 100%;
+    height: 72px;
+    padding: 0 28px;
+    font-size: 20px;
+  }
+}
+/*************** footer ***************/
+/* ===========================
+    FOOTER
+=========================== */
+
+.footer {
+  background: #07101d;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
 .footer-con {
   display: flex;
   justify-content: space-between;
-  height: inherit;
-  width: 100%;
-  padding: 0px 50px;
+
+  max-width: 1600px;
+
+  margin: 0 auto;
+
+  padding: 64px 97px 49px 3px;
 }
 
 .footer-left {
-  padding: 37px 14px;
-  float: left;
-}
-
-.footer-left .footer-info {
-  line-height: 15px;
-  font-size: 12px;
-}
-
-.footer-left .footer-copy {
-  margin-top: 8px;
-  font-size: 12px;
-  font-weight: 400;
-  color: #808184;
-}
-
-.footer-right {
-  margin: auto 0;
-  padding: 29px 12px;
-}
-
-.footer-right div {
-  margin-bottom: 6px;
-  font-size: 15px;
-  color: #808184;
+  width: 330px;
 }
 
 .footer-logo {
-  width: 120px;
-  height: 45px;
-  background: no-repeat left/100% url(../img/footer_logo.png);
+  margin-bottom: 28px;
 }
 
-.footer-right > a {
-  float: right;
-  margin-top: 3px;
+.footer-logo img {
+  height: 42px;
 }
 
-.footer-right > a > .post-icon {
-  width: 30px;
-  height: 30px;
-  background: no-repeat left/100% url(../img/icon_post.png);
+.footer-left address {
+  margin-bottom: 25px;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-style: normal;
 }
 
+.footer-left .tel {
+  color: #fff;
+
+  font-size: 15px;
+}
+
+.footer-left strong {
+  font-size: 22px;
+
+  font-weight: 700;
+}
+
+/* Right */
+
+.footer-right {
+  display: flex;
+
+  gap: 80px;
+}
+
+.footer-right dt {
+  margin-bottom: 20px;
+
+  color: #fff;
+
+  font-size: 20px;
+
+  font-weight: 600;
+}
+
+.footer-right dd {
+  margin-bottom: 12px;
+}
+
+.footer-right a {
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 15px;
+
+  transition: 0.3s;
+}
+
+.footer-right a:hover {
+  color: #fff;
+}
+
+/* Bottom */
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer-bottom-con {
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 35px;
+
+  max-width: 1600px;
+
+  margin: 0 auto;
+
+  padding: 18px 20px;
+}
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.4);
+
+  font-size: 13px;
+}
+
+.policy {
+  display: flex;
+
+  gap: 18px;
+}
+
+.policy a {
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 13px;
+}
+@media (max-width: 768px) {
+  .footer-con {
+    display: block;
+  }
+
+  .footer-right {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 40px;
+
+    margin-top: 50px;
+  }
+
+  .footer-bottom-con {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+}
 /*************** top button ***************/
 #btn-top {
   position: fixed;
@@ -1038,7 +1183,6 @@ span.highlight {
     font-size: 1.5rem !important;
     height: 66px;
   }
-
   .first-menu {
     min-width: 300px;
   }
