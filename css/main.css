@@ -616,10 +616,124 @@ a.slide_btn {
   width: auto;
   height: 40px;
 }
+.partner {
+  position: relative;
 
+  display: flex;
+
+  align-items: center;
+
+  height: 82px;
+
+  background: linear-gradient(90deg, #06152d 0%, #081934 100%);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  overflow: hidden;
+}
+.partner {
+  overflow: hidden;
+}
+
+.partner-track {
+  display: flex;
+
+  gap: 80px;
+
+  width: max-content;
+
+  animation: partnerMove 25s linear infinite;
+}
+
+@keyframes partnerMove {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+/* 슬라이더 */
+
+.partner-slider {
+  width: calc(100% - 170px);
+
+  overflow: hidden;
+}
+
+.partner-swiper {
+  width: 100%;
+}
+
+.partner-swiper .swiper-slide {
+  width: auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.partner-swiper img {
+  display: block;
+
+  height: 28px;
+
+  width: auto;
+}
+
+/* 오른쪽 고정 */
+
+.partner-fixed {
+  position: absolute;
+
+  top: 0;
+
+  right: 0;
+
+  width: 170px;
+
+  height: 82px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 14px;
+
+  color: #fff;
+
+  font-size: 15px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(7, 22, 47, 0) 0%,
+    #07162f 25%,
+    #07162f 100%
+  );
+
+  z-index: 30;
+}
+.partner-fixed a {
+  display: flex;
+  align-items: center;
+  filter: brightness(0) invert(1);
+  gap: 10px;
+  padding: 10px;
+}
+.partner-fixed svg {
+  width: 16px;
+  transform: rotate(180deg);
+}
 /*************** main2 ***************/
 .main2 {
-  padding: 120px 0;
+  padding: 80px 0;
   background: #f8fafc;
 }
 
@@ -849,7 +963,7 @@ a.slide_btn {
 /*************** main3 ***************/
 
 .main3 {
-  padding: 120px 0;
+  padding: 80px 0;
   background: #fff;
 }
 
@@ -1104,7 +1218,7 @@ a.slide_btn {
 /*************** main4 ***************/
 
 .main4 {
-  padding: 120px 0;
+  padding: 80px 0;
   background: #f8fafc;
 }
 
@@ -1282,7 +1396,7 @@ a.slide_btn {
 /*************** main5 ***************/
 
 .main5 {
-  padding: 120px 0;
+  padding: 80px 0;
   background: #fff;
 }
 
