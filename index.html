@@ -81,6 +81,23 @@
         if (window.scrollY >= elemTops[1] - 80) {
           $("#header").addClass("solid");
         }
+        var main2BusinessSwiper = new Swiper(".main2-swiper", {
+          wrapperClass: "main2-wrapper",
+
+          slideClass: "main2-slide",
+
+          slidesPerView: "auto",
+
+          spaceBetween: 12,
+
+          speed: 600,
+
+          navigation: {
+            nextEl: ".main2-next",
+
+            prevEl: ".main2-prev",
+          },
+        });
         var main5InsightSwiper = new Swiper(".main5-swiper", {
           loop: true,
 
@@ -566,156 +583,183 @@
       <!-- 사업 영역 1 -->
       <div class="main main2 section">
         <div class="main2-con focus-elem">
+          <!-- Title -->
           <div class="main2-title-wrap">
-            <div class="main2-title-sub">WHAT WE DO</div>
-            <div class="main2-title">
+            <span class="main2-title-sub"> WHAT WE DO </span>
+
+            <h2 class="main2-title">
               데이터 기반 AI 솔루션으로<br />
               기업의 디지털 혁신을 지원합니다.
-            </div>
+            </h2>
           </div>
 
-          <div class="business-card-swiper swiper">
-            <div class="main2-sub-wrapper swiper-wrapper">
-              <!-- AI Analytics -->
-              <a
-                href="htmls/service.html#section1"
-                class="main2-sub-card swiper-slide"
-              >
-                <div class="main2-sub-card-icon">
-                  <img src="./img/main/business/icon_ai.svg" alt="" />
-                </div>
+          <!-- Swiper -->
+          <div class="main2-swiper swiper">
+            <div class="main2-wrapper">
+              <!-- Card 01 -->
+              <div class="main2-slide">
+                <a href="htmls/service.html#section1" class="main2-card">
+                  <div class="main2-card-bg">
+                    <img src="./img/main/business/icon_ai.png" alt="" />
+                  </div>
 
-                <div class="main2-sub-card-title2">AI Analytics</div>
+                  <div class="main2-card-overlay"></div>
 
-                <div class="main2-sub-card-desc">
-                  AI 기반 데이터 분석으로
-                  <br />
-                  기업의 의사결정을 지원하고
-                  <br />
-                  새로운 비즈니스 인사이트를 제공합니다.
-                </div>
+                  <div class="main2-card-content">
+                    <h3 class="main2-card-title">AI Analytics</h3>
 
-                <div class="main2-sub-card-more">자세히보기 →</div>
-              </a>
+                    <p class="main2-card-desc">
+                      AI 기반 데이터 분석으로<br />
+                      기업의 의사결정을 지원하고<br />
+                      새로운 비즈니스 인사이트를 제공합니다.
+                    </p>
 
-              <!-- Smart Factory -->
-              <a
-                href="htmls/service.html#section2"
-                class="main2-sub-card swiper-slide"
-              >
-                <div class="main2-sub-card-icon">
-                  <img src="./img/main/business/icon_factory.svg" alt="" />
-                </div>
+                    <span class="main2-card-more">
+                      자세히보기
+                      <i class="xi-arrow-right"></i>
+                    </span>
+                  </div>
+                </a>
+              </div>
 
-                <div class="main2-sub-card-title2">Smart Factory</div>
+              <!-- Card 02 -->
+              <div class="main2-slide">
+                <a href="htmls/service.html#section2" class="main2-card">
+                  <div class="main2-card-bg">
+                    <img src="./img/main/business/icon_factory.png" alt="" />
+                  </div>
 
-                <div class="main2-sub-card-desc">
-                  생산 데이터를 분석하여
-                  <br />
-                  공정을 최적화하고
-                  <br />
-                  생산성을 향상시킵니다.
-                </div>
+                  <div class="main2-card-overlay"></div>
 
-                <div class="main2-sub-card-more">자세히보기 →</div>
-              </a>
+                  <div class="main2-card-content">
+                    <h3 class="main2-card-title">Smart Factory</h3>
 
-              <!-- Platform -->
-              <a
-                href="htmls/service.html#section3"
-                class="main2-sub-card swiper-slide"
-              >
-                <div class="main2-sub-card-icon">
-                  <img src="./img/main/business/icon_platform.svg" alt="" />
-                </div>
+                    <p class="main2-card-desc">
+                      생산 데이터를 분석하여<br />
+                      공정을 최적화하고<br />
+                      생산성을 향상시킵니다.
+                    </p>
 
-                <div class="main2-sub-card-title2">Platform</div>
+                    <span class="main2-card-more">
+                      자세히보기
+                      <i class="xi-arrow-right"></i>
+                    </span>
+                  </div>
+                </a>
+              </div>
 
-                <div class="main2-sub-card-desc">
-                  고객 환경에 최적화된
-                  <br />
-                  데이터 플랫폼을 구축하여
-                  <br />
-                  운영 효율을 높입니다.
-                </div>
+              <!-- Card 03 -->
+              <div class="main2-slide">
+                <a href="htmls/service.html#section3" class="main2-card">
+                  <div class="main2-card-bg">
+                    <img src="./img/main/business/icon_platform.png" alt="" />
+                  </div>
 
-                <div class="main2-sub-card-more">자세히보기 →</div>
-              </a>
+                  <div class="main2-card-overlay"></div>
 
-              <!-- ESG -->
-              <a
-                href="htmls/service.html#section4"
-                class="main2-sub-card swiper-slide"
-              >
-                <div class="main2-sub-card-icon">
-                  <img src="./img/main/business/icon_esg.svg" alt="" />
-                </div>
+                  <div class="main2-card-content">
+                    <h3 class="main2-card-title">Platform</h3>
 
-                <div class="main2-sub-card-title2">ESG</div>
+                    <p class="main2-card-desc">
+                      고객 환경에 최적화된<br />
+                      데이터 플랫폼을 구축하여<br />
+                      운영 효율을 높입니다.
+                    </p>
 
-                <div class="main2-sub-card-desc">
-                  ESG 경영을 위한
-                  <br />
-                  데이터 분석과
-                  <br />
-                  전략 수립을 지원합니다.
-                </div>
+                    <span class="main2-card-more">
+                      자세히보기
+                      <i class="xi-arrow-right"></i>
+                    </span>
+                  </div>
+                </a>
+              </div>
 
-                <div class="main2-sub-card-more">자세히보기 →</div>
-              </a>
+              <!-- Card 04 -->
+              <div class="main2-slide">
+                <a href="htmls/service.html#section4" class="main2-card">
+                  <div class="main2-card-bg">
+                    <img src="./img/main/business/icon_esg.png" alt="" />
+                  </div>
 
-              <!-- e-Mapp -->
-              <a
-                href="htmls/service.html#section5"
-                class="main2-sub-card swiper-slide"
-              >
-                <div class="main2-sub-card-icon">
-                  <img src="./img/main/business/icon_emapp.svg" alt="" />
-                </div>
+                  <div class="main2-card-overlay"></div>
 
-                <div class="main2-sub-card-title2">e-Mapp</div>
+                  <div class="main2-card-content">
+                    <h3 class="main2-card-title">ESG</h3>
 
-                <div class="main2-sub-card-desc">
-                  데이터를 직관적으로
-                  <br />
-                  시각화하여
-                  <br />
-                  빠른 의사결정을 지원합니다.
-                </div>
+                    <p class="main2-card-desc">
+                      ESG 경영을 위한<br />
+                      데이터 분석과<br />
+                      전략 수립을 지원합니다.
+                    </p>
 
-                <div class="main2-sub-card-more">자세히보기 →</div>
-              </a>
+                    <span class="main2-card-more">
+                      자세히보기
+                      <i class="xi-arrow-right"></i>
+                    </span>
+                  </div>
+                </a>
+              </div>
 
-              <!-- RapidMiner -->
-              <a
-                href="htmls/service.html#section6"
-                class="main2-sub-card swiper-slide"
-              >
-                <div class="main2-sub-card-icon">
-                  <img src="./img/main/business/icon_rapidminer.svg" alt="" />
-                </div>
+              <!-- Card 05 -->
+              <div class="main2-slide">
+                <a href="htmls/service.html#section5" class="main2-card">
+                  <div class="main2-card-bg">
+                    <img src="./img/main/business/icon_emapp.png" alt="" />
+                  </div>
 
-                <div class="main2-sub-card-title2">RapidMiner</div>
+                  <div class="main2-card-overlay"></div>
 
-                <div class="main2-sub-card-desc">
-                  머신러닝 기반 분석 환경을
-                  <br />
-                  구축하여
-                  <br />
-                  AI 활용도를 높입니다.
-                </div>
+                  <div class="main2-card-content">
+                    <h3 class="main2-card-title">e-Mapp</h3>
 
-                <div class="main2-sub-card-more">자세히보기 →</div>
-              </a>
+                    <p class="main2-card-desc">
+                      데이터를 직관적으로<br />
+                      시각화하여<br />
+                      빠른 의사결정을 지원합니다.
+                    </p>
+
+                    <span class="main2-card-more">
+                      자세히보기
+                      <i class="xi-arrow-right"></i>
+                    </span>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Card 06 -->
+              <div class="main2-slide">
+                <a href="htmls/service.html#section6" class="main2-card">
+                  <div class="main2-card-bg">
+                    <img src="./img/main/business/icon_rapidminer.png" alt="" />
+                  </div>
+
+                  <div class="main2-card-overlay"></div>
+
+                  <div class="main2-card-content">
+                    <h3 class="main2-card-title">RapidMiner</h3>
+
+                    <p class="main2-card-desc">
+                      머신러닝 기반 분석 환경을<br />
+                      구축하여<br />
+                      AI 활용도를 높입니다.
+                    </p>
+
+                    <span class="main2-card-more">
+                      자세히보기
+                      <i class="xi-arrow-right"></i>
+                    </span>
+                  </div>
+                </a>
+              </div>
             </div>
 
-            <div class="swiper-button-prev">
+            <button class="main2-prev">
               <img src="./img/main/business/card-back.svg" alt="" />
-            </div>
+            </button>
 
-            <div class="swiper-button-next">
+            <button class="main2-next">
               <img src="./img/main/business/card-forward.svg" alt="" />
-            </div>
+            </button>
           </div>
         </div>
       </div>
