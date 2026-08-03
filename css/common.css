@@ -170,14 +170,12 @@ a {
   font-size: 60px;
   font-weight: 600;
   color: var(--obz-text-light-primary);
-  text-align: center;
 }
 .page-desc {
   font-size: 28px;
   font-weight: 500;
   color: var(--obz-text-light-secondary);
   padding-top: 50px;
-  text-align: center;
   line-height: 1.5;
 }
 .page-desc2 {
