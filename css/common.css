@@ -64,7 +64,7 @@
 }
 
 :root {
-  --obz-main-primary: #14c162;
+  --obz-main-primary: #0578fe;
   --obz-main-secondary: #203462;
   --obz-main-accent: #2e7aed;
   --obz-main-deep: #0961e7;
@@ -1158,8 +1158,7 @@ span.highlight {
   }
   .page-desc {
     font-size: 1.65rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding: 0px;
   }
 
   .more-button {

@@ -302,11 +302,17 @@ html {
   #section2 .cert-content {
     grid-template-columns: repeat(2, 1fr);
   }
+  #section2 .cert-content {
+    padding: 0px;
+  }
+  #section3 {
+    padding: 0px !important;
+  }
 }
 
 @media (max-width: 768px) {
   #section2 .cert-content {
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr;
   }
 }
 /*page2*/
@@ -381,18 +387,20 @@ html {
 
   border-radius: 10px;
 
-  padding: 28px;
+  padding: 15px;
 }
 
 #section3 .ceo-box h2 {
-  font-size: 38px;
+  font-size: 31px;
   margin-bottom: 10px;
   color: #fff;
+  font-weight: 600;
 }
 
 #section3 .ceo-box span {
   font-size: 18px;
   color: #fff;
+  opacity: 0.6;
 }
 
 /* 하단 */
@@ -426,15 +434,15 @@ html {
 }
 
 #section3 .blue .org-header {
-  background: #168fe5;
+  background: #6ab0dc;
 }
 
 #section3 .navy .org-header {
-  background: #0b3d91;
+  background: #317ecb;
 }
 
 #section3 .sky .org-header {
-  background: #2d92ea;
+  background: #3896e7;
 }
 
 #section3 .gray .org-header {
@@ -445,12 +453,13 @@ html {
   font-size: 22px;
   margin-bottom: 8px;
   font-weight: 700;
+  color: #e6f1f4;
 }
 
 #section3 .org-header span {
   font-size: 17px;
-
-  opacity: 0.95;
+  opacity: 0.6;
+  color: #fff;
 }
 
 /* 내용 */
@@ -585,9 +594,9 @@ html {
   float: left;
   width: 53px;
   color: var(--obz-main-primary);
-  font-size: 24px;
+  font-size: 28px;
   line-height: 35px;
-  font-weight: 500;
+  font-weight: 600;
   margin-top: -7px;
 }
 
@@ -1052,7 +1061,7 @@ div[class^="strategy-info-bg"] {
     padding-top: 120px;
   }
   .about-con {
-    padding: 0 20px;
+    padding: 0px;
   }
 
   #section1 {
