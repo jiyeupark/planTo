@@ -14,32 +14,39 @@
     <script type="text/javascript" src="../js/common.js"></script>
     <script type="text/javascript" src="../js/about.js"></script>
 
-    <!-- 네이버 지도 API 서비스 변경 2025.06.09 -->
-    <!-- <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=hg1pgwhv16&callback=initMap"></script> -->
-    <script
-      type="text/javascript"
-      src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=min57f5r5p"
-    ></script>
+    <!-- 네이버 지도 API  -->
+    <script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=min57f5r5p"></script>
 
     <!-- css -->
     <link href="../css/common.css" rel="stylesheet" />
     <link href="../css/about.css" rel="stylesheet" />
 
     <script>
-      $(function () {
-        $(".client-ctgr").on("click", function () {
-          var curElem = $(this);
+      window.onload = function () {
+        const position = new naver.maps.LatLng(37.5316, 126.9017);
 
-          if (curElem.hasClass("sel")) return;
-
-          $(".client-ctgr").removeClass("sel");
-          curElem.addClass("sel");
-
-          var idx = $(this).attr("data-index");
-          $(".client").removeClass("sel");
-          $(".c" + idx).addClass("sel");
+        const map = new naver.maps.Map("map", {
+          center: position,
+          zoom: 17,
         });
-      });
+
+        const marker = new naver.maps.Marker({
+          position: position,
+          map: map,
+          title: "플랜투 비즈니스 컨설팅",
+        });
+
+        const infoWindow = new naver.maps.InfoWindow({
+          content: `
+        <div style="padding:12px;min-width:220px;">
+            <strong>플랜투 비즈니스 컨설팅</strong><br>
+            서울특별시 영등포구 당산로41길 11<br>
+            E동 1412호
+        </div>`,
+        });
+
+        infoWindow.open(map, marker);
+      };
     </script>
   </head>
 
@@ -403,10 +410,10 @@
                 <span>Contract Management</span>
               </div>
 
-              <div class="org-body list">
-                <div>영업 통합 계약 관리</div>
-                <div>리스크 통제</div>
-                <div>수익 관리</div>
+              <div class="org-body">
+                <div class="team-box">영업 통합 계약 관리</div>
+                <div class="team-box">리스크 통제</div>
+                <div class="team-box">수익 관리</div>
               </div>
             </div>
 
