@@ -63,7 +63,7 @@ html {
   margin-bottom: 15px;
   font-size: 18px;
   font-weight: 600;
-  color: #0578fe;
+  color: #2e7aed;
   letter-spacing: 1px;
 }
 
@@ -82,7 +82,7 @@ html {
 .page-title {
   font-size: 18px;
   font-weight: 700;
-  color: #0578fe;
+  color: #2e7aed;
   margin-bottom: 15px;
 }
 
@@ -169,7 +169,7 @@ html {
 .service-subtitle {
   font-size: 18px;
   font-weight: 700;
-  color: #0578fe;
+  color: #2e7aed;
   margin-bottom: 15px;
 }
 
@@ -199,9 +199,9 @@ html {
 }
 
 .service-btn:hover {
-  background: #0578fe;
+  background: #2e7aed;
   color: #fff;
-  border-color: #0578fe;
+  border-color: #2e7aed;
 }
 
 /* 오른쪽 */
@@ -279,7 +279,7 @@ html {
 #section2 .sub-desc {
   font-size: 24px;
   font-weight: 700;
-  color: #0578fe;
+  color: #2e7aed;
 }
 #section2 .sub-title {
   padding-top: 0px;
@@ -379,19 +379,15 @@ html {
 /* 대표이사 */
 
 #section3 .ceo-box {
-  width: 360px;
-
+  width: 260px;
   background: #0a4c9f;
-
   text-align: center;
-
   border-radius: 10px;
-
   padding: 15px;
 }
 
 #section3 .ceo-box h2 {
-  font-size: 31px;
+  font-size: 27px;
   margin-bottom: 10px;
   color: #fff;
   font-weight: 600;
@@ -438,7 +434,7 @@ html {
 }
 
 #section3 .navy .org-header {
-  background: #317ecb;
+  background: #2e7aed;
 }
 
 #section3 .sky .org-header {
@@ -877,7 +873,7 @@ html {
 .ceo-small {
   font-size: 18px;
   font-weight: 700;
-  color: #0578fe;
+  color: #2e7aed;
   margin-bottom: 15px;
 }
 .ceo-name {
