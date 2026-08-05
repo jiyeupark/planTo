@@ -6,6 +6,26 @@ html {
   /* padding-top: 55px; */
   padding-top: 6rem;
 }
+#historyOld {
+  display: none;
+}
+
+.history-btn-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+#historyBtn {
+  padding: 12px 30px;
+  border: 2px solid #0f4fa8;
+  border-radius: 30px;
+  background: #fff;
+  color: #0f4fa8;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
 
 #leader_con,
 #history_year img {
@@ -17,9 +37,7 @@ html {
   position: relative;
   padding: 2em 0;
 }
-#section6 {
-  height: 950px;
-}
+
 #about-info,
 .about-content {
   transform: translateY(100px);
@@ -317,17 +335,15 @@ html {
 }
 /*page2*/
 /*page3*/
-/* =========================
-   SECTION 3
-========================= */
-
+/* ==========================
+    SECTION3 - 조직도
+========================== */
 #section3 {
-  background: #f6f8fb;
-  padding: 0% 120px;
+  padding: 0 120px;
+  background: #f8fafc;
 }
-
 #section3 .organization {
-  margin-top: 60px;
+  margin-top: 70px;
   position: relative;
 }
 
@@ -336,210 +352,195 @@ html {
 #section3 .org-top {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 80px;
-  margin-bottom: 60px;
+  align-items: flex-start;
+  position: relative;
 }
 
-/* 자문팀 */
-
 #section3 .advisory {
-  width: 270px;
-  border: 1px solid #bfc7d2;
-  border-radius: 8px;
-  overflow: hidden;
-  background: #fff;
+  position: absolute;
+  left: 209px;
+  top: -6px;
+  width: 180px;
+  border: 1px solid #ccc;
 }
 
 #section3 .advisory .org-header {
-  background: #f3f5f7;
-  padding: 18px;
+  background: #fff;
+  border: 1px solid #d8dce6;
+  border-radius: 6px;
+  padding: 12px;
   text-align: center;
-}
-
-#section3 .advisory h3 {
-  font-size: 34px;
-  margin-bottom: 8px;
-  font-weight: 700;
-}
-
-#section3 .advisory span {
-  font-size: 18px;
-  color: #555;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 
 #section3 .advisor-list {
   display: flex;
-  justify-content: space-around;
-  padding: 18px;
-  font-size: 20px;
-  font-weight: 600;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 10px;
 }
 
-/* 대표이사 */
+#section3 .advisor-list div {
+  flex: 1;
+  background: #f6f7fb;
+  border-radius: 5px;
+  padding: 8px 0;
+  font-size: 13px;
+}
 
 #section3 .ceo-box {
-  width: 260px;
-  background: #0a4c9f;
+  width: 300px;
+  background: #0b2c73;
+  color: #fff;
+  border-radius: 40px;
+  padding: 18px 20px;
   text-align: center;
-  border-radius: 10px;
-  padding: 15px;
+  position: relative;
 }
 
 #section3 .ceo-box h2 {
-  font-size: 27px;
-  margin-bottom: 10px;
+  margin: 0;
+  font-size: 22px;
   color: #fff;
-  font-weight: 600;
 }
 
 #section3 .ceo-box span {
-  font-size: 18px;
+  display: block;
+  margin-top: 5px;
+  font-size: 13px;
+  opacity: 0.85;
   color: #fff;
-  opacity: 0.6;
+}
+
+#section3 .ceo-box::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 40px;
+  background: #d7dce5;
+}
+
+/* 연결선 */
+
+#section3 .org-line {
+  position: relative;
+  width: 76.6%;
+  height: 40px;
+  margin: 0px auto;
+  left: 12px;
+}
+
+#section3 .org-line::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40px;
+  height: 2px;
+  background: #d7dce5;
 }
 
 /* 하단 */
 
 #section3 .org-bottom {
-  display: grid;
-
-  grid-template-columns: repeat(5, 1fr);
-
-  gap: 25px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  position: relative;
 }
-
-/* 카드 */
 
 #section3 .org-card {
-  border: 1px solid #bfc7d2;
-
-  border-radius: 10px;
-
-  overflow: hidden;
-
-  background: #fff;
+  position: relative;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  margin-right: 10px;
 }
+
+#section3 .org-card::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -40px;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 40px;
+  background: #d7dce5;
+}
+
+/* 헤더 */
 
 #section3 .org-header {
-  padding: 18px 15px;
-
-  color: #fff;
-
+  border-radius: 6px;
   text-align: center;
-}
-
-#section3 .blue .org-header {
-  background: #6ab0dc;
-}
-
-#section3 .navy .org-header {
-  background: #2e7aed;
-}
-
-#section3 .sky .org-header {
-  background: #3896e7;
-}
-
-#section3 .gray .org-header {
-  background: #888;
+  padding: 14px;
 }
 
 #section3 .org-header h3 {
-  font-size: 22px;
-  margin-bottom: 8px;
-  font-weight: 700;
-  color: #e6f1f4;
-}
-
-#section3 .org-header span {
+  margin: 0;
   font-size: 17px;
-  opacity: 0.6;
   color: #fff;
 }
 
-/* 내용 */
-
-#section3 .org-body {
-  padding: 18px;
+#section3 .org-header span {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: #fff;
+  opacity: 0.6;
 }
 
-/* 내부 박스 */
+#section3 .blue .org-header {
+  background: #0069d9;
+  color: #fff;
+}
+
+#section3 .navy .org-header {
+  background: #143a8f;
+  color: #fff;
+}
+
+#section3 .sky .org-header {
+  background: #4da3ff;
+  color: #fff;
+}
+
+#section3 .gray .org-header {
+  background: #99a1b2;
+  color: #333;
+}
+
+/* 팀 박스 */
+
+#section3 .org-body {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
 
 #section3 .team-box {
-  border: 1px solid #98b9d8;
-
+  background: #fff;
+  border: 1px solid #d9dde6;
   border-radius: 6px;
-
-  margin-bottom: 15px;
-
-  padding: 18px;
-
+  padding: 5px;
   text-align: center;
-
-  font-size: 18px;
-
-  font-weight: 700;
-
-  background: #f9fbfd;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  min-height: 50px;
+  min-width: 70px;
+  display: inline-grid;
+  justify-content: center;
+  align-items: center;
 }
 
 #section3 .team-box small {
   display: block;
-
-  margin-top: 6px;
-
-  font-size: 14px;
-
-  color: #666;
-
-  font-weight: 400;
-}
-
-/* 계약관리 */
-
-#section3 .list {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 18px;
-}
-
-#section3 .list div {
-  border-bottom: 1px solid #ddd;
-
-  padding-bottom: 15px;
-
-  text-align: center;
-
-  font-size: 18px;
-
-  font-weight: 600;
-}
-
-#section3 .list div:last-child {
-  border: none;
-}
-
-/* 모바일 */
-
-@media (max-width: 1200px) {
-  #section3 .org-bottom {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  #section3 .org-top {
-    flex-direction: column;
-
-    gap: 30px;
-  }
-
-  #section3 .org-bottom {
-    grid-template-columns: 1fr;
-  }
+  margin-top: 5px;
+  color: #888;
+  font-size: 12px;
 }
 /*page4*/
 #section4 .sub-title {
@@ -548,7 +549,6 @@ html {
   height: 50px;
 }
 #section4 .about-con {
-  height: 1800px;
   overflow: hidden;
   /* transition: height 1s ease-in-out; */
 }
@@ -571,7 +571,7 @@ html {
   padding-bottom: 35px;
 }
 #history_year dl ul {
-  padding-bottom: 30px;
+  padding-bottom: 12px;
   border-bottom: 1px solid var(--obz-border-light);
   width: 950px;
 }
@@ -605,13 +605,6 @@ html {
   text-align: center;
   cursor: pointer;
   margin-top: 35px;
-}
-#btn-more-history:hover {
-  opacity: 1;
-}
-
-#more-history {
-  display: none;
 }
 
 /*page5*/
@@ -739,120 +732,160 @@ html {
 }
 
 /*page6*/
+/* =========================
+   Section6 - 오시는 길
+========================= */
+
+#section6 {
+  padding: 0 120px;
+  background: #f7f7f7;
+}
+
 #section6 .sub-title {
-  padding-top: 100px;
-}
-#contact_map {
-  width: 1100px;
-  border: 1px solid var(--obz-border-light);
-  height: 400px;
-  margin: 40px auto;
-}
-#contact_map #map {
-  width: 1100px;
-  height: 400px;
-  position: relative;
-  overflow: hidden;
-  /* background: url(http://static.naver.net/maps/mantle/2x/auth_fail.png) center center / 256px 256px rgb(248, 249, 250); */
-  background: url(/img/about/map/auth_fail.png) center center / 256px 256px
-    rgb(248, 249, 250);
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  color: #1f2b4d;
+  margin-bottom: 60px;
 }
 
-.company-path-wrap {
-  height: 285px;
+/* 전체 레이아웃 */
+#section6 .location-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
 }
 
-.company-traffic {
+/* =========================
+   왼쪽
+========================= */
+
+#section6 .company-path-wrap {
+  width: 38%;
+}
+
+#section6 .location-title {
+  margin-bottom: 40px;
+}
+
+#section6 .location-title span {
+  display: block;
+  font-size: 14px;
+  color: #1b5cb8;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+#section6 .location-title h2 {
+  font-size: 46px;
+  color: #1f2b4d;
+  font-weight: 700;
+}
+
+#section6 .company-traffic {
   display: flex;
   flex-direction: column;
-  width: 1100px;
-  margin: 0 auto;
-  justify-content: space-between;
+  gap: 28px;
 }
-.traffic-up {
+
+#section6 .traffic-item {
   display: flex;
-  flex-direction: row;
-  width: 1095px;
-  margin: 0 auto;
-  justify-content: flex-start;
+  align-items: flex-start;
 }
 
-.traffic-up .traffic-left {
-  padding-right: 150px;
-  border-right: 1px solid var(--obz-border-light);
+#section6 .traffic-icon {
+  width: 42px;
+  font-size: 24px;
+  color: #1b5cb8;
+  margin-top: 3px;
 }
 
-.traffic-up .traffic-right {
-  padding-left: 25px;
+#section6 .traffic-content {
+  flex: 1;
 }
 
-.traffic {
-  margin: 15px 0;
+#section6 .traffic-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 6px;
 }
-.traffic-title {
+
+#section6 .traffic-desc {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.8;
+}
+
+#section6 .traffic-desc span {
+  font-size: 16px;
+  color: #1b5cb8;
+  font-weight: 700;
+}
+
+/* =========================
+   지도
+========================= */
+
+#section6 #contact_map {
+  width: 62%;
+}
+
+#section6 #map {
   width: 100%;
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-.traffic-desc {
-  font-size: 16px;
-  margin: 10px 0;
-  font-weight: 400;
-  color: var(--obz-text-light-secondary);
-}
-.traffic-desc span {
-  font-size: 16px;
-  margin: 10px 0;
-  font-weight: 600;
-  color: #555;
+  height: 430px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
-.traffic:last-child {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.traffic-bus {
-  font-size: 18px;
-  padding-right: 20px;
-  border-right: 1px solid var(--obz-border-light);
-  margin-right: -8px;
+/* =========================
+   반응형
+========================= */
+
+@media (max-width: 1024px) {
+  #section6 .location-wrap {
+    flex-direction: column;
+  }
+
+  #section6 .company-path-wrap,
+  #section6 #contact_map {
+    width: 100%;
+  }
+
+  #section6 .location-title {
+    text-align: center;
+  }
 }
 
-.traffic-bus:last-child {
-  border: none;
-}
+@media (max-width: 768px) {
+  #section6 {
+    padding: 70px 0;
+  }
 
-.traffic-bus .traffic-desc {
-  letter-spacing: 0.5px;
-  margin: 5px 0 10px 0;
-}
+  #section6 .sub-title {
+    font-size: 34px;
+    margin-bottom: 40px;
+  }
 
-.bus-blue::before {
-  width: 37px;
-  height: 18px;
-  content: "";
-  position: absolute;
-  display: block;
-  margin-top: 9px;
-  margin-left: 5px;
-  z-index: -1;
-  background-color: #2f96fc41;
-}
-.bus-green::before {
-  width: 37px;
-  height: 18px;
-  content: "";
-  position: absolute;
-  display: block;
-  margin-top: 9px;
-  margin-left: 5px;
-  z-index: -1;
-  background-color: #2eff743d;
-}
+  #section6 .location-title h2 {
+    font-size: 34px;
+  }
 
+  #section6 #map {
+    height: 300px;
+  }
+
+  #section6 .traffic-title {
+    font-size: 17px;
+  }
+
+  #section6 .traffic-desc {
+    font-size: 15px;
+  }
+}
 /* page7 */
 .about7 {
   background: #f7f7f7;
@@ -1185,44 +1218,6 @@ div[class^="strategy-info-bg"] {
   }
   .client-cont-mo {
     display: flex;
-  }
-
-  #section6 {
-    height: fit-content;
-  }
-  #contact_map {
-    width: 100%;
-  }
-  #contact_map #map {
-    width: 100%;
-  }
-  .company-path-wrap {
-    height: fit-content;
-  }
-  .company-traffic {
-    width: 100%;
-  }
-  .traffic-up {
-    width: 100%;
-    flex-direction: column;
-  }
-  .traffic-up .traffic-left {
-    padding-right: 0px;
-    border: 0;
-  }
-  .traffic-up .traffic-right {
-    padding-left: 0px;
-    padding-top: 15px;
-  }
-  .traffic-bus {
-    border-right: 0px;
-  }
-  .traffic-desc {
-    font-size: 1.1rem;
-  }
-  .traffic-bus .traffic-desc {
-    margin-left: 4px;
-    margin-top: 3px;
   }
 
   #section7 .about-info-desc {
