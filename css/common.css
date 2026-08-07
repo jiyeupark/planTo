@@ -255,8 +255,8 @@ span.highlight {
 
 .top-logo {
   float: left;
-  width: 110px;
-  height: 54px;
+  width: 135px;
+  height: 63px;
   flex-basis: 130px;
   background: no-repeat left/80% url(../img/gnb/planTo_logo_white.svg);
 }

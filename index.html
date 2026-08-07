@@ -98,34 +98,25 @@
             prevEl: ".main2-prev",
           },
         });
-        var partnerSwiper = new Swiper(".partner-swiper", {
+        const partnerSwiper = new Swiper(".partner-swiper", {
           loop: true,
-
-          loopAdditionalSlides: 10,
+          loopAdditionalSlides: 20,
 
           slidesPerView: "auto",
-
           spaceBetween: 80,
 
-          speed: 6000,
+          speed: 8000,
 
           allowTouchMove: false,
 
           autoplay: {
-            delay: 1,
+            delay: 0,
             disableOnInteraction: false,
-            pauseOnMouseEnter: false,
           },
 
-          freeMode: true,
-
-          freeModeMomentum: false,
-
-          watchSlidesProgress: true,
-
-          observer: true,
-
-          observeParents: true,
+          // 삭제
+          // freeMode: true,
+          // freeModeMomentum: false,
         });
         var main5InsightSwiper = new Swiper(".main5-swiper", {
           loop: true,
@@ -164,27 +155,7 @@
             },
           },
         });
-        var clientLogoFlowSwiper = new Swiper(".clientLogoFlowSwiper", {
-          loop: true,
 
-          speed: 6000,
-
-          slidesPerView: "auto",
-
-          spaceBetween: 80,
-
-          freeMode: true,
-
-          freeModeMomentum: false,
-
-          allowTouchMove: false,
-
-          autoplay: {
-            delay: 0,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          },
-        });
         var businessCardSwiper = new Swiper(".business-card-swiper", {
           slidesPerView: 5,
 
@@ -474,7 +445,6 @@
                 </a>
               </div>
             </div>
-
           </div>
 
           <div class="swiper-pagination"></div>
@@ -485,9 +455,9 @@
             <img src="./img/main/banner/forward.svg" />
           </div>
         </div>
-        <div class="partner">
-          <div class="partner-slider">
-            <div class="partner-swiper swiper">
+        <section class="em-partner-band">
+          <div class="em-partner-band__flow">
+            <div class="em-partner-band__swiper swiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <img src="./img/main/client/01-01.png" alt="" />
@@ -510,32 +480,53 @@
                 <div class="swiper-slide">
                   <img src="./img/main/client/02-02.png" alt="" />
                 </div>
+                <div class="swiper-slide">
+                  <img src="./img/main/client/02-03.png" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/main/client/02-04.svg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/main/client/02-05.png" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/main/client/03-01.png" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/main/client/03-02.png" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/main/client/03-03.svg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/main/client/03-04.png" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/main/client/03-05.png" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/main/client/03-05.png" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/main/client/04-01.png" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/main/client/04-02.png" alt="" />
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="partner-fixed">
-            <a href="#">전체보기   <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="1em"
-              height="1em"
-              viewBox="0 0 24 24"
-            >
-              <path d="M0 0h24v24H0z" fill="none" />
-              <path
-                fill="currentColor"
-                d="M1 13v-2h1v-1h1V9h1V8h1V7h1V6h1V5h1V4h1V3h1V2h1V1h1v1h1v1h1v1h-1v1h-1v1h-1v1h-1v1H9v1H8v1h15v4H8v1h1v1h1v1h1v1h1v1h1v1h1v1h-1v1h-1v1h-1v-1h-1v-1H9v-1H8v-1H7v-1H6v-1H5v-1H4v-1H3v-1H2v-1z"
-              /></a>
-
-
-            </svg>
-          </div>
-        </div>
+          <a href="#" class="em-partner-band__more">
+            <span>전체보기</span>
+            <svg>...</svg>
+          </a>
+        </section>
       </div>
 
       <!-- 사업 영역 1 -->
-      <div class="main main2 section">
-        <div class="main2-con focus-elem">
+      <div class="main main2 section focus-elem">
+        <div class="main2-con">
           <!-- Title -->
           <div class="main2-title-wrap">
             <span class="main2-title-sub"> WHAT WE DO </span>
@@ -569,10 +560,18 @@
 
                     <span class="main2-card-more">
                       자세히보기
-                      <svg xmlns="http://www.w3.org/2000/svg" width="0.5em" height="1em" viewBox="0 0 12 24">
-  <path d="M0 0h12v24H0z" fill="none" />
-  <path fill="currentColor" fill-rule="evenodd" d="M10.157 12.711L4.5 18.368l-1.414-1.414l4.95-4.95l-4.95-4.95L4.5 5.64l5.657 5.657a1 1 0 0 1 0 1.414" />
-</svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path
+                          fill="currentColor"
+                          d="M13.884 6.116a1.25 1.25 0 0 0-1.768 1.768l2.866 2.866H6a1.25 1.25 0 1 0 0 2.5h8.982l-2.866 2.866a1.25 1.25 0 0 0 1.768 1.768l5-5a1.25 1.25 0 0 0 0-1.768z"
+                        />
+                      </svg>
                     </span>
                   </div>
                 </a>
@@ -598,10 +597,18 @@
 
                     <span class="main2-card-more">
                       자세히보기
-                      <svg xmlns="http://www.w3.org/2000/svg" width="0.5em" height="1em" viewBox="0 0 12 24">
-  <path d="M0 0h12v24H0z" fill="none" />
-  <path fill="currentColor" fill-rule="evenodd" d="M10.157 12.711L4.5 18.368l-1.414-1.414l4.95-4.95l-4.95-4.95L4.5 5.64l5.657 5.657a1 1 0 0 1 0 1.414" />
-</svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path
+                          fill="currentColor"
+                          d="M13.884 6.116a1.25 1.25 0 0 0-1.768 1.768l2.866 2.866H6a1.25 1.25 0 1 0 0 2.5h8.982l-2.866 2.866a1.25 1.25 0 0 0 1.768 1.768l5-5a1.25 1.25 0 0 0 0-1.768z"
+                        />
+                      </svg>
                     </span>
                   </div>
                 </a>
@@ -627,10 +634,18 @@
 
                     <span class="main2-card-more">
                       자세히보기
-                      <svg xmlns="http://www.w3.org/2000/svg" width="0.5em" height="1em" viewBox="0 0 12 24">
-  <path d="M0 0h12v24H0z" fill="none" />
-  <path fill="currentColor" fill-rule="evenodd" d="M10.157 12.711L4.5 18.368l-1.414-1.414l4.95-4.95l-4.95-4.95L4.5 5.64l5.657 5.657a1 1 0 0 1 0 1.414" />
-</svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path
+                          fill="currentColor"
+                          d="M13.884 6.116a1.25 1.25 0 0 0-1.768 1.768l2.866 2.866H6a1.25 1.25 0 1 0 0 2.5h8.982l-2.866 2.866a1.25 1.25 0 0 0 1.768 1.768l5-5a1.25 1.25 0 0 0 0-1.768z"
+                        />
+                      </svg>
                     </span>
                   </div>
                 </a>
@@ -656,10 +671,18 @@
 
                     <span class="main2-card-more">
                       자세히보기
-                      <svg xmlns="http://www.w3.org/2000/svg" width="0.5em" height="1em" viewBox="0 0 12 24">
-  <path d="M0 0h12v24H0z" fill="none" />
-  <path fill="currentColor" fill-rule="evenodd" d="M10.157 12.711L4.5 18.368l-1.414-1.414l4.95-4.95l-4.95-4.95L4.5 5.64l5.657 5.657a1 1 0 0 1 0 1.414" />
-</svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path
+                          fill="currentColor"
+                          d="M13.884 6.116a1.25 1.25 0 0 0-1.768 1.768l2.866 2.866H6a1.25 1.25 0 1 0 0 2.5h8.982l-2.866 2.866a1.25 1.25 0 0 0 1.768 1.768l5-5a1.25 1.25 0 0 0 0-1.768z"
+                        />
+                      </svg>
                     </span>
                   </div>
                 </a>
@@ -685,10 +708,18 @@
 
                     <span class="main2-card-more">
                       자세히보기
-                      <svg xmlns="http://www.w3.org/2000/svg" width="0.5em" height="1em" viewBox="0 0 12 24">
-  <path d="M0 0h12v24H0z" fill="none" />
-  <path fill="currentColor" fill-rule="evenodd" d="M10.157 12.711L4.5 18.368l-1.414-1.414l4.95-4.95l-4.95-4.95L4.5 5.64l5.657 5.657a1 1 0 0 1 0 1.414" />
-</svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path
+                          fill="currentColor"
+                          d="M13.884 6.116a1.25 1.25 0 0 0-1.768 1.768l2.866 2.866H6a1.25 1.25 0 1 0 0 2.5h8.982l-2.866 2.866a1.25 1.25 0 0 0 1.768 1.768l5-5a1.25 1.25 0 0 0 0-1.768z"
+                        />
+                      </svg>
                     </span>
                   </div>
                 </a>
@@ -714,10 +745,18 @@
 
                     <span class="main2-card-more">
                       자세히보기
-                      <svg xmlns="http://www.w3.org/2000/svg" width="0.5em" height="1em" viewBox="0 0 12 24">
-  <path d="M0 0h12v24H0z" fill="none" />
-  <path fill="currentColor" fill-rule="evenodd" d="M10.157 12.711L4.5 18.368l-1.414-1.414l4.95-4.95l-4.95-4.95L4.5 5.64l5.657 5.657a1 1 0 0 1 0 1.414" />
-</svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path
+                          fill="currentColor"
+                          d="M13.884 6.116a1.25 1.25 0 0 0-1.768 1.768l2.866 2.866H6a1.25 1.25 0 1 0 0 2.5h8.982l-2.866 2.866a1.25 1.25 0 0 0 1.768 1.768l5-5a1.25 1.25 0 0 0 0-1.768z"
+                        />
+                      </svg>
                     </span>
                   </div>
                 </a>
@@ -736,8 +775,8 @@
       </div>
 
       <!-- 사업 영역 2 -->
-      <div class="main main3 section">
-        <div class="main3-con focus-elem">
+      <div class="main main3 section focus-elem">
+        <div class="main3-con">
           <div class="main3-head">
             <div class="main3-title-wrap">
               <span class="main3-title-sub">CASE STUDIES</span>
@@ -1086,10 +1125,19 @@
             </div>
 
             <div class="main5-next">
-              <svg xmlns="http://www.w3.org/2000/svg" width="0.5em" height="1em" viewBox="0 0 12 24">
-  <path d="M0 0h12v24H0z" fill="none" />
-  <path fill="currentColor" fill-rule="evenodd" d="M10.157 12.711L4.5 18.368l-1.414-1.414l4.95-4.95l-4.95-4.95L4.5 5.64l5.657 5.657a1 1 0 0 1 0 1.414" />
-</svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="0.5em"
+                height="1em"
+                viewBox="0 0 12 24"
+              >
+                <path d="M0 0h12v24H0z" fill="none" />
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M10.157 12.711L4.5 18.368l-1.414-1.414l4.95-4.95l-4.95-4.95L4.5 5.64l5.657 5.657a1 1 0 0 1 0 1.414"
+                />
+              </svg>
             </div>
           </div>
         </div>
@@ -1098,9 +1146,6 @@
       <!-- 플랜투의 고객사 -->
 
       <!-- 문의 사항 -->
-      <script>
-        loadHTML("htmls/inquire.html");
-      </script>
 
       <div id="main-popup"></div>
     </section>
