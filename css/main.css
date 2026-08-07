@@ -593,6 +593,10 @@ a.slide_btn {
   top: 0;
   right: 0;
 }
+/* ===========================
+   Partner Logo Band
+=========================== */
+
 .em-partner-band {
   display: flex;
   align-items: center;
@@ -607,35 +611,45 @@ a.slide_btn {
   overflow: hidden;
 }
 
-.em-partner-band__flow {
+.em-partner-band__marquee {
   flex: 1;
   overflow: hidden;
-  padding: 0 40px;
+  position: relative;
 }
 
-.em-partner-band__swiper {
-  width: 100%;
-}
-
-.em-partner-band__swiper .swiper-wrapper {
-  transition-timing-function: linear !important;
-}
-
-.em-partner-band__swiper .swiper-slide {
-  width: auto;
-  flex-shrink: 0;
-
+.em-partner-band__track {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 80px;
+
+  width: max-content;
+
+  animation: partnerLogoFlow 45s linear infinite;
 }
 
-.em-partner-band__swiper img {
-  height: 28px;
-  width: auto;
+.em-partner-band__track:hover {
+  animation-play-state: paused;
+}
+
+.em-partner-band__track img {
   display: block;
 
+  flex-shrink: 0;
+
+  width: auto;
+  height: 28px;
+
+  object-fit: contain;
+
   filter: brightness(0) invert(1);
+
+  opacity: 0.9;
+
+  transition: opacity 0.3s;
+}
+
+.em-partner-band__track img:hover {
+  opacity: 1;
 }
 
 .em-partner-band__more {
@@ -649,10 +663,28 @@ a.slide_btn {
 
   flex-shrink: 0;
 
-  border-left: 1px solid rgba(255, 255, 255, 0.08);
-
   color: #fff;
   text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: background 0.3s;
+}
+
+.em-partner-band__more:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+@keyframes partnerLogoFlow {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 /*************** main2 ***************/
 .main2 {
@@ -1228,7 +1260,7 @@ a.slide_btn {
 
   border-radius: 50%;
 
-  background: #f4f8ff;
+  background: #5d98ff;
 
   transition: 0.35s;
 }

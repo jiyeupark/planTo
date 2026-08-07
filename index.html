@@ -99,24 +99,24 @@
           },
         });
         const partnerSwiper = new Swiper(".partner-swiper", {
-          loop: true,
-          loopAdditionalSlides: 20,
-
           slidesPerView: "auto",
           spaceBetween: 80,
 
-          speed: 8000,
+          loop: true,
+          loopAdditionalSlides: 30,
+
+          speed: 6000,
 
           allowTouchMove: false,
 
           autoplay: {
             delay: 0,
             disableOnInteraction: false,
+            pauseOnMouseEnter: true,
           },
 
-          // 삭제
-          // freeMode: true,
-          // freeModeMomentum: false,
+          observer: true,
+          observeParents: true,
         });
         var main5InsightSwiper = new Swiper(".main5-swiper", {
           loop: true,
@@ -456,71 +456,49 @@
           </div>
         </div>
         <section class="em-partner-band">
-          <div class="em-partner-band__flow">
-            <div class="em-partner-band__swiper swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="./img/main/client/01-01.png" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="./img/main/client/01-02.png" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="./img/main/client/01-03.png" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="./img/main/client/01-04.png" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="./img/main/client/01-05.png" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="./img/main/client/02-01.svg" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="./img/main/client/02-02.png" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="./img/main/client/02-03.png" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="./img/main/client/02-04.svg" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="./img/main/client/02-05.png" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="./img/main/client/03-01.png" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="./img/main/client/03-02.png" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="./img/main/client/03-03.svg" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="./img/main/client/03-04.png" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="./img/main/client/03-05.png" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="./img/main/client/03-05.png" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="./img/main/client/04-01.png" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="./img/main/client/04-02.png" alt="" />
-                </div>
-              </div>
+          <div class="em-partner-band__marquee">
+            <div class="em-partner-band__track">
+              <!-- 로고 1세트 -->
+              <img src="./img/main/client/01-01.png" alt="" />
+              <img src="./img/main/client/01-02.png" alt="" />
+              <img src="./img/main/client/01-03.png" alt="" />
+              <img src="./img/main/client/01-04.png" alt="" />
+              <img src="./img/main/client/01-05.png" alt="" />
+              <img src="./img/main/client/02-01.svg" alt="" />
+              <img src="./img/main/client/02-02.svg" alt="" />
+              <img src="./img/main/client/02-03.png" alt="" />
+              <img src="./img/main/client/02-04.svg" alt="" />
+              <img src="./img/main/client/02-05.png" alt="" />
+              <img src="./img/main/client/03-01.png" alt="" />
+              <img src="./img/main/client/03-02.png" alt="" />
+              <img src="./img/main/client/03-03.svg" alt="" />
+              <img src="./img/main/client/03-04.png" alt="" />
+              <img src="./img/main/client/03-05.png" alt="" />
+              <img src="./img/main/client/04-01.png" alt="" />
+              <img src="./img/main/client/04-02.png" alt="" />
+
+              <!-- 그대로 한번 더 복사 -->
+              <img src="./img/main/client/01-01.png" alt="" />
+              <img src="./img/main/client/01-02.png" alt="" />
+              <img src="./img/main/client/01-03.png" alt="" />
+              <img src="./img/main/client/01-04.png" alt="" />
+              <img src="./img/main/client/01-05.png" alt="" />
+              <img src="./img/main/client/02-01.svg" alt="" />
+              <img src="./img/main/client/02-02.png" alt="" />
+              <img src="./img/main/client/02-03.png" alt="" />
+              <img src="./img/main/client/02-04.svg" alt="" />
+              <img src="./img/main/client/02-05.png" alt="" />
+              <img src="./img/main/client/03-01.png" alt="" />
+              <img src="./img/main/client/03-02.png" alt="" />
+              <img src="./img/main/client/03-03.svg" alt="" />
+              <img src="./img/main/client/03-04.png" alt="" />
+              <img src="./img/main/client/03-05.png" alt="" />
+              <img src="./img/main/client/04-01.png" alt="" />
+              <img src="./img/main/client/04-02.png" alt="" />
             </div>
           </div>
 
-          <a href="#" class="em-partner-band__more">
-            <span>전체보기</span>
-            <svg>...</svg>
-          </a>
+          <a href="#" class="em-partner-band__more"> 전체보기 → </a>
         </section>
       </div>
 
@@ -913,7 +891,7 @@
             <li class="main4-item">
               <a href="#">
                 <div class="main4-icon">
-                  <img src="./img/main/industry01.png" alt="" />
+                  <img src="./img/industry/manufacturing.png" alt="" />
                 </div>
 
                 <strong>Manufacturing</strong>
@@ -925,7 +903,7 @@
             <li class="main4-item">
               <a href="#">
                 <div class="main4-icon">
-                  <img src="./img/main/industry02.png" alt="" />
+                  <img src="./img/industry/public.png" alt="" />
                 </div>
 
                 <strong>Public</strong>
@@ -937,7 +915,7 @@
             <li class="main4-item">
               <a href="#">
                 <div class="main4-icon">
-                  <img src="./img/main/industry03.png" alt="" />
+                  <img src="./img/industry/finance.png" alt="" />
                 </div>
 
                 <strong>Finance</strong>
@@ -949,7 +927,7 @@
             <li class="main4-item">
               <a href="#">
                 <div class="main4-icon">
-                  <img src="./img/main/industry04.png" alt="" />
+                  <img src="./img/industry/healthcare.png" alt="" />
                 </div>
 
                 <strong>Healthcare</strong>
@@ -961,7 +939,7 @@
             <li class="main4-item">
               <a href="#">
                 <div class="main4-icon">
-                  <img src="./img/main/industry05.svg" alt="" />
+                  <img src="./img/industry/logistics.png" alt="" />
                 </div>
 
                 <strong>Logistics</strong>
@@ -973,7 +951,7 @@
             <li class="main4-item">
               <a href="#">
                 <div class="main4-icon">
-                  <img src="./img/main/industry06.svg" alt="" />
+                  <img src="./img/industry/energy.png" alt="" />
                 </div>
 
                 <strong>Energy</strong>
