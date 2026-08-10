@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -17,109 +17,16 @@
     <link href="../../../css/common.css" rel="stylesheet" />
     <link href="../../../css/product.css" rel="stylesheet" />
 
-    <style>
-      .page-top .banner-image img.img1 {
-        left: -50%;
-        top: -23%;
-      }
-      .page-top .banner-image img.img2 {
-        left: -10%;
-        top: 75%;
-      }
-      .page-top .banner-image img.img3 {
-        left: 55%;
-        top: 0%;
-      }
-    </style>
+    <link href="../../../css/data.css" rel="stylesheet" />
 
     <script>
-      useTransparentGNB = true; // common.js의 투명 GNB 사용 여부
+      useTransparentGNB = true;
 
-      var lastScrollY = 0;
-      var flag_InitScroll = true;
-      var flag_AutoScroll = false;
-      var isMobile;
-
-      $(document).ready(function () {
-        var body = document.body;
-        var doc = document.documentElement;
-        isMobile = detectMobileDevice(window.navigator.userAgent);
-
-        /*----------- 접속 기기에 따른 애니메이션 유무 --------------*/
-        if (isMobile) {
-          // 모바일 접속 시 애니메이션 없음
-        } else {
-          // PC 접속 시 애니메이션 있음
-          if (body.scrollTop != 0 || doc.scrollTop != 0) {
-            body.scrollTop = 0;
-            doc.scrollTop = 0;
-          } else {
-            flag_InitScroll = false;
-          }
-        }
-
-        var params = this.location.href.split("?");
-        if (params.length > 1) {
-          var elem = $("#" + params[1])[0];
-          elem.scrollIntoView({ block: "center" });
-        }
+      $(window).on("scroll", function () {
+        $("#header").toggleClass("solid", window.scrollY > 150);
       });
-
-      //*************** 스크롤 ***************//
-      window.addEventListener("scroll", function (e) {
-        if (flag_InitScroll) {
-          if (lastScrollY < window.scrollY) {
-            flag_InitScroll = false;
-          }
-          if (window.scrollY == 0) {
-            flag_InitScroll = false;
-          }
-          lastScrollY = window.scrollY;
-          return;
-        }
-
-        if (lastScrollY < window.scrollY) {
-          if (window.scrollY > 0 && window.scrollY < 6) {
-            if (!flag_AutoScroll) {
-              e.preventDefault();
-              $("html, body").animate({ scrollTop: 600 }, 400);
-            }
-          }
-        }
-
-        if (window.scrollY > 150) {
-          $("#header").addClass("solid");
-        } else {
-          $("#header").removeClass("solid");
-        }
-
-        lastScrollY = window.scrollY;
-      });
-
-      function moveScroll(scrollY, scrollTime) {
-        flag_AutoScroll = true;
-        $("html, body").animate(
-          { scrollTop: scrollY },
-          scrollTime,
-          function () {
-            flag_AutoScroll = false;
-          },
-        );
-      }
-
-      //*************** recognize mobile device ***************//
-      function detectMobileDevice(agent) {
-        const mobileRegex = [
-          /Android/i,
-          /iPhone/i,
-          /iPad/i,
-          /iPod/i,
-          /BlackBerry/i,
-          /Windows Phone/i,
-        ];
-        return mobileRegex.some((mobile) => agent.match(mobile));
-      }
     </script>
+    <title>빅데이터 통합 분석 플랫폼 | e-Mapp</title>
   </head>
 
   <body class="product">
@@ -128,191 +35,384 @@
         loadHTML("../../header.html");
       </script>
     </header>
-    <section>
-      <div class="page-top">
-        <div class="slide-bg-cover">
-          <div class="blur1"></div>
-          <div class="blur2"></div>
-        </div>
-        <div class="container product-cont">
-          <div class="product-con">
-            <div class="product-category">플랜투 RegTech</div>
-            <div class="product-title">e·Mapp</div>
-            <div class="product-summary">
-              ETL(데이터의 추출, 변환, 적재)과 머신러닝이 결합된 빅데이터 통합
-              분석 플랫폼
+
+    <main class="emapp">
+      <div class="emapp__container">
+        <section class="emapp__hero" aria-labelledby="emapp-hero-title">
+          <div class="emapp__hero-copy">
+            <div class="emapp__brandline">
+              <span class="emapp__wordmark">e-<strong>M</strong>app</span>
+              <small>(Moving and Pivoting Paradigm)</small>
             </div>
-            <div class="product-tag-cont">
-              <div class="product-tag">#데이터수집</div>
-              <div class="product-tag">#데이터처리</div>
-              <div class="product-tag">#데이터통합</div>
-              <div class="product-tag">#CDP</div>
-            </div>
-            <p class="product-desc">
-              온·오프라인에서 발생하는 모든 고객 데이터를
-              <br />
-              실시간으로 수집 및 통합하여 비즈니스에 활용할 수 있습니다.
+            <h1 id="emapp-hero-title">빅데이터 통합 분석 플랫폼</h1>
+            <p class="emapp__hero-lead">
+              ETL · AI · 시각화로 지식서비스 인사이트를 창출하는<br />
+              One-Stop End-to-End 플랫폼
             </p>
-          </div>
-          <div class="banner-image">
-            <img
-              class="img1"
-              src="../../../img/product/cdxp/data/banner1.png"
-            />
-            <img
-              class="img2"
-              src="../../../img/product/cdxp/data/banner2.png"
-            />
-            <img
-              class="img3"
-              src="../../../img/product/cdxp/data/banner3.png"
-            />
-          </div>
-        </div>
-      </div>
 
-      <div class="page page1">
-        <div class="page-cont">
-          <div class="page-title">플랜투 비즈니스 e·Mapp</div>
-          <div class="page-desc">
-            e·Mapp은 플랜투비즈니스컨설팅에서 개발한 빅데이터 수집부터 분석,
-            결과까지의 One-stop 솔루션의 제공및 정형, 비정형 형태를 포함한
-            다양한 데이터로부터 지식과 인사이트를 추출하기 위한 빅데이터 분석
-            플랫폼을 제공하는 토털 솔루션을 말합니다. 데이터 엔지니어링, 데이터
-            준비, 분석 활동이 서로 다른 툴을 사용하여 별도의 프로세스로 구성되어
-            있어 필요에 따른 맞춤형 솔루션 구현이 가능합니다.
-          </div>
-          <div class="product-card-cont">
-            <div class="product-card">
-              <div class="product-card-caption">Feature 01</div>
-              <div class="product-card-title">App/Web 데이터 통합 수집</div>
-              <div class="product-card-desc">
-                표준화된 태깅 구조를 통해
-                <br />
-                모바일 앱과 웹사이트에서의 고객 행동 이력을
-                <br />
-                이벤트 단위로 통합 수집 (GA4 방식)
+            <div class="emapp__hero-facts">
+              <div class="emapp__fact">
+                <span class="emapp__fact-icon">◎</span>
+                <strong class="emapp__fact-title">핵심 가치</strong>
+                <div class="emapp__fact-text">
+                  다양한 원천 데이터로부터<br />새로운 인사이트를 추출
+                </div>
               </div>
-            </div>
-            <div class="product-card">
-              <div class="product-card-caption">Feature 02</div>
-              <div class="product-card-title">오프라인 데이터 수집 및 연계</div>
-              <div class="product-card-desc">
-                EAI, MCI, File 등
-                <br />
-                다양한 유형의 데이터 수집 컴포넌트를 바탕으로
-                <br />
-                여러 업무 시스템에 분산된 고객 데이터 통합 활용
+              <div class="emapp__fact">
+                <span class="emapp__fact-icon">✓</span>
+                <strong class="emapp__fact-title">주요 인증</strong>
+                <div class="emapp__fact-text">
+                  2025년 7월 e-Mapp 2.0<br />GS 1등급 (Good Software) 획득
+                </div>
               </div>
-            </div>
-            <div class="product-card">
-              <div class="product-card-caption">Feature 03</div>
-              <div class="product-card-title">대규모 데이터의 안정적 처리</div>
-              <div class="product-card-desc">
-                국내 최대 금융사, 유통사의
-                <br />
-                디지털 행동 데이터 및 내부 업무 데이터
-                <br />
-                실시간 수집·처리 지원 중
-              </div>
-            </div>
-            <div class="product-card">
-              <div class="product-card-caption">Feature 04</div>
-              <div class="product-card-title">No-Code 방식</div>
-              <div class="product-card-desc">
-                다양한 데이터 가공 컴포넌트를
-                <br />
-                워크플로우 형태로 연결하여
-                <br />
-                직관적으로 데이터 수집 및 처리 프로세스 설계
-              </div>
-            </div>
-            <div class="product-card">
-              <div class="product-card-caption">Feature 05</div>
-              <div class="product-card-title">다양한 업무 시스템으로 전송</div>
-              <div class="product-card-desc">
-                데이터 저장 또는 추출 컴포넌트를 통해
-                <br />
-                데이터 처리 결과를
-                <br />
-                대상 시스템에 적합한 형식으로 실시간 전송
+              <div class="emapp__fact">
+                <span class="emapp__fact-icon">↗</span>
+                <strong class="emapp__fact-title">개발 이력</strong>
+                <div class="emapp__fact-text">
+                  2021 개발 착수<br />2025 2.0 GS 1등급
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div class="page page2">
-        <div class="page-cont">
-          <div class="page-title">플랜투 RegTech DATA 제품 구성</div>
-          <div class="product-sub-list">
-            <div id="TagManager" class="product-sub-item">
-              <div class="product-sub-item-title">TagManager</div>
-              <div class="product-sub-item-title2">디지털 행동 로그 수집</div>
-              <div class="product-sub-item-desc">
-                클릭, 스크롤, 스와이프 등 모바일 앱과 웹사이트 상에서 발생하는
-                <br />
-                다양한 행동 데이터와 관련 정보를 실시간으로 수집하여 전송합니다.
-              </div>
-              <div class="product-sub-item-image">
-                <img src="../../../img/product/cdxp/data/solution1.png" />
-              </div>
-            </div>
-            <div id="DataPipeline" class="product-sub-item">
-              <div class="product-sub-item-title">DataPipeline</div>
-              <div class="product-sub-item-title2">실시간 데이터 처리</div>
-              <div class="product-sub-item-desc">
-                디지털 접점에서 발생하는 온라인 행동 데이터와 업무 시스템에서
-                수집되는 오프라인 고객 정보를
-                <br />
-                실시간으로 수집, 정제, 통합하여 전송합니다.
-              </div>
-              <div class="product-sub-item-image">
-                <img src="../../../img/product/cdxp/data/solution2.png" />
-              </div>
-            </div>
-            <div id="D3F" class="product-sub-item">
-              <div class="product-sub-item-title">D3F</div>
-              <div class="product-sub-item-title2">
-                대규모 데이터 가공 및 결합
-              </div>
-              <div class="product-sub-item-desc">
-                여러 원천 시스템의 대규모 데이터를 다양한 비즈니스 목적에 따라
-                자동으로 일괄 처리하여
-                <br />
-                안정적으로 정합성 높은 데이터 활용 환경을 구성합니다.
-              </div>
-              <div class="product-sub-item-image">
-                <img src="../../../img/product/cdxp/data/solution3.png" />
-              </div>
+          <div class="emapp__hero-visual" aria-hidden="true">
+            <div class="emapp__platform">
+              <span class="emapp__platform-grid"></span>
+              <span class="emapp__platform-layer"></span>
+              <span
+                class="emapp__platform-layer emapp__platform-layer--top"
+              ></span>
+              <span class="emapp__platform-core">e</span>
+              <span class="emapp__float-card emapp__float-card--data">▤</span>
+              <span class="emapp__float-card emapp__float-card--ai">AI</span>
+              <span class="emapp__float-card emapp__float-card--brain">◉</span>
+              <span class="emapp__float-card emapp__float-card--chart">↗</span>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      <div class="page page3">
-        <div class="page-cont">
-          <div class="page-title">관련 솔루션</div>
-          <div class="product-card-cont">
-            <a class="link-card" href="../solution/obzenAnalytics.html">
-              <div class="link-card-caption">
-                디지털 행동 데이터 수집 및 분석
-              </div>
-              <div class="link-card-title">obzen Analytics</div>
-              <div class="link-card-icon"></div>
-            </a>
-            <a class="link-card" href="../solution/obzenDigitalMarketing.html">
-              <div class="link-card-caption">
-                실시간 개인화 마케팅 자동화 솔루션
-              </div>
-              <div class="link-card-title">obzen onCMS</div>
-              <div class="link-card-icon"></div>
-            </a>
+        <section
+          class="emapp__section"
+          aria-labelledby="emapp-architecture-title"
+        >
+          <div class="emapp__section-heading">
+            <span class="emapp__section-number">2</span>
+            <h2 id="emapp-architecture-title" class="emapp__section-title">
+              전체 아키텍처 개요
+            </h2>
           </div>
-        </div>
-      </div>
 
-      <!-- 문의 사항 -->
+          <div class="emapp__architecture">
+            <article class="emapp__architecture-card">
+              <div class="emapp__arch-icon">
+                <img
+                  src="../../../img/product/cdxp/data/database.png"
+                  alt=""
+                />
+              </div>
+              <h3>원천데이터</h3>
+              <p>기관계·정보계와 다양한<br />외부 데이터 소스</p>
+              <ul>
+                <li>RDBMS · CSV · 파일</li>
+                <li>기타 표출 지원</li>
+              </ul>
+            </article>
+            <span class="emapp__flow-arrow" aria-hidden="true"></span>
+            <article class="emapp__architecture-card">
+              <div class="emapp__arch-icon">
+              <img
+                  src="../../../img/product/cdxp/data/layer-ai-brain-icon.png"
+                  alt=""
+                />
+              <h3>수집 모듈</h3>
+              <p>정형·비정형 데이터를<br />안정적으로 연결·수집</p>
+              <ul>
+                <li>Collector · JDBC · REST API</li>
+                <li>(a)FTP · File Upload</li>
+              </ul>
+            </article>
+            <span class="emapp__flow-arrow" aria-hidden="true"></span>
+            <article class="emapp__architecture-card">
+              <div class="emapp__arch-icon">
+               <img
+                  src="../../../img/product/cdxp/data/layer-ai-brain-icon.png"
+                  alt=""
+                />
+              </div>
+              <h3>데이터 적재 및 분석</h3>
+              <p>데이터레이크 기반의<br />분석·모델링·마트 구성</p>
+              <ul>
+                <li>Scheduler · Split Analyzer</li>
+                <li>AI Analyzer · Data Mart</li>
+              </ul>
+            </article>
+            <span class="emapp__flow-arrow" aria-hidden="true"></span>
+            <article class="emapp__architecture-card">
+              <div class="emapp__arch-icon">
+               <img
+                  src="../../../img/product/cdxp/data/layer-ai-brain-icon.png"
+                  alt=""
+                />
+              </div>
+              <h3>시각화 화면</h3>
+              <p>대시보드와 차트로<br />인사이트를 즉시 확인</p>
+              <ul>
+                <li>포털 · 차트 · 그리드</li>
+                <li>분석 결과 공유</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <div class="emapp__split emapp__section">
+          <section class="emapp__section" aria-labelledby="emapp-module-title">
+            <div class="emapp__section-heading">
+              <span class="emapp__section-number">3</span>
+              <h2 id="emapp-module-title" class="emapp__section-title">
+                핵심 솔루션 모듈
+              </h2>
+            </div>
+            <table class="emapp__module-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>모듈명</th>
+                  <th>주요 기능</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="4">솔루션</td>
+                  <td>Collector &amp; 데이터 수집</td>
+                  <td>다양한 채널의 데이터 수집</td>
+                </tr>
+                <tr>
+                  <td>AI Modeler &amp; 데이터 분석</td>
+                  <td>Data Analyzer 데이터 분석</td>
+                </tr>
+                <tr>
+                  <td>Visualization &amp; 시각화</td>
+                  <td>Data Gateway · 포털 · 리포트</td>
+                </tr>
+                <tr>
+                  <td>Data Meta &amp; 데이터 표준화</td>
+                  <td>Portal &amp; 분석·마케팅 포털 서비스</td>
+                </tr>
+                <tr>
+                  <td>에드온</td>
+                  <td>HR</td>
+                  <td>Environment Setting</td>
+                </tr>
+                <tr>
+                  <td>에드온</td>
+                  <td>Internal portal</td>
+                  <td>User Setting</td>
+                </tr>
+                <tr>
+                  <td>관리툴</td>
+                  <td>Accounting</td>
+                  <td>Monitoring</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section
+            class="emapp__section"
+            aria-labelledby="emapp-collection-title"
+          >
+            <div class="emapp__section-heading">
+              <span class="emapp__section-number">4</span>
+              <h2 id="emapp-collection-title" class="emapp__section-title">
+                데이터 수집 레이어 상세
+              </h2>
+            </div>
+            <div class="emapp__collection-grid">
+              <div class="emapp__collection-card">
+                <span class="emapp__collection-symbol">▤</span
+                ><strong>스케줄 기반<br />Collector</strong>
+              </div>
+              <div class="emapp__collection-card">
+                <span class="emapp__collection-symbol">◇</span
+                ><strong>JDBC<br />(D3 맵핑 연동)</strong>
+              </div>
+              <div class="emapp__collection-card">
+                <span class="emapp__collection-symbol">◎</span
+                ><strong>REST API</strong>
+              </div>
+              <div class="emapp__collection-card">
+                <span class="emapp__collection-symbol">↗</span
+                ><strong>(a)FTP</strong>
+              </div>
+              <div class="emapp__collection-card">
+                <span class="emapp__collection-symbol">▣</span
+                ><strong>파일 업로드</strong>
+              </div>
+              <div class="emapp__collection-card">
+                <span class="emapp__collection-symbol">⌕</span
+                ><strong>웹 크롤링</strong>
+              </div>
+              <div class="emapp__collection-card">
+                <span class="emapp__collection-symbol">▥</span
+                ><strong>OPEN API</strong>
+              </div>
+              <div class="emapp__collection-card">
+                <span class="emapp__collection-symbol">↥</span
+                ><strong>수동 전처리 데이터</strong>
+              </div>
+            </div>
+            <p class="emapp__collection-note">
+              정형·비정형 데이터를 포트 수용하며, 크롤링과 OPEN API를 통해 외부
+              데이터까지 확장합니다.
+            </p>
+          </section>
+        </div>
+
+        <div class="emapp__split emapp__section">
+          <section
+            class="emapp__section"
+            aria-labelledby="emapp-analysis-title"
+          >
+            <div class="emapp__section-heading">
+              <span class="emapp__section-number">5</span>
+              <h2 id="emapp-analysis-title" class="emapp__section-title">
+                AI/ML 분석 레이어
+              </h2>
+            </div>
+            <div class="emapp__analysis-layout">
+              <div class="emapp__analysis-type">
+                <h3>지원 분석 유형</h3>
+                <p>• 예측, 분류 / 기타 고급 분석</p>
+                <strong class="emapp__algorithm-title">예시 알고리즘</strong>
+                <ul class="emapp__algorithm-list">
+                  <li>Bayesian Regression</li>
+                  <li>CNN</li>
+                  <li>Decision Tree</li>
+                  <li>Gradient Tree (e1, e2)</li>
+                  <li>Gradient Boosting (e3)</li>
+                  <li>Image Destraher</li>
+                  <li>Krwinbson Classifier</li>
+                  <li>Linear / Logistical / SoftMax</li>
+                </ul>
+              </div>
+              <div class="emapp__analysis-package">
+                <h3>AI(ML &amp; DL) 분석 패키지 구성</h3>
+                <div class="emapp__package-icons">
+                  <span><b>▤</b>모델 관리</span>
+                  <span><b>⌘</b>속성메타<br />셋 관리</span>
+                  <span><b>⚙</b>실행 저장</span>
+                </div>
+                <ul class="emapp__package-list">
+                  <li>분석 패키지와 실행 결과를 체계적으로 관리</li>
+                  <li>사용자 세분화와 맞춤 분석·처방을 지원</li>
+                  <li>공원별 현황에 맞춘 서비스 모델을 제공</li>
+                </ul>
+              </div>
+            </div>
+            <div class="emapp__certification">
+              <div class="emapp__certification-card">
+                <span>⌂</span><strong>관찰점 Ⅰ</strong>
+                <p>전자정부 프레임워크 호환 지원</p>
+              </div>
+              <div class="emapp__certification-card">
+                <span>⌂</span><strong>관찰점 Ⅱ</strong>
+                <p>전자정부 드레블러그 호환</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="emapp__section" aria-labelledby="emapp-service-title">
+            <div class="emapp__section-heading">
+              <span class="emapp__section-number">7</span>
+              <h2 id="emapp-service-title" class="emapp__section-title">
+                시각화 및 운영 기능
+              </h2>
+            </div>
+            <div class="emapp__service-grid">
+              <div class="emapp__service-card">
+                <span class="emapp__service-symbol">◉</span
+                ><strong>인메모리 분석</strong>
+              </div>
+              <div class="emapp__service-card">
+                <span class="emapp__service-symbol">▤</span
+                ><strong>차트 · 그리드<br />고객 재성용</strong>
+              </div>
+              <div class="emapp__service-card">
+                <span class="emapp__service-symbol">♙</span
+                ><strong>통계적<br />상관관계 조회</strong>
+              </div>
+              <div class="emapp__service-card">
+                <span class="emapp__service-symbol">▧</span
+                ><strong>통계·차트<br />판넬 차트</strong>
+              </div>
+              <div class="emapp__service-card">
+                <span class="emapp__service-symbol">◔</span
+                ><strong>핵심 경영 관리</strong>
+              </div>
+              <div class="emapp__service-card">
+                <span class="emapp__service-symbol">↺</span
+                ><strong>사용자 데이터 반복<br />신규 및 다운로드</strong>
+              </div>
+              <div class="emapp__service-card">
+                <span class="emapp__service-symbol">⌘</span
+                ><strong>자원 관리</strong>
+              </div>
+              <div class="emapp__service-card">
+                <span class="emapp__service-symbol">⟳</span
+                ><strong>운영 모니터링</strong>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <section class="emapp__section" aria-labelledby="emapp-summary-title">
+          <div class="emapp__section-heading">
+            <span class="emapp__section-number">8</span>
+            <h2 id="emapp-summary-title" class="emapp__section-title">
+              기술 특징 요약
+            </h2>
+          </div>
+          <table class="emapp__summary-table">
+            <thead>
+              <tr>
+                <th>기술 특성</th>
+                <th>지원 방식</th>
+                <th>인증 현황</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>데이터 분석</td>
+                <td>정형 · 비정형 통합 처리</td>
+                <td>GS 1등급 (e-Mapp 2.0)</td>
+              </tr>
+              <tr>
+                <td>분석 효율</td>
+                <td>대용량 원천 데이터 연동</td>
+                <td>GS 1등급 (e-Mapp 2.0)</td>
+              </tr>
+              <tr>
+                <td>호환성</td>
+                <td>표준 API 및 JDBC 기반</td>
+                <td>GS 1등급 (e-Mapp 2.0)</td>
+              </tr>
+              <tr>
+                <td>품질 인증</td>
+                <td>표준화된 처리·운영 체계</td>
+                <td>GS 1등급 (e-Mapp 2.0)</td>
+              </tr>
+              <tr>
+                <td>확장성</td>
+                <td>스케일 아웃 기반 확장</td>
+                <td>GS 1등급 (e-Mapp 2.0)</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </main>
+
+    <section>
       <script>
         loadHTML("../../inquire.html");
       </script>
