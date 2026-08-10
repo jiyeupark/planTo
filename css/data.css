@@ -26,10 +26,11 @@
 .emapp *::before,
 .emapp *::after {
   box-sizing: border-box;
+  font-size: 15px;
 }
 
 .emapp__container {
-  width: min(1080px, 100%);
+  width: min(1500px, 100%);
   margin: 0 auto;
 }
 
@@ -74,9 +75,9 @@
 }
 
 .emapp__wordmark {
-  letter-spacing: -0.09em;
+  letter-spacing: -0.05em;
   font-size: clamp(50px, 5vw, 70px);
-
+  font-weight: 700;
   line-height: 0.8;
 }
 
@@ -84,13 +85,13 @@
   color: #397cf0;
   display: inline-block;
   font-size: inherit;
-
+  font-weight: 700;
   line-height: inherit;
 }
 
 .emapp__brandline small {
   padding-bottom: 1px;
-  font-size: 14px;
+  font-size: 19px;
   font-weight: 700;
   letter-spacing: -0.04em;
 }
@@ -100,7 +101,7 @@
   margin: 0;
   color: #070b14;
   font-size: clamp(32px, 3.5vw, 49px);
-
+  font-weight: 700;
   letter-spacing: -0.07em;
   line-height: 1.24;
 }
@@ -108,9 +109,9 @@
 .emapp__hero-lead {
   margin: 16px 0 0;
   color: var(--emapp-navy);
-  font-size: 17px;
-  font-weight: 700;
-  letter-spacing: -0.045em;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.05em;
   line-height: 1.6;
 }
 
@@ -137,11 +138,13 @@
   width: 37px;
   height: 37px;
   margin-bottom: 9px;
-  color: #1760c7;
-  border: 2px solid currentColor;
   border-radius: 11px;
   place-items: center;
   font-size: 18px;
+}
+.emapp__fact-icon img {
+  display: block;
+  width: 100%;
 }
 
 .emapp__fact-title {
@@ -316,11 +319,11 @@
 .emapp__section-title {
   margin: 0;
   margin-left: -43px;
-  padding: 8px 22px 9px 50px;
+  padding: 8px 22px 9px 58px;
   color: #fff;
   border-radius: 22px;
   background: linear-gradient(90deg, #10458f, #082966);
-  font-size: clamp(20px, 2vw, 26px);
+  font-size: clamp(20px, 2vw, 24px);
   letter-spacing: -0.07em;
   line-height: 1;
 }
@@ -339,10 +342,9 @@
 }
 
 .emapp__arch-icon {
-  display: grid;
-  margin: 0 auto 12px;
+  display: inline-grid;
   color: #1453ad;
-  place-items: center;
+  justify-items: center;
 }
 
 .emapp__arch-icon img {
@@ -372,13 +374,14 @@
   padding: 11px 8px;
   list-style: none;
   border-radius: 12px;
-  background: #edf1f7;
+  background: #cbdefc;
+  width: 100%;
 }
 
 .emapp__architecture-card li {
   color: #25334d;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 600;
   letter-spacing: -0.045em;
   line-height: 1.6;
 }
@@ -433,7 +436,7 @@
   color: #fff;
   border-right: 1px solid rgba(255, 255, 255, 0.35);
   background: #225bb3;
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: -0.05em;
 }
 
@@ -442,7 +445,7 @@
   padding: 10px 12px;
   border-top: 1px solid #c8d6ea;
   border-right: 1px solid #c8d6ea;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.35;
 }
 
@@ -456,7 +459,6 @@
 .emapp__module-table td:first-child,
 .emapp__summary-table td:first-child {
   color: #173c79;
-  text-align: center;
   background: #edf4ff;
 }
 
