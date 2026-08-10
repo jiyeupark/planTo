@@ -20,11 +20,11 @@
     <link href="../../../css/data.css" rel="stylesheet" />
 
     <script>
-      useTransparentGNB = true;
+    useTransparentGNB = true;
 
-      $(window).on("scroll", function () {
-        $("#header").toggleClass("solid", window.scrollY > 150);
-      });
+  $(function () {
+    $("#header").addClass("solid");
+  });
     </script>
     <title>빅데이터 통합 분석 플랫폼 | e-Mapp</title>
   </head>
@@ -37,11 +37,17 @@
     </header>
 
     <main class="emapp">
-
-      <div class="emapp__container  focus-elem">
-
-        <section class="emapp__hero" aria-labelledby="emapp-hero-title">
-
+      <section class="emapp__background" >
+      <div class="emapp__container">
+        <video
+          class="emapp__hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          src="../../../img/product/cdxp/data/emapp_hero.mp4"
+        ></video>
+        <div class="emapp__hero" aria-labelledby="emapp-hero-title">
           <div class="emapp__hero-copy">
             <div class="emapp__brandline">
               <span class="emapp__wordmark">e-<strong>M</strong>app</span>
@@ -86,7 +92,9 @@
               </div>
             </div>
           </div>
-
+        </div>
+      </div>
+      </div>
         </section>
 
         <section
@@ -121,7 +129,7 @@
               <img
                   src="../../../img/product/cdxp/data/layer-ai-brain-icon.png"
                   alt=""
-                />
+                /></div>
               <h3>수집 모듈</h3>
               <p>정형·비정형 데이터를<br />안정적으로 연결·수집</p>
               <ul>
@@ -398,7 +406,7 @@
             </tbody>
           </table>
         </section>
-      </div>
+
     </main>
 
 
