@@ -51,6 +51,27 @@ body {
   color: var(--planto-ink);
 }
 
+/* The opened menu always uses the dark navigation treatment.
+   This must override the scrolled (`solid`) header state as well, otherwise
+   a white header can be paired with the white logo while the menu is open. */
+#header.m-over,
+#header.solid.m-over {
+  border-color: rgba(190, 220, 250, 0.14);
+  background: rgba(9, 27, 55, 0.98);
+  box-shadow: 0 12px 28px rgba(5, 18, 39, 0.22);
+  backdrop-filter: blur(16px);
+}
+
+#header.m-over .top-logo,
+#header.solid.m-over .top-logo {
+  background: no-repeat left / 95% url(../img/gnb/planto-logo-white.png);
+}
+
+#header.m-over .first-menu a,
+#header.solid.m-over .first-menu a {
+  color: #fff;
+}
+
 #header .first-menu a {
   letter-spacing: -0.03em;
 }

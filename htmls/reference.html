@@ -12,17 +12,32 @@
     <link rel="stylesheet" href="../css/corporate.css" />
     <link rel="stylesheet" href="../css/unified.css" />
   </head>
-  <body>
+  <body class="reference-body">
     <header><script>loadHTML("header.html");</script></header>
-    <main class="corporate-page">
-      <section class="corporate-hero">
+    <main class="corporate-page reference-page">
+      <section class="corporate-hero reference-hero">
         <div class="corporate-hero__inner">
           <h2 class="corporate-eyebrow">REFERENCES</h2>
           <h1>검증된 경험으로<br />신뢰를 쌓아갑니다.</h1>
           <p>국내 은행, 보험, 증권, 카드 등 30여 개 금융사가 최근 PlanTo의 제품과 전문성을 선택했습니다.</p>
+          <div class="reference-hero__metrics" aria-label="PlanTo 주요 실적">
+            <div><strong>2002</strong><span>설립</span></div>
+            <div><strong>30+</strong><span>금융 고객사</span></div>
+            <div><strong>60+</strong><span>최근 구축 실적</span></div>
+          </div>
         </div>
       </section>
-      <section class="corporate-section">
+      <nav class="reference-nav" aria-label="레퍼런스 바로가기">
+        <div class="corporate-container">
+          <span>EXPLORE</span>
+          <a href="#bank">금융</a>
+          <a href="#public">공공</a>
+          <a href="#industry">제조·기타</a>
+          <a href="#delivery-title">구축 실적</a>
+          <a href="#partners">파트너</a>
+        </div>
+      </nav>
+      <section class="corporate-section reference-directory">
         <div class="corporate-container">
           <div class="corporate-section__head">
             <h2>금융권을 중심으로<br />다양한 산업의 변화를 지원합니다.</h2>
@@ -30,12 +45,12 @@
           </div>
           <div class="reference-lead">PlanTo는 2002년 설립 이후 AI, 책무관리, 내부통제, ESG, 성과·재무관리, 빅데이터/DW 분야의 프로젝트를 수행하며 고객의 디지털 혁신을 지원해 왔습니다.</div>
           <div class="reference-grid">
-            <article id="bank" class="reference-card"><h3>은행·저축은행</h3><p>책무구조도, 내부통제, 경영관리와 데이터 기반 운영 환경 구축</p><ul class="reference-list"><li>우리은행</li><li>산업은행</li><li>한국증권금융</li><li>우리금융저축은행</li><li>SBI저축은행</li><li>다올저축은행</li><li>JT저축은행</li><li>JT친애저축은행</li></ul></article>
-            <article id="insurance" class="reference-card"><h3>보험</h3><p>책무관리와 리스크 관리 체계 고도화</p><ul class="reference-list"><li>삼성생명</li><li>교보생명</li><li>교보라이프플래닛</li><li>한화생명</li><li>NH농협생명</li><li>동양생명</li><li>악사손해보험</li></ul></article>
-            <article id="securities" class="reference-card"><h3>증권·자산운용</h3><p>컴플라이언스, 관리회계, 내부통제와 책무구조도 관리</p><ul class="reference-list"><li>한국투자증권</li><li>대신증권</li><li>다올투자증권</li><li>부국증권</li><li>넥스트증권</li><li>넥스트레이드</li><li>KT투자운용</li><li>한화자산운용</li><li>코람코자산운용</li></ul></article>
-            <article id="card" class="reference-card"><h3>카드·기타 금융사</h3><p>책무관리, 수익관리, 리스크 통제 시스템 구축</p><ul class="reference-list"><li>삼성카드</li><li>현대카드</li><li>BC카드</li><li>우리카드</li><li>IBK캐피탈</li><li>산은캐피탈</li><li>한국토지신탁</li><li>KIDB채권중개</li></ul></article>
-            <article id="public" class="reference-card"><h3>공공</h3><p>데이터 분석과 디지털 서비스, 경영정보 고도화</p><ul class="reference-list"><li>한국지능정보사회진흥원</li><li>국민건강보험공단</li><li>인사혁신처</li><li>서울주택도시공사</li><li>한국무역협회</li><li>기획재정부</li><li>국가기록원</li><li>중소기업기술정보진흥원</li></ul></article>
-            <article id="industry" class="reference-card"><h3>제조 및 기타</h3><p>ESG, 빅데이터 분석, BI와 컴플라이언스 시스템 구축</p><ul class="reference-list"><li>삼성전자</li><li>현대자동차</li><li>HMM</li><li>롯데케미칼</li><li>유니드</li><li>대동</li><li>GS리테일</li><li>GC녹십자</li></ul></article>
+            <article id="bank" class="reference-card"><div class="reference-card__top"><span>01</span><strong>8 CLIENTS</strong></div><h3>은행·저축은행</h3><p>책무구조도, 내부통제, 경영관리와 데이터 기반 운영 환경 구축</p><ul class="reference-list"><li>우리은행</li><li>산업은행</li><li>한국증권금융</li><li>우리금융저축은행</li><li>SBI저축은행</li><li>다올저축은행</li><li>JT저축은행</li><li>JT친애저축은행</li></ul></article>
+            <article id="insurance" class="reference-card"><div class="reference-card__top"><span>02</span><strong>7 CLIENTS</strong></div><h3>보험</h3><p>책무관리와 리스크 관리 체계 고도화</p><ul class="reference-list"><li>삼성생명</li><li>교보생명</li><li>교보라이프플래닛</li><li>한화생명</li><li>NH농협생명</li><li>동양생명</li><li>악사손해보험</li></ul></article>
+            <article id="securities" class="reference-card"><div class="reference-card__top"><span>03</span><strong>9 CLIENTS</strong></div><h3>증권·자산운용</h3><p>컴플라이언스, 관리회계, 내부통제와 책무구조도 관리</p><ul class="reference-list"><li>한국투자증권</li><li>대신증권</li><li>다올투자증권</li><li>부국증권</li><li>넥스트증권</li><li>넥스트레이드</li><li>KT투자운용</li><li>한화자산운용</li><li>코람코자산운용</li></ul></article>
+            <article id="card" class="reference-card"><div class="reference-card__top"><span>04</span><strong>8 CLIENTS</strong></div><h3>카드·기타 금융사</h3><p>책무관리, 수익관리, 리스크 통제 시스템 구축</p><ul class="reference-list"><li>삼성카드</li><li>현대카드</li><li>BC카드</li><li>우리카드</li><li>IBK캐피탈</li><li>산은캐피탈</li><li>한국토지신탁</li><li>KIDB채권중개</li></ul></article>
+            <article id="public" class="reference-card"><div class="reference-card__top"><span>05</span><strong>8 CLIENTS</strong></div><h3>공공</h3><p>데이터 분석과 디지털 서비스, 경영정보 고도화</p><ul class="reference-list"><li>한국지능정보사회진흥원</li><li>국민건강보험공단</li><li>인사혁신처</li><li>서울주택도시공사</li><li>한국무역협회</li><li>기획재정부</li><li>국가기록원</li><li>중소기업기술정보진흥원</li></ul></article>
+            <article id="industry" class="reference-card"><div class="reference-card__top"><span>06</span><strong>8 CLIENTS</strong></div><h3>제조 및 기타</h3><p>ESG, 빅데이터 분석, BI와 컴플라이언스 시스템 구축</p><ul class="reference-list"><li>삼성전자</li><li>현대자동차</li><li>HMM</li><li>롯데케미칼</li><li>유니드</li><li>대동</li><li>GS리테일</li><li>GC녹십자</li></ul></article>
           </div>
         </div>
       </section>
@@ -53,7 +68,7 @@
           <p class="reference-delivery__note">2023년부터 2026년까지 회사소개서에 수록된 최근 구축 실적 60여 건 기준</p>
         </div>
       </section>
-      <section id="partners" class="corporate-section corporate-section--white">
+      <section id="partners" class="corporate-section corporate-section--white reference-partners">
         <div class="corporate-container">
           <div class="corporate-section__head">
             <h2>주요 파트너사</h2>

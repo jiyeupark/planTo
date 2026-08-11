@@ -85,6 +85,7 @@ $(document).ready(function () {
 function menuDropUp() {
     // $('.sub-menu-cont').css('display','none');
     $('.sub-menu-cont').removeClass("show");
+    $("#header").removeClass("m-over");
     mVarMouseOnMenu = false;
 }
 
