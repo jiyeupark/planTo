@@ -69,7 +69,11 @@ hr.sub-title-hr {
   background-repeat: no-repeat;
   background-size: contain;
 }
-
+input:focus,
+button:focus,
+a:focus {
+  outline: none;
+}
 /* LEJ Slide Style */
 .slide-con-container {
   display: flex;
@@ -604,7 +608,7 @@ a.slide_btn {
   display: flex;
   align-items: center;
 
-  height: 82px;
+  height: 86px;
 
   background: linear-gradient(90deg, #06152d 0%, #081934 100%);
 
@@ -616,6 +620,8 @@ a.slide_btn {
 
 .em-partner-band__marquee {
   flex: 1;
+  min-width: 0;
+  padding: 0 12px;
   overflow: hidden;
   position: relative;
 }
@@ -623,11 +629,12 @@ a.slide_btn {
 .em-partner-band__track {
   display: flex;
   align-items: center;
-  gap: 80px;
+  gap: 0;
 
   width: max-content;
 
-  animation: partnerLogoFlow 45s linear infinite;
+  animation: partnerLogoFlow 40s linear infinite;
+  will-change: transform;
 }
 
 .em-partner-band__track:hover {
@@ -636,16 +643,17 @@ a.slide_btn {
 
 .em-partner-band__track img {
   display: block;
-
   flex-shrink: 0;
 
-  width: auto;
-  height: 32px;
+  box-sizing: border-box;
+  width: 176px;
+  height: 40px;
+  padding: 0 28px;
   object-fit: contain;
 
   filter: brightness(0) invert(1);
 
-  opacity: 0.9;
+  opacity: 0.88;
 
   transition: opacity 0.3s;
 }
@@ -655,7 +663,7 @@ a.slide_btn {
 }
 
 .em-partner-band__more {
-  width: 170px;
+  width: clamp(132px, 11vw, 170px);
   height: 100%;
 
   display: flex;
@@ -665,6 +673,7 @@ a.slide_btn {
 
   flex-shrink: 0;
 
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
   color: #fff;
   text-decoration: none;
   font-size: 15px;
@@ -683,6 +692,27 @@ a.slide_btn {
 
   to {
     transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .em-partner-band {
+    height: 72px;
+  }
+
+  .em-partner-band__marquee {
+    padding: 0 4px;
+  }
+
+  .em-partner-band__track img {
+    width: 128px;
+    height: 32px;
+    padding: 0 18px;
+  }
+
+  .em-partner-band__more {
+    width: 106px;
+    font-size: 12px;
   }
 }
 /*************** main2 ***************/
@@ -1203,21 +1233,21 @@ a.slide_btn {
 
 /* Moving customer list */
 .main4-client-marquee {
-  margin: -10px;
-  padding: 10px;
+  margin: 0;
+  padding: 8px 0;
   overflow: hidden;
   -webkit-mask-image: linear-gradient(
     90deg,
     transparent,
-    #000 5%,
-    #000 95%,
+    #000 7%,
+    #000 93%,
     transparent
   );
   mask-image: linear-gradient(
     90deg,
     transparent,
-    #000 5%,
-    #000 95%,
+    #000 7%,
+    #000 93%,
     transparent
   );
 }
@@ -1225,8 +1255,9 @@ a.slide_btn {
 .main4-client-track {
   display: flex;
   width: max-content;
-  gap: 16px;
+  gap: 14px;
   animation: main4ClientFlow 56s linear infinite;
+  will-change: transform;
 }
 
 .main4-client-marquee:hover .main4-client-track {
@@ -1236,17 +1267,18 @@ a.slide_btn {
 .main4-client-list {
   display: grid;
   flex: 0 0 auto;
-  grid-auto-columns: 188px;
+  grid-auto-columns: 184px;
   grid-auto-flow: column;
-  grid-template-rows: repeat(3, 110px);
-  gap: 16px;
+  grid-template-rows: repeat(3, 106px);
+  gap: 14px;
   margin: 0;
   padding: 0;
 }
 
 .main4-client-list li {
   display: grid;
-  padding: 22px;
+  box-sizing: border-box;
+  padding: 18px;
   place-items: center;
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-md);
@@ -1255,111 +1287,26 @@ a.slide_btn {
     transform 0.25s ease,
     border-color 0.25s ease,
     box-shadow 0.25s ease;
-  will-change: transform;
-  animation: main4ClientFloatA 5.8s ease-in-out infinite;
-}
-
-.main4-client-list li:nth-child(4n + 2) {
-  animation-name: main4ClientFloatB;
-  animation-duration: 6.6s;
-  animation-delay: -1.9s;
-}
-
-.main4-client-list li:nth-child(4n + 3) {
-  animation-name: main4ClientFloatC;
-  animation-duration: 5.2s;
-  animation-delay: -3.4s;
-}
-
-.main4-client-list li:nth-child(4n) {
-  animation-name: main4ClientFloatD;
-  animation-duration: 7.1s;
-  animation-delay: -0.8s;
 }
 
 .main4-client-list li:hover {
   border-color: var(--color-brand-primary);
   box-shadow: var(--shadow-card);
-  animation-play-state: paused;
+  transform: translateY(-3px);
 }
 
 .main4-client-list img {
   display: block;
-  width: auto;
-  max-width: 78%;
-  height: 46px;
-  max-height: 46px;
+  width: 144px;
+  max-width: 100%;
+  height: 42px;
+  max-height: 100%;
   object-fit: contain;
-}
-
-.main4-client-list li:nth-child(5n + 2) img,
-.main4-client-list li:nth-child(5n + 4) img {
-  animation: main4ClientLogoPulse 4.6s ease-in-out infinite;
-}
-
-.main4-client-list li:nth-child(5n + 4) img {
-  animation-delay: -2.2s;
-}
-
-.main4-client-list li:hover img {
-  animation-play-state: paused;
 }
 
 @keyframes main4ClientFlow {
   to {
-    transform: translateX(calc(-50% - 8px));
-  }
-}
-
-@keyframes main4ClientFloatA {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) rotate(-0.25deg);
-  }
-  50% {
-    transform: translate3d(0, -7px, 0) rotate(0.3deg);
-  }
-}
-
-@keyframes main4ClientFloatB {
-  0%,
-  100% {
-    transform: translate3d(0, -3px, 0) rotate(0.25deg);
-  }
-  50% {
-    transform: translate3d(3px, 4px, 0) rotate(-0.3deg);
-  }
-}
-
-@keyframes main4ClientFloatC {
-  0%,
-  100% {
-    transform: translate3d(0, 2px, 0) scale(0.99);
-  }
-  50% {
-    transform: translate3d(-3px, -6px, 0) scale(1.01);
-  }
-}
-
-@keyframes main4ClientFloatD {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) rotate(0.2deg);
-  }
-  50% {
-    transform: translate3d(-4px, 5px, 0) rotate(-0.35deg);
-  }
-}
-
-@keyframes main4ClientLogoPulse {
-  0%,
-  100% {
-    opacity: 0.86;
-    transform: scale(0.98);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.035);
+    transform: translateX(calc(-50% - 7px));
   }
 }
 
@@ -1407,8 +1354,7 @@ a.slide_btn {
 
 @media (prefers-reduced-motion: reduce) {
   .main4-client-track,
-  .main4-client-list li,
-  .main4-client-list img {
+  .em-partner-band__track {
     animation: none;
   }
 }

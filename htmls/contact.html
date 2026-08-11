@@ -14,8 +14,9 @@
         useTransparentGNB = true;
 
         $(document).ready(function () {
-            $('.button-success').on('click',function(){
-                sendForm();
+            $('.gform').on('submit', function (event) {
+                event.preventDefault();
+                sendForm(this);
             });
 
             if (isMobile) {
@@ -32,7 +33,7 @@
             }
         });
 
-        function sendForm(){
+        function sendForm(form){
             var obj = new Object();
             var content = '';
 
@@ -53,7 +54,7 @@
             // 이메일
             if(obj.phone=='' && obj.email == ''){
                 alert('연락처나 이메일을 입력해주세요.');
-                if(obj.phone=''){
+                if(obj.phone === ''){
                     $('#phone').focus();
                 } else if(obj.email == ''){
                     $('#email').focus();
@@ -82,32 +83,9 @@
                 return;
             }
 
-            // form 전송
-            $.ajax({
-                url: 'sendMail.php',
-                data : {
-                    name : obj.name,
-                    phone : obj.phone,
-                    company : obj.company,
-                    email : obj.email,
-                    title : obj.title,
-                    content : obj.content
-                },
-                type : 'POST',
-				dataType : 'json',
-                success	: function(result) {
-					if(result.success == false) {
-						alert(result.msg);
-						return;
-					} else {
-                        alert(result.data);
-                        location.reload();
-                    }
-				},
-                error: function(){
-                    alert(result.msg);
-                }
-            });
+            // 폼에 설정된 Google Apps Script 엔드포인트로 기본 전송합니다.
+            // 기존 sendMail.php는 프로젝트에 없어 전송이 중단되고 있었습니다.
+            form.submit();
         }
     </script>
 
@@ -274,6 +252,37 @@
             height: 66px;
             font-size: 26px;
             margin-top: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            min-width: 220px;
+            padding: 0 28px;
+            border: 0;
+            border-radius: 12px;
+            background: var(--obz-main-accent);
+            color: #ffffff;
+            font: inherit;
+            cursor: pointer;
+            transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+        }
+
+        .button-success:hover,
+        .button-success:focus-visible {
+            transform: translateY(-2px);
+            background: var(--obz-main-secondary);
+            box-shadow: 0 12px 24px rgba(31, 107, 255, .24);
+        }
+
+        .button-success:focus-visible {
+            outline: 3px solid rgba(31, 107, 255, .3);
+            outline-offset: 3px;
+        }
+
+        .button-success svg {
+            width: 28px;
+            height: 28px;
+            fill: currentColor;
         }
 
 
@@ -375,17 +384,17 @@
                         <div class="form-4">
                             <input type="checkbox" id="chk-personal">
                             <label for="chk-personal">개인정보 수집 및 이용에 동의합니다.</label>
-                            <a href="./privacy.html" target="_blank">
+                            <a href="./policies.html#privacy" target="_blank">
                                 <div class="btn-personal">자세히</div>
                             </a>
                         </div>
                         <div class="form-5">
                              <!-- <div class="button-success">문의하기</div> -->
                              <div class="more-button-cont">
-                                <div class="button-success rect-button dark">
+                                <button type="submit" class="button-success rect-button dark">
                                     문의하기
                                     <svg viewBox="0 0 36 36"><path d="M18 6L15.885 8.115L24.255 16.5H6V19.5H24.255L15.885 27.885L18 30L30 18L18 6Z"></path></svg>
-                                </div>
+                                </button>
                             </div>
                         </div>
                     </form>

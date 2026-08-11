@@ -885,7 +885,7 @@
           </div>
           <p>${diagram.lead}</p>
         </div>
-        <div class="detail-diagram detail-diagram--${categoryKey} detail-diagram--${diagramLayout.name}">
+        <div class="detail-diagram detail-diagram--${categoryKey} detail-diagram--${diagramLayout.name} detail-diagram--theme-${itemKey}">
           <div class="detail-diagram__header">
             <span>PLAN TO FLOW</span>
             <strong>${item.name}</strong>

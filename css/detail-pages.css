@@ -2254,3 +2254,184 @@
   }
 
 }
+
+/* Colour-coded solution maps: each detail page gets its own accent family. */
+html:has(.detail-page) {
+  overflow-x: clip;
+}
+
+.detail-page {
+  overflow-x: clip;
+}
+
+.detail-diagram {
+  --diagram-start: #104174;
+  --diagram-mid: #0d315c;
+  --diagram-end: #0a274b;
+  --diagram-glow: rgba(89, 184, 255, 0.42);
+  --diagram-accent: #b8e3ff;
+  --diagram-secondary: #69b8ff;
+  --diagram-soft: #e1f5ff;
+  --diagram-deep: rgba(6, 35, 75, 0.84);
+  border-color: color-mix(in srgb, var(--diagram-accent) 36%, transparent);
+  background:
+    radial-gradient(circle at 78% 0%, var(--diagram-glow), transparent 25%),
+    linear-gradient(145deg, var(--diagram-start) 0%, var(--diagram-mid) 58%, var(--diagram-end) 100%);
+}
+
+.detail-diagram::before,
+.detail-diagram::after {
+  border-color: color-mix(in srgb, var(--diagram-accent) 24%, transparent);
+}
+
+.detail-diagram::before {
+  box-shadow: 0 0 0 45px color-mix(in srgb, var(--diagram-glow) 12%, transparent);
+}
+
+.detail-diagram__header span,
+.detail-diagram__foundation > span,
+.detail-diagram__stage > p {
+  color: var(--diagram-accent);
+}
+
+.detail-diagram__header i {
+  background: linear-gradient(90deg, color-mix(in srgb, var(--diagram-accent) 38%, transparent), transparent);
+}
+
+.detail-diagram__stage {
+  border-color: color-mix(in srgb, var(--diagram-accent) 28%, transparent);
+  background: linear-gradient(155deg, color-mix(in srgb, var(--diagram-accent) 55%, #163c6c), var(--diagram-deep));
+}
+
+.detail-diagram__stage:nth-child(2) {
+  background: linear-gradient(155deg, color-mix(in srgb, var(--diagram-secondary) 62%, #173966), var(--diagram-deep));
+}
+
+.detail-diagram__stage:nth-child(3) {
+  background: linear-gradient(155deg, color-mix(in srgb, var(--diagram-accent) 42%, var(--diagram-secondary)), var(--diagram-deep));
+}
+
+.detail-diagram__stage:nth-child(4) {
+  background: linear-gradient(155deg, color-mix(in srgb, var(--diagram-secondary) 44%, var(--diagram-accent)), var(--diagram-deep));
+}
+
+.detail-diagram__number {
+  border-color: color-mix(in srgb, var(--diagram-accent) 42%, transparent);
+  background: color-mix(in srgb, var(--diagram-accent) 16%, transparent);
+  color: var(--diagram-soft);
+}
+
+.detail-diagram__stage li {
+  border-color: color-mix(in srgb, var(--diagram-accent) 30%, transparent);
+  background: color-mix(in srgb, var(--diagram-end) 58%, transparent);
+}
+
+.detail-diagram__foundation {
+  border-color: color-mix(in srgb, var(--diagram-accent) 25%, transparent);
+  background: color-mix(in srgb, var(--diagram-end) 72%, transparent);
+}
+
+.detail-diagram__foundation li::before {
+  background: var(--diagram-accent);
+}
+
+.detail-diagram__stage:not(:last-child)::after {
+  border-color: color-mix(in srgb, var(--diagram-accent) 52%, transparent);
+}
+
+.detail-diagram__stage:not(:last-child)::before {
+  border-color: var(--diagram-soft);
+}
+
+/* Blue / indigo: compliance and control. */
+.detail-diagram--theme-regtech { --diagram-start: #123f76; --diagram-mid: #172f68; --diagram-end: #111b4c; --diagram-glow: rgba(105, 174, 255, .52); --diagram-accent: #9ed5ff; --diagram-secondary: #998fff; --diagram-soft: #e1f3ff; }
+
+/* Green / lime: sustainable data. */
+.detail-diagram--theme-esg { --diagram-start: #104d4c; --diagram-mid: #0d3d46; --diagram-end: #102d3c; --diagram-glow: rgba(75, 215, 180, .4); --diagram-accent: #a8f0d5; --diagram-secondary: #d7e46e; --diagram-soft: #e6fff5; --diagram-deep: rgba(6, 56, 61, .86); }
+
+/* Cyan / violet: data pipelines and analytics. */
+.detail-diagram--theme-bigdata,
+.detail-diagram--theme-emapp { --diagram-start: #1d3572; --diagram-mid: #163864; --diagram-end: #142751; --diagram-glow: rgba(83, 205, 247, .42); --diagram-accent: #a6e9ff; --diagram-secondary: #b494ff; --diagram-soft: #e8faff; --diagram-deep: rgba(11, 44, 89, .86); }
+
+/* Coral / aqua: delivery and operations. */
+.detail-diagram--theme-sism { --diagram-start: #5a345f; --diagram-mid: #273b70; --diagram-end: #19345b; --diagram-glow: rgba(248, 132, 137, .42); --diagram-accent: #ffd0ba; --diagram-secondary: #71d7cf; --diagram-soft: #fff0e4; --diagram-deep: rgba(42, 40, 89, .87); }
+
+/* Violet / peach: strategy and roadmap. */
+.detail-diagram--theme-consulting { --diagram-start: #493d7d; --diagram-mid: #243e70; --diagram-end: #183358; --diagram-glow: rgba(184, 137, 255, .4); --diagram-accent: #dcc7ff; --diagram-secondary: #ffbf9b; --diagram-soft: #f4edff; --diagram-deep: rgba(42, 44, 96, .87); }
+
+/* Sky / mint: compliance platform. */
+.detail-diagram--theme-cms { --diagram-start: #0c477f; --diagram-mid: #0e3a69; --diagram-end: #0b2c52; --diagram-glow: rgba(77, 183, 255, .46); --diagram-accent: #b4e7ff; --diagram-secondary: #90e3ba; --diagram-soft: #e7f8ff; }
+
+/* Plum / fuchsia: AI audit signals. */
+.detail-diagram--theme-aiq { --diagram-start: #412f74; --diagram-mid: #213c73; --diagram-end: #182c57; --diagram-glow: rgba(213, 104, 255, .42); --diagram-accent: #ecc2ff; --diagram-secondary: #ff8fc9; --diagram-soft: #faeaff; --diagram-deep: rgba(45, 36, 90, .87); }
+
+/* Indigo / orange: modelling workflow. */
+.detail-diagram--theme-rapidminer { --diagram-start: #403b78; --diagram-mid: #293765; --diagram-end: #1d2b55; --diagram-glow: rgba(255, 170, 94, .38); --diagram-accent: #ffd5aa; --diagram-secondary: #a99cff; --diagram-soft: #fff2de; --diagram-deep: rgba(45, 43, 88, .87); }
+
+/* Teal / coral: visual exploration. */
+.detail-diagram--theme-tableau { --diagram-start: #0e4b5c; --diagram-mid: #17466c; --diagram-end: #173558; --diagram-glow: rgba(64, 211, 186, .42); --diagram-accent: #b6f1e2; --diagram-secondary: #ffaba9; --diagram-soft: #e9fff9; --diagram-deep: rgba(12, 60, 82, .87); }
+
+/* Slate / lime: enterprise governance. */
+.detail-diagram--theme-mstr { --diagram-start: #253e63; --diagram-mid: #273764; --diagram-end: #1a2d51; --diagram-glow: rgba(181, 225, 90, .34); --diagram-accent: #d4f3a2; --diagram-secondary: #91b7ff; --diagram-soft: #f3ffdd; --diagram-deep: rgba(29, 48, 81, .87); }
+
+/* Wine / pink: advanced analytics lifecycle. */
+.detail-diagram--theme-sas { --diagram-start: #61325d; --diagram-mid: #403467; --diagram-end: #21365e; --diagram-glow: rgba(245, 113, 177, .38); --diagram-accent: #ffd0e8; --diagram-secondary: #ab9cff; --diagram-soft: #fff0f8; --diagram-deep: rgba(53, 37, 89, .87); }
+
+/* Distinct map silhouettes for signal, platform, and dashboard products. */
+.detail-diagram--signal .detail-diagram__flow {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.detail-diagram--signal .detail-diagram__stage {
+  min-height: 142px;
+  border-style: solid;
+  transform: none;
+}
+
+.detail-diagram--signal .detail-diagram__stage:nth-child(1) { grid-column: span 2; }
+.detail-diagram--signal .detail-diagram__stage:nth-child(2) { grid-column: 3; grid-row: 1 / span 2; }
+.detail-diagram--signal .detail-diagram__stage:nth-child(3),
+.detail-diagram--signal .detail-diagram__stage:nth-child(4) { min-height: 128px; }
+
+.detail-diagram--platform .detail-diagram__flow {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.detail-diagram--platform .detail-diagram__stage {
+  min-height: 144px;
+  transform: none;
+}
+
+.detail-diagram--platform .detail-diagram__stage:nth-child(1),
+.detail-diagram--platform .detail-diagram__stage:nth-child(2),
+.detail-diagram--platform .detail-diagram__stage:nth-child(3) { grid-column: span 2; }
+.detail-diagram--platform .detail-diagram__stage:nth-child(4) { grid-column: 2 / span 4; min-height: 122px; }
+
+.detail-diagram--dashboard .detail-diagram__flow {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.detail-diagram--dashboard .detail-diagram__stage { min-height: 150px; }
+.detail-diagram--dashboard .detail-diagram__stage:nth-child(1),
+.detail-diagram--dashboard .detail-diagram__stage:nth-child(2) { grid-column: span 2; }
+.detail-diagram--dashboard .detail-diagram__stage:nth-child(3) { grid-column: 1 / span 3; }
+.detail-diagram--dashboard .detail-diagram__stage:nth-child(4) { grid-column: 4; }
+
+@media (max-width: 1024px) {
+  .detail-diagram--signal .detail-diagram__flow,
+  .detail-diagram--platform .detail-diagram__flow,
+  .detail-diagram--dashboard .detail-diagram__flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .detail-diagram--signal .detail-diagram__stage:nth-child(n),
+  .detail-diagram--platform .detail-diagram__stage:nth-child(n),
+  .detail-diagram--dashboard .detail-diagram__stage:nth-child(n) { grid-column: auto; grid-row: auto; }
+}
+
+@media (max-width: 600px) {
+  .detail-diagram--signal .detail-diagram__flow,
+  .detail-diagram--platform .detail-diagram__flow,
+  .detail-diagram--dashboard .detail-diagram__flow { grid-template-columns: 1fr; }
+}

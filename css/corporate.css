@@ -2,6 +2,45 @@ html {
   scroll-behavior: smooth;
 }
 
+.policy-guide {
+  display: grid;
+  gap: 24px;
+}
+
+.policy-guide__item {
+  padding: clamp(28px, 4vw, 48px);
+  border: 1px solid var(--planto-line);
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 14px 32px rgba(38, 88, 145, 0.07);
+  scroll-margin-top: 96px;
+}
+
+.policy-guide__item h2 {
+  margin: 0;
+  color: var(--planto-navy);
+  font-size: clamp(25px, 3vw, 34px);
+}
+
+.policy-guide__item p,
+.policy-guide__item li {
+  color: var(--planto-copy);
+  font-size: 16px;
+  line-height: 1.8;
+  word-break: keep-all;
+}
+
+.policy-guide__item p {
+  margin: 18px 0 0;
+}
+
+.policy-guide__item ul {
+  margin: 20px 0 0;
+  padding: 22px 26px;
+  border-radius: 14px;
+  background: #f3f8ff;
+}
+
 .corporate-page {
   padding-top: 60px;
   background: #f7faff;
