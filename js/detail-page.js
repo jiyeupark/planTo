@@ -349,6 +349,134 @@
     },
   };
 
+  const diagramCatalog = {
+    business: {
+      regtech: {
+        title: "규제 기준에서 관리 인사이트까지",
+        lead: "규제와 조직의 책임을 하나의 운영 흐름으로 연결합니다.",
+        stages: [
+          ["INPUT", "규제·업무 기준", ["규제 요건", "내부 기준"]],
+          ["STRUCTURE", "책무·통제 설계", ["책무 구조", "통제 항목"]],
+          ["MANAGE", "점검·이력 관리", ["점검 결과", "변경 이력"]],
+          ["INSIGHT", "감사·개선", ["위험 신호", "개선 과제"]],
+        ],
+        foundation: ["권한 기반 관리", "증적·이력 추적", "상시 모니터링"],
+      },
+      esg: {
+        title: "ESG 데이터를 경영의 언어로",
+        lead: "사업장과 조직에 흩어진 지표를 신뢰할 수 있는 경영 데이터로 전환합니다.",
+        stages: [
+          ["SOURCE", "지표·원천 데이터", ["환경 데이터", "사회·거버넌스"]],
+          ["COLLECT", "표준 수집", ["입력 기준", "수집 일정"]],
+          ["VERIFY", "검증·이력 관리", ["근거 확인", "변경 추적"]],
+          ["REPORT", "공시·경영 인사이트", ["ESG 리포트", "성과 분석"]],
+        ],
+        foundation: ["지표 체계", "데이터 품질", "보고 기준 대응"],
+      },
+      bigdata: {
+        title: "수집부터 의사결정까지 연결되는 데이터 흐름",
+        lead: "회사소개서의 빅데이터 플랫폼 구조를 웹 환경에 맞는 실행 흐름으로 재구성했습니다.",
+        stages: [
+          ["SOURCE", "다양한 원천", ["업무 시스템", "외부·비정형 데이터"]],
+          ["COLLECT", "수집·정제", ["ETL·API", "품질 관리"]],
+          ["ANALYZE", "데이터·AI 분석", ["Data Lake", "모델 분석"]],
+          ["ACTIVATE", "시각화·의사결정", ["BI 대시보드", "실행 인사이트"]],
+        ],
+        foundation: ["통합 데이터 모델", "거버넌스", "확장 가능한 분석 환경"],
+      },
+      sism: {
+        title: "구축 이후까지 설계된 운영 체계",
+        lead: "업무와 기술, 운영을 한 흐름으로 관리해 서비스의 연속성을 만듭니다.",
+        stages: [
+          ["DISCOVER", "업무·환경 진단", ["요구사항", "현행 시스템"]],
+          ["DESIGN", "설계·구현", ["업무 설계", "기술 구현"]],
+          ["OPERATE", "전환·운영", ["품질 검증", "운영 지원"]],
+          ["EVOLVE", "개선·고도화", ["사용자 피드백", "변화 대응"]],
+        ],
+        foundation: ["프로젝트 관리", "품질·보안", "지속 운영 지원"],
+      },
+      consulting: {
+        title: "복잡한 과제를 실행 가능한 로드맵으로",
+        lead: "현황을 진단하고 우선순위를 설계해 실행의 방향을 명확히 합니다.",
+        stages: [
+          ["DISCOVER", "현황·과제 진단", ["비즈니스 목표", "핵심 이슈"]],
+          ["DEFINE", "목표 모델 정의", ["업무·데이터", "운영 기준"]],
+          ["PLAN", "전략·로드맵", ["우선순위", "투자 계획"]],
+          ["DELIVER", "실행·정착", ["구축 연계", "성과 점검"]],
+        ],
+        foundation: ["산업 전문성", "실행 경험", "협업 거버넌스"],
+      },
+    },
+    product: {
+      cms: {
+        title: "책무의 생성부터 개선까지 이어지는 관리 체계",
+        lead: "회사소개서의 PlanToCMS 구성도를 역할과 데이터 흐름 중심으로 재해석했습니다.",
+        stages: [
+          ["CONNECT", "시스템·조직 연계", ["통합 로그인", "조직·인사 정보"]],
+          ["DEFINE", "책무·통제 관리", ["책무 기술서", "통제 기준"]],
+          ["CHECK", "이행점검·승인", ["점검 결과", "보고서 승인"]],
+          ["MONITOR", "대시보드·개선", ["현황 모니터링", "변경 이력"]],
+        ],
+        foundation: ["권한·역할 관리", "통합 데이터", "보안·감사 대응"],
+      },
+      esg: {
+        title: "신뢰할 수 있는 ESG 데이터 운영",
+        lead: "수집, 검증, 보고로 이어지는 ESG 관리의 전 과정을 하나의 화면으로 연결합니다.",
+        stages: [
+          ["SOURCE", "ESG 지표 입력", ["사업장 데이터", "조직별 지표"]],
+          ["COLLECT", "수집·일정 관리", ["입력 현황", "담당자 관리"]],
+          ["VERIFY", "검증·근거 관리", ["증빙 자료", "변경 이력"]],
+          ["REPORT", "공시·성과 분석", ["ESG 리포트", "경영 대시보드"]],
+        ],
+        foundation: ["표준 지표", "데이터 신뢰성", "공시 대응"],
+      },
+      aiq: {
+        title: "신호를 발견하고 판단을 돕는 AI 감사 흐름",
+        lead: "데이터와 분석 모델, 감사 업무를 연결해 리스크 대응의 속도를 높입니다.",
+        stages: [
+          ["DATA", "감사 데이터 연결", ["업무 데이터", "점검 이력"]],
+          ["MODEL", "AI 분석 모델", ["탐지 시나리오", "학습·분석"]],
+          ["SIGNAL", "위험 신호 탐지", ["이상 징후", "우선순위"]],
+          ["ACTION", "점검·조치 연계", ["근거 확인", "후속 관리"]],
+        ],
+        foundation: ["설명 가능한 분석", "권한 관리", "지속 모델 개선"],
+      },
+      emapp: {
+        title: "데이터가 인사이트가 되는 One-Stop 플랫폼",
+        lead: "e-Mapp 소개서의 수집·분석·시각화 구조를 PlanTo 웹의 디자인 언어로 재구성했습니다.",
+        stages: [
+          ["SOURCE", "다양한 원천 데이터", ["기간계·업무계", "파일·API·IoT"]],
+          ["COLLECT", "Collector·ETL", ["수집 스케줄", "변환·정제"]],
+          ["ANALYZE", "Data Lake·AI", ["분석 모델", "예측·분류"]],
+          ["VISUALIZE", "BI·포털", ["시각화 화면", "공유·의사결정"]],
+        ],
+        foundation: ["데이터 표준", "관리자 기능", "모니터링"],
+      },
+      rapidminer: {
+        title: "모델 설계부터 운영 배포까지",
+        lead: "분석 워크플로를 설계하고 실행해 현업 활용으로 연결하는 AI 분석 환경입니다.",
+        stages: [
+          ["INGEST", "데이터 연결", ["DB·파일·API", "데이터 준비"]],
+          ["DESIGN", "분석 워크플로", ["모델 설계", "실험 관리"]],
+          ["EXECUTE", "실행·평가", ["Job 실행", "성능 검증"]],
+          ["DEPLOY", "배포·활용", ["서비스 연계", "모델 운영"]],
+        ],
+        foundation: ["오픈소스 확장", "재현 가능한 분석", "운영 인프라"],
+      },
+      tableau: {
+        title: "데이터 탐색을 모두의 의사결정으로",
+        lead: "연결된 데이터를 직관적인 시각화로 전환해 현업의 빠른 탐색과 공유를 지원합니다.",
+        stages: [
+          ["CONNECT", "데이터 연결", ["다양한 원천", "실시간·추출"]],
+          ["PREPARE", "정제·모델링", ["데이터 준비", "관계 설정"]],
+          ["VISUALIZE", "시각적 분석", ["대시보드", "드릴다운"]],
+          ["SHARE", "공유·실행", ["조직 협업", "의사결정"]],
+        ],
+        foundation: ["셀프서비스 분석", "거버넌스", "안전한 공유"],
+      },
+    },
+  };
+
   const page = document.getElementById("detail-page");
   const categoryKey = document.body.dataset.detailCategory;
   const category = catalog[categoryKey];
@@ -360,6 +488,7 @@
     : category.defaultItem;
   const item = category.items[itemKey];
   const itemList = Object.entries(category.items);
+  const diagram = diagramCatalog[categoryKey][itemKey];
 
   document.title = `${item.name} | PlanTo`;
   const description = document.querySelector('meta[name="description"]');
@@ -394,6 +523,76 @@
     )
     .join("");
 
+  const experience =
+    categoryKey === "business"
+      ? {
+          label: "DELIVERY FRAME",
+          title: "전략을 실행으로 바꾸는<br />PlanTo의 협업 방식",
+          lead: "업무 현장의 맥락과 데이터, 기술을 함께 살피며 변화가 실제 성과로 이어지도록 설계합니다.",
+          cards: [
+            ["01", "Discover", "비즈니스 목표와 현재의 과제를 함께 정리합니다."],
+            ["02", "Design", "데이터·업무·운영 기준을 하나의 실행안으로 설계합니다."],
+            ["03", "Deliver", "구축 이후의 정착과 개선까지 연결해 지원합니다."],
+          ],
+        }
+      : {
+          label: "PRODUCT EXPERIENCE",
+          title: "연결하고, 이해하고,<br />더 넓게 활용합니다.",
+          lead: "제품 기능이 현업의 데이터 흐름과 자연스럽게 맞물리도록 도입부터 활용 확장까지 함께합니다.",
+          cards: [
+            ["01", "Connect", "분산된 데이터와 업무 흐름을 제품 환경에 연결합니다."],
+            ["02", "Activate", "필요한 역할과 시나리오에 맞게 기능을 빠르게 활용합니다."],
+            ["03", "Scale", "사용 경험과 운영 데이터를 바탕으로 활용 범위를 확장합니다."],
+          ],
+        };
+
+  const visualPanels = item.chips
+    .map(
+      (chip, index) => `
+        <div class="detail-visual__panel detail-visual__panel--${index + 1}">
+          <span>0${index + 1}</span><strong>${chip}</strong>
+        </div>`,
+    )
+    .join("");
+
+  const signals = item.chips
+    .map(
+      (chip, index) => `
+        <article class="detail-signal__item">
+          <span class="detail-signal__index">0${index + 1}</span>
+          <strong>${chip}</strong>
+          <span>CORE CAPABILITY</span>
+        </article>`,
+    )
+    .join("");
+
+  const experienceCards = experience.cards
+    .map(
+      ([number, title, text]) => `
+        <article class="detail-experience__card">
+          <span>${number}</span>
+          <h3>${title}</h3>
+          <p>${text}</p>
+        </article>`,
+    )
+    .join("");
+
+  const diagramStages = diagram.stages
+    .map(
+      ([label, title, tags], index) => `
+        <article class="detail-diagram__stage">
+          <span class="detail-diagram__number">0${index + 1}</span>
+          <p>${label}</p>
+          <h3>${title}</h3>
+          <ul>${tags.map((tag) => `<li>${tag}</li>`).join("")}</ul>
+        </article>`,
+    )
+    .join("");
+
+  const diagramFoundation = diagram.foundation
+    .map((item) => `<li>${item}</li>`)
+    .join("");
+
   page.innerHTML = `
     <section class="detail-hero">
       <div class="detail-shell detail-hero__layout">
@@ -407,12 +606,22 @@
           <ul class="detail-hero__chips">${item.chips.map((chip) => `<li>${chip}</li>`).join("")}</ul>
         </div>
         <div class="detail-visual" aria-hidden="true">
+          <div class="detail-visual__mesh"></div>
+          <span class="detail-visual__beam detail-visual__beam--one"></span>
+          <span class="detail-visual__beam detail-visual__beam--two"></span>
+          <div class="detail-visual__orbit detail-visual__orbit--outer"></div>
+          <div class="detail-visual__orbit detail-visual__orbit--inner"></div>
           <div class="detail-visual__core">${item.visual}</div>
           <span class="detail-visual__node detail-visual__node--one">${item.nodes[0]}</span>
           <span class="detail-visual__node detail-visual__node--two">${item.nodes[1]}</span>
           <span class="detail-visual__node detail-visual__node--three">${item.nodes[2]}</span>
+          ${visualPanels}
         </div>
       </div>
+    </section>
+
+    <section class="detail-signal">
+      <div class="detail-shell detail-signal__grid">${signals}</div>
     </section>
 
     <section class="detail-section detail-section--white">
@@ -429,6 +638,42 @@
       </div>
     </section>
 
+    <section class="detail-experience">
+      <div class="detail-shell detail-experience__surface">
+        <div class="detail-experience__copy">
+          <p class="detail-kicker">${experience.label}</p>
+          <h2>${experience.title}</h2>
+          <p>${experience.lead}</p>
+          <span class="detail-experience__line" aria-hidden="true"></span>
+        </div>
+        <div class="detail-experience__cards">${experienceCards}</div>
+      </div>
+    </section>
+
+    <section class="detail-architecture">
+      <div class="detail-shell">
+        <div class="detail-architecture__intro">
+          <div>
+            <p class="detail-kicker">SOLUTION MAP</p>
+            <h2>${diagram.title}</h2>
+          </div>
+          <p>${diagram.lead}</p>
+        </div>
+        <div class="detail-diagram detail-diagram--${categoryKey}">
+          <div class="detail-diagram__header">
+            <span>PLAN TO FLOW</span>
+            <strong>${item.name}</strong>
+            <i aria-hidden="true"></i>
+          </div>
+          <div class="detail-diagram__flow">${diagramStages}</div>
+          <div class="detail-diagram__foundation">
+            <span>OPERATING FOUNDATION</span>
+            <ul>${diagramFoundation}</ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="detail-section">
       <div class="detail-shell">
         <div class="detail-section__intro">
@@ -441,5 +686,6 @@
         <ol class="detail-flow">${flow}</ol>
       </div>
     </section>
+
 `;
 })();
