@@ -177,28 +177,28 @@
           visual: "CMS",
           nodes: ["ROLE", "CONTROL", "CHECK"],
           summary:
-            "금융권 내부통제와 책무구조도 관리 전 과정을 지원하는 컴플라이언스 관리 플랫폼입니다.",
-          chips: ["책무관리", "내부통제", "점검 관리"],
-          statement: "책임과 통제를 한 흐름으로 관리합니다",
-          lead: "조직의 책무와 내부통제 활동을 체계화해, 변화하는 규제 환경에서도 관리 현황을 명확히 파악할 수 있도록 지원합니다.",
+            "책무의 생성·배분부터 이행점검, 보고 승인, 대시보드 모니터링과 개선까지 지원하는 금융권 컴플라이언스 관리 플랫폼입니다.",
+          chips: ["책무 생성·배분", "이행점검·승인", "대시보드·개선"],
+          statement: "책임과 통제를 생성부터 개선까지 한 흐름으로 관리합니다",
+          lead: "조직의 역할과 책무, 통제 기준과 점검 활동을 유기적으로 연결해 변화하는 규제 환경에서도 책임 소재와 관리 현황을 명확히 파악할 수 있도록 지원합니다.",
           features: [
             [
               "책무 체계 관리",
-              "조직·직책·책무의 관계를 기준에 맞게 관리합니다.",
+              "조직·직책·책무의 관계를 정의하고 생성과 배분 이력을 기준에 맞게 관리합니다.",
             ],
             [
               "통제 활동 연결",
-              "통제 기준과 점검 활동을 연결해 누락을 줄입니다.",
+              "통제 기준, 이행점검, 보고서 승인 절차를 연결해 누락을 줄입니다.",
             ],
             [
               "관리 현황 가시화",
-              "업무별 진행 현황과 주요 이슈를 한눈에 확인합니다.",
+              "대시보드에서 진행 현황과 주요 이슈를 확인하고 변경·개선 이력을 관리합니다.",
             ],
           ],
           flow: [
-            ["구조 정의", "조직의 책무와 관리 기준을 설정합니다."],
-            ["활동 운영", "통제와 점검 업무를 체계적으로 수행합니다."],
-            ["현황 확인", "관리 현황을 바탕으로 개선 과제를 찾습니다."],
+            ["생성·배분", "조직의 책무와 관리 기준을 정의하고 배분합니다."],
+            ["이행·승인", "통제와 점검 업무를 수행하고 보고를 승인합니다."],
+            ["모니터링·개선", "대시보드로 현황을 확인하고 개선 과제를 관리합니다."],
           ],
         },
         esg: {
@@ -264,28 +264,28 @@
           visual: "e-Mapp",
           nodes: ["ETL", "AI", "BI"],
           summary:
-            "ETL, AI·머신러닝, 시각화를 결합해 수집부터 분석 결과까지 지원하는 빅데이터 통합 분석 플랫폼입니다.",
-          chips: ["ETL", "AI·ML", "데이터 시각화"],
-          statement: "데이터의 전 과정을 하나의 분석 환경으로",
-          lead: "다양한 데이터의 수집·가공·분석·시각화를 연결해, 데이터 전문가와 현업이 함께 활용할 수 있는 분석 기반을 제공합니다.",
+            "ETL과 AI·머신러닝, 시각화를 결합한 빅데이터 통합 분석 플랫폼으로 다양한 원천 데이터의 수집부터 분석 결과 활용까지 One-Stop으로 지원합니다.",
+          chips: ["Collector·ETL", "AI·ML", "BI·Data Portal"],
+          statement: "데이터의 전 과정을 하나의 분석 환경으로 연결합니다",
+          lead: "다양한 원천 데이터를 GUI 기반으로 통합하고, 오픈소스 기반 AI·ML과 시각화 분석을 결합해 데이터 전문가와 현업이 함께 활용할 수 있는 End-to-End 분석 환경을 제공합니다.",
           features: [
             [
               "데이터 파이프라인",
-              "다양한 원천 데이터를 수집하고 분석 가능한 형태로 가공합니다.",
+              "정형·비정형 데이터, 파일·API·IoT 등 다양한 원천을 수집하고 분석 가능한 형태로 가공합니다.",
             ],
             [
               "분석 워크플로",
-              "분석과 모델링 업무를 반복 가능한 흐름으로 관리합니다.",
+              "예측·분류·분석을 위한 워크플로를 구성하고 필요한 알고리즘을 확장합니다.",
             ],
             [
               "공유 가능한 인사이트",
-              "대시보드와 리포트로 결과를 조직에 쉽게 공유합니다.",
+              "대시보드와 리포트로 분석 결과를 공유해 데이터 기반 의사결정을 지원합니다.",
             ],
           ],
           flow: [
-            ["수집·정제", "데이터를 연결하고 품질을 관리합니다."],
-            ["분석·모델링", "문제에 맞는 분석을 수행하고 결과를 검증합니다."],
-            ["시각화·활용", "인사이트를 현업의 의사결정에 연결합니다."],
+            ["수집·정제", "Collector·ETL로 데이터를 연결하고 변환·품질을 관리합니다."],
+            ["분석·모델링", "AI·ML 분석을 수행하고 목적에 맞는 알고리즘을 적용합니다."],
+            ["시각화·활용", "BI·포털로 인사이트를 현업의 의사결정에 연결합니다."],
           ],
         },
         rapidminer: {
@@ -343,6 +343,48 @@
               "데이터를 시각적으로 비교하고 인사이트를 찾습니다.",
             ],
             ["공유와 실행", "대시보드를 통해 조직의 행동을 연결합니다."],
+          ],
+        },
+        mstr: {
+          name: "MicroStrategy",
+          eyebrow: "PARTNER PRODUCT · ENTERPRISE BI",
+          visual: "MSTR",
+          nodes: ["GOVERN", "EXPLORE", "SHARE"],
+          summary:
+            "개인화된 리포트와 셀프서비스 분석, 데이터 거버넌스를 연결하는 엔터프라이즈 비즈니스 인텔리전스 플랫폼입니다.",
+          chips: ["엔터프라이즈 BI", "셀프서비스 분석", "데이터 거버넌스"],
+          statement: "신뢰할 수 있는 데이터를 조직 전체의 인사이트로",
+          lead: "다양한 데이터 소스와 분석 도구를 연결해, 현업은 빠르게 탐색하고 조직은 일관된 데이터 기준과 보안을 유지할 수 있도록 지원합니다.",
+          features: [
+            ["통합 데이터 연결", "다양한 데이터 소스와 기존 분석 도구를 엔터프라이즈 환경에 연결합니다."],
+            ["셀프서비스 분석", "현업이 신뢰할 수 있는 데이터를 바탕으로 리포트와 대시보드를 직접 탐색합니다."],
+            ["확장 가능한 거버넌스", "보안, 데이터 관리, API·SDK 연계를 통해 분석 환경을 안정적으로 확장합니다."],
+          ],
+          flow: [
+            ["데이터 연결", "전사 데이터와 분석 도구를 공통 환경으로 연결합니다."],
+            ["탐색·시각화", "필요한 리포트와 대시보드로 인사이트를 빠르게 만듭니다."],
+            ["공유·운영", "조직의 데이터 기준과 거버넌스 아래에서 안전하게 공유합니다."],
+          ],
+        },
+        sas: {
+          name: "SAS",
+          eyebrow: "PARTNER PRODUCT · ANALYTICS PLATFORM",
+          visual: "SAS",
+          nodes: ["DISCOVER", "ANALYZE", "DEPLOY"],
+          summary:
+            "다양한 데이터를 실시간으로 분석하고 데이터 발견부터 예측 결과 활용까지 통합 분석 라이프사이클을 지원하는 플랫폼입니다.",
+          chips: ["통합 분석", "예측 분석", "분석 라이프사이클"],
+          statement: "발견부터 예측과 활용까지 이어지는 분석 기반",
+          lead: "시각적·통계적·텍스트 분석과 오픈소스 연계를 바탕으로, 복잡한 분석 과제를 하나의 관리 가능한 흐름으로 운영하도록 지원합니다.",
+          features: [
+            ["데이터 발견", "다양한 원천 데이터를 연결하고 탐색해 분석의 출발점을 빠르게 찾습니다."],
+            ["고급 분석", "통계, 텍스트, 예측 분석을 조합해 문제에 맞는 분석을 수행합니다."],
+            ["운영 가능한 결과", "분석 결과를 반복 가능한 라이프사이클로 관리하고 업무에 적용합니다."],
+          ],
+          flow: [
+            ["발견·준비", "여러 데이터 원천을 연결하고 분석 목적에 맞게 준비합니다."],
+            ["분석·예측", "시각적 탐색과 통계·머신러닝 분석으로 결과를 검증합니다."],
+            ["배포·활용", "검증한 인사이트를 조직의 업무와 의사결정에 연결합니다."],
           ],
         },
       },
@@ -474,6 +516,28 @@
         ],
         foundation: ["셀프서비스 분석", "거버넌스", "안전한 공유"],
       },
+      mstr: {
+        title: "전사 데이터의 기준과 현업 분석을 함께",
+        lead: "신뢰할 수 있는 엔터프라이즈 데이터, 셀프서비스 분석, 보안·거버넌스를 하나의 BI 환경으로 연결합니다.",
+        stages: [
+          ["CONNECT", "엔터프라이즈 연결", ["다양한 데이터", "기존 BI 도구"]],
+          ["GOVERN", "데이터 기준·보안", ["권한 관리", "데이터 거버넌스"]],
+          ["EXPLORE", "셀프서비스 분석", ["리포트·대시보드", "시각적 탐색"]],
+          ["SHARE", "공유·확장", ["조직 협업", "API·SDK 연계"]],
+        ],
+        foundation: ["엔터프라이즈 데이터", "확장 가능한 아키텍처", "안전한 분석"],
+      },
+      sas: {
+        title: "데이터 발견부터 예측 활용까지의 분석 라이프사이클",
+        lead: "다양한 데이터 소스와 시각적·통계적 분석을 연결해 분석 과제의 전 과정을 지원합니다.",
+        stages: [
+          ["SOURCE", "다양한 데이터 연결", ["실시간 데이터", "오픈소스 연계"]],
+          ["DISCOVER", "탐색·준비", ["시각적 탐색", "데이터 발견"]],
+          ["ANALYZE", "통계·예측 분석", ["텍스트 분석", "분석 모델"]],
+          ["ACTIVATE", "결과 활용", ["의사결정 지원", "분석 운영"]],
+        ],
+        foundation: ["통합 분석 환경", "확장성", "분석 관리"],
+      },
     },
   };
 
@@ -550,6 +614,18 @@
         featureIcons: ["02-jdbc", "05-upload", "05-analytics-dashboard"].map(icon),
         stageIcons: ["02-jdbc", "07-data-sync", "05-analytics-dashboard", "03-user-sync"].map(icon),
       },
+      mstr: {
+        art: `${assetRoot}main/banner/planToAnalytics.png`,
+        artType: "scene",
+        featureIcons: ["02-jdbc", "05-analytics-dashboard", "03-user-sync"].map(icon),
+        stageIcons: ["02-jdbc", "09-server-checklist", "05-analytics-dashboard", "03-user-sync"].map(icon),
+      },
+      sas: {
+        art: `${dataAssetRoot}artificial-intelligence.png`,
+        artType: "object",
+        featureIcons: ["07-data-sync", "07-analytics", "10-monitoring-sync"].map(icon),
+        stageIcons: ["02-jdbc", "05-upload", "07-analytics", "02-dashboard-report"].map(icon),
+      },
     },
   };
 
@@ -568,7 +644,48 @@
       emapp: { name: "platform", hub: "e-Mapp" },
       rapidminer: { name: "workflow", hub: "MODEL" },
       tableau: { name: "dashboard", hub: "INSIGHT" },
+      mstr: { name: "dashboard", hub: "GOVERN" },
+      sas: { name: "workflow", hub: "ANALYTICS" },
     },
+  };
+
+  const iconKindByAsset = {
+    "01-ai-accelerator.png": "brain",
+    "01-schedule-collector.png": "calendar",
+    "02-dashboard-report.png": "chart",
+    "02-jdbc.png": "database",
+    "03-rest-api.png": "network",
+    "03-user-sync.png": "users",
+    "04-growth-chart.png": "trend",
+    "05-analytics-dashboard.png": "chart",
+    "05-upload.png": "upload",
+    "06-driving-monitor.png": "monitor",
+    "07-analytics.png": "chart",
+    "07-data-sync.png": "database",
+    "09-chart-check.png": "chartCheck",
+    "09-server-checklist.png": "shield",
+    "10-monitoring-sync.png": "monitor",
+  };
+
+  const svgPaths = {
+    brain: '<path d="M9 5.2A3.4 3.4 0 0 1 15.3 6a3.9 3.9 0 0 1 2.2 6.8A3.7 3.7 0 0 1 14 19H9.5A3.5 3.5 0 0 1 6 15.5a3.6 3.6 0 0 1 .5-1.8A3.9 3.9 0 0 1 8.2 6"/><path d="M12 6v13M8.2 10.1H12m0 4h3.8"/>',
+    calendar: '<rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4m8-4v4M4 10h16m-12 4h3m2 0h3"/>',
+    chart: '<path d="M4 19V5m0 14h16"/><path d="m7 15 3-4 3 2 4-6"/><path d="M17 7h2v2"/>',
+    chartCheck: '<path d="M4 19V5m0 14h16"/><path d="M7 15v-3m4 3V8m4 7v-5"/><path d="m15.5 7.5 1.3 1.3 2.7-3"/>',
+    database: '<ellipse cx="12" cy="5.5" rx="7" ry="2.8"/><path d="M5 5.5v6c0 1.6 3.1 2.8 7 2.8s7-1.2 7-2.8v-6M5 11.5v6c0 1.6 3.1 2.8 7 2.8s7-1.2 7-2.8v-6"/>',
+    monitor: '<rect x="3.5" y="4.5" width="17" height="12" rx="2"/><path d="M8.5 20h7m-3.5-3.5V20m-5-9 2.5-2.5L12 11l4-4"/>',
+    network: '<circle cx="6" cy="12" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="18" cy="18" r="2"/><path d="m7.8 11 8.4-4m-8.4 6 8.4 4"/>',
+    shield: '<path d="M12 3.2 19 6v5.3c0 4.3-2.9 8.2-7 9.5-4.1-1.3-7-5.2-7-9.5V6l7-2.8Z"/><path d="m8.7 12 2.1 2.1 4.5-4.7"/>',
+    trend: '<path d="M4 19V5m0 14h16"/><path d="m7 15 3.5-4 3 2 4.5-6"/><path d="M17 7h2v2"/>',
+    upload: '<path d="M12 16V4m0 0L8 8m4-4 4 4"/><path d="M5 14v5h14v-5"/>',
+    users: '<circle cx="9" cy="8" r="3"/><path d="M3.5 20v-1.5A4.5 4.5 0 0 1 8 14h2a4.5 4.5 0 0 1 4.5 4.5V20M16 5.5a2.6 2.6 0 0 1 0 5.1m1.8 3.8a4.5 4.5 0 0 1 2.7 4.1V20"/>',
+    spark: '<path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z"/><path d="m18.5 15 .7 2 .8-2 2-.7-2-.8-.8-2-.7 2-2 .8 2 .7Z"/>',
+  };
+
+  const svgIcon = (asset) => {
+    const fileName = asset.split("/").pop();
+    const kind = iconKindByAsset[fileName] || "spark";
+    return `<svg class="detail-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${svgPaths[kind]}</svg>`;
   };
 
   const page = document.getElementById("detail-page");
@@ -596,7 +713,7 @@
         <article class="detail-feature">
           <div class="detail-feature__top">
             <span class="detail-feature__number">0${index + 1}</span>
-            <span class="detail-feature__icon"><img src="${visuals.featureIcons[index]}" alt="" loading="lazy" /></span>
+            <span class="detail-feature__icon">${svgIcon(visuals.featureIcons[index])}</span>
           </div>
           <h3>${title}</h3>
           <p>${text}</p>
@@ -658,7 +775,7 @@
     .map(
       (chip, index) => `
         <article class="detail-signal__item">
-          <span class="detail-signal__icon"><img src="${visuals.featureIcons[index]}" alt="" loading="lazy" /></span>
+          <span class="detail-signal__icon">${svgIcon(visuals.featureIcons[index])}</span>
           <div class="detail-signal__copy">
             <span class="detail-signal__index">0${index + 1}</span>
             <strong>${chip}</strong>
@@ -674,7 +791,7 @@
         <article class="detail-experience__card">
           <div class="detail-experience__card-top">
             <span class="detail-experience__number">${number}</span>
-            <span class="detail-experience__icon"><img src="${visuals.featureIcons[index]}" alt="" loading="lazy" /></span>
+            <span class="detail-experience__icon">${svgIcon(visuals.featureIcons[index])}</span>
           </div>
           <h3>${title}</h3>
           <p>${text}</p>
@@ -688,7 +805,7 @@
         <article class="detail-diagram__stage">
           <div class="detail-diagram__stage-top">
             <span class="detail-diagram__number">0${index + 1}</span>
-            <span class="detail-diagram__stage-icon"><img src="${visuals.stageIcons[index]}" alt="" loading="lazy" /></span>
+            <span class="detail-diagram__stage-icon">${svgIcon(visuals.stageIcons[index])}</span>
           </div>
           <p>${label}</p>
           <h3>${title}</h3>
