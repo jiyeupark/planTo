@@ -128,6 +128,37 @@ html {
   box-shadow: 0 22px 38px rgba(23, 105, 223, 0.16);
 }
 
+a.business-card,
+a.product-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.business-card--link,
+.product-card--link {
+  position: relative;
+}
+
+.corporate-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  color: var(--planto-blue);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.corporate-card-link span {
+  transition: transform 180ms ease;
+}
+
+.business-card--link:hover .corporate-card-link span,
+.product-card--link:hover .corporate-card-link span {
+  transform: translateX(4px);
+}
+
 .business-card__number,
 .product-card__kind {
   display: inline-flex;
@@ -176,6 +207,10 @@ html {
 
 .product-card--partner .product-card__kind {
   background: rgba(168, 211, 255, 0.18);
+  color: #b9ddff;
+}
+
+.product-card--partner .corporate-card-link {
   color: #b9ddff;
 }
 

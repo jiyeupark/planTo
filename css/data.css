@@ -542,7 +542,7 @@
   margin: 16px 0 0;
   color: #31415d;
   text-align: center;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.055em;
   line-height: 1.6;
@@ -588,7 +588,7 @@
   margin: 0;
   padding-left: 18px;
   color: #21304b;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.04em;
   line-height: 1.72;
@@ -614,7 +614,7 @@
   align-content: center;
   gap: 9px;
   color: #1e4f9e;
-  font-size: 13px;
+  font-size: 16px;
 
   letter-spacing: -0.06em;
 }
@@ -634,7 +634,7 @@
   margin: 0;
   padding-left: 18px;
   color: #263650;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.045em;
   line-height: 1.7;
@@ -677,7 +677,7 @@
 .emapp__certification-card p {
   margin: 6px 0 0;
   color: var(--emapp-muted);
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.05em;
 }

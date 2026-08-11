@@ -640,8 +640,7 @@ a.slide_btn {
   flex-shrink: 0;
 
   width: auto;
-  height: 28px;
-
+  height: 32px;
   object-fit: contain;
 
   filter: brightness(0) invert(1);
