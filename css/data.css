@@ -1,6 +1,3 @@
-.emapp__background {
-  background: linear-gradient(135deg, #e4ecf7, #ccd8ee);
-}
 .emapp {
   --emapp-navy: #082966;
   --emapp-blue: #1760c7;
@@ -20,7 +17,7 @@
       transparent 22rem
     ),
     linear-gradient(180deg, #ffffff 0%, #f6f9fe 48%, #ffffff 100%);
-
+  margin-bottom: 4rem;
   word-break: keep-all;
 }
 
@@ -35,6 +32,8 @@
   width: min(1500px, 100%);
   margin: 0 auto;
   margin-top: 4rem;
+  position: relative;
+  z-index: 1;
 }
 
 .emapp__hero {
@@ -48,20 +47,21 @@
   isolation: isolate;
 }
 
-.emapp__hero-video,
-.emapp__hero-video-overlay {
+.emapp__hero-video {
   position: absolute;
-  inset: 0;
+  inset: 0 auto 0 50%;
   z-index: 0;
-  width: 100%;
+  width: 100vw;
+  max-width: none;
   height: 100%;
   pointer-events: none;
+  transform: translateX(-47%);
 }
 
 .emapp__hero-video {
   object-fit: cover;
   object-position: center;
-  opacity: 3;
+  opacity: 1;
 }
 
 .emapp__hero::before {
@@ -301,6 +301,7 @@
   width: min(1500px, 100%);
   margin: 0 auto;
   margin-top: 62px;
+  padding: 1rem;
 }
 
 .emapp__section-heading {
@@ -320,8 +321,8 @@
 
 .emapp__section-number {
   display: grid;
-  width: 39px;
-  height: 39px;
+  width: 34px;
+  height: 34px;
   flex: 0 0 auto;
   position: relative;
   z-index: 1;
@@ -336,7 +337,7 @@
 
 .emapp__section-title {
   margin: 0;
-  margin-left: -43px;
+  margin-left: -37px;
   padding: 8px 22px 9px 58px;
   color: #fff;
   border-radius: 22px;
@@ -510,17 +511,22 @@
 .emapp__collection-symbol,
 .emapp__service-symbol {
   display: grid;
-  width: 40px;
-  height: 40px;
+  width: 4rem;
+  height: 4rem;
   margin: 0 auto 9px;
   color: #1257b5;
-  border: 2px solid currentColor;
+
   border-radius: 13px;
   background: #fff;
   place-items: center;
   font-size: 23px;
-
   line-height: 1;
+}
+
+.emapp__collection-symbol img,
+.emapp__service-symbol img {
+  display: block;
+  width: 100%;
 }
 
 .emapp__collection-card strong,

@@ -37,17 +37,20 @@
     </header>
 
     <main class="emapp">
-      <section class="emapp__background" >
-      <div class="emapp__container">
-        <video
-          class="emapp__hero-video"
-          autoplay
-          muted
-          loop
-          playsinline
-          src="../../../img/product/cdxp/data/emapp_hero.mp4"
-        ></video>
+      <section class="emapp__background">
+        <div class="emapp__container">
         <div class="emapp__hero" aria-labelledby="emapp-hero-title">
+          <video
+            class="emapp__hero-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            aria-hidden="true"
+            tabindex="-1"
+          >
+            <source src="../../../img/product/cdxp/data/map2.mp4" type="video/mp4" />
+          </video>
           <div class="emapp__hero-copy">
             <div class="emapp__brandline">
               <span class="emapp__wordmark">e-<strong>M</strong>app</span>
@@ -93,9 +96,6 @@
             </div>
           </div>
         </div>
-      </div>
-      </div>
-        </section>
 
         <section
           class="emapp__section"
@@ -235,35 +235,59 @@
             </div>
             <div class="emapp__collection-grid">
               <div class="emapp__collection-card">
-                <span class="emapp__collection-symbol">▤</span
+                <span class="emapp__collection-symbol"><img
+                  src="../../../img/product/cdxp/data/icons/01-schedule-collector.png"
+                  alt=""
+                /></span
                 ><strong>스케줄 기반<br />Collector</strong>
               </div>
               <div class="emapp__collection-card">
-                <span class="emapp__collection-symbol">◇</span
+                <span class="emapp__collection-symbol"><img
+                  src="../../../img/product/cdxp/data/icons/02-jdbc-collector.png"
+                  alt=""
+                /></span
                 ><strong>JDBC<br />(D3 맵핑 연동)</strong>
               </div>
               <div class="emapp__collection-card">
-                <span class="emapp__collection-symbol">◎</span
+                <span class="emapp__collection-symbol"><img
+                  src="../../../img/product/cdxp/data/icons/03-rest-api.png"
+                  alt=""
+                /></span
                 ><strong>REST API</strong>
               </div>
               <div class="emapp__collection-card">
-                <span class="emapp__collection-symbol">↗</span
+                <span class="emapp__collection-symbol"><img
+                  src="../../../img/product/cdxp/data/icons/04-ftp.png"
+                  alt=""
+                /></span
                 ><strong>(a)FTP</strong>
               </div>
               <div class="emapp__collection-card">
-                <span class="emapp__collection-symbol">▣</span
+                <span class="emapp__collection-symbol"><img
+                  src="../../../img/product/cdxp/data/icons/05-file-upload.png"
+                  alt=""
+                /></span
                 ><strong>파일 업로드</strong>
               </div>
               <div class="emapp__collection-card">
-                <span class="emapp__collection-symbol">⌕</span
+                <span class="emapp__collection-symbol"><img
+                  src="../../../img/product/cdxp/data/icons/06-web-crawling.png"
+                  alt=""
+                /></span
                 ><strong>웹 크롤링</strong>
               </div>
               <div class="emapp__collection-card">
-                <span class="emapp__collection-symbol">▥</span
+                <span class="emapp__collection-symbol"><img
+                  src="../../../img/product/cdxp/data/icons/07-open-api.png"
+                  alt=""
+                /></span
                 ><strong>OPEN API</strong>
               </div>
               <div class="emapp__collection-card">
-                <span class="emapp__collection-symbol">↥</span
+                <span class="emapp__collection-symbol"><img
+                  src="../../../img/product/cdxp/data/icons/08-manual-preprocessing.png"
+                  alt=""
+                /></span
                 ><strong>수동 전처리 데이터</strong>
               </div>
             </div>
@@ -406,6 +430,8 @@
             </tbody>
           </table>
         </section>
+        </div>
+      </section>
 
     </main>
 
