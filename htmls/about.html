@@ -24,7 +24,7 @@
 
     <!-- css -->
     <link href="../css/common.css" rel="stylesheet" />
-    <link href="../css/about.css" rel="stylesheet" />
+    <link href="../css/about.css?v=20260812-about" rel="stylesheet" />
     <link href="../css/corporate.css" rel="stylesheet" />
 
     <script>
@@ -49,7 +49,8 @@
 
           if (isHidden) {
             historyOld.style.display = "grid";
-            historyBtn.textContent = "접기 −";
+            historyBtn.textContent = "이전 연혁 접기 −";
+            historyBtn.setAttribute("aria-expanded", "true");
 
             // 접기 버튼 스타일
             historyBtn.style.backgroundColor = "#0f4fa8";
@@ -57,7 +58,8 @@
             historyBtn.style.borderColor = "#0f4fa8";
           } else {
             historyOld.style.display = "none";
-            historyBtn.textContent = "더보기 +";
+            historyBtn.textContent = "이전 연혁 펼쳐보기 +";
+            historyBtn.setAttribute("aria-expanded", "false");
 
             // 더보기 버튼 스타일
             historyBtn.style.backgroundColor = "#fff";
@@ -95,7 +97,7 @@
     <link href="../css/unified.css" rel="stylesheet" />
   </head>
 
-  <body>
+  <body class="about-page">
     <header>
       <script>
         loadHTML("./header.html");
@@ -537,9 +539,10 @@
       <div class="container about-con" id="about4-con">
         <div class="history-heading">
           <span>HISTORY</span>
-          <div class="sub-title">연혁</div>
+          <div class="sub-title">함께 성장해 온<br />PlanTo의 여정</div>
+          <p>축적된 경험을 바탕으로 고객의 변화에 가장 먼저 답해왔습니다.</p>
         </div>
-        <div id="history_Con">
+        <div id="history_Con" aria-label="PlanTo 연혁">
           <div id="history_year">
             <!-- 항상 보이는 연혁 -->
             <div class="history-visible">
@@ -772,7 +775,7 @@
             </div>
 
             <div class="history-btn-wrap">
-              <button id="historyBtn">더보기 +</button>
+              <button id="historyBtn" type="button" aria-expanded="false">이전 연혁 펼쳐보기 +</button>
             </div>
           </div>
         </div>

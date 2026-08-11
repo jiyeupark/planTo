@@ -1246,3 +1246,693 @@ div[class^="strategy-info-bg"] {
     margin-bottom: 10px;
   }
 }
+
+/* =========================================================
+   About page refinement
+   Shared spacing and typography align the legacy content with the
+   refreshed corporate pages. The timeline is intentionally card based,
+   so the full company history stays dense without becoming a long list.
+========================================================= */
+.about-page {
+  background: #f7faff;
+  color: var(--planto-ink);
+}
+
+.about-page .section {
+  padding: clamp(76px, 8vw, 120px) 0;
+}
+
+.about-page .container,
+.about-page .about-con,
+.about-page #section6 .location-wrap {
+  width: min(1180px, calc(100% - 48px));
+  max-width: 1180px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.about-page #section1 {
+  padding: clamp(116px, 12vw, 168px) 0 clamp(76px, 8vw, 116px);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 84% 17%, rgba(121, 194, 255, .36), transparent 25%),
+    linear-gradient(135deg, #fbfdff 0%, #eaf5ff 54%, #dceeff 100%);
+}
+
+.about-page .about1-con {
+  gap: clamp(42px, 7vw, 88px);
+  padding: 0;
+}
+
+.about-page .page-title,
+.about-page .ceo-small,
+.about-page #section2 .sub-desc,
+.about-page #section3 .sub-desc,
+.about-page .history-heading > span {
+  color: var(--planto-blue);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.about-page .about1-title {
+  margin-bottom: 24px;
+  color: var(--planto-navy);
+  font-size: clamp(38px, 4.2vw, 56px);
+  letter-spacing: -.065em;
+}
+
+.about-page .page-desc {
+  max-width: 630px;
+  margin-bottom: 38px;
+  color: #526a87;
+  font-size: 17px;
+  line-height: 1.85;
+  word-break: keep-all;
+}
+
+.about-page .about-count {
+  gap: 0;
+  max-width: 580px;
+  border-top: 1px solid rgba(84, 126, 165, .28);
+}
+
+.about-page .count-box {
+  flex: 1;
+  min-width: 0;
+  padding: 20px 14px 0;
+  border-right: 1px solid rgba(84, 126, 165, .22);
+}
+
+.about-page .count-box:first-child {
+  padding-left: 0;
+}
+
+.about-page .count-box:last-child {
+  border-right: 0;
+}
+
+.about-page .count-box h3 {
+  margin-bottom: 7px;
+  color: var(--planto-navy);
+  font-size: clamp(24px, 2.4vw, 34px);
+  line-height: 1;
+  letter-spacing: -.05em;
+}
+
+.about-page .count-box span {
+  color: #59708b;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.about-page .about-right {
+  width: min(44vw, 520px);
+}
+
+.about-page .about-right img {
+  border: 8px solid rgba(255, 255, 255, .78);
+  border-radius: 24px;
+  box-shadow: 0 28px 54px rgba(30, 84, 136, .18);
+}
+
+.about-page #section2 {
+  background: #fff;
+}
+
+.about-page #section2 .sub-desc,
+.about-page #section3 .sub-desc {
+  margin-bottom: 12px;
+}
+
+.about-page #section2 .sub-title,
+.about-page #section3 .sub-title {
+  margin: 0 0 40px;
+  padding: 0;
+  color: var(--planto-navy);
+  font-size: clamp(32px, 3.3vw, 46px);
+  font-weight: 750;
+  letter-spacing: -.06em;
+}
+
+.about-page #section2 .cert-content {
+  gap: 16px;
+  padding: 0;
+}
+
+.about-page #section2 .cert-card {
+  overflow: hidden;
+  border: 1px solid #d9e6f3;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(29, 83, 136, .07);
+}
+
+.about-page #section2 .cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 34px rgba(29, 83, 136, .13);
+}
+
+.about-page #section2 .cert-card img {
+  width: 100%;
+  height: 150px;
+  padding: 16px;
+  background: linear-gradient(145deg, #f7fbff, #edf6ff);
+}
+
+.about-page #section2 .cert-info {
+  padding: 18px;
+  text-align: left;
+}
+
+.about-page #section2 .cert-info span {
+  color: var(--planto-blue);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+.about-page #section2 .cert-info h4 {
+  margin: 9px 0 4px;
+  color: var(--planto-navy);
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.about-page #section2 .cert-info p {
+  margin: 0;
+  color: #6a7f96;
+  font-size: 13px;
+}
+
+.about-page .about7 {
+  background: #edf6ff;
+}
+
+.about-page .ceo-wrap {
+  gap: clamp(42px, 7vw, 88px);
+  padding: 0;
+}
+
+.about-page .ceo-text h2 {
+  margin-bottom: 28px;
+  color: var(--planto-navy);
+  font-size: clamp(34px, 3.6vw, 48px);
+  letter-spacing: -.06em;
+}
+
+.about-page .ceo-text h3 {
+  margin-bottom: 26px;
+  color: #123f70;
+  font-size: clamp(23px, 2.7vw, 32px);
+  letter-spacing: -.05em;
+}
+
+.about-page .ceo-text p {
+  color: #526a87;
+  font-size: 16px;
+  line-height: 1.9;
+  word-break: keep-all;
+}
+
+.about-page .ceo-image {
+  width: min(42vw, 490px);
+}
+
+.about-page .ceo-image img {
+  border: 7px solid rgba(255, 255, 255, .84);
+  border-radius: 22px;
+  box-shadow: 0 24px 44px rgba(26, 81, 132, .15);
+}
+
+.about-page #section3 {
+  padding-right: 0;
+  padding-left: 0;
+  background: #fff;
+}
+
+.about-page #section3 .about-con {
+  padding: 0;
+}
+
+.about-page #section3 .organization {
+  margin-top: 0;
+  padding: clamp(28px, 4vw, 48px);
+  border: 1px solid #d8e6f3;
+  border-radius: 22px;
+  background: linear-gradient(145deg, #fbfdff, #eff7ff);
+  box-shadow: 0 15px 34px rgba(32, 84, 136, .07);
+}
+
+.about-page #section3 .advisory {
+  left: 8%;
+  border: 0;
+  border-radius: 10px;
+}
+
+.about-page #section3 .org-line {
+  width: 80%;
+}
+
+.about-page #section3 .org-bottom {
+  gap: 12px;
+}
+
+.about-page #section3 .org-card {
+  flex: 1;
+  min-width: 0;
+  margin-right: 0;
+}
+
+.about-page #section3 .org-body {
+  gap: 7px;
+}
+
+.about-page #section3 .team-box {
+  min-width: 0;
+  padding: 8px 5px;
+  font-size: 12px;
+}
+
+.about-page #section3 .team-box small {
+  font-size: 10px;
+  word-break: keep-all;
+}
+
+.about-page #section4 {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 10% 14%, rgba(115, 193, 255, .2), transparent 22%),
+    radial-gradient(circle at 92% 80%, rgba(63, 129, 234, .12), transparent 25%),
+    #f5faff;
+}
+
+.about-page #section4 .about-con {
+  overflow: visible;
+}
+
+.about-page .history-heading {
+  max-width: 560px;
+  margin-bottom: clamp(44px, 6vw, 72px);
+}
+
+.about-page .history-heading > span {
+  display: block;
+  margin-bottom: 14px;
+}
+
+.about-page #section4 .sub-title {
+  height: auto;
+  margin: 0;
+  padding: 0;
+  color: var(--planto-navy);
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 750;
+  line-height: 1.22;
+  letter-spacing: -.065em;
+}
+
+.about-page .history-heading p {
+  margin: 20px 0 0;
+  color: #5c7694;
+  font-size: 16px;
+  line-height: 1.75;
+  word-break: keep-all;
+}
+
+.about-page #history_Con {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  text-align: initial;
+}
+
+.about-page #history_year {
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.about-page #history_year::before {
+  position: absolute;
+  top: 4px;
+  bottom: 78px;
+  left: 50%;
+  width: 1px;
+  background: repeating-linear-gradient(to bottom, #8dbfeb 0 5px, transparent 5px 11px);
+  content: "";
+}
+
+.about-page .history-visible,
+.about-page #historyOld {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 112px;
+  align-items: start;
+}
+
+.about-page #historyOld {
+  display: none;
+  margin-top: 12px;
+  padding-top: 34px;
+  border-top: 1px solid #cfe1f1;
+}
+
+.about-page #history_year dl {
+  display: flex;
+  clear: none;
+  align-items: flex-start;
+  gap: 15px;
+  min-width: 0;
+  margin: 0;
+  padding: 0 0 28px;
+  position: relative;
+  transition: transform 180ms ease;
+}
+
+.about-page #history_year dl:hover {
+  transform: translateY(-3px);
+}
+
+.about-page #history_year dl:nth-child(odd) {
+  grid-column: 1;
+  flex-direction: row-reverse;
+}
+
+.about-page #history_year dl:nth-child(even) {
+  grid-column: 2;
+}
+
+.about-page #history_year dl::before {
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  width: 11px;
+  height: 11px;
+  border: 3px solid #f5faff;
+  border-radius: 50%;
+  background: var(--planto-blue);
+  box-shadow: 0 0 0 1px #5b9edf;
+  content: "";
+}
+
+.about-page #history_year dl:nth-child(odd)::before {
+  right: -61px;
+}
+
+.about-page #history_year dl:nth-child(even)::before {
+  left: -61px;
+}
+
+.about-page #history_year dl dt {
+  float: none;
+  width: auto;
+  margin: 1px 0 0;
+  color: var(--planto-blue);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -.04em;
+}
+
+.about-page #history_year dl dd {
+  width: auto;
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+}
+
+.about-page #history_year dl ul {
+  width: auto;
+  margin: 0;
+  padding: 17px 18px;
+  border: 1px solid #dce9f6;
+  border-bottom: 1px solid #dce9f6;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .9);
+  box-shadow: 0 11px 24px rgba(30, 88, 145, .06);
+}
+
+.about-page #history_year dl ul li {
+  margin: 0 0 8px;
+  padding: 0;
+  color: #506c89;
+  font-size: 13px;
+  line-height: 1.55;
+  letter-spacing: -.025em;
+  text-align: left;
+  word-break: keep-all;
+}
+
+.about-page #history_year dl ul li:last-child {
+  margin-bottom: 0;
+}
+
+.about-page #history_year dl ul b {
+  margin-right: 5px;
+  color: var(--planto-navy);
+  font-weight: 800;
+}
+
+.about-page .history-btn-wrap {
+  margin: 14px 0 0;
+}
+
+.about-page #historyBtn {
+  min-height: 46px;
+  padding: 10px 22px;
+  border: 1px solid #a9c7e5;
+  background: #fff;
+  box-shadow: 0 8px 18px rgba(30, 83, 136, .08);
+  color: var(--planto-navy);
+  font-size: 14px;
+}
+
+.about-page #historyBtn:hover {
+  border-color: var(--planto-blue);
+  background: var(--planto-blue);
+  color: #fff;
+}
+
+.about-page #section6 {
+  padding: clamp(76px, 8vw, 118px) 0;
+  background: #fff;
+}
+
+.about-page #section6 .location-wrap {
+  align-items: stretch;
+  gap: clamp(36px, 6vw, 76px);
+  padding: clamp(28px, 5vw, 60px);
+  border: 1px solid #d8e6f3;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #f8fcff, #edf6ff);
+  box-shadow: 0 18px 36px rgba(29, 83, 136, .08);
+}
+
+.about-page #section6 .company-path-wrap {
+  width: 38%;
+}
+
+.about-page #section6 #contact_map {
+  width: 62%;
+}
+
+.about-page #section6 .location-title span {
+  color: var(--planto-blue);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.about-page #section6 .location-title h2 {
+  color: var(--planto-navy);
+  font-size: clamp(34px, 3.5vw, 46px);
+  letter-spacing: -.06em;
+}
+
+.about-page #section6 .traffic-title {
+  color: var(--planto-navy);
+  font-size: 17px;
+}
+
+.about-page #section6 .traffic-desc {
+  color: #526a87;
+  font-size: 15px;
+}
+
+.about-page #section6 #map {
+  min-height: 100%;
+  border: 5px solid rgba(255, 255, 255, .8);
+  border-radius: 16px;
+}
+
+@media (max-width: 1024px) {
+  .about-page .about1-con,
+  .about-page .ceo-wrap {
+    gap: 42px;
+  }
+
+  .about-page .about-right,
+  .about-page .ceo-image {
+    width: min(43vw, 440px);
+  }
+
+  .about-page #section3 .organization {
+    overflow-x: auto;
+  }
+
+  .about-page #section3 .org-top,
+  .about-page #section3 .org-line,
+  .about-page #section3 .org-bottom {
+    min-width: 880px;
+  }
+
+  .about-page #section6 .location-wrap {
+    flex-direction: column;
+  }
+
+  .about-page #section6 .company-path-wrap,
+  .about-page #section6 #contact_map {
+    width: 100%;
+  }
+
+  .about-page #section6 #map {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 760px) {
+  .about-page .section {
+    padding: 72px 0;
+  }
+
+  .about-page .container,
+  .about-page .about-con,
+  .about-page #section6 .location-wrap {
+    width: min(100% - 40px, 1180px);
+  }
+
+  .about-page #section1 {
+    padding: 112px 0 72px;
+  }
+
+  .about-page .about1-con,
+  .about-page .ceo-wrap {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .about-page .about1-title {
+    font-size: clamp(36px, 10vw, 48px);
+  }
+
+  .about-page .about-count {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: none;
+  }
+
+  .about-page .count-box {
+    padding: 17px 12px 0;
+  }
+
+  .about-page .count-box:nth-child(2) {
+    border-right: 0;
+  }
+
+  .about-page .count-box:nth-child(n + 3) {
+    margin-top: 15px;
+  }
+
+  .about-page .about-right,
+  .about-page .ceo-image {
+    width: 100%;
+  }
+
+  .about-page .ceo-wrap {
+    flex-direction: column-reverse;
+  }
+
+  .about-page #section2 .cert-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-page #section2 .cert-card img {
+    height: 118px;
+    padding: 12px;
+  }
+
+  .about-page #section2 .cert-info {
+    padding: 14px;
+  }
+
+  .about-page #section2 .cert-info h4 {
+    font-size: 14px;
+  }
+
+  .about-page #section4 .about-con {
+    height: auto !important;
+  }
+
+  .about-page .history-heading {
+    margin-bottom: 42px;
+  }
+
+  .about-page #history_year::before {
+    top: 8px;
+    bottom: 70px;
+    left: 16px;
+  }
+
+  .about-page .history-visible,
+  .about-page #historyOld {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .about-page #historyOld {
+    margin-top: 2px;
+    padding-top: 26px;
+  }
+
+  .about-page #history_year dl,
+  .about-page #history_year dl:nth-child(odd),
+  .about-page #history_year dl:nth-child(even) {
+    grid-column: 1;
+    flex-direction: row;
+    gap: 10px;
+    padding: 0 0 22px 42px;
+  }
+
+  .about-page #history_year dl::before,
+  .about-page #history_year dl:nth-child(odd)::before,
+  .about-page #history_year dl:nth-child(even)::before {
+    top: 8px;
+    right: auto;
+    left: 9px;
+  }
+
+  .about-page #history_year dl dt {
+    min-width: 48px;
+    font-size: 18px;
+  }
+
+  .about-page #history_year dl ul {
+    padding: 14px;
+  }
+
+  .about-page #history_year dl ul li {
+    font-size: 12px;
+  }
+
+  .about-page #section6 .location-wrap {
+    width: min(100% - 40px, 1180px);
+    padding: 26px 20px;
+  }
+
+  .about-page #section6 .location-title {
+    text-align: left;
+  }
+
+  .about-page #section6 #map {
+    min-height: 290px;
+  }
+}

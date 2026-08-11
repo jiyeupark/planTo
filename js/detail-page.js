@@ -818,6 +818,22 @@
     .map((item) => `<li>${item}</li>`)
     .join("");
 
+  const diagramNetwork = `
+    <div class="detail-diagram__network" aria-hidden="true">
+      <svg viewBox="0 0 1000 420" preserveAspectRatio="none" focusable="false">
+        <path class="detail-diagram__path detail-diagram__path--horizon" d="M48 210H952" />
+        <path class="detail-diagram__path detail-diagram__path--one" d="M128 78C298 78 360 146 500 210" />
+        <path class="detail-diagram__path detail-diagram__path--two" d="M872 78C702 78 640 146 500 210" />
+        <path class="detail-diagram__path detail-diagram__path--three" d="M128 342C298 342 360 274 500 210" />
+        <path class="detail-diagram__path detail-diagram__path--four" d="M872 342C702 342 640 274 500 210" />
+        <circle class="detail-diagram__network-node detail-diagram__network-node--core" cx="500" cy="210" r="7" />
+        <circle class="detail-diagram__network-node detail-diagram__network-node--one" cx="128" cy="78" r="4" />
+        <circle class="detail-diagram__network-node detail-diagram__network-node--two" cx="872" cy="78" r="4" />
+        <circle class="detail-diagram__network-node detail-diagram__network-node--three" cx="128" cy="342" r="4" />
+        <circle class="detail-diagram__network-node detail-diagram__network-node--four" cx="872" cy="342" r="4" />
+      </svg>
+    </div>`;
+
   page.innerHTML = `
     <section class="detail-hero">
       <div class="detail-shell detail-hero__layout">
@@ -891,7 +907,8 @@
             <strong>${item.name}</strong>
             <i aria-hidden="true"></i>
           </div>
-          <span class="detail-diagram__hub" aria-hidden="true">${diagramLayout.hub}</span>
+          ${diagramNetwork}
+          <div class="detail-diagram__hub" aria-hidden="true"><span class="detail-diagram__hub-label">${diagramLayout.hub}</span></div>
           <div class="detail-diagram__flow">${diagramStages}</div>
           <div class="detail-diagram__foundation">
             <span>OPERATING FOUNDATION</span>

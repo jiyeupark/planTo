@@ -605,7 +605,7 @@ a.slide_btn {
 =========================== */
 
 .em-partner-band {
-  display: flex;
+  display: none;
   align-items: center;
 
   height: 86px;
