@@ -477,6 +477,100 @@
     },
   };
 
+  const assetRoot = "../../img/";
+  const dataAssetRoot = `${assetRoot}product/cdxp/data/`;
+  const icon = (name) => `${dataAssetRoot}icons/${name}.png`;
+  const visualCatalog = {
+    business: {
+      regtech: {
+        art: `${dataAssetRoot}authentication.png`,
+        artType: "object",
+        featureIcons: ["09-server-checklist", "03-user-sync", "01-ai-accelerator"].map(icon),
+        stageIcons: ["03-user-sync", "09-server-checklist", "10-monitoring-sync", "07-analytics"].map(icon),
+      },
+      esg: {
+        art: `${assetRoot}main/banner/planToAnalytics.png`,
+        artType: "scene",
+        featureIcons: ["07-data-sync", "09-server-checklist", "02-dashboard-report"].map(icon),
+        stageIcons: ["05-upload", "07-data-sync", "09-server-checklist", "02-dashboard-report"].map(icon),
+      },
+      bigdata: {
+        art: `${assetRoot}main/banner/planToAnalytics.png`,
+        artType: "scene",
+        featureIcons: ["01-schedule-collector", "01-ai-accelerator", "05-analytics-dashboard"].map(icon),
+        stageIcons: ["02-jdbc", "07-data-sync", "07-analytics", "02-dashboard-report"].map(icon),
+      },
+      sism: {
+        art: `${assetRoot}main/banner/manufature.png`,
+        artType: "scene",
+        featureIcons: ["03-rest-api", "09-server-checklist", "10-monitoring-sync"].map(icon),
+        stageIcons: ["03-user-sync", "03-rest-api", "09-server-checklist", "10-monitoring-sync"].map(icon),
+      },
+      consulting: {
+        art: `${assetRoot}main/business/card-consulting.png`,
+        artType: "photo",
+        featureIcons: ["04-growth-chart", "09-chart-check", "02-dashboard-report"].map(icon),
+        stageIcons: ["03-user-sync", "04-growth-chart", "09-chart-check", "06-driving-monitor"].map(icon),
+      },
+    },
+    product: {
+      cms: {
+        art: `${dataAssetRoot}authentication.png`,
+        artType: "object",
+        featureIcons: ["03-user-sync", "09-server-checklist", "02-dashboard-report"].map(icon),
+        stageIcons: ["03-user-sync", "09-server-checklist", "10-monitoring-sync", "02-dashboard-report"].map(icon),
+      },
+      esg: {
+        art: `${assetRoot}main/banner/planToAnalytics.png`,
+        artType: "scene",
+        featureIcons: ["07-data-sync", "09-server-checklist", "02-dashboard-report"].map(icon),
+        stageIcons: ["05-upload", "07-data-sync", "09-server-checklist", "02-dashboard-report"].map(icon),
+      },
+      aiq: {
+        art: `${dataAssetRoot}artificial-intelligence.png`,
+        artType: "object",
+        featureIcons: ["01-ai-accelerator", "07-analytics", "09-server-checklist"].map(icon),
+        stageIcons: ["02-jdbc", "01-ai-accelerator", "07-analytics", "09-server-checklist"].map(icon),
+      },
+      emapp: {
+        art: `${dataAssetRoot}banner1.png`,
+        artType: "interface",
+        featureIcons: ["01-schedule-collector", "07-analytics", "02-dashboard-report"].map(icon),
+        stageIcons: ["02-jdbc", "01-schedule-collector", "01-ai-accelerator", "05-analytics-dashboard"].map(icon),
+      },
+      rapidminer: {
+        art: `${dataAssetRoot}artificial-intelligence.png`,
+        artType: "object",
+        featureIcons: ["02-jdbc", "07-analytics", "10-monitoring-sync"].map(icon),
+        stageIcons: ["02-jdbc", "01-ai-accelerator", "07-analytics", "09-server-checklist"].map(icon),
+      },
+      tableau: {
+        art: `${assetRoot}main/banner/planToAnalytics.png`,
+        artType: "scene",
+        featureIcons: ["02-jdbc", "05-upload", "05-analytics-dashboard"].map(icon),
+        stageIcons: ["02-jdbc", "07-data-sync", "05-analytics-dashboard", "03-user-sync"].map(icon),
+      },
+    },
+  };
+
+  const diagramLayouts = {
+    business: {
+      regtech: { name: "control", hub: "CONTROL" },
+      esg: { name: "orbit", hub: "ESG DATA" },
+      bigdata: { name: "pipeline", hub: "DATA HUB" },
+      sism: { name: "cycle", hub: "OPERATE" },
+      consulting: { name: "roadmap", hub: "ROADMAP" },
+    },
+    product: {
+      cms: { name: "stack", hub: "CMS" },
+      esg: { name: "matrix", hub: "ESG" },
+      aiq: { name: "signal", hub: "AIQ" },
+      emapp: { name: "platform", hub: "e-Mapp" },
+      rapidminer: { name: "workflow", hub: "MODEL" },
+      tableau: { name: "dashboard", hub: "INSIGHT" },
+    },
+  };
+
   const page = document.getElementById("detail-page");
   const categoryKey = document.body.dataset.detailCategory;
   const category = catalog[categoryKey];
@@ -489,6 +583,8 @@
   const item = category.items[itemKey];
   const itemList = Object.entries(category.items);
   const diagram = diagramCatalog[categoryKey][itemKey];
+  const visuals = visualCatalog[categoryKey][itemKey];
+  const diagramLayout = diagramLayouts[categoryKey][itemKey];
 
   document.title = `${item.name} | PlanTo`;
   const description = document.querySelector('meta[name="description"]');
@@ -498,7 +594,10 @@
     .map(
       ([title, text], index) => `
         <article class="detail-feature">
-          <span class="detail-feature__number">0${index + 1}</span>
+          <div class="detail-feature__top">
+            <span class="detail-feature__number">0${index + 1}</span>
+            <span class="detail-feature__icon"><img src="${visuals.featureIcons[index]}" alt="" loading="lazy" /></span>
+          </div>
           <h3>${title}</h3>
           <p>${text}</p>
         </article>`,
@@ -559,18 +658,24 @@
     .map(
       (chip, index) => `
         <article class="detail-signal__item">
-          <span class="detail-signal__index">0${index + 1}</span>
-          <strong>${chip}</strong>
-          <span>CORE CAPABILITY</span>
+          <span class="detail-signal__icon"><img src="${visuals.featureIcons[index]}" alt="" loading="lazy" /></span>
+          <div class="detail-signal__copy">
+            <span class="detail-signal__index">0${index + 1}</span>
+            <strong>${chip}</strong>
+            <span class="detail-signal__caption">CORE CAPABILITY</span>
+          </div>
         </article>`,
     )
     .join("");
 
   const experienceCards = experience.cards
     .map(
-      ([number, title, text]) => `
+      ([number, title, text], index) => `
         <article class="detail-experience__card">
-          <span>${number}</span>
+          <div class="detail-experience__card-top">
+            <span class="detail-experience__number">${number}</span>
+            <span class="detail-experience__icon"><img src="${visuals.featureIcons[index]}" alt="" loading="lazy" /></span>
+          </div>
           <h3>${title}</h3>
           <p>${text}</p>
         </article>`,
@@ -581,7 +686,10 @@
     .map(
       ([label, title, tags], index) => `
         <article class="detail-diagram__stage">
-          <span class="detail-diagram__number">0${index + 1}</span>
+          <div class="detail-diagram__stage-top">
+            <span class="detail-diagram__number">0${index + 1}</span>
+            <span class="detail-diagram__stage-icon"><img src="${visuals.stageIcons[index]}" alt="" loading="lazy" /></span>
+          </div>
           <p>${label}</p>
           <h3>${title}</h3>
           <ul>${tags.map((tag) => `<li>${tag}</li>`).join("")}</ul>
@@ -607,6 +715,7 @@
         </div>
         <div class="detail-visual" aria-hidden="true">
           <div class="detail-visual__mesh"></div>
+          <div class="detail-visual__art detail-visual__art--${visuals.artType}"><img src="${visuals.art}" alt="" /></div>
           <span class="detail-visual__beam detail-visual__beam--one"></span>
           <span class="detail-visual__beam detail-visual__beam--two"></span>
           <div class="detail-visual__orbit detail-visual__orbit--outer"></div>
@@ -659,12 +768,13 @@
           </div>
           <p>${diagram.lead}</p>
         </div>
-        <div class="detail-diagram detail-diagram--${categoryKey}">
+        <div class="detail-diagram detail-diagram--${categoryKey} detail-diagram--${diagramLayout.name}">
           <div class="detail-diagram__header">
             <span>PLAN TO FLOW</span>
             <strong>${item.name}</strong>
             <i aria-hidden="true"></i>
           </div>
+          <span class="detail-diagram__hub" aria-hidden="true">${diagramLayout.hub}</span>
           <div class="detail-diagram__flow">${diagramStages}</div>
           <div class="detail-diagram__foundation">
             <span>OPERATING FOUNDATION</span>
