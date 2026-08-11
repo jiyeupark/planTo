@@ -1,0 +1,560 @@
+/*
+  PlanTo visual system
+  This layer is loaded after each page stylesheet so existing content can keep
+  its structure while sharing the visual language established on the homepage.
+*/
+:root {
+  --planto-blue: #2e7aed;
+  --planto-blue-deep: #155fc8;
+  --planto-navy: #14233f;
+  --planto-ink: #172238;
+  --planto-copy: #64728a;
+  --planto-surface: #f5f8fc;
+  --planto-surface-blue: #eaf3ff;
+  --planto-line: #dce6f2;
+  --planto-radius: 20px;
+  --planto-shadow: 0 16px 38px rgba(22, 49, 92, 0.1);
+
+  --obz-main-primary: var(--planto-blue);
+  --obz-main-secondary: var(--planto-navy);
+  --obz-main-accent: #4b9aff;
+  --obz-main-deep: var(--planto-blue-deep);
+  --obz-text-light-primary: var(--planto-ink);
+  --obz-text-light-secondary: var(--planto-copy);
+  --obz-border-light: var(--planto-line);
+  --obz-border-normal: #c8d5e5;
+  --obz-border-dark: #9caec2;
+  --obz-background-dark: var(--planto-navy);
+  --obz-background-light: var(--planto-surface);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body {
+  background: #fff;
+  color: var(--planto-ink);
+}
+
+::selection {
+  background: rgba(46, 122, 237, 0.2);
+  color: var(--planto-navy);
+}
+
+/* Global navigation */
+#header {
+  height: 68px;
+  border-bottom: 1px solid transparent;
+  background: linear-gradient(180deg, rgba(8, 19, 40, 0.42), transparent);
+  transition: background-color 180ms ease, border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+#header .header-con,
+.first-menu {
+  height: 68px;
+}
+
+.first-menu {
+  line-height: 68px;
+}
+
+.top-logo {
+  height: 68px;
+}
+
+#header.solid {
+  border-color: rgba(211, 224, 240, 0.8);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 8px 28px rgba(15, 35, 70, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+#header.solid .first-menu a {
+  color: var(--planto-ink);
+}
+
+#header .first-menu a {
+  letter-spacing: -0.03em;
+}
+
+#header .first-menu li {
+  padding: 0 24px;
+}
+
+#header .first-menu li .select-bar {
+  width: 48px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--planto-blue);
+}
+
+.sub-menu-cont {
+  top: 68px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(14, 29, 55, 0.97);
+  backdrop-filter: blur(18px);
+}
+
+.sub-menu-cont.show {
+  height: 430px;
+}
+
+.sub-menu-main-title {
+  color: #a9cfff;
+  font-weight: 600;
+}
+
+.sub-menu-title {
+  font-weight: 600;
+}
+
+.sub-menu:hover .sub-menu-title,
+.sub-menu:hover .sub-menu-desc {
+  color: #8cc2ff;
+}
+
+/* Shared typography, sections and interactive components */
+.page-title,
+.corporate-hero h1,
+.corporate-section__head h2 {
+  letter-spacing: -0.055em;
+}
+
+.page-desc,
+.page-desc2,
+.sub-desc,
+.corporate-section__head p {
+  color: var(--planto-copy);
+}
+
+.sub-title,
+.sub-title2,
+.service-title,
+.service-sub-title {
+  color: var(--planto-ink);
+  letter-spacing: -0.045em;
+}
+
+.sub-title-hr {
+  width: 36px;
+  height: 3px;
+  border-radius: 99px;
+  background: var(--planto-blue);
+}
+
+.more-button {
+  min-height: 52px;
+  border: 1px solid #b5c8df;
+  border-radius: 999px;
+  color: var(--planto-navy);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.more-button path {
+  fill: var(--planto-navy);
+}
+
+.more-button:hover {
+  border-color: var(--planto-blue);
+  background: var(--planto-blue);
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(46, 122, 237, 0.2);
+  transform: translateY(-2px);
+}
+
+.more-button:hover path {
+  fill: #fff !important;
+}
+
+.more-button.dark {
+  border-color: rgba(255, 255, 255, 0.65);
+}
+
+.more-button.dark:hover {
+  border-color: var(--planto-blue);
+  background: var(--planto-blue);
+  color: #fff;
+}
+
+.feature-card,
+.product-main .link-card,
+.product .link-card,
+.solution .link-card,
+.service-info-card {
+  border: 1px solid var(--planto-line);
+  border-radius: var(--planto-radius);
+  box-shadow: var(--planto-shadow);
+}
+
+.feature-card {
+  background: linear-gradient(145deg, #fff 0%, #f4f8ff 100%);
+  transition: transform 180ms ease, box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.feature-card:hover,
+.product-main .link-card:hover,
+.product .link-card:hover,
+.solution .link-card:hover {
+  border-color: #a6c9f6;
+  box-shadow: 0 22px 44px rgba(29, 79, 145, 0.16);
+  transform: translateY(-5px);
+}
+
+.feature-card .feature-card-caption,
+.product-main .link-card-caption,
+.product .link-card-caption,
+.solution .link-card-caption {
+  color: var(--planto-blue);
+}
+
+.feature-card .feature-card-title,
+.product-main .link-card-title,
+.product .link-card-title,
+.solution .link-card-title {
+  color: var(--planto-navy);
+  letter-spacing: -0.04em;
+}
+
+/* Business, reference and product overview pages */
+.corporate-page {
+  background: var(--planto-surface);
+  color: var(--planto-ink);
+}
+
+.corporate-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 86% 12%, rgba(73, 154, 255, 0.42), transparent 26%),
+    radial-gradient(circle at 70% 85%, rgba(30, 90, 180, 0.32), transparent 35%),
+    linear-gradient(135deg, #0e1c35 0%, #142d59 56%, #1e5da9 140%);
+}
+
+.corporate-hero::after {
+  position: absolute;
+  right: -100px;
+  bottom: -210px;
+  width: 520px;
+  height: 520px;
+  border: 1px solid rgba(172, 215, 255, 0.25);
+  border-radius: 50%;
+  content: "";
+}
+
+.corporate-hero__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.corporate-hero h1 {
+  max-width: 820px;
+  color: #fff;
+}
+
+.corporate-hero p,
+.corporate-eyebrow {
+  color: #a9d2ff;
+}
+
+.corporate-eyebrow {
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.corporate-section {
+  padding: clamp(76px, 8vw, 118px) 0;
+}
+
+.corporate-section--white {
+  background: #fff;
+}
+
+.corporate-section__head h2,
+.business-card h3,
+.product-card h3,
+.reference-card h3 {
+  color: var(--planto-navy);
+}
+
+.business-card,
+.product-card,
+.reference-card {
+  border-color: var(--planto-line);
+  border-radius: var(--planto-radius);
+  box-shadow: 0 12px 30px rgba(22, 56, 107, 0.08);
+}
+
+.business-card,
+.product-card {
+  background: linear-gradient(145deg, #fff 0%, #eff6ff 100%);
+}
+
+.business-card:hover,
+.product-card:hover,
+.reference-card:hover {
+  border-color: #a9cbf4;
+  box-shadow: 0 24px 46px rgba(25, 84, 159, 0.15);
+}
+
+.business-card__number,
+.product-card__kind,
+.reference-list li {
+  background: #e9f3ff;
+  color: var(--planto-blue-deep);
+}
+
+.reference-lead {
+  border-left-color: var(--planto-blue);
+  background: #eaf4ff;
+  color: #264e80;
+}
+
+.product-card--partner,
+.future-strategy {
+  background:
+    radial-gradient(circle at 84% 15%, rgba(67, 146, 255, 0.3), transparent 30%),
+    var(--planto-navy);
+  border-color: var(--planto-navy);
+}
+
+/* Product detail pages */
+.page-top {
+  background:
+    radial-gradient(circle at 78% 26%, rgba(71, 150, 255, 0.32), transparent 27%),
+    linear-gradient(135deg, #0b172e 0%, #172f5d 100%);
+}
+
+.page-top .product-category,
+.page-top .product-summary {
+  color: #a8d2ff;
+}
+
+.page-top .product-tag {
+  border-color: rgba(196, 226, 255, 0.5);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.product .page,
+.solution .page,
+.product-main .page {
+  background: #fff;
+}
+
+.product .page:nth-of-type(even),
+.solution .page:nth-of-type(even),
+.product-main .page:nth-of-type(even) {
+  background: var(--planto-surface);
+}
+
+.product .product-card,
+.solution .product-card {
+  overflow: hidden;
+  border: 1px solid var(--planto-line);
+  border-radius: var(--planto-radius);
+  box-shadow: var(--planto-shadow);
+}
+
+.product .product-card:hover,
+.solution .product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 44px rgba(29, 79, 145, 0.16);
+}
+
+.product .product-sub-item {
+  border-color: var(--planto-line);
+}
+
+.product .product-sub-item-title,
+.solution .solution-func-title {
+  color: var(--planto-navy);
+}
+
+.solution .solution-func-item {
+  border-bottom-color: var(--planto-line);
+}
+
+/* e-Mapp retains its product character while matching the house blue. */
+.emapp {
+  --emapp-navy: var(--planto-navy);
+  --emapp-blue: var(--planto-blue-deep);
+  --emapp-sky: #67b7ff;
+  --emapp-ink: var(--planto-ink);
+  --emapp-muted: var(--planto-copy);
+  --emapp-line: var(--planto-line);
+  --emapp-surface: var(--planto-surface);
+  --emapp-soft-blue: var(--planto-surface-blue);
+}
+
+.emapp__hero,
+.emapp__section,
+.emapp__architecture-card,
+.emapp__collection-card,
+.emapp__module-table {
+  border-radius: var(--planto-radius);
+}
+
+/* Legacy company, service and contact pages */
+.about1,
+.about7,
+.about8,
+.service2,
+.service3,
+.service4,
+.contact1,
+.recruit1,
+.promotion1 {
+  position: relative;
+}
+
+.about1#section1 {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 84% 20%, rgba(79, 157, 255, 0.3), transparent 27%),
+    linear-gradient(135deg, #0d1b34 0%, #173766 100%);
+}
+
+.about1 .about1-title,
+.about1 .count-box h3 {
+  color: #fff;
+}
+
+.about1 .page-title {
+  color: #9acbff;
+}
+
+.about1 .page-desc,
+.about1 .count-box span {
+  color: rgba(233, 244, 255, 0.78);
+}
+
+.about1 .about-right img {
+  border: 1px solid rgba(187, 221, 255, 0.28);
+  box-shadow: 0 24px 50px rgba(4, 14, 34, 0.3);
+}
+
+.about1::before,
+.contact1::before {
+  background: linear-gradient(120deg, rgba(9, 23, 49, 0.78), rgba(14, 56, 111, 0.48));
+  opacity: 1;
+}
+
+.about-count .count-box,
+.cert-card,
+.service-box,
+.service-info-card,
+.refer-card,
+.history-card {
+  border-radius: var(--planto-radius);
+}
+
+.cert-card,
+.service-box,
+.refer-card,
+.history-card {
+  border: 1px solid var(--planto-line);
+  box-shadow: var(--planto-shadow);
+}
+
+.service-info-card {
+  overflow: hidden;
+}
+
+.service-info-card:hover {
+  border-color: var(--planto-blue);
+  box-shadow: 0 22px 44px rgba(29, 79, 145, 0.18);
+  transform: translateY(-5px);
+}
+
+.contact-bottom {
+  border: 1px solid rgba(214, 227, 243, 0.9);
+  border-radius: 24px;
+  box-shadow: 0 24px 54px rgba(8, 32, 70, 0.2);
+}
+
+.contact-bottom .input-box,
+.contact-bottom .help-content {
+  border-color: var(--planto-line);
+}
+
+.contact-bottom .input-box:focus,
+.contact-bottom .help-content:focus {
+  border-color: var(--planto-blue);
+  box-shadow: 0 0 0 4px rgba(46, 122, 237, 0.12);
+}
+
+/* Notice and promotion pages */
+.promotion1 {
+  background-color: var(--planto-surface);
+}
+
+table#list {
+  border-top-color: var(--planto-blue);
+}
+
+.table > thead {
+  border-bottom-color: var(--planto-blue);
+}
+
+table#list td.col1:hover {
+  color: var(--planto-blue);
+}
+
+/* Footer and utility controls */
+.footer {
+  background:
+    radial-gradient(circle at 88% 0%, rgba(86, 163, 255, 0.28), transparent 28%),
+    #112441;
+}
+
+.footer-left strong {
+  color: #9ccaff;
+}
+
+#btn-top {
+  width: 56px;
+  height: 56px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: var(--planto-navy);
+  box-shadow: 0 12px 26px rgba(16, 35, 63, 0.22);
+}
+
+#btn-top .top-arrow {
+  margin: 10px 0 0 15px;
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    scroll-padding-top: 72px;
+  }
+
+  #header,
+  #header .header-con,
+  .first-menu,
+  .top-logo {
+    height: 60px;
+  }
+
+  .sub-menu-cont {
+    top: 60px;
+  }
+
+  .corporate-hero {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .business-grid,
+  .product-grid,
+  .reference-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-bottom {
+    border-radius: 18px;
+  }
+}
