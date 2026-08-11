@@ -1,14 +1,4 @@
 /* Shared detail pages for PlanTo's business areas and products. */
-:root {
-  --detail-blue: #2e7aed;
-  --detail-blue-deep: #155fc8;
-  --detail-navy: #0d1e39;
-  --detail-ink: #172238;
-  --detail-copy: #63718a;
-  --detail-line: #dce7f3;
-  --detail-surface: #f5f8fc;
-}
-
 /* Additional icon touchpoints and page-specific diagram compositions. */
 .detail-signal__item {
   display: flex;

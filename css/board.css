@@ -164,7 +164,7 @@ td.col1 {
 /* promotion */
 .promotion table#list .col2 {
     width: 170px;
-    color: var(--obz-);
+    color: var(--color-text-secondary);
 }
 
 

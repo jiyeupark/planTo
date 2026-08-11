@@ -3,31 +3,6 @@
   This layer is loaded after each page stylesheet so existing content can keep
   its structure while sharing the visual language established on the homepage.
 */
-:root {
-  --planto-blue: #2e7aed;
-  --planto-blue-deep: #155fc8;
-  --planto-navy: #14233f;
-  --planto-ink: #172238;
-  --planto-copy: #64728a;
-  --planto-surface: #f5f8fc;
-  --planto-surface-blue: #eaf3ff;
-  --planto-line: #dce6f2;
-  --planto-radius: 20px;
-  --planto-shadow: 0 16px 38px rgba(22, 49, 92, 0.1);
-
-  --obz-main-primary: var(--planto-blue);
-  --obz-main-secondary: var(--planto-navy);
-  --obz-main-accent: #4b9aff;
-  --obz-main-deep: var(--planto-blue-deep);
-  --obz-text-light-primary: var(--planto-ink);
-  --obz-text-light-secondary: var(--planto-copy);
-  --obz-border-light: var(--planto-line);
-  --obz-border-normal: #c8d5e5;
-  --obz-border-dark: #9caec2;
-  --obz-background-dark: var(--planto-navy);
-  --obz-background-light: var(--planto-surface);
-}
-
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 88px;
@@ -382,7 +357,7 @@ body {
 .emapp {
   --emapp-navy: var(--planto-navy);
   --emapp-blue: var(--planto-blue-deep);
-  --emapp-sky: #67b7ff;
+  --emapp-sky: var(--color-product-sky-bright);
   --emapp-ink: var(--planto-ink);
   --emapp-muted: var(--planto-copy);
   --emapp-line: var(--planto-line);

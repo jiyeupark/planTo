@@ -1,13 +1,3 @@
-:root {
-  --emapp-blue: #0769df;
-  --emapp-deep: #063477;
-  --emapp-navy: #061b42;
-  --emapp-ink: #111827;
-  --emapp-copy: #42526a;
-  --emapp-line: #c9d8ec;
-  --emapp-sky: #eaf4ff;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -23,7 +13,7 @@ body.emapp-page {
   padding-top: 68px;
   background: #f8fafc;
   color: var(--emapp-ink);
-  font-family: Pretendard, "Noto Sans KR", Arial, sans-serif;
+  font-family: var(--font-family-korean);
   word-break: keep-all;
 }
 

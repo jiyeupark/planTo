@@ -1,11 +1,3 @@
-:root {
-  --planto-blue: #1769df;
-  --planto-navy: #102d55;
-  --planto-sky: #eaf4ff;
-  --planto-line: #d7e7f8;
-  --planto-copy: #526a87;
-}
-
 html {
   scroll-behavior: smooth;
 }

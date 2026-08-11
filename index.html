@@ -888,91 +888,59 @@
         </div>
       </div>
 
-      <!-- 플랜투의 주요 제품 -->
+      <!-- 플랜투의 고객사 -->
       <div class="main main4 section">
         <div class="main4-con focus-elem">
           <div class="main4-title-wrap">
-            <span class="main4-title-sub"> INDUSTRY </span>
-
-            <h2 class="main4-title">
-              다양한 산업의 디지털 혁신을<br />
-              플랜투가 함께합니다.
-            </h2>
+            <span class="main4-title-sub">CUSTOMERS</span>
+            <h2 class="main4-title">플랜투와 함께한<br />고객사입니다.</h2>
           </div>
 
-          <ul class="main4-list">
-            <li class="main4-item">
-              <a href="#">
-                <div class="main4-icon">
-                  <img src="./img/industry/manufacturing.png" alt="" />
-                </div>
+          <div class="main4-client-marquee">
+            <div class="main4-client-track">
+              <ul class="main4-client-list" aria-label="고객사 목록">
+                <li><img src="./img/main/client/01-01.png" alt="" loading="lazy" /></li>
+                <li><img src="./img/main/client/01-02.png" alt="" loading="lazy" /></li>
+                <li><img src="./img/main/client/01-03.png" alt="" loading="lazy" /></li>
+                <li><img src="./img/main/client/01-04.png" alt="" loading="lazy" /></li>
+                <li><img src="./img/main/client/01-05.png" alt="" loading="lazy" /></li>
+                <li><img src="./img/main/client/02-01.png" alt="" loading="lazy" /></li>
+                <li><img src="./img/main/client/07-01.png" alt="" loading="lazy" /></li>
+                <li><img src="./img/main/client/07-02.png" alt="" loading="lazy" /></li>
+                <li><img src="./img/main/client/07-03.png" alt="" loading="lazy" /></li>
+                <li><img src="./img/main/client/07-04.png" alt="" loading="lazy" /></li>
+                <li><img src="./img/main/client/07-05.png" alt="" loading="lazy" /></li>
+                <li><img src="./img/main/client/08-01.png" alt="" loading="lazy" /></li>
+                <li><img src="./img/main/client/08-02.png" alt="" loading="lazy" /></li>
+                <li><img src="./img/main/client/08-03.png" alt="" loading="lazy" /></li>
+                <li><img src="./img/main/client/08-04.png" alt="" loading="lazy" /></li>
+                <li><img src="./img/main/client/08-05.png" alt="" loading="lazy" /></li>
+                <li><img src="./img/main/client/09-04.png" alt="" loading="lazy" /></li>
+                <li><img src="./img/main/client/09-05.png" alt="" loading="lazy" /></li>
+                <li><img src="./img/main/client/10-01.png" alt="" loading="lazy" /></li>
+                <li><img src="./img/main/client/13-04.png" alt="" loading="lazy" /></li>
+                <li><img src="./img/main/client/13-05.png" alt="" loading="lazy" /></li>
+                <li><img src="./img/main/client/14-01.png" alt="" loading="lazy" /></li>
+                <li><img src="./img/main/client/14-02.png" alt="" loading="lazy" /></li>
+                <li><img src="./img/main/client/14-03.png" alt="" loading="lazy" /></li>
+                <li><img src="./img/main/client/14-04.png" alt="" loading="lazy" /></li>
+                <li><img src="./img/main/client/14-05.png" alt="" loading="lazy" /></li>
+                <li><img src="./img/main/client/15-01.png" alt="" loading="lazy" /></li>
+              </ul>
+            </div>
+          </div>
 
-                <strong>Manufacturing</strong>
-
-                <span>제조</span>
-              </a>
-            </li>
-
-            <li class="main4-item">
-              <a href="#">
-                <div class="main4-icon">
-                  <img src="./img/industry/public.png" alt="" />
-                </div>
-
-                <strong>Public</strong>
-
-                <span>공공</span>
-              </a>
-            </li>
-
-            <li class="main4-item">
-              <a href="#">
-                <div class="main4-icon">
-                  <img src="./img/industry/finance.png" alt="" />
-                </div>
-
-                <strong>Finance</strong>
-
-                <span>금융</span>
-              </a>
-            </li>
-
-            <li class="main4-item">
-              <a href="#">
-                <div class="main4-icon">
-                  <img src="./img/industry/healthcare.png" alt="" />
-                </div>
-
-                <strong>Healthcare</strong>
-
-                <span>의료</span>
-              </a>
-            </li>
-
-            <li class="main4-item">
-              <a href="#">
-                <div class="main4-icon">
-                  <img src="./img/industry/logistics.png" alt="" />
-                </div>
-
-                <strong>Logistics</strong>
-
-                <span>물류</span>
-              </a>
-            </li>
-
-            <li class="main4-item">
-              <a href="#">
-                <div class="main4-icon">
-                  <img src="./img/industry/energy.png" alt="" />
-                </div>
-
-                <strong>Energy</strong>
-
-                <span>에너지</span>
-              </a>
-            </li>
-          </ul>
+          <script>
+            (function () {
+              const track = document.querySelector(".main4-client-track");
+              const clientList = track && track.querySelector(".main4-client-list");
+              if (clientList) {
+                const duplicate = clientList.cloneNode(true);
+                duplicate.setAttribute("aria-hidden", "true");
+                track.appendChild(duplicate);
+              }
+            })();
+          </script>
         </div>
       </div>
 

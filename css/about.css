@@ -955,7 +955,7 @@ html {
 .ceo-sign {
   font-size: 42px;
 
-  font-family: "Nanum Pen Script", cursive;
+  font-family: var(--font-family-signature);
 
   color: #222;
 }
