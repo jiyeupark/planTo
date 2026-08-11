@@ -2,469 +2,185 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- js -->
-    <script type="text/javascript" src="../../../js/include.js"></script>
-    <script
-      type="text/javascript"
-      src="../../../js/jquery/jquery.min.js"
-    ></script>
-    <script type="text/javascript" src="../../../js/common.js"></script>
-
-    <!-- css -->
+    <meta name="description" content="e-Mapp은 ETL, AI, 시각화를 결합한 빅데이터 통합 분석 플랫폼입니다." />
+    <title>e-Mapp | 빅데이터 통합 분석 플랫폼</title>
+    <script src="../../../js/include.js"></script>
+    <script src="../../../js/jquery/jquery.min.js"></script>
+    <script src="../../../js/common.js"></script>
     <link href="../../../css/common.css" rel="stylesheet" />
-    <link href="../../../css/product.css" rel="stylesheet" />
-
-    <link href="../../../css/data.css" rel="stylesheet" />
-
-    <script>
-    useTransparentGNB = true;
-
-  $(function () {
-    $("#header").addClass("solid");
-  });
-    </script>
-    <title>빅데이터 통합 분석 플랫폼 | e-Mapp</title>
     <link href="../../../css/unified.css" rel="stylesheet" />
+    <link href="../../../css/data.css" rel="stylesheet" />
+    <script>
+      useTransparentGNB = true;
+      $(function () {
+        $("#header").addClass("solid");
+      });
+    </script>
   </head>
-
-  <body class="product">
+  <body class="emapp-page product">
     <header>
-      <script>
-        loadHTML("../../header.html");
-      </script>
+      <script>loadHTML("../../header.html");</script>
     </header>
+    <nav class="emapp-nav" aria-label="e-Mapp 제품 메뉴">
+      <div class="emapp-nav__inner">
+        <a class="emapp-brand" href="../product.html" aria-label="e-Mapp 제품 소개">
+          <span class="emapp-brand__symbol" aria-hidden="true">e</span>
+          <span class="emapp-brand__name">-Mapp</span>
+          <small>Moving and Pivoting Paradigm</small>
+        </a>
+        <nav class="emapp-nav__links" aria-label="e-Mapp 메뉴">
+          <a href="#overview">제품소개</a>
+          <a href="#features">핵심기능</a>
+          <a href="#architecture">아키텍처</a>
+          <a href="#operations">활용사례</a>
+          <a href="#operations">고객지원</a>
+        </nav>
+        <a class="emapp-nav__cta" href="../../contact.html">데모 요청</a>
+      </div>
+    </nav>
 
-    <main class="emapp">
-      <section class="emapp__background">
-        <div class="emapp__container">
-        <div class="emapp__hero" aria-labelledby="emapp-hero-title">
-          <video
-            class="emapp__hero-video"
-            autoplay
-            muted
-            loop
-            playsinline
-            aria-hidden="true"
-            tabindex="-1"
-          >
-            <source src="../../../img/product/cdxp/data/map2.mp4" type="video/mp4" />
-          </video>
-          <div class="emapp__hero-copy">
-            <div class="emapp__brandline">
-              <span class="emapp__wordmark">e-<strong>M</strong>app</span>
-              <small>(Moving and Pivoting Paradigm)</small>
-            </div>
-            <h1 id="emapp-hero-title">빅데이터 통합 분석 플랫폼</h1>
-            <p class="emapp__hero-lead">
-              ETL · AI · 시각화로 지식서비스 인사이트를 창출하는<br />
-              One-Stop End-to-End 플랫폼
-            </p>
-
-            <div class="emapp__hero-facts">
-              <div class="emapp__fact">
-                <span class="emapp__fact-icon">  <img
-                  src="../../../img/product/cdxp/data/database.png"
-                  alt=""
-                /></span>
-                <strong class="emapp__fact-title">핵심 가치</strong>
-                <div class="emapp__fact-text">
-                  다양한 원천 데이터로부터<br />새로운 인사이트를 추출
-                </div>
-              </div>
-              <div class="emapp__fact">
-                <span class="emapp__fact-icon">  <img
-                  src="../../../img/product/cdxp/data/authentication.png"
-                  alt=""
-                /></span>
-                <strong class="emapp__fact-title">주요 인증</strong>
-                <div class="emapp__fact-text">
-                  2025년 7월 e-Mapp 2.0<br />GS 1등급 (Good Software) 획득
-                </div>
-              </div>
-              <div class="emapp__fact">
-                <span class="emapp__fact-icon">  <img
-                  src="../../../img/product/cdxp/data/goal.png"
-                  alt=""
-                /></span>
-                <strong class="emapp__fact-title">개발 이력</strong>
-                <div class="emapp__fact-text">
-                  2021 개발 착수<br />2025 2.0 GS 1등급
-                </div>
-              </div>
+    <main class="emapp-main">
+      <section id="overview" class="emapp-hero">
+        <div class="emapp-shell emapp-hero__grid">
+          <div class="emapp-hero__copy">
+            <p class="emapp-hero__name">e-Mapp</p>
+            <h1>(Moving and Pivoting Paradigm)</h1>
+            <p class="emapp-hero__headline">ETL + AI + 시각화를 결합한 빅데이터 통합 분석 플랫폼</p>
+            <p class="emapp-hero__lead">정형·비정형 데이터를 통합 분석하고, 의사결정에 필요한<br />지식과 인사이트를 추출하는 One-Stop End-to-End 플랫폼</p>
+            <ul class="emapp-hero__badges" aria-label="e-Mapp 핵심 역량">
+              <li><img src="../../../img/product/cdxp/data/database.png" alt="" />ETL</li>
+              <li><img src="../../../img/product/cdxp/data/artificial-intelligence.png" alt="" />AI/ML</li>
+              <li><img src="../../../img/product/cdxp/data/layer-dashboard-charts.png" alt="" />시각화</li>
+              <li><img src="../../../img/product/cdxp/data/authentication.png" alt="" />GS 1등급</li>
+            </ul>
+            <p class="emapp-hero__note">* 2025년 7월 e-Mapp 2.0 GS 1등급 획득</p>
+          </div>
+          <div class="emapp-hero__art" aria-hidden="true">
+            <span class="emapp-hero__orbit emapp-hero__orbit--one"></span>
+            <span class="emapp-hero__orbit emapp-hero__orbit--two"></span>
+            <span class="emapp-hero__chip emapp-hero__chip--data">DATA</span>
+            <span class="emapp-hero__chip emapp-hero__chip--ai">AI</span>
+            <span class="emapp-hero__chip emapp-hero__chip--cloud">CLOUD</span>
+            <div class="emapp-hero__platform">
+              <span class="emapp-hero__layer emapp-hero__layer--base"></span>
+              <span class="emapp-hero__layer emapp-hero__layer--middle"></span>
+              <span class="emapp-hero__layer emapp-hero__layer--top"></span>
+              <strong>e-Mapp</strong>
             </div>
           </div>
-        </div>
-
-        <section
-          class="emapp__section"
-          aria-labelledby="emapp-architecture-title"
-        >
-          <div class="emapp__section-heading">
-            <span class="emapp__section-number">2</span>
-            <h2 id="emapp-architecture-title" class="emapp__section-title">
-              전체 아키텍처 개요
-            </h2>
-          </div>
-
-          <div class="emapp__architecture">
-            <article class="emapp__architecture-card">
-              <div class="emapp__arch-icon">
-                <img
-                  src="../../../img/product/cdxp/data/database.png"
-                  alt=""
-                />
-              </div>
-              <h3>원천데이터</h3>
-              <p>기관계·정보계와 다양한<br />외부 데이터 소스</p>
-              <ul>
-                <li>RDBMS · CSV · 파일</li>
-                <li>기타 표출 지원</li>
-              </ul>
-            </article>
-            <span class="emapp__flow-arrow" aria-hidden="true"></span>
-            <article class="emapp__architecture-card">
-              <div class="emapp__arch-icon">
-              <img
-                  src="../../../img/product/cdxp/data/layer-ai-brain-icon.png"
-                  alt=""
-                /></div>
-              <h3>수집 모듈</h3>
-              <p>정형·비정형 데이터를<br />안정적으로 연결·수집</p>
-              <ul>
-                <li>Collector · JDBC · REST API</li>
-                <li>(a)FTP · File Upload</li>
-              </ul>
-            </article>
-            <span class="emapp__flow-arrow" aria-hidden="true"></span>
-            <article class="emapp__architecture-card">
-              <div class="emapp__arch-icon">
-               <img
-                  src="../../../img/product/cdxp/data/artificial-intelligence.png"
-                  alt=""
-                />
-              </div>
-              <h3>데이터 적재 및 분석</h3>
-              <p>데이터레이크 기반의<br />분석·모델링·마트 구성</p>
-              <ul>
-                <li>Scheduler · Split Analyzer</li>
-                <li>AI Analyzer · Data Mart</li>
-              </ul>
-            </article>
-            <span class="emapp__flow-arrow" aria-hidden="true"></span>
-            <article class="emapp__architecture-card">
-              <div class="emapp__arch-icon">
-               <img
-                  src="../../../img/product/cdxp/data/layer-computer-monitor.png"
-                  alt="시각화"
-                />
-              </div>
-              <h3>시각화 화면</h3>
-              <p>대시보드와 차트로<br />인사이트를 즉시 확인</p>
-              <ul>
-                <li>포털 · 차트 · 그리드</li>
-                <li>분석 결과 공유</li>
-              </ul>
-            </article>
-          </div>
-        </section>
-
-        <div class="emapp__split emapp__section">
-          <section class="emapp__section" aria-labelledby="emapp-module-title">
-            <div class="emapp__section-heading">
-              <span class="emapp__section-number">3</span>
-              <h2 id="emapp-module-title" class="emapp__section-title">
-                핵심 솔루션 모듈
-              </h2>
-            </div>
-            <table class="emapp__module-table">
-              <thead>
-                <tr>
-                  <th>구분</th>
-                  <th>모듈명</th>
-                  <th>주요 기능</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td rowspan="4">솔루션</td>
-                  <td>Collector &amp; 데이터 수집</td>
-                  <td>다양한 채널의 데이터 수집</td>
-                </tr>
-                <tr>
-                  <td>AI Modeler &amp; 데이터 분석</td>
-                  <td>Data Analyzer 데이터 분석</td>
-                </tr>
-                <tr>
-                  <td>Visualization &amp; 시각화</td>
-                  <td>Data Gateway · 포털 · 리포트</td>
-                </tr>
-                <tr>
-                  <td>Data Meta &amp; 데이터 표준화</td>
-                  <td>Portal &amp; 분석·마케팅 포털 서비스</td>
-                </tr>
-                <tr>
-                  <td>에드온</td>
-                  <td>HR</td>
-                  <td>Environment Setting</td>
-                </tr>
-                <tr>
-                  <td>에드온</td>
-                  <td>Internal portal</td>
-                  <td>User Setting</td>
-                </tr>
-                <tr>
-                  <td>관리툴</td>
-                  <td>Accounting</td>
-                  <td>Monitoring</td>
-                </tr>
-              </tbody>
-            </table>
-          </section>
-
-          <section
-            class="emapp__section"
-            aria-labelledby="emapp-collection-title"
-          >
-            <div class="emapp__section-heading">
-              <span class="emapp__section-number">4</span>
-              <h2 id="emapp-collection-title" class="emapp__section-title">
-                데이터 수집 레이어 상세
-              </h2>
-            </div>
-            <div class="emapp__collection-grid">
-              <div class="emapp__collection-card">
-                <span class="emapp__collection-symbol"><img
-                  src="../../../img/product/cdxp/data/icons/01-schedule-collector.png"
-                  alt=""
-                /></span
-                ><strong>스케줄 기반<br />Collector</strong>
-              </div>
-              <div class="emapp__collection-card">
-                <span class="emapp__collection-symbol"><img
-                  src="../../../img/product/cdxp/data/icons/02-jdbc.png"
-                  alt=""
-                /></span
-                ><strong>JDBC<br />(D3 맵핑 연동)</strong>
-              </div>
-              <div class="emapp__collection-card">
-                <span class="emapp__collection-symbol"><img
-                  src="../../../img/product/cdxp/data/icons/03-rest-api.png"
-                  alt=""
-                /></span
-                ><strong>REST API</strong>
-              </div>
-              <div class="emapp__collection-card">
-                <span class="emapp__collection-symbol"><img
-                  src="../../../img/product/cdxp/data/icons/04-ftp.png"
-                  alt=""
-                /></span
-                ><strong>(a)FTP</strong>
-              </div>
-              <div class="emapp__collection-card">
-                <span class="emapp__collection-symbol"><img
-                  src="../../../img/product/cdxp/data/icons/05-upload.png"
-                  alt=""
-                /></span
-                ><strong>파일 업로드</strong>
-              </div>
-              <div class="emapp__collection-card">
-                <span class="emapp__collection-symbol"><img
-                  src="../../../img/product/cdxp/data/icons/06-web-crawling.png"
-                  alt=""
-                /></span
-                ><strong>웹 크롤링</strong>
-              </div>
-              <div class="emapp__collection-card">
-                <span class="emapp__collection-symbol"><img
-                  src="../../../img/product/cdxp/data/icons/07-analytics.png"
-                  alt=""
-                /></span
-                ><strong>OPEN API</strong>
-              </div>
-              <div class="emapp__collection-card">
-                <span class="emapp__collection-symbol"><img
-                  src="../../../img/product/cdxp/data/icons/09-chart-check.png"
-                  alt=""
-                /></span
-                ><strong>수동 전처리 데이터</strong>
-              </div>
-            </div>
-            <p class="emapp__collection-note">
-              정형·비정형 데이터를 포트 수용하며, 크롤링과 OPEN API를 통해 외부
-              데이터까지 확장합니다.
-            </p>
-          </section>
-        </div>
-
-        <div class="emapp__split emapp__section">
-          <section
-            class="emapp__section"
-            aria-labelledby="emapp-analysis-title"
-          >
-            <div class="emapp__section-heading">
-              <span class="emapp__section-number">5</span>
-              <h2 id="emapp-analysis-title" class="emapp__section-title">
-                AI/ML 분석 레이어
-              </h2>
-            </div>
-            <div class="emapp__analysis-layout">
-              <div class="emapp__analysis-type">
-                <h3>지원 분석 유형</h3>
-                <p>• 예측, 분류 / 기타 고급 분석</p>
-                <strong class="emapp__algorithm-title">예시 알고리즘</strong>
-                <ul class="emapp__algorithm-list">
-                  <li>Bayesian Regression</li>
-                  <li>CNN</li>
-                  <li>Decision Tree</li>
-                  <li>Gradient Tree (e1, e2)</li>
-                  <li>Gradient Boosting (e3)</li>
-                  <li>Image Destraher</li>
-                  <li>Krwinbson Classifier</li>
-                  <li>Linear / Logistical / SoftMax</li>
-                </ul>
-              </div>
-              <div class="emapp__analysis-package">
-                <h3>AI(ML &amp; DL) 분석 패키지 구성</h3>
-                <div class="emapp__package-icons">
-                  <span><b>▤</b>모델 관리</span>
-                  <span><b>⌘</b>속성메타<br />셋 관리</span>
-                  <span><b>⚙</b>실행 저장</span>
-                </div>
-                <ul class="emapp__package-list">
-                  <li>분석 패키지와 실행 결과를 체계적으로 관리</li>
-                  <li>사용자 세분화와 맞춤 분석·처방을 지원</li>
-                  <li>공원별 현황에 맞춘 서비스 모델을 제공</li>
-                </ul>
-              </div>
-            </div>
-
-          </section>
-
-          <section class="emapp__section" aria-labelledby="emapp-service-title">
-            <div class="emapp__section-heading">
-              <span class="emapp__section-number">7</span>
-              <h2 id="emapp-service-title" class="emapp__section-title">
-                시각화 및 운영 기능
-              </h2>
-            </div>
-            <div class="emapp__service-grid">
-              <div class="emapp__service-card">
-                <span class="emapp__service-symbol"><img
-                  src="../../../img/product/cdxp/data/icons/01-ai-accelerator.png"
-                  alt=""
-                /></span
-                ><strong>인메모리 분석</strong>
-              </div>
-              <div class="emapp__service-card">
-                <span class="emapp__service-symbol"><img
-                  src="../../../img/product/cdxp/data/icons/02-dashboard-report.png"
-                  alt=""
-                /></span
-                ><strong>차트 · 그리드<br />고객 재성용</strong>
-              </div>
-              <div class="emapp__service-card">
-                <span class="emapp__service-symbol"><img
-                  src="../../../img/product/cdxp/data/icons/03-user-sync.png"
-                  alt=""
-                />  </span
-                ><strong>통계적<br />상관관계 조회</strong>
-              </div>
-              <div class="emapp__service-card">
-                <span class="emapp__service-symbol"><img
-                  src="../../../img/product/cdxp/data/icons/05-analytics-dashboard.png"
-                  alt=""
-                /></span
-                ><strong>통계·차트<br />판넬 차트</strong>
-              </div>
-              <div class="emapp__service-card">
-                <span class="emapp__service-symbol"><img
-                  src="../../../img/product/cdxp/data/icons/05-analytics-dashboard.png"
-                  alt=""
-                />      </span
-                ><strong>핵심 경영 관리</strong>
-              </div>
-              <div class="emapp__service-card">
-                <span class="emapp__service-symbol"><img
-                  src="../../../img/product/cdxp/data/icons/06-driving-monitor.png"
-                  alt=""
-                /></span
-                ><strong>사용자 데이터 반복<br />신규 및 다운로드</strong>
-              </div>
-              <div class="emapp__service-card">
-                <span class="emapp__service-symbol"><img
-                  src="../../../img/product/cdxp/data/icons/07-data-sync.png"
-                  alt=""
-                /></span
-                ><strong>자원 관리</strong>
-              </div>
-              <div class="emapp__service-card">
-                <span class="emapp__service-symbol"><img
-                  src="../../../img/product/cdxp/data/icons/08-cloud-download.png"
-                  alt=""
-                /></span
-                ><strong>운영 모니터링</strong>
-              </div>
-            </div>
-          </section>
-        </div>
-
-        <section class="emapp__section" aria-labelledby="emapp-summary-title">
-          <div class="emapp__section-heading">
-            <span class="emapp__section-number">8</span>
-            <h2 id="emapp-summary-title" class="emapp__section-title">
-              기술 특징 요약
-            </h2>
-          </div>
-          <table class="emapp__summary-table">
-            <thead>
-              <tr>
-                <th>기술 특성</th>
-                <th>지원 방식</th>
-                <th>인증 현황</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>데이터 분석</td>
-                <td>정형 · 비정형 통합 처리</td>
-                <td>GS 1등급 (e-Mapp 2.0)</td>
-              </tr>
-              <tr>
-                <td>분석 효율</td>
-                <td>대용량 원천 데이터 연동</td>
-                <td>GS 1등급 (e-Mapp 2.0)</td>
-              </tr>
-              <tr>
-                <td>호환성</td>
-                <td>표준 API 및 JDBC 기반</td>
-                <td>GS 1등급 (e-Mapp 2.0)</td>
-              </tr>
-              <tr>
-                <td>품질 인증</td>
-                <td>표준화된 처리·운영 체계</td>
-                <td>GS 1등급 (e-Mapp 2.0)</td>
-              </tr>
-              <tr>
-                <td>확장성</td>
-                <td>스케일 아웃 기반 확장</td>
-                <td>GS 1등급 (e-Mapp 2.0)</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
         </div>
       </section>
 
+      <section id="architecture" class="emapp-section emapp-section--architecture">
+        <div class="emapp-shell">
+          <h2 class="emapp-section__title"><span>2.</span> 전체 아키텍처 개요</h2>
+          <div class="emapp-architecture">
+            <article class="emapp-architecture__card">
+              <span class="emapp-architecture__number">1</span>
+              <img src="../../../img/product/cdxp/data/database.png" alt="" />
+              <h3>원천데이터 계층</h3>
+              <p>기관계 / 정보계<br />IoT / CSV / 파일 / 기타</p>
+            </article>
+            <span class="emapp-architecture__arrow" aria-hidden="true">→</span>
+            <article class="emapp-architecture__card">
+              <span class="emapp-architecture__number">2</span>
+              <img src="../../../img/product/cdxp/data/layer-cloud-upload-icon.png" alt="" />
+              <h3>수집 모듈</h3>
+              <p>Collector / JDBC / REST API<br />(s)FTP / File Upload / Crawling</p>
+            </article>
+            <span class="emapp-architecture__arrow" aria-hidden="true">→</span>
+            <article class="emapp-architecture__card">
+              <span class="emapp-architecture__number">3</span>
+              <img src="../../../img/product/cdxp/data/artificial-intelligence.png" alt="" />
+              <h3>데이터 적재·분석 계층</h3>
+              <p>Scheduler / Administrator<br />Data Analyzer / Data Mart</p>
+            </article>
+            <span class="emapp-architecture__arrow" aria-hidden="true">→</span>
+            <article class="emapp-architecture__card">
+              <span class="emapp-architecture__number">4</span>
+              <img src="../../../img/product/cdxp/data/layer-computer-monitor.png" alt="" />
+              <h3>시각화 계층</h3>
+              <p>포털 · 그리드 · 대시보드<br />차트 · 리포트 · 분석노트</p>
+            </article>
+          </div>
+          <p class="emapp-highlight"><span aria-hidden="true">ϟ</span> 인메모리 방식으로 처리해 속도·그리드 관리·통계 처리를 한층 더 빠르고 안정적으로 제공합니다.</p>
+        </div>
+      </section>
+
+      <section id="solutions" class="emapp-section emapp-section--white">
+        <div class="emapp-shell">
+          <h2 class="emapp-section__title"><span>3.</span> 핵심 솔루션 모듈</h2>
+          <div class="emapp-table-wrap">
+            <table class="emapp-table">
+              <thead><tr><th>구분</th><th>모듈명</th><th>주요 역할</th></tr></thead>
+              <tbody>
+                <tr><th rowspan="6">솔루션</th><td>Collector &amp; 데이터 수집</td><td>Channel API · 다양한 원천 데이터 수집</td></tr>
+                <tr><td>데이터 스토리지 / 데이터 전처리</td><td>대용량 데이터 저장·정제 및 표준화</td></tr>
+                <tr><td>AI Modeler &amp; 데이터 분석</td><td>AI 분석 · 분석 패키지 · 예측 모델</td></tr>
+                <tr><td>Visualizer &amp; 시각화 분석</td><td>차트·그리드·대시보드 기반 인사이트 제공</td></tr>
+                <tr><td>Data Viewer &amp; 분석노트</td><td>통계·드릴다운·리포팅을 통한 결과 탐색</td></tr>
+                <tr><td>Data Meta &amp; 사용자 분석</td><td>사용자·로그·메타데이터 관리</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="emapp-callout">분석 목적에 따라 모듈을 선택적으로 사용하고, 데이터 수집부터 분석·시각화까지 하나의 워크플로로 연결할 수 있습니다.</p>
+        </div>
+      </section>
+
+      <section id="features" class="emapp-section emapp-section--features">
+        <div class="emapp-shell">
+          <h2 class="emapp-section__title"><span>6.</span> 시각화 및 사용자 기능</h2>
+          <div class="emapp-feature-grid">
+            <article><img src="../../../img/product/cdxp/data/icons/01-ai-accelerator.png" alt="" /><strong>대용량 데이터 처리</strong></article>
+            <article><img src="../../../img/product/cdxp/data/icons/02-dashboard-report.png" alt="" /><strong>분석·차트 통합</strong></article>
+            <article><img src="../../../img/product/cdxp/data/icons/03-user-sync.png" alt="" /><strong>통계 상관관계 분석</strong></article>
+            <article><img src="../../../img/product/cdxp/data/icons/05-analytics-dashboard.png" alt="" /><strong>분석 포털 관리</strong></article>
+            <article><img src="../../../img/product/cdxp/data/icons/06-driving-monitor.png" alt="" /><strong>핵심 경영 대시보드</strong></article>
+            <article><img src="../../../img/product/cdxp/data/icons/07-data-sync.png" alt="" /><strong>오토ML·모델 운영</strong></article>
+            <article><img src="../../../img/product/cdxp/data/icons/08-cloud-download.png" alt="" /><strong>데이터 추출·다운로드</strong></article>
+            <article><img src="../../../img/product/cdxp/data/icons/09-chart-check.png" alt="" /><strong>작업 환경 통합 관리</strong></article>
+            <article><img src="../../../img/product/cdxp/data/icons/10-monitoring-sync.png" alt="" /><strong>이력·변경 관리</strong></article>
+            <article><img src="../../../img/product/cdxp/data/icons/04-growth-chart.png" alt="" /><strong>시뮬레이션 기능</strong></article>
+          </div>
+          <p class="emapp-highlight emapp-highlight--check"><span aria-hidden="true">✓</span> 전처리부터 분석과 시각화까지 전 과정을 한 화면에서 연결해 업무 효율과 활용성을 높입니다.</p>
+        </div>
+      </section>
+
+      <section id="operations" class="emapp-section emapp-section--white">
+        <div class="emapp-shell emapp-operation-layout">
+          <section>
+            <h2 class="emapp-section__title"><span>7.</span> 관리 및 운영 기능</h2>
+            <div class="emapp-operation-grid">
+              <article><img src="../../../img/product/cdxp/data/icons/03-user-sync.png" alt="" /><strong>사용자 권한 부여</strong><small>Role 기반 접근 관리</small></article>
+              <article><img src="../../../img/product/cdxp/data/icons/07-analytics.png" alt="" /><strong>환경 설정</strong><small>프로세스·메타 관리</small></article>
+              <article><img src="../../../img/product/cdxp/data/icons/01-schedule-collector.png" alt="" /><strong>스케줄 관리</strong><small>동기화·배치 작업</small></article>
+              <article><img src="../../../img/product/cdxp/data/icons/02-jdbc.png" alt="" /><strong>사용자 현황 확인</strong><small>접속·활동 이력</small></article>
+              <article><img src="../../../img/product/cdxp/data/icons/09-server-checklist.png" alt="" /><strong>스케줄 통합 관리</strong><small>운영 계획 관리</small></article>
+              <article><img src="../../../img/product/cdxp/data/icons/04-ftp.png" alt="" /><strong>권한 인증</strong><small>접근 통제 기능</small></article>
+            </div>
+          </section>
+          <section>
+            <h2 class="emapp-section__title"><span>8.</span> 기술 특징 요약</h2>
+            <table class="emapp-table emapp-table--summary">
+              <thead><tr><th>항목</th><th>내용</th></tr></thead>
+              <tbody>
+                <tr><th>대용량 처리</th><td>정형·비정형 통합 분석</td></tr>
+                <tr><th>처리 방식</th><td>ETL · 인메모리</td></tr>
+                <tr><th>AI 기반</th><td>오토ML·AI·시스템라이징</td></tr>
+                <tr><th>분석·시각화</th><td>데이터 스토리지 · 시각화</td></tr>
+                <tr><th>호환성</th><td>다양한 채널과 연계</td></tr>
+                <tr><th>품질 인증</th><td>GS 1등급 (e-Mapp 2.0)</td></tr>
+              </tbody>
+            </table>
+          </section>
+        </div>
+      </section>
     </main>
 
-
     <footer>
-      <script>
-        loadHTML("../../footer.html");
-      </script>
+      <script>loadHTML("../../footer.html");</script>
     </footer>
   </body>
 </html>

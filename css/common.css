@@ -284,7 +284,7 @@ span.highlight {
   padding: 0 20px;
 }
 .first-menu a {
-  font-size: 18px;
+  font-size: 20px;
   color: #ffffff;
   font-weight: 600;
   transition: all 0.1s;
@@ -556,7 +556,7 @@ span.highlight {
 }
 .feature-card .feature-card-desc {
   color: var(--obz-text-light-secondary);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
   margin-top: 15px;
   line-height: 1.5;
@@ -608,7 +608,7 @@ span.highlight {
 }
 
 .inquire .sub-desc {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.75);
   text-align: left;
@@ -1286,7 +1286,7 @@ span.highlight {
 }
 #responsive-menu .responsive-menu-body li a {
   color: var(--obz-text-dark-primary);
-  /* font-size: 18px; */
+  /* font-size: 20px; */
   font-size: 1.2rem;
   font-weight: 300;
   line-height: 1.8;

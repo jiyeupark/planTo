@@ -79,7 +79,7 @@ html {
 .service-title-sub {
   display: block;
   margin-bottom: 15px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   color: #2e7aed;
   letter-spacing: 1px;
@@ -98,7 +98,7 @@ html {
 }
 
 .page-title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: #2e7aed;
   margin-bottom: 15px;
@@ -113,7 +113,7 @@ html {
 }
 
 .page-desc {
-  font-size: 18px;
+  font-size: 20px;
   color: #666;
   line-height: 1.8;
   margin-bottom: 45px;
@@ -185,7 +185,7 @@ html {
 }
 
 .service-subtitle {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: #2e7aed;
   margin-bottom: 15px;
@@ -295,7 +295,7 @@ html {
 }
 
 #section2 .sub-desc {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: #2e7aed;
 }
@@ -310,7 +310,7 @@ html {
 }
 
 #section2 .cert-info h4 {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.6;
   font-weight: 600;
   color: #222;
@@ -597,7 +597,7 @@ html {
 }
 
 #btn-more-history {
-  font-size: 18px;
+  font-size: 20px;
   color: #444;
   font-weight: 400;
   letter-spacing: -0.5px;
@@ -628,7 +628,7 @@ html {
   display: block;
 }
 .client-title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
   color: var(--obz-text-light-secondary);
   border-bottom: 1px solid var(--obz-border-light);
@@ -675,7 +675,7 @@ html {
   text-align: center;
   background: #ffffff;
   color: var(--obz-text-light-secondary);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
   transition: all 0.15s;
   padding: 15px;
@@ -709,7 +709,7 @@ html {
   text-align: center;
   background: var(--obz-background-light);
   color: var(--obz-background-dark);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
   transition: all 0.15s;
   padding: 10px;
@@ -773,7 +773,7 @@ html {
 }
 
 #section6 .location-title span {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: #2e7aed;
   margin-bottom: 15px;
@@ -809,7 +809,7 @@ html {
 }
 
 #section6 .traffic-title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: #222;
   margin-bottom: 6px;
@@ -908,14 +908,14 @@ html {
 .ceo-small {
   display: block;
   margin-bottom: 15px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   color: #2e7aed;
   letter-spacing: 1px;
 }
 .ceo-name {
   display: flex;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: #324265;
   margin-top: 20px;
@@ -945,7 +945,7 @@ html {
 }
 
 .ceo-text p {
-  font-size: 18px;
+  font-size: 20px;
 
   color: #555;
 
@@ -1057,7 +1057,7 @@ div[class^="strategy-info-bg"] {
 }
 
 .strategy-info-title {
-  font-size: 18px;
+  font-size: 20px;
   color: var(--obz-text-light-secondary);
   font-weight: 600;
 }

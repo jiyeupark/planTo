@@ -472,7 +472,7 @@ hr.sub-title-hr {
 .main1 .con1-btn-more {
   position: absolute;
   margin-top: 550px;
-  font-size: 18px;
+  font-size: 20px;
   color: #fff;
   cursor: pointer;
   opacity: 0.8;
@@ -1336,7 +1336,7 @@ a.slide_btn {
   }
 
   .main4-item strong {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .main4-item span {
@@ -1415,7 +1415,7 @@ a.slide_btn {
 .main5-title-sub {
   display: block;
   margin-bottom: 15px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   color: #2e7aed;
   letter-spacing: 1px;
