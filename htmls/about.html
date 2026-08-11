@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -31,13 +31,24 @@
       window.onload = function () {
         const historyBtn = document.getElementById("historyBtn");
         const historyOld = document.getElementById("historyOld");
+        const credentialSection = document.getElementById("section2");
+        const ceoSection = document.getElementById("section7");
+        const historySection = document.getElementById("section4");
+        const strategySection = document.getElementById("section8");
+
+        if (credentialSection && ceoSection) {
+          ceoSection.before(credentialSection);
+        }
+        if (historySection && strategySection) {
+          historySection.after(strategySection);
+        }
 
         historyBtn.addEventListener("click", function () {
           const isHidden =
             window.getComputedStyle(historyOld).display === "none";
 
           if (isHidden) {
-            historyOld.style.display = "block";
+            historyOld.style.display = "grid";
             historyBtn.textContent = "접기 −";
 
             // 접기 버튼 스타일
@@ -501,7 +512,10 @@
     <!-- section 4 -->
     <section id="section4" class="about4 section">
       <div class="container about-con" id="about4-con">
-        <div class="sub-title">연혁</div>
+        <div class="history-heading">
+          <span>HISTORY</span>
+          <div class="sub-title">연혁</div>
+        </div>
         <div id="history_Con">
           <div id="history_year">
             <!-- 항상 보이는 연혁 -->

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- js -->
     <script type="text/javascript" src="../js/include.js"></script>
     <script type="text/javascript" src="../js/jquery/jquery.min.js"></script>
@@ -12,7 +12,7 @@
 
     <!-- css -->
     <link href="../css/common.css" rel="stylesheet" />
-    
+
     <style>
         html {
             scroll-behavior: smooth;
@@ -78,7 +78,7 @@
 
         #service-info {
             padding-top: 150px;
-        }   
+        }
 
         .service-info-con {
             width: 100%;
@@ -172,7 +172,7 @@
             color: #FFFFFF;
             font-weight: 600;
         }
-        
+
         .service2 .service-main-cont {
             padding-top: 80px;
         }
@@ -284,7 +284,7 @@
 
 
         /*************** 반응형 ***************/
-        @media screen and (max-width: 768px) { 
+        @media screen and (max-width: 768px) {
             .service1-bgimg {
                 height: 640px;
             }
@@ -322,11 +322,11 @@
             }
             .service-desc {
                 font-size: 1.28rem;
-                letter-spacing: -0.5px;
+                letter-spacing: 1.1px;
             }
             .service-sub-title {
                 font-size: 1.73rem;
-                letter-spacing: -0.5px;
+                letter-spacing: 1.1px;
                 white-space: nowrap;
             }
 
@@ -334,7 +334,7 @@
                 padding-top: 40px;
             }
 
-            #section3 { 
+            #section3 {
                 margin-top: 60px;
                 padding: 70px 0;
             }
@@ -358,7 +358,7 @@
             .feature-card .feature-card-caption,
             .service .feature-card .feature-card-desc {
                 font-size: 1.1rem;
-                letter-spacing: -0.5px;
+                letter-spacing: 1.1px;
             }
 
         }
@@ -370,7 +370,7 @@
 
         var section;
         var navigation;
-        
+
         //*************** load ***************//
         $(document).ready(function () {
             section = $('.section');
@@ -394,7 +394,7 @@
         function updateNavigation() {
             section.each(function(){
                 $this = $(this);
-            
+
                 var activeSection = $('#navigation a[href="#'+$this.attr('id')+'"]').data('number') - 1;
 
                 if ( ($this.offset().top - $(window).height()/2 < $(window).scrollTop() ) && ( $this.offset().top + $this.height() - $(window).height()/2 > $(window).scrollTop()) ) {
@@ -489,8 +489,8 @@
                                     <br>
                                     캠페인 시나리오 도출
                                 </div>
-                                <div class="service-info-icon"></div> 
-                            </a> 
+                                <div class="service-info-icon"></div>
+                            </a>
                             <a class="service-info-con-2 service-info-card" href="#section3">
                                 AI
                                 <br>
@@ -500,8 +500,8 @@
                                     <br>
                                     머신러닝 모델 개발
                                 </div>
-                                <div class="service-info-icon"></div> 
-                            </a> 
+                                <div class="service-info-icon"></div>
+                            </a>
                             <a class="service-info-con-3 service-info-card" href="#section4">
                                 생성형 AI
                                 <br>
@@ -511,8 +511,8 @@
                                     <br>
                                     비즈니스 가치 창출
                                 </div>
-                                <div class="service-info-icon"></div> 
-                            </a> 
+                                <div class="service-info-icon"></div>
+                            </a>
                             <!-- <a class="service-info-con-4 service-info-card" href="#section5">
                                 네이버클라우드
                                 <br>
@@ -522,10 +522,10 @@
                                     <br>
                                     네이버 데이터의 연계분석
                                 </div>
-                                <div class="service-info-icon"></div> 
+                                <div class="service-info-icon"></div>
                             </a>  -->
                         </div>
-                    </div>  
+                    </div>
                 </div>
             </div>
         </section>
@@ -726,7 +726,7 @@
                 </div>
             </div>
         </section> -->
-        
+
         <footer>
             <script>loadHTML("./footer.html");</script>
         </footer>

@@ -46,7 +46,7 @@ input:focus {
 @font-face {
   font-family: "Pretendard";
   src: url("../font/Pretendard/Pretendard-ExtraBold.woff");
-  font-weight: 800;
+  font-weight: 700;
 }
 @font-face {
   font-family: "Pretendard";
@@ -262,10 +262,10 @@ span.highlight {
 
 .top-logo {
   float: left;
-  width: 135px;
-  height: 63px;
+  width: 15rem;
+  height: 5rem;
   flex-basis: 130px;
-  background: no-repeat left/80% url(../img/gnb/planTo_logo_white.svg);
+  background: no-repeat left/95% url(../img/gnb/planto-logo-white.png);
 }
 .first-menu {
   display: flex;
@@ -431,7 +431,7 @@ span.highlight {
   background: transparent;
 }
 #header.solid .top-logo {
-  background: no-repeat left/80% url(../img/gnb/planTo_logo_black.svg);
+  background: no-repeat left/95% url(../img/gnb/planto-logo-dark.png);
 }
 #header.solid .first-menu a {
   color: #111;
@@ -440,7 +440,7 @@ span.highlight {
   background-color: #000000;
 }
 #header.m-over .top-logo {
-  background: no-repeat left/80% url(../img/gnb/planTo_logo_white.svg);
+  background: no-repeat left/95% url(../img/gnb/planto-logo-white.png);
 }
 #header.m-over .first-menu a {
   color: #ffffff;
@@ -449,7 +449,7 @@ span.highlight {
   background-color: #000000 !important;
 }
 #header.rspv .top-logo {
-  background: no-repeat left/80% url(../img/gnb/planTo_logo_white.svg) !important;
+  background: no-repeat left/95% url(../img/gnb/planto-logo-white.png) !important;
 }
 #header.solid .sub-logo > div {
   color: #fff;
@@ -986,7 +986,7 @@ span.highlight {
   padding: 0.1em;
   color: var(--obz-border-dark);
   font-size: 15px;
-  letter-spacing: -0.5px;
+  letter-spacing: 1.1px;
   -webkit-transition: -webkit-transform 0.1s;
   -moz-transition: -moz-transform 0.1s;
   transition: transform 0.1s;
