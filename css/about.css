@@ -488,7 +488,7 @@ html {
 #section3 .org-header span {
   display: block;
   margin-top: 4px;
-  font-size: 12px;
+  font-size: 15px;
   color: #fff;
   opacity: 0.6;
 }
@@ -540,7 +540,7 @@ html {
   display: block;
   margin-top: 5px;
   color: #888;
-  font-size: 12px;
+  font-size: 15px;
 }
 /*page4*/
 #section4 .sub-title {
@@ -1275,7 +1275,11 @@ div[class^="strategy-info-bg"] {
   padding: clamp(116px, 12vw, 168px) 0 clamp(76px, 8vw, 116px);
   overflow: hidden;
   background:
-    radial-gradient(circle at 84% 17%, rgba(121, 194, 255, .36), transparent 25%),
+    radial-gradient(
+      circle at 84% 17%,
+      rgba(121, 194, 255, 0.36),
+      transparent 25%
+    ),
     linear-gradient(135deg, #fbfdff 0%, #eaf5ff 54%, #dceeff 100%);
 }
 
@@ -1290,16 +1294,16 @@ div[class^="strategy-info-bg"] {
 .about-page #section3 .sub-desc,
 .about-page .history-heading > span {
   color: var(--planto-blue);
-  font-size: 13px;
+  font-size: clamp(16px, 2.2vw, 22px);
   font-weight: 800;
-  letter-spacing: .14em;
+  letter-spacing: 0.14em;
 }
 
 .about-page .about1-title {
   margin-bottom: 24px;
   color: var(--planto-navy);
   font-size: clamp(38px, 4.2vw, 56px);
-  letter-spacing: -.065em;
+  letter-spacing: -0.005em;
 }
 
 .about-page .page-desc {
@@ -1314,14 +1318,14 @@ div[class^="strategy-info-bg"] {
 .about-page .about-count {
   gap: 0;
   max-width: 580px;
-  border-top: 1px solid rgba(84, 126, 165, .28);
+  border-top: 1px solid rgba(84, 126, 165, 0.28);
 }
 
 .about-page .count-box {
   flex: 1;
   min-width: 0;
   padding: 20px 14px 0;
-  border-right: 1px solid rgba(84, 126, 165, .22);
+  border-right: 1px solid rgba(84, 126, 165, 0.22);
 }
 
 .about-page .count-box:first-child {
@@ -1337,12 +1341,12 @@ div[class^="strategy-info-bg"] {
   color: var(--planto-navy);
   font-size: clamp(24px, 2.4vw, 34px);
   line-height: 1;
-  letter-spacing: -.05em;
+  letter-spacing: -0.05em;
 }
 
 .about-page .count-box span {
   color: #59708b;
-  font-size: 13px;
+  font-size: 16px;
   white-space: nowrap;
 }
 
@@ -1351,9 +1355,9 @@ div[class^="strategy-info-bg"] {
 }
 
 .about-page .about-right img {
-  border: 8px solid rgba(255, 255, 255, .78);
+  border: 8px solid rgba(255, 255, 255, 0.78);
   border-radius: 24px;
-  box-shadow: 0 28px 54px rgba(30, 84, 136, .18);
+  box-shadow: 0 28px 54px rgba(30, 84, 136, 0.18);
 }
 
 .about-page #section2 {
@@ -1372,7 +1376,7 @@ div[class^="strategy-info-bg"] {
   color: var(--planto-navy);
   font-size: clamp(32px, 3.3vw, 46px);
   font-weight: 750;
-  letter-spacing: -.06em;
+  letter-spacing: -0.06em;
 }
 
 .about-page #section2 .cert-content {
@@ -1384,12 +1388,12 @@ div[class^="strategy-info-bg"] {
   overflow: hidden;
   border: 1px solid #d9e6f3;
   border-radius: 16px;
-  box-shadow: 0 12px 28px rgba(29, 83, 136, .07);
+  box-shadow: 0 12px 28px rgba(29, 83, 136, 0.07);
 }
 
 .about-page #section2 .cert-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 34px rgba(29, 83, 136, .13);
+  box-shadow: 0 20px 34px rgba(29, 83, 136, 0.13);
 }
 
 .about-page #section2 .cert-card img {
@@ -1406,9 +1410,9 @@ div[class^="strategy-info-bg"] {
 
 .about-page #section2 .cert-info span {
   color: var(--planto-blue);
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 800;
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
 }
 
 .about-page #section2 .cert-info h4 {
@@ -1421,7 +1425,7 @@ div[class^="strategy-info-bg"] {
 .about-page #section2 .cert-info p {
   margin: 0;
   color: #6a7f96;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .about-page .about7 {
@@ -1437,14 +1441,14 @@ div[class^="strategy-info-bg"] {
   margin-bottom: 28px;
   color: var(--planto-navy);
   font-size: clamp(34px, 3.6vw, 48px);
-  letter-spacing: -.06em;
+  letter-spacing: -0.06em;
 }
 
 .about-page .ceo-text h3 {
   margin-bottom: 26px;
   color: #123f70;
   font-size: clamp(23px, 2.7vw, 32px);
-  letter-spacing: -.05em;
+  letter-spacing: -0.05em;
 }
 
 .about-page .ceo-text p {
@@ -1459,9 +1463,9 @@ div[class^="strategy-info-bg"] {
 }
 
 .about-page .ceo-image img {
-  border: 7px solid rgba(255, 255, 255, .84);
+  border: 7px solid rgba(255, 255, 255, 0.84);
   border-radius: 22px;
-  box-shadow: 0 24px 44px rgba(26, 81, 132, .15);
+  box-shadow: 0 24px 44px rgba(26, 81, 132, 0.15);
 }
 
 .about-page #section3 {
@@ -1480,7 +1484,7 @@ div[class^="strategy-info-bg"] {
   border: 1px solid #d8e6f3;
   border-radius: 22px;
   background: linear-gradient(145deg, #fbfdff, #eff7ff);
-  box-shadow: 0 15px 34px rgba(32, 84, 136, .07);
+  box-shadow: 0 15px 34px rgba(32, 84, 136, 0.07);
 }
 
 .about-page #section3 .advisory {
@@ -1510,7 +1514,7 @@ div[class^="strategy-info-bg"] {
 .about-page #section3 .team-box {
   min-width: 0;
   padding: 8px 5px;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .about-page #section3 .team-box small {
@@ -1521,8 +1525,16 @@ div[class^="strategy-info-bg"] {
 .about-page #section4 {
   overflow: hidden;
   background:
-    radial-gradient(circle at 10% 14%, rgba(115, 193, 255, .2), transparent 22%),
-    radial-gradient(circle at 92% 80%, rgba(63, 129, 234, .12), transparent 25%),
+    radial-gradient(
+      circle at 10% 14%,
+      rgba(115, 193, 255, 0.2),
+      transparent 22%
+    ),
+    radial-gradient(
+      circle at 92% 80%,
+      rgba(63, 129, 234, 0.12),
+      transparent 25%
+    ),
     #f5faff;
 }
 
@@ -1548,7 +1560,8 @@ div[class^="strategy-info-bg"] {
   font-size: clamp(34px, 4vw, 52px);
   font-weight: 750;
   line-height: 1.22;
-  letter-spacing: -.065em;
+  letter-spacing: -0.005em;
+  text-align: left;
 }
 
 .about-page .history-heading p {
@@ -1573,11 +1586,15 @@ div[class^="strategy-info-bg"] {
 
 .about-page #history_year::before {
   position: absolute;
-  top: 4px;
-  bottom: 78px;
+  top: -14px;
+  bottom: 66px;
   left: 50%;
   width: 1px;
-  background: repeating-linear-gradient(to bottom, #8dbfeb 0 5px, transparent 5px 11px);
+  background: repeating-linear-gradient(
+    to bottom,
+    #8dbfeb 0 5px,
+    transparent 5px 11px
+  );
   content: "";
 }
 
@@ -1593,7 +1610,6 @@ div[class^="strategy-info-bg"] {
   display: none;
   margin-top: 12px;
   padding-top: 34px;
-  border-top: 1px solid #cfe1f1;
 }
 
 .about-page #history_year dl {
@@ -1619,6 +1635,7 @@ div[class^="strategy-info-bg"] {
 
 .about-page #history_year dl:nth-child(even) {
   grid-column: 2;
+  top: -43px;
 }
 
 .about-page #history_year dl::before {
@@ -1650,7 +1667,7 @@ div[class^="strategy-info-bg"] {
   font-size: 22px;
   font-weight: 800;
   line-height: 1.25;
-  letter-spacing: -.04em;
+  letter-spacing: -0.04em;
 }
 
 .about-page #history_year dl dd {
@@ -1667,17 +1684,17 @@ div[class^="strategy-info-bg"] {
   border: 1px solid #dce9f6;
   border-bottom: 1px solid #dce9f6;
   border-radius: 12px;
-  background: rgba(255, 255, 255, .9);
-  box-shadow: 0 11px 24px rgba(30, 88, 145, .06);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 11px 24px rgba(30, 88, 145, 0.06);
 }
 
 .about-page #history_year dl ul li {
   margin: 0 0 8px;
   padding: 0;
   color: #506c89;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.55;
-  letter-spacing: -.025em;
+  letter-spacing: -0.025em;
   text-align: left;
   word-break: keep-all;
 }
@@ -1701,7 +1718,7 @@ div[class^="strategy-info-bg"] {
   padding: 10px 22px;
   border: 1px solid #a9c7e5;
   background: #fff;
-  box-shadow: 0 8px 18px rgba(30, 83, 136, .08);
+  box-shadow: 0 8px 18px rgba(30, 83, 136, 0.08);
   color: var(--planto-navy);
   font-size: 14px;
 }
@@ -1724,7 +1741,7 @@ div[class^="strategy-info-bg"] {
   border: 1px solid #d8e6f3;
   border-radius: 24px;
   background: linear-gradient(135deg, #f8fcff, #edf6ff);
-  box-shadow: 0 18px 36px rgba(29, 83, 136, .08);
+  box-shadow: 0 18px 36px rgba(29, 83, 136, 0.08);
 }
 
 .about-page #section6 .company-path-wrap {
@@ -1737,15 +1754,15 @@ div[class^="strategy-info-bg"] {
 
 .about-page #section6 .location-title span {
   color: var(--planto-blue);
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 800;
-  letter-spacing: .14em;
+  letter-spacing: 0.14em;
 }
 
 .about-page #section6 .location-title h2 {
   color: var(--planto-navy);
   font-size: clamp(34px, 3.5vw, 46px);
-  letter-spacing: -.06em;
+  letter-spacing: -0.06em;
 }
 
 .about-page #section6 .traffic-title {
@@ -1760,7 +1777,7 @@ div[class^="strategy-info-bg"] {
 
 .about-page #section6 #map {
   min-height: 100%;
-  border: 5px solid rgba(255, 255, 255, .8);
+  border: 5px solid rgba(255, 255, 255, 0.8);
   border-radius: 16px;
 }
 
@@ -1920,7 +1937,7 @@ div[class^="strategy-info-bg"] {
   }
 
   .about-page #history_year dl ul li {
-    font-size: 12px;
+    font-size: 15px;
   }
 
   .about-page #section6 .location-wrap {

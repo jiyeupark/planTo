@@ -20,6 +20,10 @@
   border-radius: 13px;
   background: rgba(5, 38, 77, 0.42);
 }
+.detail-feature__icon svg {
+  filter: brightness(0) saturate(100%) invert(26%) sepia(89%) saturate(2903%)
+    hue-rotate(206deg) brightness(99%) contrast(81%);
+}
 
 .detail-signal__icon img {
   display: block;
@@ -28,7 +32,10 @@
   object-fit: contain;
   filter: brightness(1.08) saturate(0.86);
 }
-
+.detail-signal__icon svg {
+  filter: brightness(0) saturate(100%) invert(84%) sepia(35%) saturate(184%)
+    hue-rotate(141deg) brightness(105%) contrast(83%);
+}
 .detail-signal__copy {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -51,7 +58,7 @@
   grid-column: 1 / -1;
   margin-top: 3px;
   color: #dcefff;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.09em;
 }
@@ -65,7 +72,7 @@
 
 .detail-experience__number {
   color: #b9e2ff;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 800;
   letter-spacing: 0.1em;
 }
@@ -106,7 +113,7 @@
     0 0 0 10px rgba(98, 185, 255, 0.09),
     0 0 26px rgba(105, 187, 255, 0.48);
   color: #fff;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 800;
   letter-spacing: 0.05em;
   text-align: center;
@@ -500,7 +507,7 @@
 .detail-hero {
   position: relative;
   overflow: hidden;
-  padding: clamp(78px, 10vw, 128px) 0 clamp(72px, 8vw, 108px);
+  padding: clamp(78px, 10vw, 80px) 0 clamp(72px, 8vw, 108px);
   background:
     radial-gradient(
       circle at 80% 18%,
@@ -680,7 +687,7 @@
   border-radius: 7px;
   background: rgba(10, 40, 79, 0.78);
   color: #ddecff;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.04em;
 }
@@ -694,7 +701,7 @@
   bottom: 45px;
 }
 .detail-visual__node--three {
-  bottom: 37px;
+  bottom: 90px;
   left: 50px;
 }
 
@@ -728,7 +735,7 @@
   font-size: clamp(31px, 3.6vw, 48px);
   font-weight: 700;
   line-height: 1.24;
-  letter-spacing: -0.055em;
+  letter-spacing: 1.1px;
   word-break: keep-all;
 }
 
@@ -823,7 +830,7 @@
 
 .detail-flow__step {
   color: #8dc5ff;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 800;
   letter-spacing: 0.12em;
 }
@@ -1034,7 +1041,7 @@
 }
 
 .detail-visual__node--three {
-  bottom: 44px;
+  bottom: 90px;
   left: 48px;
 }
 
@@ -1061,7 +1068,7 @@
 }
 
 .detail-visual__panel strong {
-  font-size: 12px;
+  font-size: 15px;
   letter-spacing: -0.02em;
 }
 
@@ -1128,7 +1135,7 @@
   position: relative;
   z-index: 1;
   color: #8bc5ff;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 800;
   letter-spacing: 0.08em;
 }
@@ -1307,7 +1314,7 @@
 
 .detail-experience__card > span {
   color: #91ccff;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 800;
   letter-spacing: 0.1em;
 }
@@ -1512,7 +1519,7 @@
 
 .detail-diagram__header span {
   color: #8dc7ff;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 800;
   letter-spacing: 0.13em;
 }
@@ -1626,7 +1633,7 @@
   border-radius: 8px;
   background: rgba(181, 221, 255, 0.11);
   color: #9bd2ff;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 800;
   letter-spacing: 0.04em;
 }
@@ -1665,7 +1672,7 @@
   border-radius: 999px;
   background: rgba(4, 26, 54, 0.25);
   color: #d4ebff;
-  font-size: 11px;
+  font-size: 15px;
   line-height: 1.25;
   letter-spacing: -0.02em;
   word-break: keep-all;
@@ -1703,8 +1710,9 @@
 
 .detail-diagram__foundation li {
   position: relative;
-  font-size: 13px;
+  font-size: 15px !important;
   letter-spacing: -0.02em;
+  color: #cce6ff;
 }
 
 .detail-diagram__foundation li::before {
@@ -1735,7 +1743,7 @@
   border-color: rgba(216, 239, 255, 0.72);
   background: rgba(7, 35, 73, 0.91);
   color: #fff;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .detail-visual__panel {
@@ -1745,12 +1753,12 @@
 
 .detail-visual__panel span {
   color: #acd9ff;
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .detail-visual__panel strong {
   color: #fff;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .detail-signal__grid {
@@ -1770,7 +1778,7 @@
 
 .detail-signal__item > span:last-child {
   color: #dcefff;
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .detail-experience__card {
@@ -1788,7 +1796,7 @@
 
 .detail-experience__card > span {
   color: #b9e2ff;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .detail-experience__card h3 {
@@ -1836,7 +1844,7 @@
   border-color: rgba(178, 221, 255, 0.42);
   background: rgba(5, 31, 65, 0.5);
   color: #bfe3ff;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .detail-flow h3 {
@@ -1872,7 +1880,7 @@
 
 .detail-diagram__header span {
   color: #b8e3ff;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .detail-diagram__header strong {
@@ -1933,12 +1941,12 @@
   border-color: rgba(204, 235, 255, 0.58);
   background: rgba(197, 232, 255, 0.19);
   color: #c0e6ff;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .detail-diagram__stage > p {
   color: #c5e7ff;
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .detail-diagram__stage h3 {
@@ -1949,8 +1957,9 @@
   border-color: rgba(211, 237, 255, 0.34);
   background: rgba(3, 28, 60, 0.48);
   color: #f0f9ff;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.35;
+  padding: 6px 15px;
 }
 
 .detail-diagram__foundation {
@@ -1960,7 +1969,7 @@
 
 .detail-diagram__foundation > span {
   color: #bae3ff;
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .detail-diagram__foundation ul {
@@ -2312,7 +2321,7 @@
   }
 
   .detail-diagram__header strong {
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .detail-diagram__flow {
@@ -2740,7 +2749,9 @@ html:has(.detail-page) {
   stroke-linecap: round;
   stroke-width: 2;
   stroke-dasharray: 5 13;
-  filter: drop-shadow(0 0 5px color-mix(in srgb, var(--diagram-secondary) 72%, transparent));
+  filter: drop-shadow(
+    0 0 5px color-mix(in srgb, var(--diagram-secondary) 72%, transparent)
+  );
   animation: detail-network-flow 7s linear infinite;
 }
 
@@ -2816,7 +2827,8 @@ html:has(.detail-page) {
   margin-left: auto;
   border-radius: 999px;
   background: linear-gradient(90deg, transparent, var(--diagram-accent));
-  box-shadow: 0 0 12px color-mix(in srgb, var(--diagram-accent) 68%, transparent);
+  box-shadow: 0 0 12px
+    color-mix(in srgb, var(--diagram-accent) 68%, transparent);
 }
 
 .detail-diagram__stage h3,
@@ -2838,22 +2850,32 @@ html:has(.detail-page) {
   left: 0;
   width: 38%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--diagram-accent), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--diagram-accent),
+    transparent
+  );
   box-shadow: 0 0 12px var(--diagram-accent);
 }
 
 .detail-diagram__hub {
-  width: 112px;
-  height: 112px;
+  width: 160px;
+  height: 160px;
   overflow: visible;
   border-color: color-mix(in srgb, var(--diagram-soft) 78%, transparent);
-  background:
-    radial-gradient(circle at 32% 28%, var(--diagram-soft) 0 3%, var(--diagram-secondary) 5%, var(--diagram-start) 62%, var(--diagram-end) 100%);
+  background: radial-gradient(
+    circle at 32% 28%,
+    var(--diagram-soft) 0 3%,
+    var(--diagram-secondary) 5%,
+    var(--diagram-start) 62%,
+    var(--diagram-end) 100%
+  );
   box-shadow:
     0 0 0 12px color-mix(in srgb, var(--diagram-glow) 20%, transparent),
     0 0 42px color-mix(in srgb, var(--diagram-accent) 72%, transparent),
     inset 0 1px rgba(255, 255, 255, 0.42);
-  font-size: 12px;
+  font-size: 15px;
   letter-spacing: 0.08em;
 }
 
@@ -2883,6 +2905,11 @@ html:has(.detail-page) {
   max-width: 78px;
   text-align: center;
   line-height: 1.2;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  left: -5px;
+  display: contents;
 }
 
 .detail-diagram--control .detail-diagram__hub,
@@ -2949,8 +2976,11 @@ html:has(.detail-page) {
   inset: 122px 5% 84px;
 }
 
-.detail-diagram--pipeline .detail-diagram__network .detail-diagram__path:not(.detail-diagram__path--horizon),
-.detail-diagram--pipeline .detail-diagram__network-node:not(.detail-diagram__network-node--core) {
+.detail-diagram--pipeline
+  .detail-diagram__network
+  .detail-diagram__path:not(.detail-diagram__path--horizon),
+.detail-diagram--pipeline
+  .detail-diagram__network-node:not(.detail-diagram__network-node--core) {
   display: none;
 }
 
@@ -2976,7 +3006,8 @@ html:has(.detail-page) {
   50% {
     box-shadow:
       inset 0 1px rgba(255, 255, 255, 0.2),
-      0 19px 38px color-mix(in srgb, var(--diagram-secondary) 22%, rgba(2, 17, 50, 0.28));
+      0 19px 38px
+        color-mix(in srgb, var(--diagram-secondary) 22%, rgba(2, 17, 50, 0.28));
   }
 }
 

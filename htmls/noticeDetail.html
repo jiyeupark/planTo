@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="PlanTo 공지사항 상세" />
+    <title>공지사항 | PlanTo</title>
+    <script src="../js/include.js"></script>
+    <script src="../js/jquery/jquery.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/notice-articles.js"></script>
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/unified.css" />
+    <link rel="stylesheet" href="../css/notice-detail.css" />
+  </head>
+  <body class="notice-detail-page">
+    <header><script>loadHTML("./header.html");</script></header>
+
+    <main>
+      <section class="notice-detail-hero">
+        <div class="notice-detail-container notice-detail-hero__inner">
+          <a class="notice-detail-back" href="promotion.html">← 공지사항 목록</a>
+          <div class="notice-detail-hero__content">
+            <div class="notice-detail-meta">
+              <p id="noticeDetailCategory" class="notice-detail-category"></p>
+              <span class="notice-detail-meta__line" aria-hidden="true"></span>
+              <time id="noticeDetailDate"></time>
+            </div>
+            <h1 id="noticeDetailTitle">공지사항</h1>
+          </div>
+          <p class="notice-detail-hero__mark" aria-hidden="true">PLAN<br />TO<br /><span>INSIGHTS</span></p>
+        </div>
+      </section>
+
+      <article id="noticeDetailArticle" class="notice-detail-container notice-detail-article" aria-live="polite">
+        <div class="notice-detail-article__reading" aria-hidden="true">
+          <span>PLAN TO INSIGHTS</span>
+          <span>ARTICLE</span>
+        </div>
+        <div class="notice-detail-content">
+          <img id="noticeDetailImage" class="notice-detail-image" src="" alt="" hidden />
+          <p id="noticeDetailBody" class="notice-detail-body"></p>
+          <div id="noticeDetailMedia" class="notice-detail-media" hidden></div>
+        </div>
+        <div class="notice-detail-actions">
+          <button id="noticeEditButton" class="notice-detail-edit-button" type="button" hidden>공지 수정</button>
+          <a id="noticeDetailLink" class="notice-detail-link" target="_blank" rel="noopener noreferrer" hidden>관련 링크 열기 ↗</a>
+        </div>
+
+        <section id="noticeAccessPanel" class="notice-access-panel" hidden aria-labelledby="noticeAccessTitle">
+          <div class="notice-access-panel__head">
+            <div>
+              <p>AUTHOR ACCESS</p>
+              <h2 id="noticeAccessTitle">작성자 인증</h2>
+            </div>
+            <button id="noticeAccessClose" class="notice-edit-panel__close" type="button" aria-label="작성자 인증 닫기">×</button>
+          </div>
+          <p class="notice-access-panel__description">등록할 때 설정한 수정 비밀번호를 입력하면 공지 편집 권한이 열립니다.</p>
+          <form id="noticeAccessForm" class="notice-access-form">
+            <label for="noticeAccessPassword">수정 비밀번호</label>
+            <input id="noticeAccessPassword" type="password" autocomplete="current-password" required />
+            <p id="noticeAccessMessage" class="notice-edit-form__message" aria-live="polite"></p>
+            <div class="notice-edit-form__actions">
+              <button id="noticeAccessCancel" type="button">취소</button>
+              <button type="submit">인증하고 수정하기</button>
+            </div>
+          </form>
+        </section>
+
+        <section id="noticeEditPanel" class="notice-edit-panel" hidden aria-labelledby="noticeEditTitle">
+          <div class="notice-edit-panel__head">
+            <div>
+              <p>EDIT NOTICE</p>
+              <h2 id="noticeEditTitle">공지 수정</h2>
+            </div>
+            <button id="noticeEditClose" class="notice-edit-panel__close" type="button" aria-label="공지 수정 닫기">×</button>
+          </div>
+          <form id="noticeEditForm" class="notice-edit-form">
+            <label for="noticeEditCategory">분류</label>
+            <select id="noticeEditCategory" required>
+              <option value="공지사항">공지사항</option>
+              <option value="언론보도">언론보도</option>
+            </select>
+
+            <label for="noticeEditTitleInput">제목</label>
+            <input id="noticeEditTitleInput" type="text" maxlength="120" required />
+
+            <label for="noticeEditBody">내용</label>
+            <textarea id="noticeEditBody" rows="9" maxlength="2000" required></textarea>
+
+            <label for="noticeEditImage">대표 이미지 <span>선택 · 1.5MB 이하</span></label>
+            <input id="noticeEditImage" type="file" accept="image/*" />
+            <div id="noticeEditImagePreview" class="notice-edit-form__image-preview" hidden>
+              <img src="" alt="수정할 대표 이미지 미리보기" />
+            </div>
+            <label class="notice-edit-form__remove-image" for="noticeEditRemoveImage">
+              <input id="noticeEditRemoveImage" type="checkbox" />
+              대표 이미지 제거
+            </label>
+
+            <label for="noticeEditRelatedUrl">관련 링크 <span>선택</span></label>
+            <input id="noticeEditRelatedUrl" type="url" placeholder="https://example.com" />
+
+            <p id="noticeEditMessage" class="notice-edit-form__message" aria-live="polite"></p>
+            <div class="notice-edit-form__actions">
+              <button id="noticeEditCancel" type="button">취소</button>
+              <button type="submit">수정 저장</button>
+            </div>
+          </form>
+        </section>
+      </article>
+    </main>
+
+    <footer><script>loadHTML("footer.html");</script></footer>
+
+    <script>
+      (function () {
+        var LOCAL_NOTICE_STORAGE_KEY = "planto-local-notice-articles";
+        var activeArticle = null;
+        var editImageChanged = false;
+        var editAuthorized = false;
+
+        function getLocalArticles() {
+          try {
+            var articles = JSON.parse(localStorage.getItem(LOCAL_NOTICE_STORAGE_KEY) || "[]");
+            return Array.isArray(articles) ? articles.filter(function (article) {
+              return article && article.isLocal && article.id && article.title;
+            }) : [];
+          } catch (error) {
+            return [];
+          }
+        }
+
+        function articleId(article) {
+          if (article && article.isLocal) return article.id;
+          return article && article.number ? "source-" + article.number : "";
+        }
+
+        function articleCategory(article) {
+          var match = String(article && article.title ? article.title : "").match(/^\s*\[([^\]]+)\]\s*/);
+          return match ? match[1] : (article && article.category ? article.category : "공지사항");
+        }
+
+        function articleTitle(article) {
+          return String(article && article.title ? article.title : "").replace(/^\s*\[[^\]]+\]\s*/, "");
+        }
+
+        function imageUrl(article) {
+          var thumbnail = article && article.thumbnail ? String(article.thumbnail) : "";
+          if (!thumbnail) return "";
+          if (/^data:image\//i.test(thumbnail) || /^https?:\/\//i.test(thumbnail)) return thumbnail;
+          if (/^\/\//.test(thumbnail)) return "https:" + thumbnail;
+          return /^\//.test(thumbnail) ? "https://contents.sixshop.com" + thumbnail : "../wp" + thumbnail;
+        }
+
+        function safeUrl(value) {
+          try {
+            var url = new URL(value, window.location.href);
+            return url.protocol === "http:" || url.protocol === "https:" ? url.href : "";
+          } catch (error) {
+            return "";
+          }
+        }
+
+        function canEditArticle(article) {
+          return !!(article && article.isLocal && article.passwordSalt && article.passwordHash);
+        }
+
+        function hashNoticePassword(password, salt) {
+          if (!window.crypto || !window.crypto.subtle || !window.TextEncoder) {
+            return Promise.reject(new Error("Crypto unavailable"));
+          }
+
+          return window.crypto.subtle.digest("SHA-256", new TextEncoder().encode(salt + ":" + password)).then(function (hashBuffer) {
+            return Array.prototype.map.call(new Uint8Array(hashBuffer), function (byte) {
+              return byte.toString(16).padStart(2, "0");
+            }).join("");
+          });
+        }
+
+        function setAccessPanelState(isOpen) {
+          var panel = document.getElementById("noticeAccessPanel");
+          panel.hidden = !isOpen;
+          if (isOpen) {
+            window.setTimeout(function () {
+              document.getElementById("noticeAccessPassword").focus();
+            }, 20);
+          }
+        }
+
+        function setEditPanelState(isOpen) {
+          var panel = document.getElementById("noticeEditPanel");
+          panel.hidden = !isOpen;
+          if (isOpen) {
+            window.setTimeout(function () {
+              document.getElementById("noticeEditTitleInput").focus();
+            }, 20);
+          }
+        }
+
+        function updateEditImagePreview(image) {
+          var preview = document.getElementById("noticeEditImagePreview");
+          var previewImage = preview.querySelector("img");
+          if (image) {
+            previewImage.src = image;
+            preview.hidden = false;
+          } else {
+            previewImage.removeAttribute("src");
+            preview.hidden = true;
+          }
+        }
+
+        function populateEditForm(article) {
+          document.getElementById("noticeEditCategory").value = article.category || "공지사항";
+          document.getElementById("noticeEditTitleInput").value = articleTitle(article);
+          document.getElementById("noticeEditBody").value = article.body || "";
+          document.getElementById("noticeEditRelatedUrl").value = article.relatedUrl || "";
+          document.getElementById("noticeEditImage").value = "";
+          document.getElementById("noticeEditImage").dataset.loading = "false";
+          document.getElementById("noticeEditRemoveImage").checked = false;
+          document.getElementById("noticeEditMessage").textContent = "";
+          editImageChanged = false;
+          updateEditImagePreview(imageUrl(article));
+        }
+
+        function cleanSourceMarkup(markup) {
+          var template = document.createElement("template");
+          template.innerHTML = markup || "";
+
+          template.content.querySelectorAll("script, style, iframe, object, embed, form, input, button").forEach(function (element) {
+            element.remove();
+          });
+
+          template.content.querySelectorAll("*").forEach(function (element) {
+            Array.prototype.slice.call(element.attributes).forEach(function (attribute) {
+              if (/^on/i.test(attribute.name) || attribute.name === "style" || attribute.name === "id" || attribute.name === "class") {
+                element.removeAttribute(attribute.name);
+              }
+            });
+
+            if (element.tagName === "IMG") {
+              var image = safeUrl(element.getAttribute("src") || element.getAttribute("data-src") || "");
+              if (image) {
+                element.setAttribute("src", image);
+                element.setAttribute("loading", "lazy");
+              } else {
+                element.remove();
+              }
+              element.removeAttribute("data-src");
+            }
+
+            if (element.tagName === "A") {
+              var link = safeUrl(element.getAttribute("href") || "");
+              if (link) {
+                element.setAttribute("href", link);
+                element.setAttribute("target", "_blank");
+                element.setAttribute("rel", "noopener noreferrer");
+              } else {
+                element.removeAttribute("href");
+              }
+            }
+          });
+
+          return template.innerHTML;
+        }
+
+        function sourceBodyData(markup, primaryImage) {
+          var template = document.createElement("template");
+          template.innerHTML = cleanSourceMarkup(markup);
+
+          var lines = Array.prototype.slice.call(template.content.querySelectorAll("p, li, h1, h2, h3, h4, blockquote"))
+            .map(function (element) {
+              return String(element.textContent || "").replace(/\u00a0/g, " ").trim();
+            })
+            .filter(Boolean);
+          var images = Array.prototype.slice.call(template.content.querySelectorAll("img"))
+            .map(function (image) {
+              return image.getAttribute("src") || "";
+            })
+            .filter(function (image, index, array) {
+              return image && image !== primaryImage && array.indexOf(image) === index;
+            });
+
+          return {
+            text: lines.length ? lines.join("\n\n") : String(template.content.textContent || "").trim(),
+            images: images
+          };
+        }
+
+        function showNotFound() {
+          document.getElementById("noticeDetailCategory").textContent = "공지사항";
+          document.getElementById("noticeDetailTitle").textContent = "게시글을 찾을 수 없습니다.";
+          document.getElementById("noticeDetailBody").textContent = "공지사항 목록에서 다시 선택해 주세요.";
+          document.getElementById("noticeEditButton").hidden = true;
+          setAccessPanelState(false);
+          setEditPanelState(false);
+        }
+
+        function renderArticle(article) {
+          activeArticle = article;
+          var title = articleTitle(article);
+          var image = imageUrl(article);
+          var imageElement = document.getElementById("noticeDetailImage");
+          var media = document.getElementById("noticeDetailMedia");
+
+          document.title = title + " | PlanTo";
+          document.getElementById("noticeDetailCategory").textContent = articleCategory(article);
+          document.getElementById("noticeDetailTitle").textContent = title;
+          document.getElementById("noticeDetailDate").textContent = article.date || "";
+
+          if (image) {
+            imageElement.src = image;
+            imageElement.alt = title + " 대표 이미지";
+            imageElement.hidden = false;
+          } else {
+            imageElement.hidden = true;
+          }
+
+          var body = document.getElementById("noticeDetailBody");
+          media.innerHTML = "";
+          media.hidden = true;
+          if (article.isLocal) {
+            body.textContent = article.body || "";
+          } else {
+            var sourceBody = sourceBodyData(article.body, image);
+            body.textContent = sourceBody.text;
+            sourceBody.images.forEach(function (sourceImage, index) {
+              var contentImage = document.createElement("img");
+              contentImage.src = sourceImage;
+              contentImage.alt = title + " 본문 이미지 " + (index + 1);
+              contentImage.loading = "lazy";
+              media.appendChild(contentImage);
+            });
+            media.hidden = !sourceBody.images.length;
+          }
+
+          var link = document.getElementById("noticeDetailLink");
+          var relatedUrl = safeUrl(article.relatedUrl || "");
+          if (relatedUrl) {
+            link.href = relatedUrl;
+            link.hidden = false;
+          } else {
+            link.hidden = true;
+          }
+
+          document.getElementById("noticeEditButton").hidden = !canEditArticle(article);
+          if (!canEditArticle(article)) {
+            editAuthorized = false;
+            setAccessPanelState(false);
+            setEditPanelState(false);
+          }
+        }
+
+        function bindEditEvents() {
+          document.getElementById("noticeEditButton").addEventListener("click", function () {
+            if (!canEditArticle(activeArticle)) return;
+            editAuthorized = false;
+            document.getElementById("noticeAccessPassword").value = "";
+            document.getElementById("noticeAccessMessage").textContent = "";
+            setEditPanelState(false);
+            setAccessPanelState(true);
+          });
+
+          document.getElementById("noticeEditClose").addEventListener("click", function () {
+            editAuthorized = false;
+            setEditPanelState(false);
+          });
+
+          document.getElementById("noticeEditCancel").addEventListener("click", function () {
+            editAuthorized = false;
+            setEditPanelState(false);
+          });
+
+          document.getElementById("noticeAccessClose").addEventListener("click", function () {
+            setAccessPanelState(false);
+          });
+
+          document.getElementById("noticeAccessCancel").addEventListener("click", function () {
+            setAccessPanelState(false);
+          });
+
+          document.getElementById("noticeAccessForm").addEventListener("submit", async function (event) {
+            event.preventDefault();
+            if (!canEditArticle(activeArticle)) return;
+
+            var message = document.getElementById("noticeAccessMessage");
+            var password = document.getElementById("noticeAccessPassword").value;
+            if (!password) {
+              message.textContent = "수정 비밀번호를 입력해 주세요.";
+              return;
+            }
+
+            try {
+              var passwordHash = await hashNoticePassword(password, activeArticle.passwordSalt);
+              if (passwordHash !== activeArticle.passwordHash) {
+                message.textContent = "수정 비밀번호가 일치하지 않습니다.";
+                return;
+              }
+            } catch (error) {
+              message.textContent = "이 브라우저에서는 작성자 인증을 확인할 수 없습니다. 최신 브라우저에서 다시 시도해 주세요.";
+              return;
+            }
+
+            editAuthorized = true;
+            setAccessPanelState(false);
+            populateEditForm(activeArticle);
+            setEditPanelState(true);
+          });
+
+          document.getElementById("noticeEditImage").addEventListener("change", function () {
+            var imageFile = this.files && this.files[0];
+            var message = document.getElementById("noticeEditMessage");
+            if (!imageFile) return;
+
+            if (!/^image\//.test(imageFile.type)) {
+              message.textContent = "이미지 파일만 등록할 수 있습니다.";
+              this.value = "";
+              return;
+            }
+
+            if (imageFile.size > 1500000) {
+              message.textContent = "이미지 파일은 1.5MB 이하로 등록해 주세요.";
+              this.value = "";
+              return;
+            }
+
+            this.dataset.loading = "true";
+            var input = this;
+            var reader = new FileReader();
+            reader.onload = function (event) {
+              editImageChanged = true;
+              input.dataset.loading = "false";
+              document.getElementById("noticeEditRemoveImage").checked = false;
+              updateEditImagePreview(event.target.result);
+              message.textContent = "";
+            };
+            reader.onerror = function () {
+              input.dataset.loading = "false";
+              input.value = "";
+              message.textContent = "이미지를 불러오지 못했습니다. 다시 선택해 주세요.";
+            };
+            reader.readAsDataURL(imageFile);
+          });
+
+          document.getElementById("noticeEditRemoveImage").addEventListener("change", function () {
+            if (this.checked) {
+              document.getElementById("noticeEditImage").value = "";
+              document.getElementById("noticeEditImage").dataset.loading = "false";
+              editImageChanged = false;
+              updateEditImagePreview("");
+            } else if (activeArticle) {
+              updateEditImagePreview(imageUrl(activeArticle));
+            }
+          });
+
+          document.getElementById("noticeEditForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            var message = document.getElementById("noticeEditMessage");
+
+            if (!canEditArticle(activeArticle) || !editAuthorized) {
+              message.textContent = "작성자 인증 후 수정할 수 있습니다.";
+              return;
+            }
+            var imageInput = document.getElementById("noticeEditImage");
+            var title = document.getElementById("noticeEditTitleInput").value.trim().replace(/^\s*\[[^\]]+\]\s*/, "");
+            var category = document.getElementById("noticeEditCategory").value;
+            var body = document.getElementById("noticeEditBody").value.trim();
+            var relatedUrl = document.getElementById("noticeEditRelatedUrl").value.trim();
+
+            if (imageInput.dataset.loading === "true") {
+              message.textContent = "이미지를 불러오는 중입니다. 잠시 후 다시 저장해 주세요.";
+              return;
+            }
+
+            if (!title || !body) {
+              message.textContent = "제목과 내용을 입력해 주세요.";
+              return;
+            }
+
+            if (relatedUrl && (!/^https?:\/\//i.test(relatedUrl) || !safeUrl(relatedUrl))) {
+              message.textContent = "관련 링크는 http:// 또는 https://로 시작해야 합니다.";
+              return;
+            }
+
+            var localArticles = getLocalArticles();
+            var articleIndex = localArticles.map(articleId).indexOf(activeArticle.id);
+            if (articleIndex < 0) {
+              message.textContent = "수정할 공지를 찾을 수 없습니다.";
+              return;
+            }
+
+            var thumbnail = activeArticle.thumbnail || "";
+            if (document.getElementById("noticeEditRemoveImage").checked) {
+              thumbnail = "";
+            } else if (editImageChanged) {
+              thumbnail = document.getElementById("noticeEditImagePreview").querySelector("img").src || "";
+            }
+
+            var updatedArticle = Object.assign({}, localArticles[articleIndex], {
+              title: title,
+              category: category,
+              body: body,
+              relatedUrl: relatedUrl,
+              thumbnail: thumbnail,
+              updatedAt: Date.now()
+            });
+            localArticles[articleIndex] = updatedArticle;
+
+            try {
+              localStorage.setItem(LOCAL_NOTICE_STORAGE_KEY, JSON.stringify(localArticles));
+            } catch (error) {
+              message.textContent = "브라우저 저장 공간에 수정 내용을 저장할 수 없습니다.";
+              return;
+            }
+
+            setEditPanelState(false);
+            editAuthorized = false;
+            renderArticle(updatedArticle);
+          });
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+          var requestedId = new URLSearchParams(window.location.search).get("id");
+          var sourceArticles = Array.isArray(window.PlanToNoticeArticles) ? window.PlanToNoticeArticles : [];
+          var articles = getLocalArticles().concat(sourceArticles);
+          var article = articles.filter(function (item) {
+            return articleId(item) === requestedId;
+          })[0];
+
+          bindEditEvents();
+          if (article) renderArticle(article);
+          else showNotFound();
+        });
+      })();
+    </script>
+  </body>
+</html>

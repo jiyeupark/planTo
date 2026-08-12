@@ -145,7 +145,7 @@ body.emapp-page {
   color: #111827;
   font-size: 20px;
   font-weight: 800;
-  letter-spacing: -0.055em;
+  letter-spacing: 1.1px;
 }
 .emapp-hero__lead {
   margin: 17px 0 0;
@@ -184,7 +184,7 @@ body.emapp-page {
 .emapp-hero__note {
   margin: 11px 0 0;
   color: #273d61;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 650;
 }
 
@@ -354,7 +354,7 @@ body.emapp-page {
   border-radius: 50%;
   background: #0870e9;
   color: #fff;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 800;
 }
 .emapp-architecture__card img {
@@ -367,12 +367,12 @@ body.emapp-page {
   color: #152a4c;
   font-size: 16px;
   font-weight: 800;
-  letter-spacing: -0.065em;
+  letter-spacing: -0.005em;
 }
 .emapp-architecture__card p {
   margin: 0;
   color: #263751;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 650;
   letter-spacing: -0.05em;
   line-height: 1.6;
@@ -515,7 +515,7 @@ body.emapp-page {
   display: block;
   margin-top: 4px;
   color: #5b6b83;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: -0.05em;
 }
@@ -548,7 +548,7 @@ body.emapp-page {
 .emapp-footer p {
   margin: 5px 0 0;
   color: #d7e9ff;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
 }
 .emapp-footer__links {
@@ -558,7 +558,7 @@ body.emapp-page {
 }
 .emapp-footer__links a {
   color: #e8f3ff;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 650;
   text-decoration: none;
 }
@@ -570,7 +570,7 @@ body.emapp-page {
   padding: 12px 24px;
   background: #032051;
   color: #d2e5ff;
-  font-size: 12px;
+  font-size: 15px;
   text-align: center;
 }
 
@@ -638,7 +638,7 @@ body.emapp-page {
   }
   .emapp-nav__cta {
     padding: 9px 12px;
-    font-size: 12px;
+    font-size: 15px;
   }
   .emapp-hero__copy {
     padding-top: 40px;

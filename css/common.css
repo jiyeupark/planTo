@@ -927,6 +927,16 @@ span.highlight {
   font-weight: 600;
 }
 
+.footer-right .footer-menu-title {
+  color: #fff;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.footer-right .footer-menu-title:hover {
+  color: #e8f9a3;
+}
+
 .footer-right dd {
   margin-bottom: 12px;
 }

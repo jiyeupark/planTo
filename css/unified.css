@@ -23,7 +23,9 @@ body {
   height: 68px;
   border-bottom: 1px solid transparent;
   background: linear-gradient(180deg, rgba(8, 19, 40, 0.42), transparent);
-  transition: background-color 180ms ease, border-color 180ms ease,
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
     box-shadow 180ms ease;
 }
 
@@ -116,7 +118,7 @@ body {
 .page-title,
 .corporate-hero h1,
 .corporate-section__head h2 {
-  letter-spacing: -0.055em;
+  letter-spacing: 1.1px;
 }
 
 .page-desc,
@@ -188,7 +190,9 @@ body {
 
 .feature-card {
   background: linear-gradient(145deg, #fff 0%, #f4f8ff 100%);
-  transition: transform 180ms ease, box-shadow 180ms ease,
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
     border-color 180ms ease;
 }
 
@@ -226,8 +230,16 @@ body {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(circle at 86% 12%, rgba(73, 154, 255, 0.42), transparent 26%),
-    radial-gradient(circle at 70% 85%, rgba(30, 90, 180, 0.32), transparent 35%),
+    radial-gradient(
+      circle at 86% 12%,
+      rgba(73, 154, 255, 0.42),
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 70% 85%,
+      rgba(30, 90, 180, 0.32),
+      transparent 35%
+    ),
     linear-gradient(135deg, #0e1c35 0%, #142d59 56%, #1e5da9 140%);
 }
 
@@ -313,15 +325,23 @@ body {
 .product-card--partner,
 .future-strategy {
   background:
-    radial-gradient(circle at 84% 15%, rgba(67, 146, 255, 0.3), transparent 30%),
-    var(--planto-navy);
+    radial-gradient(
+      circle at 84% 15%,
+      rgba(34, 117, 233, 0.3),
+      transparent 30%
+    ),
+    #1e5da9;
   border-color: var(--planto-navy);
 }
 
 /* Product detail pages */
 .page-top {
   background:
-    radial-gradient(circle at 78% 26%, rgba(71, 150, 255, 0.32), transparent 27%),
+    radial-gradient(
+      circle at 78% 26%,
+      rgba(71, 150, 255, 0.32),
+      transparent 27%
+    ),
     linear-gradient(135deg, #0b172e 0%, #172f5d 100%);
 }
 
@@ -410,7 +430,11 @@ body {
 .about1#section1 {
   overflow: hidden;
   background:
-    radial-gradient(circle at 84% 20%, rgba(79, 157, 255, 0.3), transparent 27%),
+    radial-gradient(
+      circle at 84% 20%,
+      rgba(79, 157, 255, 0.3),
+      transparent 27%
+    ),
     linear-gradient(135deg, #0d1b34 0%, #173766 100%);
 }
 
@@ -421,6 +445,7 @@ body {
 
 .about1 .page-title {
   color: #9acbff;
+  font-size: clamp(20px, 4vw, 24px);
 }
 
 .about1 .page-desc,
@@ -435,7 +460,11 @@ body {
 
 .about1::before,
 .contact1::before {
-  background: linear-gradient(120deg, rgba(9, 23, 49, 0.78), rgba(14, 56, 111, 0.48));
+  background: linear-gradient(
+    120deg,
+    rgba(9, 23, 49, 0.78),
+    rgba(14, 56, 111, 0.48)
+  );
   opacity: 1;
 }
 
@@ -503,7 +532,11 @@ table#list td.col1:hover {
 /* Footer and utility controls */
 .footer {
   background:
-    radial-gradient(circle at 88% 0%, rgba(86, 163, 255, 0.28), transparent 28%),
+    radial-gradient(
+      circle at 88% 0%,
+      rgba(86, 163, 255, 0.28),
+      transparent 28%
+    ),
     #112441;
 }
 
