@@ -87,7 +87,7 @@ body.emapp-page {
 .emapp-nav__links a {
   color: #172238;
   font-size: 14px;
-  font-weight: 750;
+  font-weight: 650;
   text-decoration: none;
 }
 .emapp-nav__links a:hover {
@@ -99,7 +99,7 @@ body.emapp-page {
   background: var(--emapp-blue);
   color: #fff;
   font-size: 16px;
-  font-weight: 750;
+  font-weight: 650;
   text-decoration: none;
   box-shadow: 0 5px 10px rgba(7, 105, 223, 0.22);
 }
@@ -447,7 +447,7 @@ body.emapp-page {
 .emapp-table tbody th {
   background: #f0f5fc;
   color: #1e3560;
-  font-weight: 750;
+  font-weight: 650;
 }
 .emapp-table tbody td:nth-child(2) {
   font-weight: 700;

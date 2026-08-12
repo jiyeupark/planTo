@@ -49,7 +49,8 @@ body {
   backdrop-filter: blur(14px);
 }
 
-#header.solid .first-menu a {
+#header.solid .first-menu a,
+#header.solid .first-menu .first-menu-trigger {
   color: var(--planto-ink);
 }
 
@@ -70,11 +71,14 @@ body {
 }
 
 #header.m-over .first-menu a,
-#header.solid.m-over .first-menu a {
+#header.m-over .first-menu .first-menu-trigger,
+#header.solid.m-over .first-menu a,
+#header.solid.m-over .first-menu .first-menu-trigger {
   color: #fff;
 }
 
-#header .first-menu a {
+#header .first-menu a,
+#header .first-menu .first-menu-trigger {
   letter-spacing: -0.03em;
 }
 

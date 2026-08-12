@@ -71,7 +71,7 @@
   margin: 20px 0 0;
   color: #fff;
   font-size: clamp(52px, 7vw, 82px);
-  font-weight: 750;
+  font-weight: 650;
   line-height: 1.05;
   letter-spacing: -0.075em;
 }
@@ -117,7 +117,7 @@
   margin: 10px 0 0;
   color: var(--planto-navy);
   font-size: clamp(32px, 4vw, 48px);
-  font-weight: 750;
+  font-weight: 650;
   line-height: 1.16;
   letter-spacing: -0.065em;
 }
@@ -376,7 +376,7 @@
   background: #fff;
   color: #245e99;
   font-size: 15px;
-  font-weight: 750;
+  font-weight: 650;
   line-height: 1;
   text-decoration: none;
   transition:
@@ -575,7 +575,7 @@
   padding-right: 35px;
   color: var(--planto-navy);
   font-size: clamp(28px, 4vw, 38px);
-  font-weight: 750;
+  font-weight: 650;
   line-height: 1.2;
   letter-spacing: -0.06em;
   word-break: keep-all;
@@ -702,7 +702,7 @@
   background: var(--planto-navy);
   color: #fff;
   font-size: 14px;
-  font-weight: 750;
+  font-weight: 650;
   transition:
     background-color 160ms ease,
     transform 160ms ease;
@@ -739,7 +739,7 @@
   border-radius: 999px;
   color: #2366a3;
   font-size: 16px;
-  font-weight: 750;
+  font-weight: 650;
   text-decoration: none;
 }
 

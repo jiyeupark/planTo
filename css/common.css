@@ -73,7 +73,8 @@ input:focus {
 :root {
   /* Typography */
   --font-family-base: "Pretendard", "Roboto", "Noto Sans KR", Arial, sans-serif;
-  --font-family-korean: "Pretendard", "Noto Sans KR", "Roboto", Arial, sans-serif;
+  --font-family-korean:
+    "Pretendard", "Noto Sans KR", "Roboto", Arial, sans-serif;
   --font-family-display: "Poppins", "Noto Sans KR", sans-serif;
   --font-family-signature: "Nanum Pen Script", cursive;
 
@@ -375,7 +376,7 @@ span.highlight {
 
 .top-logo {
   float: left;
-  width: 15rem;
+  width: 18rem;
   height: 5rem;
   flex-basis: 130px;
   background: no-repeat left/95% url(../img/gnb/planto-logo-white.png);
@@ -396,11 +397,20 @@ span.highlight {
   justify-content: center;
   padding: 0 20px;
 }
-.first-menu a {
+.first-menu a,
+.first-menu .first-menu-trigger {
   font-size: 20px;
   color: #ffffff;
   font-weight: 600;
   transition: all 0.1s;
+}
+.first-menu .first-menu-trigger {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  line-height: inherit;
+  cursor: default;
 }
 .first-menu li .select-bar {
   height: 0px;
@@ -546,7 +556,8 @@ span.highlight {
 #header.solid .top-logo {
   background: no-repeat left/95% url(../img/gnb/planto-logo-dark.png);
 }
-#header.solid .first-menu a {
+#header.solid .first-menu a,
+#header.solid .first-menu .first-menu-trigger {
   color: #111;
 }
 #header.m-over {
@@ -555,7 +566,8 @@ span.highlight {
 #header.m-over .top-logo {
   background: no-repeat left/95% url(../img/gnb/planto-logo-white.png);
 }
-#header.m-over .first-menu a {
+#header.m-over .first-menu a,
+#header.m-over .first-menu .first-menu-trigger {
   color: #ffffff;
 }
 #header.rspv {
